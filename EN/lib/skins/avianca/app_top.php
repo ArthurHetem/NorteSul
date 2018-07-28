@@ -12,27 +12,27 @@
 					<ul>
 					    <li><a href="<?php echo SITE_URL; ?>/index.php/">Home</a></li>
 						<li class="has-dropdown">
-							<a href="#">Organização</a>
+							<a href="#">Corporation</a>
 							<ul class="dropdown">
-								<li><a href="<?php echo SITE_URL; ?>/index.php/staff">Administradores</a></li>
-								<li><a href="<?php echo SITE_URL; ?>/index.php/rules">Inscreva-se</a></li>
-								<li><a href="<?php echo SITE_URL; ?>/index.php/contact">Fale Conosco</a></li>
+								<li><a href="<?php echo SITE_URL; ?>/index.php/staff">Executive</a></li>
+								<li><a href="<?php echo SITE_URL; ?>/index.php/rules">Enroll</a></li>
+								<li><a href="<?php echo SITE_URL; ?>/index.php/contact">Contact Us</a></li>
 							</ul>
 						</li>
 						<li class="has-dropdown">
-							<a href="#">Operacional</a>
+							<a href="#">Operations</a>
 							<ul class="dropdown">
-								<li><a href="<?php echo SITE_URL; ?>/index.php/frota">Nossa Frota</a></li>
-								<li><a href="<?php echo SITE_URL; ?>/index.php/last">Últimos Voos</a></li>
+								<li><a href="<?php echo SITE_URL; ?>/index.php/frota">Fleet</a></li>
+								<li><a href="<?php echo SITE_URL; ?>/index.php/last">Latest Flights</a></li>
 
 							</ul>
 						</li>
 						<li class="has-dropdown">
-							<a href="#">Membros</a>
+							<a href="#">Members</a>
 							<ul class="dropdown">
-								<li><a href="<?php echo SITE_URL; ?>/index.php/pilots">Nosso Time</a></li>
-								<li><a href="<?php echo SITE_URL; ?>/index.php/rank">Plano de Carreira</a></li>
-								<li><a href="<?php echo SITE_URL; ?>/index.php/awards">Nossas Awards</a></li>
+								<li><a href="<?php echo SITE_URL; ?>/index.php/pilots">Pilot Roster</a></li>
+								<li><a href="<?php echo SITE_URL; ?>/index.php/rank">Careers</a></li>
+								<li><a href="<?php echo SITE_URL; ?>/index.php/awards">Awards</a></li>
 							</ul>
 						</li>
 						<li><a href="<?php echo SITE_URL; ?>/index.php/ACARS">Tracking</a></li>
@@ -46,7 +46,7 @@
 						<?php if(Auth::LoggedIn())
                           {
 							  ?>
-                          <li><a href="<?php echo SITE_URL?>/../crewcenter2/index.php/profile">Acessar CrewCenter</a></li>
+                          <li><a href="<?php echo SITE_URL?>/../crewcenter2/index.php/profile">CrewCenter</a></li>
                           <?php
 						  }
                           ?>
