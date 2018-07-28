@@ -62,12 +62,12 @@ var acars_map_defaults = {
 <table id="tabledlist" class="table table-striped">
 <thead>
 	<tr>
-		<td class="quadro roxo"><b>Tripulante</b></td>
-		<td class="quadro roxo"><b>Voo</b></td>
+		<td class="quadro roxo"><b>Pilot</b></td>
+		<td class="quadro roxo"><b>Flight</b></td>
 		<td class="quadro roxo"><b>DEP <i class="fa fa-plane"></i> ARR</b></td>
 		<td class="quadro roxo"><b>Altitude</b></td>
-		<td class="quadro roxo"><b>Velocidade</b></td>
-		<td class="quadro roxo"><b>Progresso</b></td>
+		<td class="quadro roxo"><b>Speed</b></td>
+		<td class="quadro roxo"><b>Progress</b></td>
 	</tr>
 </thead>
 <tbody id="pilotlist"></tbody>
