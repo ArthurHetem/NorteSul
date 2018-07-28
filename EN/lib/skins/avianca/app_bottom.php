@@ -5,25 +5,25 @@
 
 				<div class="col-md-4">
 					<div class="gtco-widget">
-						<h3>Quem Somos</h3>
-						<p>A Avianca Virtual é uma organização virtual movida por entusiastas da aviação que busca simular com seriedade, qualidade e precisão as operações da Avianca Linhas Aéreas nas redes de voo online IVAO e VATSIM.</p>
+						<h3>About US</h3>
+						<p>NorteSul is a virtual organization created by aviation enthusiasts that simulate with profissionalism, quality and precision as we operate  NorteSul Linhas Aéreas on IVAO and VATSIM Networks.</p>
 
-<p>Utilizando como plataforma de voo o Microsoft Flight Simulator, XPlane ou Prepar3D e <b>NÃO POSSUÍMOS FINS LUCRATIVOS</b>.</p>
+<p>We support Microsoft Flight Simulator, XPlane or Prepar3D and <b>we are a Non-Profit Organization</b>.</p>
 					</div>
 				</div>
 
 				<div class="col-md-2 col-md-push-1">
 					<div class="gtco-widget">
-						<h3>Últimas Notícias</h3>
+						<h3>Latest News</h3>
 						<ul class="gtco-footer-links">
-                              Nada Encontrado!
+                              0 Files Found!
 						</ul>
 					</div>
 				</div>
 
 				<div class="col-md-2 col-md-push-1">
 					<div class="gtco-widget">
-						<h3>Voos no Momento</h3>
+						<h3>Live Flights</h3>
 						<ul class="gtco-footer-links">
 							<?php
 $results = ACARSData::GetACARSData();
@@ -40,7 +40,7 @@ else { echo "Cruise"; }?>
                                  <?php          
                          }
                  } else { ?>
-                                        Nenhum Piloto Voando Atualmente.
+                                        No Pilots Flying now.
                                  <?php
                  }
                  ?>
@@ -50,11 +50,11 @@ else { echo "Cruise"; }?>
 
 				<div class="col-md-3 col-md-push-1">
 					<div class="gtco-widget">
-						<h3>Contatos</h3>
+						<h3>Contacts</h3>
 						<ul class="gtco-quick-contact">
-						Entre em contato com a nossa equipe e tire dúvidas.
-							<li><i class="far fa-envelope"></i><a href="mailto:contato@aviancavirtual.tk">contato@aviancavirtual.tk</a></li>
-							<li><a href="https://www.facebook.com/aviancavirtualbr/" class="fab fa-facebook"></a> <a href="https://www.instagram.com/aviancav/" class="fab fa-instagram"></a></li>
+						Contact Us and a Staff will answer your questions.
+							<li><i class="far fa-envelope"></i><a href="mailto:staff@nortesulvirtual.com">staff@nortesulvirtual.com</a></li>
+							<li><a href="https://www.facebook.com/nortesulvirtual/" class="fab fa-facebook"></a> <a href="https://www.instagram.com/nortesulvirtual/" class="fab fa-instagram"></a></li>
 						</ul>
 					</div>
 				</div>
@@ -64,7 +64,7 @@ else { echo "Cruise"; }?>
 			<div class="row copyright">
 				<div class="col-md-12">
 					<p align="center">
-						<small class="block">&copy; 2017 - <?php echo date("Y")?>  Avianca Virtual. Todos os direitos reservados.</small> 
+						<small class="block">&copy; 2017 - <?php echo date("Y")?>  NorteSul Virtual. All rights reserved.</small> 
 						<small class="block">Designed by Arthur Hetem</small>
 					</p>
 				</div>
