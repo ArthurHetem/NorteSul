@@ -6,11 +6,11 @@
 					<div class="row row-mt-15em">
 
 						<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
-							<h1>Fale Conosco</h1>
+							<h1>Contact Us</h1>
                             <small><ol class="breadcrumb">
   <li>Home</li>
-  <li>Organização</li>
-  <li class="active"><b>Fale Conosco</b></li>
+  <li>Corporation</li>
+  <li class="active"><b>Contact US</b></li>
 </ol></small>							
 						</div>
 						
@@ -27,7 +27,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="col-md-6 animate-box">
-					<h3>Deixe aqui o seu recado para a nossa ouvidoria</h3>
+					<h3>Leave here your message to our Staff</h3>
 					<small>Entre em contato com a nossa equipe e tire dúvidas gerais a partir do nosso formulário abaixo.</small>
 					<form  method="POST" action="<?php echo url('/contact'); ?>">
 						<div class="row form-group">
