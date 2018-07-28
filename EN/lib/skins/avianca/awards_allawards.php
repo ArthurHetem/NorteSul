@@ -6,11 +6,11 @@
 					<div class="row row-mt-15em">
 
 						<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
-							<h1>Nossas Awards</h1>
+							<h1>Awards</h1>
                             <small><ol class="breadcrumb">
   <li>Home</li>
-  <li>Membros</li>
-  <li class="active"><b>Nossas Awards</b></li>
+  <li>Members</li>
+  <li class="active"><b>Awards</b></li>
 </ol></small>							
 						</div>
 						
@@ -26,8 +26,8 @@
 <thead>
 <tr>
 	<th class="quadro roxo">Award</th>
-    <th class="quadro roxo">Descrição</th>
-	<th class="quadro roxo">Imagem</th>
+    <th class="quadro roxo">Description</th>
+	<th class="quadro roxo">Image</th>
 	</tr>
 </thead>
 <tbody>
