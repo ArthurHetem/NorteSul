@@ -7,8 +7,8 @@
   type="text/javascript?sensor=true"></script>
 
     <div class="container" id="tourpackages-carousel">
-	<h2 class="text-center">Existem <b><?php echo ACARSData::getLiveFlightCount();?> voos</b> em andamento</h2>
-	  <h2 class="text-center"><small>Aqui você pode acompanhar todos os voos online no momento</small></h2>
+	<h2 class="text-center">Existem <b><?php echo ACARSData::getLiveFlightCount();?> Flights</b> in progress</h2>
+	  <h2 class="text-center"><small>Here you can follow live online Flights</small></h2>
        <?php
 /**
  * These are some options for the ACARS map, you can change here
