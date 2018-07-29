@@ -6,11 +6,11 @@
 					<div class="row row-mt-15em">
 
 						<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
-							<h1>Fale Conosco</h1>
+							<h1>Contact Us</h1>
                             <small><ol class="breadcrumb">
   <li>Home</li>
-  <li>Organização</li>
-  <li class="active"><b>Fale Conosco</b></li>
+  <li>Corporation</li>
+  <li class="active"><b>Contact Us</b></li>
 </ol></small>							
 						</div>
 						
@@ -23,7 +23,7 @@
 
     <div class="container" id="tourpackages-carousel">
       <div class="alert alert-success">
-        <p>Sua mensagem foi enviada, responderemos o mais rápido possível.</p>
+        <p>Message sent. It will be answered ASAP.</p>
       </div>
       <!-- End container -->
     </div>
