@@ -99,7 +99,7 @@ echo "$resp";
 							<i>3</i>
 						</span>
 						<h3>Acess to CrewCenter</h3>
-						<p>After approval, acess to CrewCenter will be granted to new MembersMe</p>
+						<p>After application approval, acess to CrewCenter will be granted to new Members</p>
 					</div>
 				</div>
 				
