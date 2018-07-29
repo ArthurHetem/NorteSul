@@ -28,7 +28,7 @@
 				<div class="col-md-12">
 					<div class="col-md-6 animate-box">
 					<h3>Leave here your message to our Staff</h3>
-					<small>Entre em contato com a nossa equipe e tire dúvidas gerais a partir do nosso formulário abaixo.</small>
+					<small>Contact our Team asking your general questions using the form below.</small>
 					<form  method="POST" action="<?php echo url('/contact'); ?>">
 						<div class="row form-group">
 							<div class="col-md-12">
@@ -43,7 +43,7 @@
 		else
 		{
 		?>
-								<label class="sr-only" for="name">Nome</label>
+								<label class="sr-only" for="name">Name</label>
 								<input type="text" id="name" class="form-control" placeholder="Nome*">
 								<?php
 		}
@@ -74,7 +74,7 @@
 
 						<div class="row form-group">
 							<div class="col-md-12">
-								<label class="sr-only" for="subject">Assunto</label>
+								<label class="sr-only" for="subject">Subject</label>
 								<input type="text" id="subject" name="subject" class="form-control" placeholder="Assunto*" value="<?php echo $_POST['subject'];?>">
 							</div>
 						</div>
@@ -95,8 +95,8 @@
 				<div class="col-md-5 col-md-push-1 animate-box">
 					
 					<div class="gtco-contact-info">
-						<h3>Redes Sociais</h3>
-						<a href="https://www.facebook.com/aviancavirtualbr/" class="fab fa-facebook"></a> <a href="https://twitter.com/aviancabrv" class="fab fa-twitter"></a> <a href="https://www.instagram.com/aviancav/" class="fab fa-instagram"></a>
+						<h3>Social Media</h3>
+						<a href="https://www.facebook.com/nortesulvirtual/" class="fab fa-facebook"></a> <a href="https://twitter.com/nortesulvirtual" class="fab fa-twitter"></a> <a href="https://www.instagram.com/nortesulvirtual/" class="fab fa-instagram"></a>
 					</div>
 
 
