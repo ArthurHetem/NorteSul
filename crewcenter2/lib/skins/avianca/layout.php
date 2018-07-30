@@ -15,7 +15,7 @@
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect. -->
-  <link rel="stylesheet" href="<?php echo SITE_URL ?>/lib/skins/avianca/dist/css/skins/skin-red.min.css">
+  <link rel="stylesheet" href="<?php echo SITE_URL ?>/lib/skins/avianca/dist/css/skins/skin-blue.min.css">
     <!-- iCheck -->
   <link rel="stylesheet" href="<?php echo SITE_URL ?>/lib/skins/avianca/plugins/iCheck/square/red.css">
 
@@ -48,8 +48,8 @@
    .cor{
 	 color:#DA0808;
    }
-   .avianca{
-	background-color:#DA0808;
+   .norte{
+	background-color:#009b3a;
 	color:#FFF;
    }
     .btn.aqua-gradient {
@@ -62,6 +62,9 @@
 
  </style>
  <script type="text/javascript" src="<?php echo fileurl('lib/js/simbrief.apiv1.js');?>"></script>
+ <!--Your Google Maps API Key here-->
+    <script src="http://maps.google.com/maps/api/js?v=3&libraries=geometry&language=en_gr&key=AIzaSyDbwylblt3-Nz21yNoDJWbHyqTjTNogYcg" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js" type="text/javascript"></script>
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -83,7 +86,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="<?php if(Auth::LoggedIn()){ echo "hold-transition skin-red sidebar-mini";} else{ echo "login-page";}?>">
+<body class="<?php if(Auth::LoggedIn()){ echo "hold-transition skin-blue sidebar-mini";} else{ echo "login-page";}?>">
 <div class="<?php if(Auth::LoggedIn()){ echo "wrapper";} else{ echo " ";}?>">
 <?php echo $page_htmlreq; ?>
 		<?php

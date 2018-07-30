@@ -6,18 +6,21 @@ if(!$last_location) {
   FltbookData::updatePilotLocation($pilotid, Auth::$userinfo->hub);
 }
 ?>
-<h3><strong>Schedule Search</strong></h3>
-<hr />
+<section class="content container-fluid">
+			<div class="row">
+			<div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Buscar Charter</h3>
+            </div>
+			<div class="box-body">
 <form action="<?php echo url('/Fltbook');?>" method="post">
-    <table class="balancesheet" align="center">
-    	<tr>
-    		<td colspan="5"><strong>Schedule Search</strong></td>
-    	</tr>
+    <table class="table table-bordered">
       <tr>
-          <td>Current Location:</td>
+          <td>Aeroporto Atual:</td>
           <td>
               <?php if($settings['search_from_current_location'] == 1) { ?>
-                <div><span class="pull-left"><input id="depicao" name="depicao" type="hidden" value="<?php echo $last_location->arricao; ?>"><font color="red"><?php echo $last_location->arricao; ?> - <?php echo $last_name->name; ?></font></span></div>
+                <div><span class="pull-left"><input class="form-control" id="depicao" name="depicao" type="hidden" value="<?php echo $last_location->arricao; ?>"><font color="red"><?php echo $last_location->arricao; ?> - <?php echo $last_name->name; ?></font></span></div>
               <?php } else { ?>
                 <font color="red"><?php echo $last_location->arricao; ?> - <?php echo $last_name->name; ?></font>
               <?php } ?>
@@ -25,9 +28,9 @@ if(!$last_location) {
       </tr>
       <?php if($settings['search_from_current_location'] == 0) { ?>
         <tr>
-            <td>Select An Departure Location:</td>
+            <td>Selecionar Aeroporto de Decolagem:</td>
             <td>
-                <select class="search" name="depicao">
+                <select class="search form-control" name="depicao">
                     <option value="" selected disabled>Choose Your Departure Location</option>
                     <?php
                       foreach ($airports as $airport) {
@@ -39,10 +42,10 @@ if(!$last_location) {
         </tr>
       <?php } ?>
       <tr>
-          <td>Select An Airline:</td>
+          <td>Selecionar Companhia Aérea:</td>
           <td>
-              <select class="search" name="airline">
-                  <option value="">Any</option>
+              <select class="search form-control" name="airline">
+                  <option value="">Qualquer</option>
                   <?php
                     foreach ($airlines as $airline) {
                       echo '<option value="'.$airline->code.'">'.$airline->name.'</option>';
@@ -52,9 +55,9 @@ if(!$last_location) {
           </td>
       </tr>
       <tr>
-          <td>Select An Aircraft Type:</td>
+          <td>Selecionar Aeronave:</td>
           <td>
-            <select class="search" name="aircraft">
+            <select class="search form-control" name="aircraft">
               <option value="" selected>Any</option>
               <?php
               if($settings['search_from_current_location'] == 1) {
@@ -82,9 +85,9 @@ if(!$last_location) {
           </td>
       </tr>
       <tr>
-          <td>Select Arrival Airfield:</td>
+          <td>Selecionar Destino:</td>
           <td>
-              <select class="search" name="arricao">
+              <select class="search form-control" name="arricao">
                   <option value="">Any</option>
                   <?php
                   if($settings['search_from_current_location'] == 1) {
@@ -109,15 +112,23 @@ if(!$last_location) {
       <tr>
     	<td align="center" colspan="2">
           <input type="hidden" name="action" value="search" />
-          <a href="<?php echo url('/Fltbook/bids'); ?>"><input type="button" value="View/Remove Bids"></a>
-          <input border="0" type="submit" name="submit" value="Search">
+          <input border="0" type="submit" name="submit" value="Buscar" class="btn-block btn-flat btn btn-info">
     	</td>
       </tr>
       <br />
   </table>
 </form>
-<hr />
-
+</div>
+</div>
+</div>
+</div>	
+<div class="row">
+			<div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Gerador de Escalas</h3>
+            </div>
+			<div class="box-body">
 <?php if($settings['search_from_current_location'] == 1) { ?>
 <h3><strong>Pilot Transfer</strong></h3>
 <form action="<?php echo url('/Fltbook/jumpseat');?>" method="post">
@@ -191,3 +202,9 @@ function calculate_transfer(arricao) {
 }
 </script>
 <?php } ?>
+</div>
+</div>
+        </div>
+        </div>		
+    </section>
+    <!-- /.content -->		

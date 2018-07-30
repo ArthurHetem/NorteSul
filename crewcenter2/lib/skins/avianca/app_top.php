@@ -4,9 +4,9 @@
     <!-- Logo -->
     <a href="<?php echo SITE_URL?>/index.php/profile" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>O</b>N<b>E</b></span>
+      <span class="logo-mini"><b>N</b>O<b>R</b></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Avianca</b>Virtual</span>
+      <span class="logo-lg"><b>Norte</b>Sul</span>
     </a>
 
     <!-- Header Navbar -->
@@ -18,19 +18,6 @@
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          <!-- Messages: style can be found in dropdown.less-->
-          <li class="dropdown messages-menu">
-            <!-- Menu toggle button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-envelope-o"></i>
-              <span class="label label-success"><?php MainController::Run('Mail', 'checkmail'); ?></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header"><h4>Você Tem <span class="bold"><?php MainController::Run('Mail', 'checkmail'); ?> Novas</span> Mensagens</h4></li>
-              <li class="footer"><a href="<?php echo SITE_URL?>/index.php/mail">Ver</a></li>
-            </ul>
-          </li>
-          <!-- /.messages-menu -->
 		  
           <!-- User Account Menu -->
           <li class="dropdown user user-menu">
@@ -104,7 +91,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <!-- Optionally, you can add icons to the links -->
         <li><a href="<?php echo SITE_URL?>/index.php/profile"><i class="fa fa-home"></i> <span>Home</span></a></li>
-		<li class="header">SISTEMAS DE VOOS</li>
+		<li class="header">OPERAÇÕES DE VOOS</li>
 		<?php
           $contabids = SchedulesData::GetBids(Auth::$pilot->pilotid);
 		  $bidscontados = COUNT($contabids);
@@ -132,9 +119,8 @@
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#">Gerar Escala<span class="label label-danger pull-right-container">INOP</span></a></li>
-            <li><a href="<?php echo SITE_URL?>/index.php/fltbook">Gerar Charter</a></li>
-			<li><a href="<?php echo SITE_URL?>/index.php/realschedulelite">Jumpseat</a></li>
+            <li><a href="<?php echo SITE_URL?>/index.php/randomflights">Gerar Escala<!--<span class="label label-danger pull-right-container">INOP</span>--></a></li>
+            <li><a href="<?php echo SITE_URL?>/index.php/fltbook">Gerar Charter / Jumpseat</a></li>
           </ul>
         </li>
 		<?php

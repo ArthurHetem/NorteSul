@@ -109,12 +109,12 @@ echo "$resp";
 	</div>
 
 
-	<div class="gtco-cover gtco-cover-sm" style="background-image: url(images/img_bg_1.jpg)"  data-stellar-background-ratio="0.5">
+	<div class="gtco-cover gtco-cover-sm amarelo" style="background-image: url(images/img_bg_1.jpg)"  data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="gtco-container text-center">
 			<div class="display-t">
 				<div class="display-tc">
-					<h1>Temos sistemas e aplicativos que temos certeza que você irá adorar!</h1>
+					<h1>Possuímos sistemas e aplicativos que temos certeza que você irá adorar!</h1>
 				</div>	
 			</div>
 		</div>
@@ -126,7 +126,7 @@ echo "$resp";
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
 					<h2>Detentora oficial do callsign <b>NOR</b> nos céus virtuais</h2>
-					<p>Utilizamos a principal rede de simulação aérea virtual, a <b>IVAO</b></p>
+					<p>Utilizamos a rede de simulação aérea virtual, a <b>IVAO</b></p>
 				</div>
 			</div>
  
@@ -279,7 +279,7 @@ echo "$resp";
 	
 	<div id="gtco-subscribe">
 		<div class="gtco-container">
-			<div class="row animate-box">
+			<div class="row animate-box azul">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
 					<h2>Nossos <b>Parceiros</b></h2>
 					<div class="owl-carousel owl-theme">

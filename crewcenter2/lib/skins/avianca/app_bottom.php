@@ -1,7 +1,7 @@
  <!-- Main Footer -->
   <footer class="main-footer">
     <!-- Default to the left -->
-    <strong>Copyright &copy; <?php echo date('Y')?> Avianca Virtual.</strong> Todos os Direitos Reservados.
+    <strong>Copyright &copy; <?php echo date('Y')?> NorteSul Virtual Airlines.</strong> Todos os Direitos Reservados.
   </footer>
 
   <!-- Control Sidebar -->
@@ -11,6 +11,18 @@
     <div class="tab-content">
       <!-- Home tab content -->
       <div class="tab-pane active" id="control-sidebar-home-tab">
+	    <h3 class="control-sidebar-heading">Feed de Atividades</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+              <i class="menu-icon fa fa-info bg-green"></i>
+
+              <div class="menu-info">
+
+                <p><?php MainController::Run('Activity', 'frontpage', 2); ?></p>
+              </div>
+          </li>
+        </ul>
+		<hr>
         <h3 class="control-sidebar-heading">Acontecimentos</h3>
         <ul class="control-sidebar-menu">
           <li>
@@ -20,14 +32,14 @@
               <div class="menu-info">
                 <h4 class="control-sidebar-subheading">Inauguração</h4>
 
-                <p>Foi em Agosto/2017</p>
+                <p>Foi em Agosto/2018</p>
               </div>
             </a>
           </li>
         </ul>
         <!-- /.control-sidebar-menu -->
         <hr>
-        <h3 class="control-sidebar-heading">Metas Avianca Virtual</h3>
+        <h3 class="control-sidebar-heading">Metas NorteSul Virtual</h3>
         <ul class="control-sidebar-menu">
           <li>
             <a href="javascript:;">

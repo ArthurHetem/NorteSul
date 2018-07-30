@@ -39,41 +39,24 @@
     else {
     $resp = "Boa noite";}
   ?>
-<?PHP	
-$voos = $pilot->totalflights;
-if ($voos >0){
-$somar = mysql_query("SELECT SUM(landingrate) as accepted FROM `phpvms_pireps` WHERE pilotid=$userinfo->pilotid");
-						 $total = mysql_fetch_array($somar);
-						 $v_total = $total['accepted'];
-						 $linha = mysql_query("SELECT * FROM `phpvms_pireps` WHERE pilotid=$userinfo->pilotid");
-						 $taxa = mysql_num_rows($linha);
-						 $v_taxa = $v_total/$taxa ;
-}
-else
-{
-$v_taxa = "0";
-}	
-?>
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Bem Vindo, <?php echo $userinfo->firstname ?>
-        <small>Seu HUB é: <span class="label label-info"><?php echo $userinfo->hub?></span></small>
-      </h1>
+		<div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h4><i class="icon fa fa-check"></i> Olá <?php echo $userinfo->firstname ?>, bem vindo de volta à NorteSul.</h4>
+                <?php echo $resp?>, hoje é <?php  echo $semana["$data"] . ", {$dia} de " . $mes_extenso["$mes"] . " de {$ano}"; ?>
+              </div>
     </section>
 
     <!-- Main content -->
-    <section class="content container-fluid">
-        <div class="callout callout-info callout-dismissable" role="alert">
-             <b><center><?php echo $resp?>, hoje é <?php  echo $semana["$data"] . ", {$dia} de " . $mes_extenso["$mes"] . " de {$ano}"; ?></center></b>
-          </div>
+    <section class="content container-fluid">	 
 		  <!--<div class="callout callout-warning callout-dismissable" role="alert">
-             <b><center>O Sistema da Avianca Virtual Poderá Passar por instabilidades no dia de hoje, pois as rotas serão atualizadas segundo o AIRAC 1712<p>Agradecemos a compreensão</p><p>Staff Avianca Virtual</p></center></b>
+             <b><center>O Sistema da NorteSul Poderá Passar por instabilidades no dia de hoje, pois as rotas serão atualizadas segundo o AIRAC<p>Agradecemos a compreensão</p><p>Staff Team.</p></center></b>
           </div>-->
 		<div class="row">
 		  <div class="col-lg-3 col-xs-6">
             <!-- small box -->
-            <div class="small-box bg-blue">
+            <div class="small-box bg-green">
               <div class="inner">
                 <h3><?php echo $pilotcode; ?></h3>
 			  
@@ -84,9 +67,9 @@ $v_taxa = "0";
               </div>
             </div>
           </div>
-		  <div class="col-lg-3 col-xs-6 col-md-offset-1">
+		  <div class="col-lg-3 col-xs-6">
             <!-- small box -->
-            <div class="small-box bg-red">
+            <div class="small-box bg-blue">
               <div class="inner">
                 <h3><?php echo $pilot->totalflights; ?></h3>
 			  
@@ -97,9 +80,9 @@ $v_taxa = "0";
               </div>
             </div>
           </div>
-		  <div class="col-lg-3 col-xs-6 col-md-offset-1">
+		  <div class="col-lg-3 col-xs-6">
             <!-- small box -->
-            <div class="small-box bg-green">
+            <div class="small-box bg-yellow">
               <div class="inner">
                 <h3><?php echo $pilot->totalhours; ?></h3>
 			  
@@ -110,37 +93,47 @@ $v_taxa = "0";
               </div>
             </div>
           </div>
-		  <div class="col-lg-3 col-xs-6 col-md-offset-2">
-            <!-- small box -->
-            <div class="small-box bg-purple">
-              <div class="inner">
-                <h3>R<?php echo FinanceData::formatMoney((floatval($pilot->totalpay) + floatval($pilot->payadjust))) ?></h3>
-			  
-                <p>Saldo Amigo</p>
-              </div>
-              <div class="icon">
-                <i class="fa fa-money"></i>
-              </div>
-            </div>
-          </div>
-		  <div class="col-lg-3 col-xs-6 col-md-offset-1">
+		  <div class="col-lg-3 col-xs-6">
             <!-- small box -->
             <div class="small-box bg-maroon">
               <div class="inner">
-                <h3><?Php echo $v_taxa ?></h3>
+                <h3><?php echo StatsData::TotalFlightsToday(); ?></h3>
 			  
-                <p>ft/min</p>
+                <p>Voos Hoje</p>
               </div>
               <div class="icon">
                 <i class="fa fa-globe"></i>
               </div>
             </div>
           </div>
-        </div><!-- /.row --> 
+        </div><!-- /.row -->
+		<script>
+                    function reload() {
+                      location.reload();
+                    }
+                  </script>
+        <!-- ACARS Map -->
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="box box-default">
+                        <div class="box-header with-border">
+                            <i class="fa fa-map"></i>
+
+                            <h3 class="box-title">Mapa ACARs NorteSul Virtual</h3>
+							<div class="pull-right"><a href="javascript::void(0);" onclick="reload();"><i class="fa fa-refresh"></i></a></div>
+                        </div>
+                        
+                        <div class="body">
+                            <?php require "acarsmap.php" ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# ACARS Map -->		
         <div class="row">
           <div class="col-md-8 col-sm-6">
           <!-- Custom Tabs -->
-          <div class="nav-tabs-custom">
+          <div class="nav-tabs-custom box box-default with-border">
             <ul class="nav nav-tabs">
               <li class="active"><a href="#tab_1" data-toggle="tab">Notícias</a></li>
               <li><a href="#tab_2" data-toggle="tab">NOTAMs</a></li>
@@ -186,6 +179,35 @@ $v_taxa = "0";
                   </ul>  
                   <?php } ?>
                   <?php } ?>
+            </div>
+            <!-- /.box-body -->
+          </div>
+         </div>
+        </div>
+		<div class="row">
+           		 <div class="col-md-6 col-sm-12">
+            <div class="box box-default">
+            <div class="box-header with-border">
+              <i class="fa fa-paper-plane"></i>
+
+              <h3 class="box-title">Focus Airport</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+			<?php Template::Show('focusairport/index.php'); ?>
+							</div>
+							</div>
+							</div>
+			<div class="col-md-6 col-sm-12">
+            <div class="box box-default">
+            <div class="box-header with-border">
+              <i class="fa fa-camera"></i>
+
+              <h3 class="box-title">Screenshot da Nossa Galeria</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                  <?php MainController::Run('Screenshots','show_random_screenshot'); ?>
             </div>
             <!-- /.box-body -->
           </div>

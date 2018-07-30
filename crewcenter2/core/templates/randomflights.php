@@ -5,20 +5,13 @@
 * www.fs-products.net
 * Verion 1.3
 * Dated: 03/22/2011
-* Edited By Arthur Hetem 10/06/2017 V1.0C
+* Edited By Arthur Hetem 28/07/2018 V1.0D
 */
-?> 
-	<!-- BEGIN CONTENT -->
-	<div class="page-content-wrapper">
-		<div class="page-content">
-			<!-- BEGIN PAGE HEADER-->
-			<h3 class="page-title">
-		<small><span class="badge badge-roundless badge-success">Versão Alpha do Despacho Operacional</span></small>
-			</h3>
-            <hr>
-			<h1 class="page-title">Escala de Voo <small>Escala Gerada Pelo Sistema</small></h1>
-			<!-- END PAGE HEADER-->
-			<!-- BEGIN DASHBOARD STATS -->
+?> 			
+<!-- Main content -->
+    <section class="content container-fluid">	 
+		<div class="row">
+		  <h1 class="page-title">Escala de Voo <small>Escala Gerada Pelo Sistema</small></h1>
 			<div class="row">
                        <table width="98%" border="0" cellspacing="0">
                                             <table class="table table-hover table-light">
@@ -80,12 +73,6 @@ else
                                                 </button>
                                                 </td>
             </table>                        
-                              
-                    </div>
-                    <!-- END CONTENT BODY -->
-                </div>
-                <!-- END CONTENT -->
-			</div>
-			<!-- END DASHBOARD STATS -->
-			<div class="clearfix">
-			</div>
+        </div>		
+    </section>
+    <!-- /.content -->			

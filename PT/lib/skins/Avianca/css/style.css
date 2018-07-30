@@ -458,7 +458,7 @@ h1, h2, h3, h4, h5, h6, figure {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.1);
 }
 .gtco-cover > .gtco-container {
   position: relative;
@@ -905,9 +905,8 @@ form label {
 #gtco-products .gtco-heading p {
   color: rgba(255, 255, 255, 0.8);
 }
-
 #gtco-subscribe {
-  background: #009b3a;
+  background: #2DAAE4;
 }
 #gtco-subscribe .form-control {
   background: transparent;
@@ -1944,6 +1943,11 @@ border: 2px solid #dc3f6a;
 }
 .ooo{
 	margin-top:650px;
+}
+.azul{
+    background-color: #009b3a;
 }	
-
+.amarelo{
+	background-color: #fcef0f;
+}	
 /*# sourceMappingURL=style.css.map */
