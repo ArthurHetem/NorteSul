@@ -126,23 +126,22 @@ if(!$last_location) {
 			<div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Gerador de Escalas</h3>
+              <h3 class="box-title">Jumpseat</h3>
             </div>
 			<div class="box-body">
 <?php if($settings['search_from_current_location'] == 1) { ?>
-<h3><strong>Pilot Transfer</strong></h3>
 <form action="<?php echo url('/Fltbook/jumpseat');?>" method="post">
-  <table class="balancesheet" width="80%" align="center">
+  <table class="balancesheet tanle table-bordered">
     <thead>
     	<tr class="balancesheet_header">
-    	   <td colspan="5">Airport Selection</td>
+    	   <td colspan="5">Selecionar Aerporto</td>
     	</tr>
     	<tr>
-	    <td align="center">Transfer To:</td>
+	    <td align="center">Transferir Para:</td>
             <td align="left">
               <div id="errors"></div>
                 <select class="search" name="depicao" onchange="calculate_transfer(this.value)">
-                    <option value="" selected disabled>Select Airport</option>
+                    <option value="" selected disabled>Selecinar Aeroporto</option>
                     <?php
                     foreach($airports as $airport) {
                       if($airport->icao == $last_location->arricao) {

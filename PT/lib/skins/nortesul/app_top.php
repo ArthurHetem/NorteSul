@@ -12,41 +12,41 @@
 					<ul>
 					    <li><a href="<?php echo SITE_URL; ?>/index.php/">Home</a></li>
 						<li class="has-dropdown">
-							<a href="#">Corporation</a>
+							<a href="#">Organização</a>
 							<ul class="dropdown">
-								<li><a href="<?php echo SITE_URL; ?>/index.php/staff">Executive</a></li>
-								<li><a href="<?php echo SITE_URL; ?>/index.php/rules">Enroll</a></li>
-								<li><a href="<?php echo SITE_URL; ?>/index.php/contact">Contact Us</a></li>
+								<li><a href="<?php echo SITE_URL; ?>/index.php/staff">Administradores</a></li>
+								<li><a href="<?php echo SITE_URL; ?>/index.php/rules">Inscreva-se</a></li>
+								<li><a href="<?php echo SITE_URL; ?>/index.php/contact">Fale Conosco</a></li>
 							</ul>
 						</li>
 						<li class="has-dropdown">
-							<a href="#">Operations</a>
+							<a href="#">Operacional</a>
 							<ul class="dropdown">
-								<li><a href="<?php echo SITE_URL; ?>/index.php/frota">Fleet</a></li>
-								<li><a href="<?php echo SITE_URL; ?>/index.php/last">Latest Flights</a></li>
+								<li><a href="<?php echo SITE_URL; ?>/index.php/frota">Nossa Frota</a></li>
+								<li><a href="<?php echo SITE_URL; ?>/index.php/last">Últimos Voos</a></li>
 
 							</ul>
 						</li>
 						<li class="has-dropdown">
-							<a href="#">Members</a>
+							<a href="#">Membros</a>
 							<ul class="dropdown">
-								<li><a href="<?php echo SITE_URL; ?>/index.php/pilots">Pilot Roster</a></li>
-								<li><a href="<?php echo SITE_URL; ?>/index.php/rank">Careers</a></li>
-								<li><a href="<?php echo SITE_URL; ?>/index.php/awards">Awards</a></li>
+								<li><a href="<?php echo SITE_URL; ?>/index.php/pilots">Nosso Time</a></li>
+								<li><a href="<?php echo SITE_URL; ?>/index.php/rank">Plano de Carreira</a></li>
+								<li><a href="<?php echo SITE_URL; ?>/index.php/awards">Nossas Awards</a></li>
 							</ul>
 						</li>
 						<li><a href="<?php echo SITE_URL; ?>/index.php/ACARS">Tracking</a></li>
 						<?php if(!Auth::LoggedIn())
                           {
 							  ?>  
-                          <li><a href="<?php echo SITE_URL?>/../crewcenter2en/index.php/login">Login</a></li>
+                          <li><a href="<?php echo SITE_URL?>/../crewcenter2pt/index.php/login">Login</a></li>
                           <?php
 						  }
                           ?>
 						<?php if(Auth::LoggedIn())
                           {
 							  ?>
-                          <li><a href="<?php echo SITE_URL?>/../crewcenter2en/index.php/profile">CrewCenter</a></li>
+                          <li><a href="<?php echo SITE_URL?>/../crewcenter2pt/index.php/profile">Acessar CrewCenter</a></li>
                           <?php
 						  }
                           ?>

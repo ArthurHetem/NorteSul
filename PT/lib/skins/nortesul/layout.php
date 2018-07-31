@@ -3,7 +3,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>NorteSul Virtual</title>
+	<title>NorteSul Virtual Airlines</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="NorteSul Virtual Airlines" />
 	<meta name="keywords" content="website, html5, css3, mobile first, responsive" />

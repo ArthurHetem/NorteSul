@@ -1,4 +1,4 @@
-﻿<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-image: url(<?php echo SITE_URL; ?>/lib/skins/avianca/images/img_bg_1.png)">
+﻿<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-image: url(<?php echo SITE_URL; ?>/lib/skins/nortesul/images/img_bg_1.png)">
 		<div class="overlay"></div>
 		<div class="gtco-container">
 			<div class="row">
@@ -6,11 +6,11 @@
 					<div class="row row-mt-15em">
 
 						<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
-							<h1>Nossa Frota</h1>
+							<h1>Fleet</h1>
                             <small><ol class="breadcrumb">
   <li>Home</li>
-  <li>Operacional</li>
-  <li class="active"><b>Nossa Frota</b></li>
+  <li>Operations</li>
+  <li class="active"><b>Fleet</b></li>
 </ol></small>							
 						</div>
 						
@@ -27,7 +27,7 @@
         <div class="profile">
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="thumbnail animate-box">
-              <img src="<?php echo SITE_URL?>/lib/skins/avianca/images/frota/A318.png" alt="">
+              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/frota/A318.png" alt="">
               <div class="caption">
                 <h4 class="text-center">
                   Airbus <b>A318</b>
@@ -126,7 +126,7 @@
 
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="thumbnail animate-box">
-              <img src="<?php echo SITE_URL?>/lib/skins/avianca/images/frota/A319.png" alt="">
+              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/frota/A319.png" alt="">
               <div class="caption">
                 <h4 class="text-center">
                   Airbus <b>A319</b>
@@ -225,7 +225,7 @@
 
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="thumbnail animate-box">
-              <img src="<?php echo SITE_URL?>/lib/skins/avianca/images/frota/A320.png" alt="">
+              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/frota/A320.png" alt="">
               <div class="caption">
                 <h4 class="text-center">
                   Airbus <b>A320</b>
@@ -324,7 +324,7 @@
 
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="thumbnail animate-box">
-              <img src="<?php echo SITE_URL?>/lib/skins/avianca/images/frota/A320NEO.png" alt="">
+              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/frota/A320NEO.png" alt="">
               <div class="caption">
                 <h4 class="text-center">
                   Airbus <b>A320<small> NEO</small></b>
@@ -422,7 +422,7 @@
 			</div>
 			<div class="col-xs-12 col-sm-6 col-md-3">
             <div class="thumbnail animate-box">
-              <img src="<?php echo SITE_URL?>/lib/skins/avianca/images/frota/A330.png" alt="">
+              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/frota/A330.png" alt="">
               <div class="caption">
                 <h4 class="text-center">
                   Airbus <b>A330-200</b>
@@ -530,12 +530,12 @@
 		<div class="gtco-container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-					<h2>Contamos com <b><?php echo StatsData::TotalAircraftInFleet(); ?></b> aeronaves na frota!</h2>
+					<h2>We have <b><?php echo StatsData::TotalAircraftInFleet(); ?></b> aircrafts in our fleet!</h2>
 					<div class="col-md-6">
-					<p>Realizamos diversos voos partindo do Brasil para o mundo, sendo uma das Virtual Airlines em operação melhor conceituada em voos online!</p>
+					<p>We have various flights on and departing from Brazil to all the world, we are one of the best and unique Virtual Airlines!</p>
 				</div>
 				<div class="col-md-6">
-				    <a href="<?php echo SITE_URL; ?>/index.php/fleet" class='btn btn-primary pull-right'><i class="fas fa-plane"></i>DETALHES DA FROTA</a>
+				    <a href="<?php echo SITE_URL; ?>/index.php/fleet" class='btn btn-primary pull-right'><i class="fas fa-plane"></i>DETAILS OF OUR FLEET</a>
 				</div>
 				</div>
 			</div>

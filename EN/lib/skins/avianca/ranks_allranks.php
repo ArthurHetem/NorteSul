@@ -6,11 +6,11 @@
 					<div class="row row-mt-15em">
 
 						<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
-							<h1>Plano de Carreira</h1>
+							<h1>Career Plan</h1>
                             <small><ol class="breadcrumb">
   <li>Home</li>
-  <li>Membros</li>
-  <li class="active"><b>Plano de Carreira</b></li>
+  <li>Members</li>
+  <li class="active"><b>Career Plan</b></li>
 </ol></small>							
 						</div>
 						
@@ -40,7 +40,7 @@
               <img src="<?php echo $rank->rankimage; ?>" alt="">
               <div class="caption">
                 <hr>
-                 <div class="team-social-link"> Tripulantes Nessa Patente:<b>
+                 <div class="team-social-link"> Pilots in this Rank:<b>
                  <?php 
 {
 echo $rank->totalpilots; // This contains the total #

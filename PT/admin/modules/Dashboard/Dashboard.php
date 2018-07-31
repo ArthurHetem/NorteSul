@@ -36,6 +36,9 @@ class Dashboard extends CodonModule {
         CentralData::send_vastats();
 
         $this->set('unexported_count', count(PIREPData::getReportsByExportStatus(false)));
+		$this->set('pireps', PIREPData::getIntervalDataByDays(array(), 30)); 
+        $this->set('allbids', SchedulesData::getAllBids());
+        $this->set('screenshots', ScreenshotsData::getscreenshots_toapprove());
         $this->render('dashboard.php');
     }
 

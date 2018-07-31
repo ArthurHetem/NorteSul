@@ -8,12 +8,12 @@
 
 					<div class="row row-mt-15em">
 						<div class="col-md-7 mt-text animate-box dividir" data-animate-effect="fadeInUp">
-							<h1>Come and fly with us</h1>	
+							<h1>Viajar e conhecer novos lugares?</h1>	
 						</div>
 						<div class="col-md-4 col-md-push-1 mt-text animate-box" data-animate-effect="fadeInRight">
 									
 									
-											<h1>"I created a machine to bring humanity close, not to destroi it". Santos Dumont</h1>
+											<h1>Venha voar</h1>
 											<img src="<?php echo SITE_URL; ?>/lib/skins/nortesul/images/logo.png" height="55px" width="255px">
 
 										
@@ -29,8 +29,8 @@
 		<div class="gtco-container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-					<h2>The best <b> and unique Virtual</b> Airline</h2>
-					<p>with its own operations and replicating real life flights in flight simulation</p>
+					<h2>A sua <b>melhor</b> Virtual Airline</h2>
+					<p>Operating real operations in flight simulation</p>
 				</div>
 			</div>
 			
@@ -39,20 +39,20 @@
 				    <h2> <?php
 $hr = date(" H ");
 if($hr >= 12 && $hr<18) {
-$resp = "Good Afternoon";}
+$resp = "Boa tarde";}
 else if ($hr >= 0 && $hr <12 ){
-$resp = "Good Day";}
+$resp = "Bom dia";}
 else {
-$resp = "Good Evening";}
+$resp = "Boa noite";}
 echo "$resp";
-?>, welcome to NorteSul Virtual Airlines</h2>
-					<h4>A <b>NorteSul Virtual</b> is a non-profit Virtual Airline Company and its vision is to be as close as possible to real life flight operations <b>providing the best flying experience to our pilots in a friendly environment</b>. <p>As right now, we are <b><?php echo StatsData::PilotCount(); ?></b> members flying online on IVAO and VATSIM networks, using Microsoft Flight Simulator, XPlane, Prepar3D and other softwares that provide the best flight simulation experience that is out there.</p></h4>
+?>, bem vindo a NorteSul Linhas Aéreas Virtuais</h2>
+					<h4>A <b>NorteSul</b> é uma Companhia Aérea Virtual sem fins lucrativos que busca simular com a maior fidelidade possível operações de uma Companhia Aérea Real. <p>Atualmente contamos com <b><?php echo StatsData::PilotCount(); ?></b> membros que simulam através da rede de voo online IVAO, utilizando as plataformas Microsoft Flight Simulator, XPlane, Prepar3D e softwares próprios que deixam a simulação mais próxima da realidade.</p></h4>
 				</div>
 				<div class="col-md-6">
 				     <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Latest Flights</a></li>
-    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">New Pilots</a></li>
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Últimos Voos</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Novos Pilotos</a></li>
   </ul>
 
   <!-- Tab panes -->
@@ -70,8 +70,8 @@ echo "$resp";
 		<div class="gtco-container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
-					<h2>Enrollment Process</h2>
-					<p>We have an easy and fast enrollment process for new members.</p>
+					<h2>Processo de Admissão</h2>
+					<p>Possuímos um processo de admissão que visa a praticidade e eficiencia na escolha de nossos membros.</p>
 				</div>
 			</div>
 			<div class="row">
@@ -80,8 +80,8 @@ echo "$resp";
 						<span class="icon">
 							<i>1</i>
 						</span>
-						<h3>Application</h3>
-						<p>New members to be are asked to full in an application with some personal info</p>
+						<h3>Realização do Cadastro</h3>
+						<p>O futuro membro preenche um cadastro informando alguns dados</p>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-6">
@@ -89,8 +89,8 @@ echo "$resp";
 						<span class="icon">
 							<i>2</i>
 						</span>
-						<h3>Application Review</h3>
-						<p>Our HR Department review all applications</p>
+						<h3>Avaliação do Cadastro</h3>
+						<p>Nosso departamento de RH avalia os cadastros</p>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-6">
@@ -98,8 +98,8 @@ echo "$resp";
 						<span class="icon">
 							<i>3</i>
 						</span>
-						<h3>Acess to CrewCenter</h3>
-						<p>After application approval, acess to CrewCenter will be granted to new Members</p>
+						<h3>Acesso ao CrewCenter</h3>
+						<p>Caso aprovado, o membro já possuirá acesso ao CrewCenter</p>
 					</div>
 				</div>
 				
@@ -114,7 +114,7 @@ echo "$resp";
 		<div class="gtco-container text-center">
 			<div class="display-t">
 				<div class="display-tc">
-					<h1>We are sure that you will simply love our systems and apps!</h1>
+					<h1>Possuímos sistemas e aplicativos que temos certeza que você irá adorar!</h1>
 				</div>	
 			</div>
 		</div>
@@ -125,8 +125,8 @@ echo "$resp";
 
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
-					<h2>Official callsign Holder <b>NOR</b> on Flight Simulation Network</h2>
-					<p>We fly on the main networks available for Virtual Flight Simulation, <b>VATSIM</b> and <b>IVAO</b></p>
+					<h2>Detentora oficial do callsign <b>NOR</b> nos céus virtuais</h2>
+					<p>Utilizamos a rede de simulação aérea virtual, a <b>IVAO</b></p>
 				</div>
 			</div>
  
@@ -135,26 +135,26 @@ echo "$resp";
 				<div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
 					<div class="feature-center">
 						<span class="counter js-counter" data-from="0" data-to="<?php echo StatsData::TotalSchedules(); ?>" data-speed="5000" data-refresh-interval="50">1</span>
-						<span class="counter-label">Routes</span>
+						<span class="counter-label">Rotas</span>
 
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
 					<div class="feature-center">
 						<span class="counter js-counter" data-from="0" data-to="<?php echo StatsData::PilotCount(); ?>" data-speed="5000" data-refresh-interval="50">1</span>
-						<span class="counter-label">Pilots</span>
+						<span class="counter-label">Tripulantes</span>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
 					<div class="feature-center">
 						<span class="counter js-counter" data-from="0" data-to="<?php echo StatsData::TotalAircraftInFleet(); ?>" data-speed="5000" data-refresh-interval="50">1</span>
-						<span class="counter-label">Aircrafts</span>
+						<span class="counter-label">Aeronaves</span>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
 					<div class="feature-center">
 						<span class="counter js-counter" data-from="0" data-to="<?php echo StatsData::TotalFlights(); ?>" data-speed="5000" data-refresh-interval="50">1</span>
-						<span class="counter-label">Flights</span>
+						<span class="counter-label">Voos</span>
 
 					</div>
 				</div>
@@ -171,10 +171,10 @@ echo "$resp";
                 </i>
               </div>
                 <h3>
-                  SITA Navigation
+                  Navegação SITA
                 </h3>
                 <p>
-                  SITA navigation helps pilots on their own navigation, fuel Control and ZFW TOW TFW TPW MTOW, etc.
+                  A Navegação SITA é uma navegação que tem como finalidade ajudar o piloto em sua própria navegação assim como no controle de combustivel tal como ZFW TOW TFW TPW MTOW etc.
                   <br>
                 </p>
             </div>
@@ -187,7 +187,7 @@ echo "$resp";
                   LoadSheet
                 </h3>
                 <p>
-                  detailed preparation sheet for each flight, including weight, load and much more.
+                  É a preparação utilizada para cada voo, como peso e distribuição de carga no compartimento e muito mais.
                   <br>
                 </p>
             </div>
@@ -200,7 +200,7 @@ echo "$resp";
                   Briefing
                 </h3>
                 <p>
-                  Briefing has all necessary flight info for pilots, like NOTAMS and up to date charts and much more...
+                  Briefing apresenta ao piloto as informações necessárias para o voo, como os NOTAMS e todas as cartas atualizadas no mesmo local e muito mais...
                   <br>
                 </p>
             </div>
@@ -215,7 +215,7 @@ echo "$resp";
                   Weather Briefing
                 </h3>
                 <p>
-                  Tool designed to help pilots to know the risks related to weather on each airport flown by our pilots.
+                  Destina-se como uma ferramenta para ajudar os pilotos a visualizarem melhor o tempo e riscos relacionados ao clima sobre os aeródromos para o voo.
                   <br>
                 </p>
             </div>
@@ -225,10 +225,10 @@ echo "$resp";
                 </i>
               </div>
                 <h3>
-                  IVAO/VATSIM Flight Plan
+                  IVAO Flight Plan
                 </h3>
                 <p>
-                  the goal of this Flight Plan (FPL) is to bring confort to the pilots when flying on IVAO and VATSIM networks
+                  O objetivo de um plano de voo apresentado (FPL) é trazer mais comodidade aos pilotos operantes na rede de voo IVAO.
                   <br>
                 </p>
             </div>
@@ -240,10 +240,10 @@ echo "$resp";
                 </i>
               </div>
                 <h3>
-                 Flight Academy 
+                  Academia
                 </h3>
                 <p>
-                  Flight academy is a place where all pilots can receive proper training, specially new ones, instructions for inactive pilots, and much more.
+                  A academia é um ambiente direcionado ao aprendizado de nossos pilotos, os exames são utilizados para promoção de patentes, instrução para inativos entre outros.
                   <br>
                 </p>
             </div>
@@ -254,10 +254,10 @@ echo "$resp";
                 </i>
               </div>
                 <h3>
-                  SOP NorteSul Virtual
+                  SOP NorteSul
                 </h3>
                 <p>
-                  STANDARD OPERATING PROCEDURES the Employee's Handbook is a document with rules, regulations and guidance to abide by all our pilots, involving daily base operations here at NorteSul Virtual, to provide a friendly environment to all members of our Organization.
+                  STANDARD OPERATING PROCEDURES integra o Manual Geral de Operações que é um conjunto de documentos e guias operacionais a ser seguido pelos tripulantes para que a NorteSul alcance o nível máximo de qualidade operacional possível.
                   <br>
                 </p>
             </div>
@@ -270,7 +270,7 @@ echo "$resp";
                   CGNA
                 </h3>
                 <p>
-                  Manages all Air Traffic related situations, with RPL (Repetitive Flight Plan) to keep our route system up to date.
+                  Gerencia todo o fluxo de tráfego aéreo, e com a RPL (Planos de Voo Repetitivo) utilizamos para mantermos todas as nossas rotas atualizadas.
                   <br>
                 </p>
             </div>
@@ -281,7 +281,7 @@ echo "$resp";
 		<div class="gtco-container">
 			<div class="row animate-box azul">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-					<h2>Our <b>Partners</b></h2>
+					<h2>Nossos <b>Parceiros</b></h2>
 					<div class="owl-carousel owl-theme">
     <div class="item"><a href="http://vatsim.net"><img src="<?php echo SITE_URL; ?>/lib/skins/nortesul/images/parceiros/vatsim.png"></a></div>
     <div class="item"><h4></h4></div>

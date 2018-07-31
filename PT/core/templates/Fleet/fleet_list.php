@@ -1,21 +1,25 @@
-﻿    <!--breadcrumbs start-->
-    <div class="breadcrumbs">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 col-sm-4">
-            <h1>
-             Nossa Frota
-            </h1>
-          </div>
-          <div class="col-lg-8 col-sm-8">
-            <ol class="pull-right">
-              <h1 class="pequeno">Avianca Virtual</h1>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--breadcrumbs end-->
+﻿<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-image: url(<?php echo SITE_URL; ?>/lib/skins/avianca/images/img_bg_1.png)">
+		<div class="overlay"></div>
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-12 col-md-offset-0 text-center">
+					<div class="row row-mt-15em">
+
+						<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
+							<h1>Nossa Frota</h1>
+                            <small><ol class="breadcrumb">
+  <li>Home</li>
+  <li>Operacional</li>
+  <li class="active"><b>Nossa Frota</b></li>
+</ol></small>							
+						</div>
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</header>
 
     <div class="container" id="tourpackages-carousel">
        <table id="tabledlist" class="table table-striped">

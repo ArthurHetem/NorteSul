@@ -1,4 +1,4 @@
-﻿<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-image: url(<?php echo SITE_URL; ?>/lib/skins/avianca/images/img_bg_1.jpg)">
+﻿<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-image: url(<?php echo SITE_URL; ?>/lib/skins/nortesul/images/img_bg_1.jpg)">
 		<div class="overlay"></div>
 		<div class="gtco-container">
 			<div class="row">
@@ -6,11 +6,11 @@
 					<div class="row row-mt-15em">
 
 						<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
-							<h1>Últimos Voos</h1>
+							<h1>Last Flights</h1>
                             <small><ol class="breadcrumb">
   <li>Home</li>
-  <li>Operacional</li>
-  <li class="active"><b>Últimos Voos</b></li>
+  <li>Operations</li>
+  <li class="active"><b>Last Flights</b></li>
 </ol></small>							
 						</div>
 						
@@ -41,13 +41,13 @@ $pireps = PIREPData::getRecentReportsByCount($count);
 <table width="725 px" border="1" class="table table-hover">
   <thead>
  <tr align="center" valign="middle">
-   <th>Tripulante</th>
-   <th>Voo #</th>
-   <th>Origem</th>
-   <th>Destino</th>
-   <th>Duração</th>
+   <th>Pilot</th>
+   <th>Flight #</th>
+   <th>Departure</th>
+   <th>Arrival</th>
+   <th>Duration</th>
    <th>Touchdown</th>
-   <th>Aeronave</th>
+   <th>Aircraft</th>
  </tr>
    </thead>
    <tbody>

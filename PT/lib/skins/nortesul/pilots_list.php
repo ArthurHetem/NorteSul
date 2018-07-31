@@ -6,11 +6,11 @@
 					<div class="row row-mt-15em">
 
 						<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
-							<h1>Pilot Roster</h1>
+							<h1>Nossos Membros</h1>
                             <small><ol class="breadcrumb">
   <li>Home</li>
-  <li>Members</li>
-  <li class="active"><b>Pilot Roster</b></li>
+  <li>Membros</li>
+  <li class="active"><b>Nossos Membros</b></li>
 </ol></small>							
 						</div>
 						
@@ -23,19 +23,19 @@
 <div class="container" id="tourpackages-carousel">
               <?php
 	          if(!$allpilots) {
-		        echo 'No Pilots!';
+		        echo 'Sem Pilotos!';
 		        return;
 	          }
 			  ?>
-      <table id="tabledlist" class="table table-striped">
+      <table id="tabledlist" class="table table-striped ooo">
             <thead>
               <tr>
-	           <th class="quadro roxo" width="16%">Pilot ID</th>
-	           <th class="quadro roxo" width="20%">Name</th>
-	           <th class="quadro roxo" width="10%">Country</th>
-			   <th class="quadro roxo" width="16%">Rank</th>
-			   <th class="quadro roxo" width="16%">Flights</th>
-	           <th class="quadro roxo" width="16%">Hours</th>
+	           <th class="quadro roxo" width="16%">Mátricula</th>
+	           <th class="quadro roxo" width="20%">Nome</th>
+	           <th class="quadro roxo" width="10%">País</th>
+			   <th class="quadro roxo" width="16%">Patente</th>
+			   <th class="quadro roxo" width="16%">Voos</th>
+	           <th class="quadro roxo" width="16%">Horas</th>
 			   <th class="quadro roxo" width="16%">HUB</th>
 			   <th class="quadro roxo" width="10%">Status</th>
               </tr>
@@ -54,9 +54,9 @@
 			  <td><b><?php echo $pilot->hub?></b></td>
 			  <td><?php
                if($pilot->retired == '1')
-               {echo '<img src="'.SITE_URL.'/lib/skins/nortesul/img/farol.png" alt="Inativo" />';}
+               {echo '<img src="'.SITE_URL.'/lib/skins/nortesul/images/farol.png" alt="Inativo" />';}
                else
-               {echo '<img src="'.SITE_URL.'/lib/skins/nortesul/img/farol.gif" alt="Ativo" />';}
+               {echo '<img src="'.SITE_URL.'/lib/skins/nortesul/images/farol.gif" alt="Ativo" />';}
            ?></td>
              <?php
               }

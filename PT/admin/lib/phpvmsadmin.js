@@ -22,8 +22,8 @@ $(document).ready(function() {
 	initListeners();
 });
 
-function initListeners() {
-
+function initListeners()
+{
 	formInit();
 	reloadGroups();
 	
@@ -45,6 +45,7 @@ function initListeners() {
 				success: function() {
 					$('#jqmdialog').jqmAddTrigger('.jqModal');
 					$('#jqmdialog').jqmHide();
+					
 				}
 			});
 			
@@ -210,20 +211,12 @@ function formInit()
 }
 
 function reloadGroups() {
-
 	$('.pilotgroupajax').live('click', function() {
 		$("#pilotgroups").load($(this).attr("href"),
 		    { action: $(this).attr("action"), pilotid: $(this).attr("pilotid"), groupid: $(this).attr("id") },
 		    function() {
 		    	reloadGroups();
 		    });
-	});
-
-	$("#pilotgroupform").ajaxForm({
-		target: '#pilotgroups',
-		success: function() {
-			reloadGroups();
-		}
 	});
 
 	$('a.button').button();
@@ -250,7 +243,12 @@ function lookupICAO() {
 	$("#statusbox").html("Fetching airport data...");
 	$("#lookupicao").hide();
 
-	url = phpvms_api_server + "/airport/get/" + icao + "&callback=?";
+	if (airport_lookup == "geonames") {
+		url = geourl + "/searchJSON?style=medium&maxRows=10&featureCode=AIRP&type=json&q=" + icao + "&callback=?";
+	}
+	else {
+		url = phpvms_api_server + "/airport/get/" + icao + "&callback=?";
+	}
 
 	$.getJSON(url,
 		function(data) {
@@ -261,16 +259,64 @@ function lookupICAO() {
 				return;
 			}
 
+			if (data.geonames) {
+				data.airports = data.geonames;
+			}
+
 			$.each(data.airports, function(i, item) {
 				$("#airporticao").val(icao);
 				$("#airportname").val(item.name);
 				$("#airportcountry").val(item.countryName);
 				$("#airportlat").val(item.lat);
 				$("#airportlong").val(item.lng);
-				$("#fuelprice").val(item.jeta);
 
 				$("#statusbox").html("");
 				$("#lookupicao").show();
+			});
+		});
+
+	return false;
+}
+
+function lookupaircraft() {
+	icao = $("#icao").val();
+
+	
+	if (icao.length != 4) {
+		$("#statusbox").html("Please enter the full 4 letter ICAO");
+		return false;
+	}
+	$("#statusbox").html("Fetching aircraft data...");
+	$("#lookupAircraft").hide();
+
+	url = phpvms_api_server + "/aircraft.php?icao=" + icao + "&callback=?";
+	$("#statusbox").html("Fetching aircraft data from "+phpvms_api_server);
+	
+	$.getJSON(url,
+		function(data) {
+
+			if (data.totalResultsCount == 0) {
+				$("#statusbox").html("Nothing found. Try entering the full 4 letter ICAO");
+				$("#lookupicao").show();
+				return;
+			}
+
+			if (data.geonames) {
+				data.airports = data.geonames;
+			}
+			
+			$.each(data.aircraft, function(i, item) {
+				$("#icao").val(icao);
+				$("#name").val(item.name);
+				$("#fullname").val(item.fullname);
+				$("#maxpax").val(item.maxpax);
+				$("#maxcargo").val(item.maxcargo);
+				$("#range").val(item.range);
+				$("#cruise").val(item.cruise);
+				$("#weight").val(item.weight);
+				
+				$("#statusbox").html("");
+				$("#lookupAircraft").show();
 			});
 		});
 

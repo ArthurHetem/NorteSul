@@ -37,6 +37,10 @@ if(Config::Get('VACENTRAL_ENABLED') == true && $unexported_count > 0)
 	<a href="<?php echo adminurl('/vacentral/sendqueuedpireps'); ?>">Click here to send them</a> </p>
 <?php
 } ?>
+<?php 
+Template::Show('pilots_viewallbids.php');
+Template::Show('screenshots_approval.php');
+?>
 <h3 style="margin-bottom: 0px;">Latest News</h3>
 	<div style="overflow: auto; height: 400px; border: 1px solid #f5f5f5; margin-bottom: 20px; padding: 7px; padding-top: 0px; padding-bottom: 20px;">
 	<?php echo $phpvms_news; ?>
@@ -65,10 +69,36 @@ $chart_height = '200';
 
 /* Don't need to change anything below this here */
 ?>
-<script type="text/javascript" src="<?php echo fileurl('/lib/js/ofc/js/swfobject.js')?>"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
-swfobject.embedSWF("<?php echo fileurl('/lib/js/ofc/open-flash-chart.swf');?>", 
-	"reportcounts", "<?php echo $chart_width;?>", "<?php echo $chart_height;?>", 
-	"9.0.0", "expressInstall.swf", 
-	{"data-file":"<?php echo adminaction('/dashboard/pirepcounts');?>"});
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Day', 'Pireps'],
+	<?php
+	$counter=0;
+	$total=0;
+	$len = count($pireps);
+	foreach($pireps as $row)
+	{
+		echo "['".date('j M',$row->timestamp)."',".$row->total."]";
+		$total=$total+$row->total;
+		if ($counter<$len-1)
+		{ 	echo ","; }
+		$counter++;	
+	}		
+	?>
+    ]);
+
+    var options = {
+      title: '',
+      legend: { position: 'none' }
+    };
+
+    var chart = new google.visualization.LineChart(document.getElementById('reportcounts'));
+
+    chart.draw(data, options);
+  }
 </script>
