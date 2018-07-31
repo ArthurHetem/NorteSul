@@ -30,7 +30,7 @@
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
 					<h2>The best <b> and unique Virtual</b> Airline</h2>
-					<p>with its own operations and replicating real life flights in flight simulation</p>
+					<p>Simulating its own flight operations and also real life flights from major carriers</p>
 				</div>
 			</div>
 			
@@ -257,7 +257,7 @@ echo "$resp";
                   SOP NorteSul Virtual
                 </h3>
                 <p>
-                  STANDARD OPERATING PROCEDURES the Employee's Handbook is a document with rules, regulations and guidance to abide by all our pilots, involving daily base operations here at NorteSul Virtual, to provide a friendly environment to all members of our Organization.
+                  STANDARD OPERATING PROCEDURES The Employee's Handbook is a document with rules, regulations and guidance to abide by all our pilots, involving daily base operations here at NorteSul Virtual, to provide a friendly environment to all members and also to help our pilots to achieve the next level experience in flight simulation.
                   <br>
                 </p>
             </div>
