@@ -14,7 +14,7 @@
 									
 									
 											<h1>"I created a machine to bring humanity close, not to destroi it". Santos Dumont</h1>
-											<a href="http://avianca.com.br" class="btn btn-danger">SITE OFICIAL AVIANCA</a>
+											<a href="http://nortesulvirtual.com" class="btn btn-danger">SITE OFICIAL NorteSul</a>
 
 										
 									</div>
@@ -29,7 +29,7 @@
 		<div class="gtco-container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-					<h2>The best <b> and unique Virtual</b> Airline</h2>
+					<h2>The best <b> and unique Virtual</b> Airline out there</h2>
 					<p>Simulating its own flight operations and also real life flights from major carriers</p>
 				</div>
 			</div>
@@ -125,7 +125,7 @@ echo "$resp";
 
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
-					<h2>Official callsign Holder <b>NOR</b> on Flight Simulation Network</h2>
+					<h2>Official callsign Holder <b>NSL</b> on Flight Simulation Network</h2>
 					<p>We fly on the main networks available for Virtual Flight Simulation, <b>VATSIM</b> and <b>IVAO</b></p>
 				</div>
 			</div>
