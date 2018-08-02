@@ -6,11 +6,11 @@
 					<div class="row row-mt-15em">
 
 						<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
-							<h1>Nossa Frota</h1>
+							<h1>Fleet</h1>
                             <small><ol class="breadcrumb">
   <li>Home</li>
   <li>Operacional</li>
-  <li class="active"><b>Nossa Frota</b></li>
+  <li class="active"><b>Fleet</b></li>
 </ol></small>							
 						</div>
 						
@@ -34,7 +34,7 @@
                 </h4>
                 <hr>
                 <p class="pull-left">
-                 Passageiros
+                 Passengers
                 </p>
 				<p class="pull-right">
 				120
@@ -42,7 +42,7 @@
                 <br>
 				                <hr>
                 <p class="pull-left">
-                 Comprimento
+                 Length
                 </p>
 				<p class="pull-right">
 				31,45m
@@ -58,7 +58,7 @@
                 <br>
 				                <hr>
                 <p class="pull-left">
-                 Altura
+                 Height
                 </p>
 				<p class="pull-right">
 				12,88m
@@ -66,7 +66,7 @@
                 <br>
 				                <hr>
                 <p class="pull-left">
-                 Motores
+                 Engines
                 </p>
 				<p class="pull-right">
 				2xPW6124A
@@ -74,7 +74,7 @@
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Decolagem
+                 Take Off
                 </p>
 				<p class="pull-right">
 				68,000kg
@@ -82,7 +82,7 @@
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Velocidade de cruzeiro
+                 Cruze Speed
                 </p>
 				<p class="pull-right">
 				875km/h
@@ -90,7 +90,7 @@
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Alcance
+                 Distance
                 </p>
 				<p class="pull-right">
 				5,800km
@@ -98,7 +98,7 @@
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Altitude de cruzeiro
+                 Cruze Altitude
                 </p>
 				<p class="pull-right">
 				39,000 FT
@@ -106,7 +106,7 @@
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Tripulação técnica
+                 Pilots
                 </p>
 				<p class="pull-right">
 				2
