@@ -82,7 +82,7 @@
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Cruzing Speed
+                 Cruising Speed
                 </p>
 				<p class="pull-right">
 				875km/h
@@ -181,7 +181,7 @@
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Cruzing Speed
+                 Cruising Speed
                 </p>
 				<p class="pull-right">
 				829km/h
@@ -280,7 +280,7 @@
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Cruzing Speed
+                 Cruising Speed
                 </p>
 				<p class="pull-right">
 				871km/h
@@ -379,7 +379,7 @@
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Cruizing Speed
+                 Cruising Speed
                 </p>
 				<p class="pull-right">
 				876km/h
@@ -429,15 +429,15 @@
                 </h4>
                 <hr>
                 <p class="pull-left">
-                 Passageiros
+                 Passengers
                 </p>
 				<p class="pull-right">
-				238
+				247
 				</p>
                 <br>
 				                <hr>
                 <p class="pull-left">
-                 Comprimento
+                 Length
                 </p>
 				<p class="pull-right">
 				58,82m
@@ -445,7 +445,7 @@
                 <br>
 				                <hr>
                 <p class="pull-left">
-                 Envergadura
+                 Wingspan
                 </p>
 				<p class="pull-right">
 				60,30m
@@ -453,7 +453,7 @@
                 <br>
 				                <hr>
                 <p class="pull-left">
-                 Altura
+                 Tail Height
                 </p>
 				<p class="pull-right">
 				17,39m
@@ -461,7 +461,7 @@
                 <br>
 				                <hr>
                 <p class="pull-left">
-                 Motores
+                 Engines
                 </p>
 				<p class="pull-right">
 				2xRR TRENT 772B
@@ -469,23 +469,23 @@
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Decolagem
+                 Maximum Take Off Weight
                 </p>
 				<p class="pull-right">
-				238,000kg
+				242,000kg
 				</p>
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Velocidade de cruzeiro
+                 Cruising Speed
                 </p>
 				<p class="pull-right">
-				920km/h
+				871km/h
 				</p>
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Alcance
+                 Range
                 </p>
 				<p class="pull-right">
 				13,450km
@@ -493,15 +493,15 @@
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Altitude de cruzeiro
+                 Cruise, Typical Load
                 </p>
 				<p class="pull-right">
-				41,000 FT
+				41,100 FT
 				</p>
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Tripulação técnica
+                 Cockpit Crew
                 </p>
 				<p class="pull-right">
 				3
@@ -509,7 +509,7 @@
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Tripulação comercial
+                 Cabin Crew
                 </p>
 				<p class="pull-right">
 				10
@@ -530,12 +530,12 @@
 		<div class="gtco-container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-					<h2>Contamos com <b><?php echo StatsData::TotalAircraftInFleet(); ?></b> aeronaves na frota!</h2>
+					<h2>We have <b><?php echo StatsData::TotalAircraftInFleet(); ?></b> aircrafts in our Fleet!</h2>
 					<div class="col-md-6">
-					<p>Realizamos diversos voos partindo do Brasil para o mundo, sendo uma das Virtual Airlines em operação melhor conceituada em voos online!</p>
+					<p>We Fly many flights from Brazil to Overseas, becoming the best Virtual Airlines in business within the community!</p>
 				</div>
 				<div class="col-md-6">
-				    <a href="<?php echo SITE_URL; ?>/index.php/fleet" class='btn btn-primary pull-right'><i class="fas fa-plane"></i>DETALHES DA FROTA</a>
+				    <a href="<?php echo SITE_URL; ?>/index.php/fleet" class='btn btn-primary pull-right'><i class="fas fa-plane"></i>FLEET DETAILS</a>
 				</div>
 				</div>
 			</div>
