@@ -50,18 +50,18 @@
                 <br>
 				                <hr>
                 <p class="pull-left">
-                 Envergadura
+                 Wingspan
                 </p>
 				<p class="pull-right">
-				34m
+				34.10m
 				</p>
                 <br>
 				                <hr>
                 <p class="pull-left">
-                 Height
+                 Tail Height
                 </p>
 				<p class="pull-right">
-				12,88m
+				12,56m
 				</p>
                 <br>
 				                <hr>
@@ -74,7 +74,7 @@
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Take Off
+                 Maximum Take Off Weight
                 </p>
 				<p class="pull-right">
 				68,000kg
@@ -82,7 +82,7 @@
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Cruze Speed
+                 Cruzing Speed
                 </p>
 				<p class="pull-right">
 				875km/h
@@ -90,23 +90,23 @@
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Distance
+                 Range,Typical Payload
                 </p>
 				<p class="pull-right">
-				5,800km
+				5,750km
 				</p>
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Cruze Altitude
+                 Ceiling
                 </p>
 				<p class="pull-right">
-				39,000 FT
+				39,100 - 41000 FT
 				</p>
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Pilots
+                 Cockpit Crew
                 </p>
 				<p class="pull-right">
 				2
@@ -114,7 +114,7 @@
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Tripulação comercial
+                 Cabin Crew
                 </p>
 				<p class="pull-right">
 				4
@@ -133,15 +133,15 @@
                 </h4>
                 <hr>
                 <p class="pull-left">
-                 Passageiros
+                 Passengers
                 </p>
 				<p class="pull-right">
-				132
+				134
 				</p>
                 <br>
 				                <hr>
                 <p class="pull-left">
-                 Comprimento
+                 Lenght
                 </p>
 				<p class="pull-right">
 				33,84m
@@ -149,23 +149,23 @@
                 <br>
 				                <hr>
                 <p class="pull-left">
-                 Envergadura
+                 Wingspan
                 </p>
 				<p class="pull-right">
-				34m
+				35.8m
 				</p>
                 <br>
 				                <hr>
                 <p class="pull-left">
-                 Altura
+                 Tail Height
                 </p>
 				<p class="pull-right">
-				11,80m
+				11,76m
 				</p>
                 <br>
 				                <hr>
                 <p class="pull-left">
-                 Motores
+                 Engines
                 </p>
 				<p class="pull-right">
 				2xCFM 56-5B7
@@ -173,7 +173,7 @@
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Decolagem
+                 Maximum Take Off Weight
                 </p>
 				<p class="pull-right">
 				75,500kg
@@ -181,31 +181,31 @@
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Velocidade de cruzeiro
+                 Cruzing Speed
                 </p>
 				<p class="pull-right">
-				875km/h
+				829km/h
 				</p>
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Alcance
+                 Range, Typical Payload
                 </p>
 				<p class="pull-right">
-				6,850km
+				6,950km
 				</p>
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Altitude de cruzeiro
+                 Service Ceiling
                 </p>
 				<p class="pull-right">
-				39,000 FT
+				39,100 - 41,000FT
 				</p>
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Tripulação técnica
+                 Cockpit Crew
                 </p>
 				<p class="pull-right">
 				2
@@ -213,7 +213,7 @@
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Tripulação comercial
+                 Cabin Crew
                 </p>
 				<p class="pull-right">
 				4
@@ -232,15 +232,15 @@
                 </h4>
                 <hr>
                 <p class="pull-left">
-                 Passageiros
+                 Passengers
                 </p>
 				<p class="pull-right">
-				162
+				164
 				</p>
                 <br>
 				                <hr>
                 <p class="pull-left">
-                 Comprimento
+                 Lenght
                 </p>
 				<p class="pull-right">
 				37,57m
@@ -248,7 +248,7 @@
                 <br>
 				                <hr>
                 <p class="pull-left">
-                 Envergadura
+                 Wingspan
                 </p>
 				<p class="pull-right">
 				35.80m
@@ -256,15 +256,15 @@
                 <br>
 				                <hr>
                 <p class="pull-left">
-                 Altura
+                 Tail Height
                 </p>
 				<p class="pull-right">
-				11,75m
+				11,76m
 				</p>
                 <br>
 				                <hr>
                 <p class="pull-left">
-                 Motores
+                 Engines
                 </p>
 				<p class="pull-right">
 				2xCFM 56-5B4
@@ -272,7 +272,7 @@
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Decolagem
+                 Maximum Take Off Weight
                 </p>
 				<p class="pull-right">
 				78,000kg
@@ -280,31 +280,31 @@
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Velocidade de cruzeiro
+                 Cruzing Speed
                 </p>
 				<p class="pull-right">
-				875km/h
+				871km/h
 				</p>
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Alcance
+                 Range, Typical Payload
                 </p>
 				<p class="pull-right">
-				6,110km
+				6,100km
 				</p>
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Altitude de cruzeiro
+                 Service Ceiling
                 </p>
 				<p class="pull-right">
-				39,000 FT
+				39,100 - 41000FT
 				</p>
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Tripulação técnica
+                 Cockpit Crew
                 </p>
 				<p class="pull-right">
 				2
@@ -312,7 +312,7 @@
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Tripulação comercial
+                 Cabin Crew
                 </p>
 				<p class="pull-right">
 				4
@@ -331,15 +331,15 @@
                 </h4>
                 <hr>
                 <p class="pull-left">
-                 Passageiros
+                 Passengers
                 </p>
 				<p class="pull-right">
-				165
+				186
 				</p>
                 <br>
 				                <hr>
                 <p class="pull-left">
-                 Comprimento
+                 Lenght
                 </p>
 				<p class="pull-right">
 				37,57m
@@ -347,7 +347,7 @@
                 <br>
 				                <hr>
                 <p class="pull-left">
-                 Envergadura
+                 Wingspan
                 </p>
 				<p class="pull-right">
 				35,80m
@@ -355,15 +355,15 @@
                 <br>
 				                <hr>
                 <p class="pull-left">
-                 Altura
+                 Tail Height
                 </p>
 				<p class="pull-right">
-				12,88m
+				11,76m
 				</p>
                 <br>
 				                <hr>
                 <p class="pull-left">
-                 Motores
+                 Engines
                 </p>
 				<p class="pull-right">
 				2xCFM 1A26
@@ -371,39 +371,39 @@
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Decolagem
+                 Maximum Take Off Weight
                 </p>
 				<p class="pull-right">
-				77,000kg
+				79,000kg
 				</p>
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Velocidade de cruzeiro
+                 Cruizing Speed
                 </p>
 				<p class="pull-right">
-				875km/h
+				876km/h
 				</p>
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Alcance
+                 Typical Range
                 </p>
 				<p class="pull-right">
-				7,850km
+				6,500km
 				</p>
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Altitude de cruzeiro
+                 Service Ceiling
                 </p>
 				<p class="pull-right">
-				39,000 FT
+				39,100 - 39,800FT
 				</p>
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Tripulação técnica
+                 Cockpit Crew
                 </p>
 				<p class="pull-right">
 				2
@@ -411,7 +411,7 @@
                 <br>
 				<hr>
                 <p class="pull-left">
-                 Tripulação comercial
+                 Cabin Crew
                 </p>
 				<p class="pull-right">
 				4
