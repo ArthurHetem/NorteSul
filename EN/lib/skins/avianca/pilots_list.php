@@ -6,11 +6,11 @@
 					<div class="row row-mt-15em">
 
 						<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
-							<h1>Nossos Membros</h1>
+							<h1>Pilot Roster</h1>
                             <small><ol class="breadcrumb">
   <li>Home</li>
-  <li>Membros</li>
-  <li class="active"><b>Nossos Membros</b></li>
+  <li>Pilot Roster</li>
+  <li class="active"><b>Pilots</b></li>
 </ol></small>							
 						</div>
 						
@@ -30,12 +30,12 @@
       <table id="tabledlist" class="table table-striped">
             <thead>
               <tr>
-	           <th class="quadro roxo" width="16%">Mátricula</th>
-	           <th class="quadro roxo" width="20%">Nome</th>
-	           <th class="quadro roxo" width="10%">País</th>
-			   <th class="quadro roxo" width="16%">Patente</th>
-			   <th class="quadro roxo" width="16%">Voos</th>
-	           <th class="quadro roxo" width="16%">Horas</th>
+	           <th class="quadro roxo" width="16%">Pilot ID</th>
+	           <th class="quadro roxo" width="20%">Name</th>
+	           <th class="quadro roxo" width="10%">Country</th>
+			   <th class="quadro roxo" width="16%">Rank</th>
+			   <th class="quadro roxo" width="16%">Flights</th>
+	           <th class="quadro roxo" width="16%">Hours</th>
 			   <th class="quadro roxo" width="16%">HUB</th>
 			   <th class="quadro roxo" width="10%">Status</th>
               </tr>
