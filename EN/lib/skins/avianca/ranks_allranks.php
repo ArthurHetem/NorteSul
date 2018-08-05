@@ -6,11 +6,11 @@
 					<div class="row row-mt-15em">
 
 						<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
-							<h1>Plano de Carreira</h1>
+							<h1>Career</h1>
                             <small><ol class="breadcrumb">
   <li>Home</li>
-  <li>Membros</li>
-  <li class="active"><b>Plano de Carreira</b></li>
+  <li>Pilot Roster</li>
+  <li class="active"><b>Career</b></li>
 </ol></small>							
 						</div>
 						
@@ -28,7 +28,7 @@
 			            <?php 
 		if(!$ranks)
 		{
-			echo '<div class="col-lg-12"><div class="alert alert-info"><h4>Nenhum Download</h4><p>Nenhum download foi adicionado.</p></div></div>';
+			echo '<div class="col-lg-12"><div class="alert alert-info"><h4>0 Download</h4><p>0 download was added.</p></div></div>';
 		} else {
 			foreach($ranks as $rank) {
         ?>
@@ -40,7 +40,7 @@
               <img src="<?php echo $rank->rankimage; ?>" alt="">
               <div class="caption">
                 <hr>
-                 <div class="team-social-link"> Tripulantes Nessa Patente:<b>
+                 <div class="team-social-link"> Total Crew in this Rank:<b>
                  <?php 
 {
 echo $rank->totalpilots; // This contains the total #
