@@ -9,7 +9,7 @@
 							<h1>Fleet</h1>
                             <small><ol class="breadcrumb">
   <li>Home</li>
-  <li>Operacional</li>
+  <li>Operations</li>
   <li class="active"><b>Fleet</b></li>
 </ol></small>							
 						</div>
@@ -532,7 +532,7 @@
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
 					<h2>We have <b><?php echo StatsData::TotalAircraftInFleet(); ?></b> aircrafts in our Fleet!</h2>
 					<div class="col-md-6">
-					<p>We Fly many flights from Brazil to Overseas, becoming the best Virtual Airlines in business within the community!</p>
+					<p>We Fly many flights within Brazil and from Brazil to Overseas, becoming the best Virtual Airlines in business within the community!</p>
 				</div>
 				<div class="col-md-6">
 				    <a href="<?php echo SITE_URL; ?>/index.php/fleet" class='btn btn-primary pull-right'><i class="fas fa-plane"></i>FLEET DETAILS</a>
