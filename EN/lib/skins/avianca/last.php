@@ -6,11 +6,11 @@
 					<div class="row row-mt-15em">
 
 						<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
-							<h1>Últimos Voos</h1>
+							<h1>Latest Flights</h1>
                             <small><ol class="breadcrumb">
   <li>Home</li>
-  <li>Operacional</li>
-  <li class="active"><b>Últimos Voos</b></li>
+  <li>Operations</li>
+  <li class="active"><b>Latest Flights</b></li>
 </ol></small>							
 						</div>
 						
@@ -41,13 +41,13 @@ $pireps = PIREPData::getRecentReportsByCount($count);
 <table width="725 px" border="1" class="table table-hover">
   <thead>
  <tr align="center" valign="middle">
-   <th>Tripulante</th>
-   <th>Voo #</th>
-   <th>Origem</th>
-   <th>Destino</th>
-   <th>Duração</th>
+   <th>Pilot ID</th>
+   <th>Flight Number #</th>
+   <th>Departure</th>
+   <th>Arrival</th>
+   <th>Time</th>
    <th>Touchdown</th>
-   <th>Aeronave</th>
+   <th>Aircraft</th>
  </tr>
    </thead>
    <tbody>
