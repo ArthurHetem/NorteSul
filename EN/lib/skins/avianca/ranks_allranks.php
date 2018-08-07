@@ -49,10 +49,14 @@
               <div class="caption">
                 <hr>
 <<<<<<< HEAD
+<<<<<<< HEAD
                  <div class="team-social-link"> Pilots in this Rank:<b>
 =======
                  <div class="team-social-link"> Total Crew in this Rank:<b>
 >>>>>>> 7bc52fd6ddc0a718ad64228335df3c2bd730f22f
+=======
+                 <div class="team-social-link"> Total Crew members in this Rank:<b>
+>>>>>>> 82d868ab446e44fac7c5389c27d7f49356c08b5b
                  <?php 
 {
 echo $rank->totalpilots; // This contains the total #
