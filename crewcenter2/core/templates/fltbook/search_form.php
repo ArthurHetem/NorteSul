@@ -31,7 +31,7 @@ if(!$last_location) {
             <td>Selecionar Aeroporto de Decolagem:</td>
             <td>
                 <select class="search form-control" name="depicao">
-                    <option value="" selected disabled>Choose Your Departure Location</option>
+                    <option value="" selected disabled>Selecionar Aeroporto de Decolagem</option>
                     <?php
                       foreach ($airports as $airport) {
                         echo '<option value="'.$airport->icao.'">'.$airport->icao.' - '.$airport->name.'</option>';
@@ -58,7 +58,7 @@ if(!$last_location) {
           <td>Selecionar Aeronave:</td>
           <td>
             <select class="search form-control" name="aircraft">
-              <option value="" selected>Any</option>
+              <option value="" selected>Qualquer</option>
               <?php
               if($settings['search_from_current_location'] == 1) {
 		$airc = FltbookData::routeaircraft($last_location->arricao);
@@ -88,7 +88,7 @@ if(!$last_location) {
           <td>Selecionar Destino:</td>
           <td>
               <select class="search form-control" name="arricao">
-                  <option value="">Any</option>
+                  <option value="">Qualquer</option>
                   <?php
                   if($settings['search_from_current_location'] == 1) {
                     $airs = FltbookData::arrivalairport($last_location->arricao);
@@ -140,8 +140,8 @@ if(!$last_location) {
 	    <td align="center">Transferir Para:</td>
             <td align="left">
               <div id="errors"></div>
-                <select class="search" name="depicao" onchange="calculate_transfer(this.value)">
-                    <option value="" selected disabled>Selecinar Aeroporto</option>
+                <select class="search form-control" name="depicao" onchange="calculate_transfer(this.value)">
+                    <option value="" selected disabled>Selecionar Aeroporto</option>
                     <?php
                     foreach($airports as $airport) {
                       if($airport->icao == $last_location->arricao) {
@@ -152,15 +152,15 @@ if(!$last_location) {
                     }
                     ?>
                 </select>
-                <input type="submit" id="purchase_button" value="Purchase Transfer!" disabled="disabled" />
+                <input type="submit" id="purchase_button" value="Comprar Jumpseat!" disabled="disabled" class="btn-block btn-flat btn btn-info" />
           </td>
        </tr>
        <tr>
-         <td align="center">Distance Travelling:</td>
+         <td align="center">Distancia da Viagem:</td>
          <td align="left"><div id="distance_travelling"></div></td>
        </tr>
        <tr>
-         <td align="center">Cost:</td>
+         <td align="center">Custo:</td>
          <td align="left"><div id="jump_purchase_cost"></div></td>
        </tr>
     </table>

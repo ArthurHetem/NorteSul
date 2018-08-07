@@ -6,4 +6,4 @@ Data de termino: <?php echo $end; ?><br />
 Motivo: <?php echo $reason; ?><br />
 
 Obrigado por enviar seu pedido. <br />
-Staff SkyAlliance
+RH NorteSul Virtual

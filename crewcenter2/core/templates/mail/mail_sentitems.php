@@ -10,20 +10,18 @@
 //@copyright Copyright (c) 2009-2011, David Clark
 //@license http://creativecommons.org/licenses/by-nc-sa/3.0/
 ?>
-		<!-- BEGIN CONTENT -->
-	<div class="page-content-wrapper">
-		<div class="page-content">
-			<!-- BEGIN PAGE HEADER-->
-			<h3 class="page-title">
-		<small><span class="badge badge-roundless badge-success">Versão Alpha do Despacho Operacional</span></small>
-			</h3>
-            <hr>
-			<!-- END PAGE HEADER-->
-			<!-- BEGIN DASHBOARD STATS -->
+<section class="content container-fluid">
+			<div class="row">
+			<div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">INTRANET Mail | Configurações</h3>
+            </div>
+			<div class="box-body">
 			<div class="row">
 			  <?php require 'mail_menu.php' ;?>
                       <center>
-        <table cellspacing="1" cellpadding="1" width="100%" border="1px">
+        <table class="table table-bordered">
         <?php
         if(!$mail) {
             echo '<tr><td colspan="5">You have no sent messages.</td></tr>';
@@ -31,14 +29,14 @@
         else {
             ?>
             <tr>
-                <td colspan="5" align="center"><b>Sent items for <?php echo Auth::$userinfo->firstname.' '.Auth::$userinfo->lastname.' '.$pilotcode; ?></th>
+                <td colspan="5" align="center"><b>Itens enviados por <?php echo Auth::$userinfo->firstname.' '.Auth::$userinfo->lastname.' - '.$pilotcode; ?></th>
             </tr>
             <tr>
                 <th>Status</th>
-                <th>To</th>
-                <th>Subject</th>
-                <th>Date sent</th>
-                <th>Remove</th>
+                <th>Destinatário</th>
+                <th>Assunto</th>
+                <th>Data do envio</th>
+                <th>Remover</th>
             </tr>
     <?php
         foreach($mail as $thread){
@@ -78,15 +76,12 @@
 ?>	
             <tr>
                 <td colspan="4"><b><font size="1.5px">| AIRmail3 &copy 2011 | <a href="http://www.simpilotgroup.com">simpilotgroup.com</a> |</font></b></td>
-                <td align="center"><a href="<?php echo url('/mail/delete_allsent'); ?>" onclick="return confirm('Delete All Sent Messages From View?')">Remove All</a></td>
+                <td align="center"><a href="<?php echo url('/mail/delete_allsent'); ?>" onclick="return confirm('Delete All Sent Messages From View?')">Remover tudo</a></td>
             </tr>
         </table>
     </center>
-                    </div>
-                    <!-- END CONTENT BODY -->
-                </div>
-                <!-- END CONTENT -->
-			</div>
-			<!-- END DASHBOARD STATS -->
-			<div class="clearfix">
-			</div>
+</div>
+</div>
+</div>
+</div>	
+</section>

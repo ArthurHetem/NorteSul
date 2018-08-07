@@ -1,17 +1,11 @@
-	<!-- BEGIN CONTENT -->
-	<div class="page-content-wrapper">
-		<div class="page-content">
-			<!-- BEGIN PAGE HEADER-->
-			<h3 class="page-title">
-		<small><span class="badge badge-roundless badge-success">Versão Alpha do Despacho Operacional</span></small>
-			</h3>
-            <hr>
-			<!-- END PAGE HEADER-->
-
-    <!-- Main content -->
-    <section class="content container-fluid">
-        <h2>Formulário de Pedido de Ausência</h2>
-		<div class="row">
+<section class="content container-fluid">
+			<div class="row">
+			<div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Solicitar Afastamento</h3>
+            </div>
+			<div class="box-body">
            	<div class="alert alert-info">
 	<p>Bem vindo ao formulário de pedido de ausência. </p>
 </div>	
@@ -49,10 +43,10 @@ Depois desse tempo você estará sujeito à política de inatividade.
 		<td><?php echo date("Y-m-d"); ?></td>
 	</tr>
 	<tr>
-		<td><strong>Data de termino: </strong></td>
+		<td><strong>Data de término: </strong></td>
 		<td>
 
-			<select name="month">
+			<select class="form-control" name="month">
 			<option value='1'>Janeiro</option>
 			<option value='2'>Fevereiro</option>
 			<option value='3'>Março</option>
@@ -67,13 +61,13 @@ Depois desse tempo você estará sujeito à política de inatividade.
 			<option value='12'>Dezembro</option>
 			</select>
 
-			<select name="day">
+			<select class="form-control" name="day">
 				<?php for($i = 1; $i <=31; $i++) {
 					echo "<option value='$i'>$i</option>";
 				}?>
 			</select>
 
-			<select name='year'>
+			<select class="form-control" name='year'>
 
 					<?php $year = date('Y');
 						  $year_end = $year + 5;
@@ -86,16 +80,16 @@ Depois desse tempo você estará sujeito à política de inatividade.
 	</tr>
 	<tr>
 		<td><strong>Motivo: </strong></td>
-		<td><textarea name="reason" cols="25" rows="5"></textarea></td>
+		<td><textarea class="form-control" name="reason" cols="25" rows="5"></textarea></td>
 	</tr>
 	<tr>
-		<td colspan=2 align=center><input type="submit" class="btn btn-success" value="Enviar!"/></td>
+		<td colspan=2 align=center><input type="submit" class="btn btn-flat btn-info btn-block" value="Enviar"/></td>
 	</tr>
 </table>
 
 </form>
-        </div>		
-    </section>
-    <!-- /.content -->
-			<div class="clearfix">
-			</div>
+</div>
+</div>
+</div>
+</div>	
+</section>

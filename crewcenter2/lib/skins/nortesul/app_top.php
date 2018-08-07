@@ -53,10 +53,10 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="<?php echo SITE_URL?>/../PT/index.php" class="btn btn-default btn-flat">Site</a>
+                  <a href="<?php echo SITE_URL?>/../pt/index.php" class="btn btn-default btn-flat">Site</a>
                 </div>
                 <div class="pull-right">
-                  <a href="<?php echo SITE_URL?>/../PT/index.php/logout" class="btn btn-default btn-flat">Logout</a>
+                  <a href="<?php echo SITE_URL?>/../pt/index.php/logout" class="btn btn-default btn-flat">Logout</a>
                 </div>
               </li>
             </ul>
@@ -119,33 +119,23 @@
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo SITE_URL?>/index.php/randomflights">Gerar Escala<!--<span class="label label-danger pull-right-container">INOP</span>--></a></li>
+            <li><a href="<?php echo SITE_URL?>/index.php/randomflights">Gerar Escala</a></li>
             <li><a href="<?php echo SITE_URL?>/index.php/fltbook">Gerar Charter / Jumpseat</a></li>
           </ul>
         </li>
 		<?php
 		   }
 		  ?>
-        <li><a href="#"><i class="fa fa-file-o"></i> <span>Cartas Aéreas</span></a></li>
+        <li><a href="#"><i class="fa fa-file-o"></i> <span>Cartas Aéreas</span><span class="label label-danger pull-right-container">EM BREVE</span></a></li>
 		<li class="header">PERFIL</li>
-        <li class="treeview">
-          <a href="#"><i class="fa fa-gear"></i> <span>Opções de Perfil</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo SITE_URL?>/index.php/profile/editprofile">Editar Perfil</a></li>
-            <li><a href="<?php echo SITE_URL?>/index.php/profile/changepassword">Alterar Senha</a></li>
-          </ul>
-        </li>
+        <li><a href="<?php echo SITE_URL?>/index.php/profile/editprofile"><i class="fa fa-gear"></i> <span>Editar Perfil</span></a></li>
 		<li class="header">OPERACIONAL</li>
-		<li><a href="<?php echo SITE_URL?>/index.php/acars"><i class="fa fa-paper-plane-o"></i> <span>Tracking</span></a></li>
-		<li><a href="#"><i class="fa fa-envelope-o"></i> <span>Intra-mail</span><span class="label label-danger pull-right-container">INOP</span></a></li>
+		<li><a href="<?php echo SITE_URL?>/index.php/mail"><i class="fa fa-envelope-o"></i> <span>Intra-mail</span></a></li>
 		<li><a href="http://airgocargo.000webhostapp.com/hesk/"><i class="fa fa-headphones"></i> <span>HelpDesk</span></a></li>
 		<li><a href="<?php echo SITE_URL?>/index.php/loa"><i class="fa fa-user-times"></i> <span>Solicitar Afastamento</span></a></li>
 		<li><a href="<?php echo SITE_URL?>/index.php/downloads"><i class="fa fa-cloud-download"></i> <span>Downloads</span></a></li>
-		<li><a href="<?php echo SITE_URL?>/index.php/events"><i class="fa fa-map"></i> <span>Tours</span></a></li>
+		<li><a href="<?php echo SITE_URL?>/index.php/events"><i class="fa fa-map"></i> <span>Eventos</span></a></li>
+		<li><a href="<?php echo SITE_URL?>/index.php/screenshots"><i class="fa fa-camera"></i> <span>Galeria</span></a></li>
 		<li><a href="<?php echo SITE_URL?>/index.php/finances"><i class="fa fa-book"></i> <span>Finanças</span></a></li>
 		<?php
               if(Auth::LoggedIn() && PilotGroups::group_has_perm(Auth::$usergroups, ACCESS_ADMIN))

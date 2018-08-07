@@ -7,7 +7,7 @@
     $semana = array(
         'Sun' => 'Domingo', 
         'Mon' => 'Segunda-Feira',
-        'Tue' => 'Terca-Feira',
+        'Tue' => 'Terça-Feira',
         'Wed' => 'Quarta-Feira',
         'Thu' => 'Quinta-Feira',
         'Fri' => 'Sexta-Feira',
@@ -241,7 +241,7 @@
 										 <i class="fa fa-whatsapp"></i> Whatsapp
 									</td>
 									<td>
-									  <a href="https://chat.whatsapp.com/LNDX7wHGehGGoYRWP7CX2t" class="label label-success">Entrar &raquo;</a>
+									  <a href="#" class="label label-success">Entrar &raquo;</a>
 									</td>
 								</tr>
 								<tr>
@@ -249,7 +249,7 @@
 										 <i class="fa fa-discord"></i> Discord
 									</td>
 									<td>
-<a class="label label-info" href="https://discord.gg/vZRSK75">Entrar no Servidor</a> 
+<a class="label label-info" href="https://discord.gg/njCgNkE">Entrar no Servidor</a> 
 									</td>
 								</tr>
 								<tr>

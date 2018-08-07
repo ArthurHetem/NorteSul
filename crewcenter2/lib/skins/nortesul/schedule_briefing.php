@@ -2,46 +2,13 @@
 <?php
 $acft= $schedule->aircraft ;
 $note= $schedule->notes ;
-if($acft= "A318-122" && $notes!= "VOO DE ENTREGA") {
+if($acft= "B737-800") {
 	$pax= rand(0, 120);
 	$cargo= rand(0, 18000);
 }
-if($acft= "A319-115" && $notes!= "VOO DE ENTREGA") {
-	$pax= rand(0, 132);
-	$cargo= rand(0, 29100);
-}
-if($acft= "A320-214") {
-	$pax= rand(0, 162);
-	$cargo= rand(0, 36000);
-}
-if($acft= "A320-214S") {
-	$pax= rand(0, 162);
-	$cargo= rand(0, 36000);
-}
-if($acft= "A320-251N" && $notes!= "VOO DE ENTREGA") {
-	$pax= rand(0, 165);
-	$cargo= rand(0, 36000);
-}
-if($acft= "A330-243" && $notes!= "VOO DE ENTREGA") {
-	$pax= rand(0, 238);
-	$cargo= rand(0, 80200);
-}
-if($acft= "A330-243F" && $notes!= "VOO DE ENTREGA") {
-	$pax= "4";
-	$cargo= rand(0, 80200);
-}
 ?>
-<!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        FLight Briefing
-        <small>CrewCenter <span class="label label-info">Versão Alpha</span></small>
-      </h1>
-    </section>
-
-    <!-- Main content -->
+<!-- Main content -->
     <section class="content container-fluid">
-       
 		<div class="row">
 		   <div class="col-xs-12">
           <div class="box">
@@ -166,17 +133,17 @@ echo $page;
 </table>
 
 <?php
-    $link1 = "http://www.aisweb.aer.mil.br/api/?apiKey=1913557990&apiPass=3199fa54-755b-1033-a49b-72567f175e3a&area=met&icaoCode=".$schedule->depicao. //link do arquivo xml
+    $link1 = "http://www.aisweb.aer.mil.br/api/?apiKey=1913557990&apiPass=3199fa54-755b-1033-a49b-72567f175e3a&area=met&icaoCode=".$schedule->depicao; //link do arquivo xml
     $xml1 = simplexml_load_file($link1) -> met; //carrega o arquivo XML e retornando um Array
      
         $depmetar= utf8_decode($xml1 -> metar);
-        $deptaf= utf8_decode($xml -> taf);
+        $deptaf= utf8_decode($xml1 -> taf);
 		
-	$link2 = "http://www.aisweb.aer.mil.br/api/?apiKey=1913557990&apiPass=3199fa54-755b-1033-a49b-72567f175e3a&area=met&icaoCode=".$schedule->arricao. //link do arquivo xml
+	$link2 = "http://www.aisweb.aer.mil.br/api/?apiKey=1913557990&apiPass=3199fa54-755b-1033-a49b-72567f175e3a&area=met&icaoCode=".$schedule->arricao; //link do arquivo xml
     $xml2 = simplexml_load_file($link2) -> met; //carrega o arquivo XML e retornando um Array
      
-        $arrmetar= utf8_decode($xml1 -> metar);
-        $arrtaf= utf8_decode($xml -> taf);
+        $arrmetar= utf8_decode($xml2 -> metar);
+        $arrtaf= utf8_decode($xml2 -> taf);
 ?>
 <h3>Weather Briefing <span class="label label-danger">Indisponível em Voos Internacionais</span></h3>
 <table width="98%" align="center" class="table table-bordered">
@@ -187,14 +154,19 @@ echo $page;
 	</tr>
 	<tr align="center">
 		<td width="50%" valign="top">
-			<?php $depmetar;?>
-			<br>
-			<?php $deptaf;?>
+			<?php echo $depmetar;?>
 		</td>
 		<td width="50%" valign="top">
-			<?php $arrmetar;?>
-			<br>
-			<?php $arrtaf;?>
+			<?php echo $arrmetar;?>
+		</td>
+	
+	</tr>
+		<tr align="center">
+		<td width="50%" valign="top">
+			<?php echo $deptaf;?>
+		</td>
+		<td width="50%" valign="top">
+			<?php echo $arrtaf;?>
 		</td>
 	
 	</tr>
@@ -211,10 +183,10 @@ echo $page;
 	</tr>
 	<tr align="center">
 		<td width="50%" valign="top">
-			<?php if($notes="VOO DE ENTREGA"){ echo "2";} else{ echo $pax;}?>
+			<?php echo $pax;?>
 		</td>
 		<td width="50%" valign="top">
-			<?php if($notes="VOO DE ENTREGA"){ echo "0";} else{ echo $cargo;}?>
+			<?php echo $cargo;?>
 		</td>
 	
 	</tr>

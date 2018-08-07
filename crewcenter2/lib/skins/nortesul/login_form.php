@@ -5,7 +5,7 @@
   <!-- /.login-logo -->
   <div class="login-box-body">
   <div class="login-logo">
-    <img src="<?php echo SITE_URL?>/lib/skins/avianca/img/LogoCrew.png" alt="logo" class="logo-default" width="256px" height="144px" />
+    <img src="<?php echo SITE_URL?>/lib/skins/nortesul/img/LogoCrew.png" alt="logo" class="logo-default" width="256px" height="144px" />
   </div>
     <p class="login-box-msg"><h3>Acessar CrewCenter</h3></p>
 
@@ -44,9 +44,9 @@
 				<hr>
 	  <div class="social-auth-links text-center">
       <p>Curta Nossas Redes Sociais:</p>
-      <a href="https://www.facebook.com/aviancavirtualbr/" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Página do Facebook</a>
-      <a href="https://twitter.com/aviancabrv" class="btn btn-block btn-social btn-twitter btn-flat"><i class="fa fa-twitter"></i> Perfil do Twitter</a>
-	  <a href="https://www.instagram.com/aviancav/" class="btn btn-block btn-social btn-instagram btn-flat"><i class="fa fa-instagram"></i> Perfil do Instagram</a>
+      <a href="http://www.facebook.com/nortesulvirtual" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Página do Facebook</a>
+      <a href="https://twitter.com/NortesulV" class="btn btn-block btn-social btn-twitter btn-flat"><i class="fa fa-twitter"></i> Perfil do Twitter</a>
+	  <a href="https://www.instagram.com/nortesulvirtual/" class="btn btn-block btn-social btn-instagram btn-flat"><i class="fa fa-instagram"></i> Perfil do Instagram</a>
     </div>
     <!-- /.social-auth-links -->
     </form>
@@ -56,3 +56,12 @@
   <!-- /.login-box-body -->
 </div>
 <!-- /.login-box -->
+<script>
+  $(function () {
+    $('input').icheck({
+      checkboxClass: 'icheckbox_square-blue',
+      radioClass: 'iradio_square-blue',
+      increaseArea: '20%' // optional
+    });
+  });
+</script>

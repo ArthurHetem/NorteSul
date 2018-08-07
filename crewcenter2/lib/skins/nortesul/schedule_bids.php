@@ -1,15 +1,4 @@
-<?php if(!defined('IN_PHPVMS') && IN_PHPVMS !== true) { die(); } ?>
-   <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Voos Reservados
-        <small>CrewCenter <span class="label label-info">Versão Alpha</span></small>
-      </h1>
-    </section>
-
-    <!-- Main content -->
-    <section class="content container-fluid">
-       
+   <section class="content container-fluid">    
 		<div class="row">
 		   <div class="col-xs-12">
           <div class="box">
