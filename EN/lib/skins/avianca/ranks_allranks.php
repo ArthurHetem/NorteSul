@@ -40,7 +40,7 @@
               <img src="<?php echo $rank->rankimage; ?>" alt="">
               <div class="caption">
                 <hr>
-                 <div class="team-social-link"> Total Crew in this Rank:<b>
+                 <div class="team-social-link"> Total Crew members in this Rank:<b>
                  <?php 
 {
 echo $rank->totalpilots; // This contains the total #
