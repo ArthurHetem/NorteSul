@@ -54,7 +54,7 @@ $pireps = PIREPData::getRecentReportsByCount($count);
    <th>Flight #</th>
    <th>Departure</th>
    <th>Arrival</th>
-   <th>Duration</th>
+   <th>Time</th>
 =======
    <th>Pilot ID</th>
    <th>Flight Number #</th>
