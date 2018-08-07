@@ -6,11 +6,11 @@
 					<div class="row row-mt-15em">
 
 						<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
-							<h1>Administradores</h1>
+							<h1>Staff & Careers</h1>
                             <small><ol class="breadcrumb">
   <li>Home</li>
-  <li>Organização</li>
-  <li class="active"><b>Administradores</b></li>
+  <li>Corporation</li>
+  <li class="active"><b>Staff & Careers</b></li>
 </ol></small>							
 						</div>
 						
@@ -30,7 +30,7 @@
               <img src="<?php echo SITE_URL?>/lib/skins/aviancaOLD/img/team/CEO.jpg" class="imagem" alt="">
               <div class="caption">
                 <h4 class="text-center">
-                  Arthur <b>Hetem</b>
+                  Sid <b>Dasilva</b>
                 </h4>
                 <hr>
                 <p class="text-center">
@@ -49,15 +49,15 @@
               <img src="<?php echo SITE_URL?>/lib/images/noavatar.png" class="imagem" alt="">
               <div class="caption">
                 <h4 class="text-center">
-                  Roberto <b>Silva</b>
+                  Paulo <b>Roberto</b>
                 </h4>
                 <hr>
                 <p class="text-center">
-                 DO - Diretor de Operações
+                 COO - Chief Operations Officer
                 </p>
                 <hr>
                 <div class="team-social-link">
-                  <a href="http://aviancavirtual.net.br/PT/index.php/profile/view/5" class="btn btn-primary" style="margin-left: 20%;">Detalhes</a>
+                  <a href="http://aviancavirtual.net.br/PT/index.php/profile/view/5" class="btn btn-primary" style="margin-left: 20%;">Details</a>
                 </div>
               </div>
             </div>
@@ -68,7 +68,7 @@
               <img src="<?php echo SITE_URL?>/lib/skins/Avianca/img/team/SLA.png" alt="">
               <div class="caption">
                 <h4 class="text-center">
-                 Em Breve
+                 Soon
                 </h4>
                 <hr>
                 <p class="text-center">
@@ -102,7 +102,7 @@
               <img src="<?php echo SITE_URL?>/lib/skins/Avianca/img/team/SLA.png" alt="">
               <div class="caption">
                 <h4 class="text-center">
-                  Em Breve
+                  Soon
                 </h4>
                 <hr>
                 <p class="text-center">

@@ -9,8 +9,13 @@
 							<h1>Pilot Roster</h1>
                             <small><ol class="breadcrumb">
   <li>Home</li>
+<<<<<<< HEAD
   <li>Members</li>
   <li class="active"><b>Pilot Roster</b></li>
+=======
+  <li>Pilot Roster</li>
+  <li class="active"><b>Pilots</b></li>
+>>>>>>> 7bc52fd6ddc0a718ad64228335df3c2bd730f22f
 </ol></small>							
 						</div>
 						

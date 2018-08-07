@@ -6,11 +6,11 @@
 					<div class="row row-mt-15em">
 
 						<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
-							<h1>Regulamento</h1>
+							<h1>Rules</h1>
                             <small><ol class="breadcrumb">
   <li>Home</li>
-  <li>Organização</li>
-  <li class="active"><b>Regulamento</b></li>
+  <li>Corporation</li>
+  <li class="active"><b>Rules</b></li>
 </ol></small>							
 						</div>
 						
@@ -102,10 +102,10 @@
 				  <label class="custom-control custom-checkbox">
   <input type="checkbox" class="custom-control-input">
   <span class="custom-control-indicator"></span>
-  <span class="custom-control-description">Li e concordo com os termos apresentados neste regulamento.</span>
+  <span class="custom-control-description">I read and I agree with Terms and Conditions.</span>
 </label>
 <br>
-				  <a href="<?php echo SITE_URL; ?>/index.php/registration" class='btn btn-primary'>CONTINUAR</a>
+				  <a href="<?php echo SITE_URL; ?>/index.php/registration" class='btn btn-primary'>Accept</a>
 				  </div>
 				</div>          
              
