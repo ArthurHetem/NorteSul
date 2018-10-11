@@ -64,6 +64,8 @@
  <script type="text/javascript" src="<?php echo fileurl('lib/js/simbrief.apiv1.js');?>"></script>
  <!--Your Google Maps API Key here-->
     <script src="http://maps.google.com/maps/api/js?v=3&libraries=geometry&language=en_gr&key=AIzaSyDbwylblt3-Nz21yNoDJWbHyqTjTNogYcg" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js" type="text/javascript"></script>
+
 </head>
 <!--
 BODY TAG OPTIONS:
