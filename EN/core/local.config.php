@@ -23,7 +23,7 @@ define('DBASE_TYPE', 'mysqli');
 
 define('TABLE_PREFIX', 'phpvms_');
 
-define('SITE_URL', 'http://localhost/aviancaNew/PT');
+define('SITE_URL', 'http://localhost/nortesul/en');
 
 # Page encoding options
 Config::Set('PAGE_ENCODING', 'utf-8');

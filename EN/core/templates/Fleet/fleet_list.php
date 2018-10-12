@@ -1,32 +1,36 @@
-﻿    <!--breadcrumbs start-->
-    <div class="breadcrumbs">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 col-sm-4">
-            <h1>
-             Nossa Frota
-            </h1>
-          </div>
-          <div class="col-lg-8 col-sm-8">
-            <ol class="pull-right">
-              <h1 class="pequeno">Avianca Virtual</h1>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--breadcrumbs end-->
+﻿<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-image: url(<?php echo SITE_URL; ?>/lib/skins/avianca/images/img_bg_3.jpg)">
+		<div class="overlay"></div>
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-12 col-md-offset-0 text-center">
+					<div class="row row-mt-15em">
+
+						<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
+							<h1>Our Fleet</h1>
+                            <small><ol class="breadcrumb">
+  <li>Home</li>
+  <li>Operations</li>
+  <li class="active"><b>Our Fleet</b></li>
+</ol></small>							
+						</div>
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</header>
 
     <div class="container" id="tourpackages-carousel">
        <table id="tabledlist" class="table table-striped">
 	       <thead>
 		    <tr>
-		     <th class="quadro roxo">Prefixo da Aeronave</th>
-	         <th class="quadro roxo">Tipo da Aeronave</th>
-		     <th class="quadro roxo">Alcance</th>
+		     <th class="quadro roxo">Aircraft Register</th>
+	         <th class="quadro roxo">Aircraft Type</th>
+		     <th class="quadro roxo">Range</th>
 			 <th class="quadro roxo">Max Pax</th>
-		     <th class="quadro roxo">Max Carga</th>
-		     <th class="quadro roxo">Detalhes</th>
+		     <th class="quadro roxo">Max Cargo</th>
+		     <th class="quadro roxo">More Details</th>
 		    </tr>
 	       </thead>
 	       <tbody>
@@ -37,7 +41,7 @@
 		     <td><?php echo $aircrafts->range; ?></td>
 			 <td><?php echo $aircrafts->maxpax; ?></td>
 	         <td><?php echo $aircrafts->maxcargo; ?></td>
-		     <td><a href="<?php echo url('fleet/view/' . $aircrafts->id); ?>"><button class="btn btn-default">Ver&raquo;</button></a></td> 
+		     <td><a href="<?php echo url('fleet/view/' . $aircrafts->id); ?>"><button class="btn btn-default">See&raquo;</button></a></td> 
 		    </tr>
 	        <?php } }?>
 	       </tbody>
