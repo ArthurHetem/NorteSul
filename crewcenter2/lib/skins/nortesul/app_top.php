@@ -126,7 +126,7 @@
 		<?php
 		   }
 		  ?>
-        <li><a href="#"><i class="fa fa-file-o"></i> <span>Cartas Aéreas</span><span class="label label-danger pull-right-container">EM BREVE</span></a></li>
+        <li><a href="<?php echo SITE_URL?>/EFB" target="_blank"><i class="fa fa-tablet"></i> <span>EFBv</span></a></li>
 		<li class="header">PERFIL</li>
         <li><a href="<?php echo SITE_URL?>/index.php/profile/editprofile"><i class="fa fa-gear"></i> <span>Editar Perfil</span></a></li>
 		<li class="header">OPERACIONAL</li>

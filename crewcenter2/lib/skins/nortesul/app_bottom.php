@@ -60,12 +60,12 @@
               <h4 class="control-sidebar-subheading">
                 CrewCenter
                 <span class="pull-right-container">
-                    <span class="label label-warning pull-right">30%</span>
+                    <span class="label label-success pull-right">90%</span>
                   </span>
               </h4>
 
               <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-warning" style="width: 30%"></div>
+                <div class="progress-bar progress-bar-success" style="width: 90%"></div>
               </div>
             </a>
           </li>
