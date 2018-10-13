@@ -75,7 +75,7 @@
 						<div class="row form-group">
 							<div class="col-md-12">
 								<label class="sr-only" for="subject">Subject</label>
-								<input type="text" id="subject" name="subject" class="form-control" placeholder="Subjec*" value="<?php echo $_POST['subject'];?>">
+								<input type="text" id="subject" name="subject" class="form-control" placeholder="Subject*" value="<?php echo $_POST['subject'];?>">
 							</div>
 						</div>
 
