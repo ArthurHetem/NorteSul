@@ -38,7 +38,7 @@
                 </p>
                 <hr>
                                 <div class="team-social-link">
-                  <a href="<?php echo SITE_URL?>/index.php/profile/view/1" class="btn btn-primary" style="margin-left: 20%;">Detalhes</a>
+                  <a href="<?php echo SITE_URL?>/index.php/profile/view/1" class="btn btn-primary" style="margin-left: 20%;">Details</a>
                 </div>
               </div>
             </div>
