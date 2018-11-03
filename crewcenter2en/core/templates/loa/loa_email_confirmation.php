@@ -1,9 +1,9 @@
-Seu pedido de ausencia foi enviado e processado pelo nosso sistema. <br />
-Aqui estão os detalhes do seu pedido: <br />
-Matricula: <?php echo $pilotid ?><br />
-Data de inicio: <?php echo $start ?><br />
-Data de termino: <?php echo $end; ?><br />
-Motivo: <?php echo $reason; ?><br />
+Your Leave of Absence request was received and processed by our system. <br />
+Here are the details of your request: <br />
+Pilot ID: <?php echo $pilotid ?><br />
+Start Date: <?php echo $start ?><br />
+End Date: <?php echo $end; ?><br />
+Reason: <?php echo $reason; ?><br />
 
-Obrigado por enviar seu pedido. <br />
-Staff SkyAlliance
+Thanks for your request. <br />
+Human Recourses - NorteSul Virtual

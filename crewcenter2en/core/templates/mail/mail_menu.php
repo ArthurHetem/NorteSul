@@ -13,12 +13,12 @@
 <?php if(isset($message)) {echo $message.'<br />';} ?>
 <table width="100%">
     <tr>
-        <td align="left" width="20%"><img src="<?php echo SITE_URL?>/lib/skins/avianca/assets/admin/layout/img/logo.png" border="0" alt="AIRMail" width="100px" height="40px"/></td>
+        <td align="left" width="20%"><img src="<?php echo SITE_URL?>/lib/skins/nortesul/img/LogoCrew.png" border="0" alt="AIRMail" width="100px" height="40px"/></td>
         <td align="center">
             | <a href="<?php echo SITE_URL ?>/index.php/Mail">Inbox</a> |
-            <a href="<?php echo SITE_URL ?>/index.php/Mail/newmail">Nova Mensagem</a> |
-            <a href="<?php echo SITE_URL ?>/index.php/Mail/settings">Opções</a> |
-            <a href="<?php echo SITE_URL ?>/index.php/Mail/sent">Enviadas</a> |
+            <a href="<?php echo SITE_URL ?>/index.php/Mail/newmail">New Message</a> |
+            <a href="<?php echo SITE_URL ?>/index.php/Mail/settings">Settings</a> |
+            <a href="<?php echo SITE_URL ?>/index.php/Mail/sent">Sent</a> |
         </td>
         <td width="20%" align="right"><img src="<?php echo SITE_URL?>/core/modules/Mail/mailimages/mail_small.png" border="0" alt="AIRMail" /></td>
     </tr>

@@ -5,6 +5,7 @@
 * www.fs-products.net
 * Verion 1.3
 * Dated: 03/22/2011
+* Edited By Arthur Hetem 28/07/2018 V1.0D
 */
 
 $pilotid = Auth::$userinfo->pilotid;
@@ -14,109 +15,63 @@ $last_name = OperationsData::getAirportInfo($last_location->arricao);
 $equipment = OperationsData::GetAllAircraftSearchList(true);
 $airlines = OperationsData::getAllAirlines(true);
 ?>
-	<!-- BEGIN CONTENT -->
-	<div class="page-content-wrapper">
-		<div class="page-content">
-			<!-- BEGIN PAGE HEADER-->
-			<h3 class="page-title">
-		<small><span class="badge badge-roundless badge-success">Versão Alpha do Despacho Operacional</span></small>
-			</h3>
-            <hr>
-			<h1 class="page-title">Gerar Escalas <small>Reserve e bom voo!</small></h1>
-			<!-- END PAGE HEADER-->
-			<!-- BEGIN DASHBOARD STATS -->
+<section class="content container-fluid">
 			<div class="row">
-				<div class="col-md-12">
-                        <div class="portlet light bg-inverse">
-                                    <div class="portlet-title">
-                                        <div class="caption">
-                                            <i class="icon-map font-green-haze"></i>
-                                            <span class="caption-subject bold font-green-haze uppercase"> Gerador de Escalas </span>
-                                            <span class="caption-helper">Avianca Virtual</span>
-                                        </div>
-                                    </div>
-
-
-
-
-   <!-- BEGIN PAGE-->
-
-<form name="randomflights" id="randomflights" action="<?php echo SITE_URL?>/index.php/randomflights/getRandomFlights" method="post">
-
-      <table>
+			<div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Schedules Generator</h3>
+            </div>
+			<div class="box-body table-responsive">
+<table class="table table-bordered">
+  <tbody><tr><form name="randomflights" id="randomflights" action="<?php echo SITE_URL?>/index.php/randomflights/getRandomFlights" method="post">
         <tr>
-            <div class="form-group">
-            <div class="col-md-9">
-             <td width ="25%"><b>Localiza&ccedil&atildeo atual:</b></td>
-              <td width ="75%"><select id="depicao" name="depicao" class="bs-select form-control input-large" data-style="purple">
-               <option value="<?php echo $last_location->arricao?>"><?php echo $last_location->arricao?> (<?php echo $last_name->name?>)</option>
-               </td>
-              </select>
-            </td>
+			<td><b>Actual Location:</b></td>
+			<td><select id="depicao" name="depicao" class="form-control" disabled>
+				<option value="<?php echo $last_location->arricao?>"><?php echo $last_location->arricao?> (<?php echo $last_name->name?>)</option>
+			</td>
 		</tr>
-          </div>
-		
 		<tr>
-			<div class="form-group">
-            <div class="col-md-9">
-             <td width ="25%"><b>Airline:</b></td>
-            <td width ="75%"><select id="airline" name="airline" class="bs-select form-control input-small" data-style="purple">
-	            <option value="">Airline</option>
-            <option value="ONE">Avianca</option>            </td>
+			<td><b>Airline:</b></td>
+            <td><select id="airline" name="airline" class="form-control">
+	            <option value="">Select Airline</option>
+            <?php
+                if(!$airlines) $airlines = array();
+                foreach($airlines as $airline)
+                {
+                        echo '<option value="'.$airline->code.'">'.$airline->name.'</option>';
+                }
+            ?>
+            </td>
         </tr>
 		<tr>
-			<div class="form-group">
-            <div class="col-md-9">
-             <td width ="25%"><b>Aeronave:</b></td>
-             <td width ="75%"><select id="equipment" name="equipment" class="bs-select form-control input-small" data-style="purple">
-	            <option value="">Aeronave</option>
-                        <?php
+			<td><b>Aircraft:</b></td>
+            <td><select id="equipment" name="equipment" class="form-control">
+	            <option value="">Select Equipment</option>
+            <?php
                 if(!$equipment) $equipment = array();
                 foreach($equipment as $equip)
                 {
                         echo '<option value="'.$equip->icao.'">'.$equip->name.'</option>';
                 }
-            ?></td>
-        </tr>
-		<tr>
-			<div class="form-group">
-            <div class="col-md-9">
-             <td width ="25%"><b>N&uacutemero de Voos:</b></td>
-             <td width ="75%"><select id="count" name="count" class="bs-select form-control input-small" data-style="purple">
-                <option value="1">1</option>
-                <option value="2">2</option>
-			  <option value="3">3</option>
-			  <option value="5">5</option>			  		
-			</select></td>
-			<td>
-			<div class="form-group">
-            <div class="col-md-9">
-			<button input type="submit" name="submit" value="Gerar Escala" type="button" class="btn blue mt-ladda-btn ladda-button btn-outline" data-style="slide-left" data-spinner-color="#333">
-                  <span class="ladda-label">Gerar Escala</span>
-            </button>
+            ?>
             </td>
         </tr>
-	  </table>	  	
+		<tr>
+			<td><b>Number of Flights:</b></td>
+			<td><select id="count" name="count" class="form-control">
+			  <option value="5">5</option>
+			  <option value="10">10</option>
+			  <option value="15">15</option>
+			</select></td>
+		</tr>
+<input type="submit" name="submit" value="Generate Schedule" class="pull-right btn-block btn-flat btn btn-info">
     </form>
+	</tbody>
   </tr>
 </table>
-                        </div>
-                    </div>
-                    <!-- END CONTENT BODY -->
-                </div>
-                <!-- END CONTENT -->
-                <!-- BEGIN QUICK SIDEBAR -->
- </div>
-                        
-                        <!-- END CONTEUDO -->
-                        
-                    </div>
-                    <!-- END CONTENT BODY -->
-                </div>
-                <!-- END CONTENT -->
-			</div>
-			<!-- END DASHBOARD STATS -->
-			<div class="clearfix">
-			</div>
-			</div>
-			</div>
+        </div>
+        </div>
+        </div>
+    </section>
+    <!-- /.content -->

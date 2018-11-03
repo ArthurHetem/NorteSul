@@ -23,7 +23,7 @@ define('DBASE_TYPE', 'mysql');
 
 define('TABLE_PREFIX', 'phpvms_');
 
-define('SITE_URL', 'http://localhost/nortesul/crewcenter2');
+define('SITE_URL', 'http://localhost/nortesul/crewcenter2en');
 
 # Page encoding options
 Config::Set('PAGE_ENCODING', 'ISO-8859-1');

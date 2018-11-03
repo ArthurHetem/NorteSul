@@ -9,26 +9,19 @@
 //@author David Clark (simpilot)
 //@copyright Copyright (c) 2009-2011, David Clark
 //@license http://creativecommons.org/licenses/by-nc-sa/3.0/
-//Edited By Arthur Hetem 13/06/2017
+//Edited By Arthur Hetem 02/11/2018
 ?>
-	<!-- BEGIN CONTENT -->
-	<div class="page-content-wrapper">
-		<div class="page-content">
-			<!-- BEGIN PAGE HEADER-->
-			<h3 class="page-title">
-		<small><span class="badge badge-roundless badge-success">Versão Alpha do Despacho Operacional</span></small>
-			</h3>
-            <hr>
-			<!-- END PAGE HEADER-->
-			<!-- BEGIN DASHBOARD STATS -->
+<section class="content container-fluid">
+			<div class="row">
+			<div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Intra-mail</h3>
+            </div>
+			<div class="box-body">
 			<div class="row">
 			          <?php require 'mail_menu.php' ;?>
-                    <div class="portlet box green">
-                        <div class="portlet-title">
-                            <div class="caption">
-                                 <i class="icon-envelope"></i>INTRANET</div></div></div>
                                  <center>
-                                 <div class="portlet-body">
                                    <div class="table-scrollable">
                                      <table class="table table-striped table-hover">
                                                 <thead>
@@ -37,21 +30,18 @@
                 echo '<td colspan="6" align="center"><b>'.$folder->folder_title.' folder for '.Auth::$userinfo->firstname.' '.Auth::$userinfo->lastname.' '.$pilotcode.'</b>';
                 echo ' - <a href="'.SITE_URL.'/index.php/Mail/editfolder/'.$folder->id.'">Edit Folder Name</a></td>';
                 }
-                else {echo '<td colspan="6" align="center"><b>Inbox for '.Auth::$userinfo->firstname.' '.Auth::$userinfo->lastname.' '.$pilotcode.'</b></td>';}
+                else {echo '<td colspan="6" align="center"><b>Inbox of '.Auth::$userinfo->firstname.' '.Auth::$userinfo->lastname.' - '.$pilotcode.'</b></td>';}
             ?>        </tr>
 
         <tr>
             <th>Status</th>
-            <th>From</th>
+            <th>Sent by</th>
             <th>Subject</th>
             <th>Date</th>
             <th>Delete</th>
         </tr>
 <?php if(!$mail) {
-        echo '<tr><td colspan="5"><span class="alert alert-danger">Você não possui nenhuma mensagem.</span></td></tr>';
-        echo '<tr>
-            <td colspan="5"><b><font size="1.5px">| AIRmail3 &copy 2011 | <a href="http://www.simpilotgroup.com">simpilotgroup.com</a> |</font></b></td>
-        </tr>';
+        echo '<tr><td colspan="5"><span class="alert alert-danger">You dont have messages.</span></td></tr>';
         }
         else {
             foreach($mail as $data) {
@@ -75,20 +65,16 @@
 }
 ?>
         <tr>
-            <td colspan="4"><b><font size="1.5px">| AIRmail3 &copy 2011 | <a href="http://www.simpilotgroup.com">simpilotgroup.com</a> |</font></b></td>
-            <td align="center"><a href="<?php echo url('/mail/delete_all/').$data->reciever_folder; ?>" onclick="return confirm('Delete All Inbox Messages?')">Delete All</a></td>
+            <td class="pull-right"><a href="<?php echo url('/mail/delete_all/').$data->reciever_folder; ?>" onclick="return confirm('Delete All Inbox Messages?')">Delete All</a></td>
         </tr>
         <?php
         }
         ?>
         </tr>
     </table>
-</center>    
-                    </div>
-                    <!-- END CONTENT BODY -->
-                </div>
-                <!-- END CONTENT -->
-			</div>
-			<!-- END DASHBOARD STATS -->
-			<div class="clearfix">
-			</div>
+</center>
+</div>
+</div>
+</div>
+</div>
+</section>

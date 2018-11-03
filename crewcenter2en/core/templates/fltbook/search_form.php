@@ -6,18 +6,21 @@ if(!$last_location) {
   FltbookData::updatePilotLocation($pilotid, Auth::$userinfo->hub);
 }
 ?>
-<h3><strong>Schedule Search</strong></h3>
-<hr />
+<section class="content container-fluid">
+			<div class="row">
+			<div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Search Charter</h3>
+            </div>
+			<div class="box-body">
 <form action="<?php echo url('/Fltbook');?>" method="post">
-    <table class="balancesheet" align="center">
-    	<tr>
-    		<td colspan="5"><strong>Schedule Search</strong></td>
-    	</tr>
+    <table class="table table-bordered">
       <tr>
-          <td>Current Location:</td>
+          <td>Actual location:</td>
           <td>
               <?php if($settings['search_from_current_location'] == 1) { ?>
-                <div><span class="pull-left"><input id="depicao" name="depicao" type="hidden" value="<?php echo $last_location->arricao; ?>"><font color="red"><?php echo $last_location->arricao; ?> - <?php echo $last_name->name; ?></font></span></div>
+                <div><span class="pull-left"><input class="form-control" id="depicao" name="depicao" type="hidden" value="<?php echo $last_location->arricao; ?>"><font color="red"><?php echo $last_location->arricao; ?> - <?php echo $last_name->name; ?></font></span></div>
               <?php } else { ?>
                 <font color="red"><?php echo $last_location->arricao; ?> - <?php echo $last_name->name; ?></font>
               <?php } ?>
@@ -25,10 +28,10 @@ if(!$last_location) {
       </tr>
       <?php if($settings['search_from_current_location'] == 0) { ?>
         <tr>
-            <td>Select An Departure Location:</td>
+            <td>Select Departure Airport:</td>
             <td>
-                <select class="search" name="depicao">
-                    <option value="" selected disabled>Choose Your Departure Location</option>
+                <select class="search form-control" name="depicao">
+                    <option value="" selected disabled>Select Departure Airport</option>
                     <?php
                       foreach ($airports as $airport) {
                         echo '<option value="'.$airport->icao.'">'.$airport->icao.' - '.$airport->name.'</option>';
@@ -39,9 +42,9 @@ if(!$last_location) {
         </tr>
       <?php } ?>
       <tr>
-          <td>Select An Airline:</td>
+          <td>Selecionar Airline:</td>
           <td>
-              <select class="search" name="airline">
+              <select class="search form-control" name="airline">
                   <option value="">Any</option>
                   <?php
                     foreach ($airlines as $airline) {
@@ -52,9 +55,9 @@ if(!$last_location) {
           </td>
       </tr>
       <tr>
-          <td>Select An Aircraft Type:</td>
+          <td>Select Equipment:</td>
           <td>
-            <select class="search" name="aircraft">
+            <select class="search form-control" name="aircraft">
               <option value="" selected>Any</option>
               <?php
               if($settings['search_from_current_location'] == 1) {
@@ -82,9 +85,9 @@ if(!$last_location) {
           </td>
       </tr>
       <tr>
-          <td>Select Arrival Airfield:</td>
+          <td>Select Arrival Airport:</td>
           <td>
-              <select class="search" name="arricao">
+              <select class="search form-control" name="arricao">
                   <option value="">Any</option>
                   <?php
                   if($settings['search_from_current_location'] == 1) {
@@ -109,28 +112,35 @@ if(!$last_location) {
       <tr>
     	<td align="center" colspan="2">
           <input type="hidden" name="action" value="search" />
-          <a href="<?php echo url('/Fltbook/bids'); ?>"><input type="button" value="View/Remove Bids"></a>
-          <input border="0" type="submit" name="submit" value="Search">
+          <input border="0" type="submit" name="submit" value="Search" class="btn-block btn-flat btn btn-info">
     	</td>
       </tr>
       <br />
   </table>
 </form>
-<hr />
-
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+			<div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Jumpseat</h3>
+            </div>
+			<div class="box-body">
 <?php if($settings['search_from_current_location'] == 1) { ?>
-<h3><strong>Pilot Transfer</strong></h3>
 <form action="<?php echo url('/Fltbook/jumpseat');?>" method="post">
-  <table class="balancesheet" width="80%" align="center">
+  <table class="balancesheet tanle table-bordered">
     <thead>
     	<tr class="balancesheet_header">
-    	   <td colspan="5">Airport Selection</td>
+    	   <td colspan="5">Select Airport</td>
     	</tr>
     	<tr>
 	    <td align="center">Transfer To:</td>
             <td align="left">
               <div id="errors"></div>
-                <select class="search" name="depicao" onchange="calculate_transfer(this.value)">
+                <select class="search form-control" name="depicao" onchange="calculate_transfer(this.value)">
                     <option value="" selected disabled>Select Airport</option>
                     <?php
                     foreach($airports as $airport) {
@@ -142,11 +152,11 @@ if(!$last_location) {
                     }
                     ?>
                 </select>
-                <input type="submit" id="purchase_button" value="Purchase Transfer!" disabled="disabled" />
+                <input type="submit" id="purchase_button" value="Buy Jumpseat!" disabled="disabled" class="btn-block btn-flat btn btn-info" />
           </td>
        </tr>
        <tr>
-         <td align="center">Distance Travelling:</td>
+         <td align="center">Travel Distance:</td>
          <td align="left"><div id="distance_travelling"></div></td>
        </tr>
        <tr>
@@ -191,3 +201,9 @@ function calculate_transfer(arricao) {
 }
 </script>
 <?php } ?>
+</div>
+</div>
+        </div>
+        </div>
+    </section>
+    <!-- /.content -->

@@ -11,33 +11,27 @@
 //@license http://creativecommons.org/licenses/by-nc-sa/3.0/
 //Edited By Arthur Hetem 13/06/2017
 ?>
-	<!-- BEGIN CONTENT -->
-	<div class="page-content-wrapper">
-		<div class="page-content">
-			<!-- BEGIN PAGE HEADER-->
-			<h3 class="page-title">
-		<small><span class="badge badge-roundless badge-success">Versão Alpha do Despacho Operacional</span></small>
-			</h3>
-            <hr>
-			<!-- END PAGE HEADER-->
-			<!-- BEGIN DASHBOARD STATS -->
+<section class="content container-fluid">
+			<div class="row">
+			<div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Intra-mail | New Message</h3>
+            </div>
+			<div class="box-body">
 			<div class="row">
 			<?php require 'mail_menu.php' ;?>
-                    <div class="portlet box green">
-                        <div class="portlet-title">
-                            <div class="caption">
-                                 <i class="fa fa-comments"></i>Escrever Nova Mensagem</div></div></div>
                                 <center>
     <form action="<?php echo url('/Mail');?>" method="post" enctype="multipart/form-data">
-        <table cellspacing="1" cellpadding="5" border="1" width="100%">
-            <tr bgcolor="#cccccc">
+        <table class="table table-bordered">
+            <tr>
                 <td colspan="2">
-                    <b>Para:</b>
-                    <select name="who_to">
-                        <option value="">Select a pilot</option>
+                    <b>To:</b>
+                    <select class="form-control" name="who_to">
+                        <option value="">Select pilot</option>
                         <?php if(PilotGroups::group_has_perm(Auth::$usergroups, ACCESS_ADMIN)) {
                             ?>
-                        <option value="all">NÃO UTILIZAR</option>
+                        <option value="all">DONT USE</option>
                         <?php
                         }
                         foreach($allpilots as $pilots) {
@@ -46,16 +40,16 @@
                         ?>
                     </select>
                 </td>
-                <td><b>Assunto:<input type="text" name="subject"></b></td>
+                <td><b>Subject:<input class="form-control" type="text" name="subject"></b></td>
             </tr>
-            <tr bgcolor="#eeeeee">
-                <td colspan="3"><b>Mensagem:</b><br /><br />
-                    <textarea name="message" rows="10" cols="100"></textarea></td></tr>
-            <tr bgcolor="#cccccc">
+            <tr>
+                <td colspan="3"><b>Message:</b><br /><br />
+                    <textarea class="form-control" name="message" rows="10" cols="100"></textarea></td></tr>
+            <tr>
                 <td colspan="3">
                     <input type="hidden" name="who_from" value="<?php echo Auth::$userinfo->pilotid ?>" />
                     <input type="hidden" name="action" value="send" />
-                    <input type="submit" class="btn red" value="Enviar">
+                    <input type="submit" class="btn btn-flat btn-block btn-info" value="Send">
                 </td>
             </tr>
             <tr>
@@ -64,11 +58,8 @@
         </table>
     </form>
 </center>
-                    </div>
-                    <!-- END CONTENT BODY -->
-                </div>
-                <!-- END CONTENT -->
-			</div>
-			<!-- END DASHBOARD STATS -->
-			<div class="clearfix">
-			</div>
+</div>
+</div>
+</div>
+</div>
+</section>
