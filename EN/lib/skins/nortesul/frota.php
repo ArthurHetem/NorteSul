@@ -27,7 +27,7 @@
         <div class="profile">
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="thumbnail animate-box">
-              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/frota/A318.png" alt="">
+              <!--<img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/frota/A318.png" alt="">-->
               <div class="caption">
                 <h4 class="text-center">
                   Airbus <b>A318</b>
@@ -126,7 +126,7 @@
 
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="thumbnail animate-box">
-              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/frota/A319.png" alt="">
+              <!--<img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/frota/A319.png" alt="">-->
               <div class="caption">
                 <h4 class="text-center">
                   Airbus <b>A319</b>
@@ -225,7 +225,7 @@
 
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="thumbnail animate-box">
-              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/frota/A320.png" alt="">
+              <!--<img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/frota/A320.png" alt="">-->
               <div class="caption">
                 <h4 class="text-center">
                   Airbus <b>A320</b>
@@ -324,7 +324,7 @@
 
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="thumbnail animate-box">
-              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/frota/A320NEO.png" alt="">
+              <!--<img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/frota/A320NEO.png" alt="">-->
               <div class="caption">
                 <h4 class="text-center">
                   Airbus <b>A320<small> NEO</small></b>
@@ -420,105 +420,6 @@
               </div>
             </div>
 			</div>
-			<div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="thumbnail animate-box">
-              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/frota/A330.png" alt="">
-              <div class="caption">
-                <h4 class="text-center">
-                  Airbus <b>A330-200</b>
-                </h4>
-                <hr>
-                <p class="pull-left">
-                 Passengers
-                </p>
-				<p class="pull-right">
-				247
-				</p>
-                <br>
-				                <hr>
-                <p class="pull-left">
-                 Length
-                </p>
-				<p class="pull-right">
-				58,82m
-				</p>
-                <br>
-				                <hr>
-                <p class="pull-left">
-                 Wingspan
-                </p>
-				<p class="pull-right">
-				60,30m
-				</p>
-                <br>
-				                <hr>
-                <p class="pull-left">
-                 Tail Height
-                </p>
-				<p class="pull-right">
-				17,39m
-				</p>
-                <br>
-				                <hr>
-                <p class="pull-left">
-                 Engines
-                </p>
-				<p class="pull-right">
-				2xRR TRENT 772B
-				</p>
-                <br>
-				<hr>
-                <p class="pull-left">
-                 Maximum Take Off Weight
-                </p>
-				<p class="pull-right">
-				242,000kg
-				</p>
-                <br>
-				<hr>
-                <p class="pull-left">
-                 Cruising Speed
-                </p>
-				<p class="pull-right">
-				871km/h
-				</p>
-                <br>
-				<hr>
-                <p class="pull-left">
-                 Range
-                </p>
-				<p class="pull-right">
-				13,450km
-				</p>
-                <br>
-				<hr>
-                <p class="pull-left">
-                 Cruise, Typical Load
-                </p>
-				<p class="pull-right">
-				41,100 FT
-				</p>
-                <br>
-				<hr>
-                <p class="pull-left">
-                 Cockpit Crew
-                </p>
-				<p class="pull-right">
-				3
-				</p>
-                <br>
-				<hr>
-                <p class="pull-left">
-                 Cabin Crew
-                </p>
-				<p class="pull-right">
-				10
-				</p>
-                <br>
-              </div>
-            </div>
-			</div>
-
 
         </div>
         <!-- End row -->

@@ -420,104 +420,6 @@
               </div>
             </div>
 			</div>
-			<div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="thumbnail animate-box">
-              <img src="<?php echo SITE_URL?>/lib/skins/avianca/images/frota/A330.png" alt="">
-              <div class="caption">
-                <h4 class="text-center">
-                  Airbus <b>A330-200</b>
-                </h4>
-                <hr>
-                <p class="pull-left">
-                 Passageiros
-                </p>
-				<p class="pull-right">
-				238
-				</p>
-                <br>
-				                <hr>
-                <p class="pull-left">
-                 Comprimento
-                </p>
-				<p class="pull-right">
-				58,82m
-				</p>
-                <br>
-				                <hr>
-                <p class="pull-left">
-                 Envergadura
-                </p>
-				<p class="pull-right">
-				60,30m
-				</p>
-                <br>
-				                <hr>
-                <p class="pull-left">
-                 Altura
-                </p>
-				<p class="pull-right">
-				17,39m
-				</p>
-                <br>
-				                <hr>
-                <p class="pull-left">
-                 Motores
-                </p>
-				<p class="pull-right">
-				2xRR TRENT 772B
-				</p>
-                <br>
-				<hr>
-                <p class="pull-left">
-                 Decolagem
-                </p>
-				<p class="pull-right">
-				238,000kg
-				</p>
-                <br>
-				<hr>
-                <p class="pull-left">
-                 Velocidade de cruzeiro
-                </p>
-				<p class="pull-right">
-				920km/h
-				</p>
-                <br>
-				<hr>
-                <p class="pull-left">
-                 Alcance
-                </p>
-				<p class="pull-right">
-				13,450km
-				</p>
-                <br>
-				<hr>
-                <p class="pull-left">
-                 Altitude de cruzeiro
-                </p>
-				<p class="pull-right">
-				41,000 FT
-				</p>
-                <br>
-				<hr>
-                <p class="pull-left">
-                 Tripulação técnica
-                </p>
-				<p class="pull-right">
-				3
-				</p>
-                <br>
-				<hr>
-                <p class="pull-left">
-                 Tripulação comercial
-                </p>
-				<p class="pull-right">
-				10
-				</p>
-                <br>
-              </div>
-            </div>
-			</div>
 
 
         </div>
@@ -532,7 +434,7 @@
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
 					<h2>Contamos com <b><?php echo StatsData::TotalAircraftInFleet(); ?></b> aeronaves na frota!</h2>
 					<div class="col-md-6">
-					<p>Realizamos diversos voos partindo do Brasil para o mundo, sendo uma das Virtual Airlines em operação melhor conceituada em voos online!</p>
+					<p>Realizamos diversos voos por todo o Brasil, sendo uma das Virtual Airlines em operação melhor conceituada em voos online!</p>
 				</div>
 				<div class="col-md-6">
 				    <a href="<?php echo SITE_URL; ?>/index.php/fleet" class='btn btn-info pull-right'><i class="fas fa-plane"></i> DETALHES DA FROTA</a>

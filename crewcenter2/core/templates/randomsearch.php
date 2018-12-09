@@ -5,7 +5,6 @@
 * www.fs-products.net
 * Verion 1.3
 * Dated: 03/22/2011
-* Edited By Arthur Hetem 28/07/2018 V1.0D
 */
 
 $pilotid = Auth::$userinfo->pilotid;
@@ -15,6 +14,7 @@ $last_name = OperationsData::getAirportInfo($last_location->arricao);
 $equipment = OperationsData::GetAllAircraftSearchList(true);
 $airlines = OperationsData::getAllAirlines(true);
 ?>
+
 <section class="content container-fluid">
 			<div class="row">
 			<div class="col-xs-12">
@@ -72,6 +72,7 @@ $airlines = OperationsData::getAllAirlines(true);
 </table>
         </div>
         </div>
-        </div>		
+        </div>
+</div>		
     </section>
     <!-- /.content -->		

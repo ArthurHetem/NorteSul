@@ -48,7 +48,7 @@ foreach($allroutes as $route) {
 	}
 ?>
 <tr style="height: 12px; font-size: 14px; font-weight: normal;">
-	<td width="16.5%" valign="middle"><img src="<?php echo SITE_URL; ?>/lib/images/airlinelogos/<?php echo $route->code;?>.png" alt="<?php echo $route->code;?>"></td>
+	<td width="16.5%" valign="middle"><img src="<?php echo SITE_URL; ?>/lib/images/airlinelogos/<?php echo $route->code;?>.png" style="height:75%; widht:75%;" alt="<?php echo $route->code;?>"></td>
 	<td width="16.5%" align="center" valign="middle"><?php echo $route->code . $route->flightnum?></td>
 	<td width="16.5%" align="center" valign="middle"><?php echo $route->depicao ;?></td>
 	<td width="16.5%" align="center" valign="middle"><?php echo $route->arricao ;?></td>

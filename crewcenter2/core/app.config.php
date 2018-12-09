@@ -71,7 +71,7 @@ Config::Set('PILOT_INACTIVE_TIME', 90);
 Config::Set('PILOT_AUTO_CONFIRM', false);
 
 # Automatically calculate ranks?
-Config::Set('RANKS_AUTOCALCULATE', true);
+Config::Set('RANKS_AUTOCALCULATE', false);
 
 # Schedules - ignore the day of week active?
 Config::Set('CHECK_SCHEDULE_DAY_OF_WEEK', true);
@@ -211,8 +211,8 @@ Config::Set('SESSION_GUEST_EXPIRE', '30'); # Clear guest sessions 30 minutes
 //Config::Set('SESSION_COOKIE_NAME', 'VMS_AUTH_COOKIE');
 
 # Email Settings
-Config::Set('EMAIL_FROM_NAME', '');
-Config::Set('EMAIL_FROM_ADDRESS', '');
+Config::Set('EMAIL_FROM_NAME', 'NorteSul Virtual Airlines');
+Config::Set('EMAIL_FROM_ADDRESS', 'noreply@nortesulvirtual.com');
 
 Config::Set('EMAIL_USE_SMTP', false);
 # Add multiple SMTP servers by separating them with ;
@@ -235,7 +235,7 @@ Config::Set('EMAIL_SEND_PIREP', true);
 # If blank, it'll default to the "from" email that's specified
 Config::Set('EMAIL_RETURN_PATH', '');
 
-Config::Set('PHPVMS_API_SERVER', 'http://api.vacentral.net');
+Config::Set('PHPVMS_API_SERVER', 'https://virtualairlines.eu/');
 Config::Set('PHPVMS_NEWS_FEED', 'http://feeds.feedburner.com/phpvms');
 Config::Set('VACENTRAL_NEWS_FEED', 'http://feeds.feedburner.com/vacentral');
 

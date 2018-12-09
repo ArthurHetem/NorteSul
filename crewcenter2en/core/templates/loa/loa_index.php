@@ -31,8 +31,9 @@
 
 <div class="alert alert-info">
 	<p>
-		The LoA will start in the date that this form has been sent and end in the user choosed date, only if there arent more than 30 days.
+		The LoA* will start at the date that this form has been sent and will end at the user chosen date but not to exceed more than 30 days.
 After that time you will be subject to our inactivity policy.
+<small>*Subject to Approval</small>
 	</p>
 </div>
 <hr />

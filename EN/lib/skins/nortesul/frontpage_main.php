@@ -8,11 +8,11 @@
 
 					<div class="row row-mt-15em">
 						<div class="col-md-7 mt-text animate-box dividir" data-animate-effect="fadeInUp">
-							<h1>Come and fly with us</h1>	
+							<h1>Do you travel to know new locations?</h1>	
 						</div>
 						<div class="col-md-4 col-md-push-1 mt-text animate-box" data-animate-effect="fadeInRight">
 									
-									
+									        <h1>Come and fly with</h1>
 											<img src="<?php echo SITE_URL; ?>/lib/skins/nortesul/images/logo.png" height="55px" width="255px">
 									</div>
 						</div>
@@ -43,7 +43,7 @@ else {
 $resp = "Good Evening";}
 echo "$resp";
 ?>, welcome to NorteSul Virtual Airlines</h2>
-					<h4>A <b>NorteSul Virtual</b> is a non-profit Virtual Airline Company and its vision is to be as close as possible to real life flight operations <b>providing the best flying experience to our pilots in a friendly environment</b>. <p>As right now, we are <b><?php echo StatsData::PilotCount(); ?></b> members flying online on IVAO and VATSIM networks, using Microsoft Flight Simulator, XPlane, Prepar3D and other softwares that provide the best flight simulation experience that is out there.</p></h4>
+					<h4><b>NorteSul Virtual</b> is a non-profit Virtual Airline Company and its vision is to be as close as possible to real-life flight operations <b>providing the best flying experience to our pilots in a friendly environment</b>. <p>As right now, we are <b><?php echo StatsData::PilotCount(); ?></b> members flying online on major virtual networks, using Microsoft Flight Simulator X, X-Plane, Prepar3D and other softwares that provide the best flight simulation experience that is out there.</p></h4>
 				</div>
 				<div class="col-md-6">
 				     <!-- Nav tabs -->
@@ -78,7 +78,7 @@ echo "$resp";
 							<i>1</i>
 						</span>
 						<h3>Application</h3>
-						<p>New members to be are asked to full in an application with some personal info</p>
+						<p>New members are asked to fill in an application with basic personal info</p>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-6">
@@ -95,8 +95,8 @@ echo "$resp";
 						<span class="icon">
 							<i>3</i>
 						</span>
-						<h3>Acess to CrewCenter</h3>
-						<p>After application approval, acess to CrewCenter will be granted to new Members</p>
+						<h3>Access to CrewCenter</h3>
+						<p>After application approval, access to CrewCenter will be granted to new Members</p>
 					</div>
 				</div>
 				
@@ -111,7 +111,7 @@ echo "$resp";
 		<div class="gtco-container text-center">
 			<div class="display-t">
 				<div class="display-tc">
-					<h1>We are sure that you will simply love our systems and apps!</h1>
+					<h1 style="color:#C72430;">We are sure that you will simply love our systems and apps!</h1>
 				</div>	
 			</div>
 		</div>
@@ -122,8 +122,8 @@ echo "$resp";
 
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
-					<h2>Official callsign Holder <b>NSL</b> on Flight Simulation Network</h2>
-					<p>We fly on the main networks available for Virtual Flight Simulation, <b>VATSIM</b> and <b>IVAO</b></p>
+					<h2>Official <b>NSV</b> callsign holder on flight simulation networks</h2>
+					<p>We fly on the major networks available for virtual flight simulation</p>
 				</div>
 			</div>
  
@@ -184,7 +184,7 @@ echo "$resp";
                   LoadSheet
                 </h3>
                 <p>
-                  detailed preparation sheet for each flight, including weight, load and much more.
+                  Detailed preparation sheet for each flight, including weight, load and much more.
                   <br>
                 </p>
             </div>
@@ -254,7 +254,7 @@ echo "$resp";
                   SOP NorteSul Virtual
                 </h3>
                 <p>
-                  STANDARD OPERATING PROCEDURES The Employee's Handbook is a document with rules, regulations and guidance to abide by all our pilots, involving daily base operations here at NorteSul Virtual, to provide a friendly environment to all members and also to help our pilots to achieve the next level experience in flight simulation.
+                  STANDARD OPERATING PROCEDURES The Employee's Handbook is a document with rules, regulations and guidance to abide by all our pilots, involving daily bases operations here at NorteSul Virtual, to provide a friendly environment to all members and also to help our pilots to achieve the next level experience in flight simulation.
                   <br>
                 </p>
             </div>
@@ -280,9 +280,7 @@ echo "$resp";
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
 					<h2>Our <b>Partners</b></h2>
 					<div class="owl-carousel owl-theme">
-    <div class="item"><a href="http://vatsim.net"><img src="<?php echo SITE_URL; ?>/lib/skins/nortesul/images/parceiros/vatsim.png"></a></div>
-    <div class="item"><h4></h4></div>
-    <div class="item"><h4></h4></div>
+    <div class="item"><h4>Enter in contact with us to be an Partner in our contact page!</h4></a></div>
 </div>
 				</div>
 			</div>

@@ -11,17 +11,6 @@
     <div class="tab-content">
       <!-- Home tab content -->
       <div class="tab-pane active" id="control-sidebar-home-tab">
-	    <h3 class="control-sidebar-heading">Activity Feed</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-              <i class="menu-icon fa fa-info bg-green"></i>
-
-              <div class="menu-info">
-
-                <p><?php MainController::Run('Activity', 'frontpage', 2); ?></p>
-              </div>
-          </li>
-        </ul>
 		<hr>
         <h3 class="control-sidebar-heading">Events</h3>
         <ul class="control-sidebar-menu">
@@ -60,12 +49,12 @@
               <h4 class="control-sidebar-subheading">
                 CrewCenter
                 <span class="pull-right-container">
-                    <span class="label label-success pull-right">90%</span>
+                    <span class="label label-success pull-right">99%</span>
                   </span>
               </h4>
 
               <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-success" style="width: 90%"></div>
+                <div class="progress-bar progress-bar-success" style="width: 99%"></div>
               </div>
             </a>
           </li>

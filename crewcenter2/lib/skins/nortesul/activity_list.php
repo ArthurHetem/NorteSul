@@ -22,24 +22,40 @@ foreach($allactivities as $activity) {
     if($activity->type == ACTIVITY_NEW_PIREP) {
         
         $link_href = url('/pireps/view/'.$activity->refid);
-        $link_title = '<font color="white">Ver PIREP</font>';
+        $link_title = 'Ver PIREP';
         
-    } elseif($activity->type == ACTIVITY_TWITTER) {
+    } elseif($activity->type == ACTIVITY_PROMOTION) {
         
         $link_href = 'http://twitter.com/#!/'.Config::get('TWITTER_AIRLINE_ACCOUNT').'/status/'.$activity->refid;
         $link_title = '<font color="white">Ver Tweet</font>';
         
     } elseif($activity->type == ACTIVITY_NEW_PILOT) {
         $link_href = url('/profile/view/'.$activity->pilotid);
-        $link_title = '<font color="white"><b>Enviar Mensagem</b></font>';
+        $link_title = '<b>Ver Perfil</b>';
     }
 ?>
     <p>
         <?php
         /*  Example, if it's a twitter status update (ACTIVITY_TWITTER),
             then show an image (in this case, a small Twitter icon) */
-        if($activity->type == ACTIVITY_TWITTER) {
+        if($activity->type == ACTIVITY_PROMOTION) {
             echo '<img src="'.fileurl('/lib/images/twitter.png').'" alt="twitter update" />';
+        }
+        
+        ?>
+		<?php
+        /*  Example, if it's a twitter status update (ACTIVITY_TWITTER),
+            then show an image (in this case, a small Twitter icon) */
+        if($activity->type == ACTIVITY_NEW_PIREP) {
+            echo '<i class="fa fa-plane"></i>';
+        }
+        
+        ?>
+		<?php
+        /*  Example, if it's a twitter status update (ACTIVITY_TWITTER),
+            then show an image (in this case, a small Twitter icon) */
+        if($activity->type == ACTIVITY_NEW_PILOT) {
+            echo '<i class="fa fa-user"></i>';
         }
         
         ?>
@@ -51,7 +67,7 @@ foreach($allactivities as $activity) {
             ?>
         
             <a href="<?php echo url('/profile/view/'.$activity->pilotid);?>">
-            <font color="white"><?php echo $pilotCode.' '.$activity->firstname.' '.$activity->lastname?></font>
+            <?php echo $pilotCode.' - '.$activity->firstname.' '.$activity->lastname?>
             </a> 
     
         <?php 

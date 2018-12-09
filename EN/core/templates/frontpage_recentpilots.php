@@ -1,6 +1,6 @@
 <?php if(!defined('IN_PHPVMS') && IN_PHPVMS !== true) { die(); } ?>
 <?php
-foreach($pilot_list as $pilot) {
+foreach($pilots as $pilot) {
 ?>
     <p>
         <a href="<?php echo url('/profile/view/'.$pilot->pilotid);?>">

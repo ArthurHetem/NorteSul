@@ -22,7 +22,7 @@ $screenshots = ScreenshotsData::getpagnated($pagination->getLimitSql());
 			<div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Galeria de Screenshots</h3>
+              <h3 class="box-title">ScreenShots Gallery</h3>
             </div>
       <div class="body">
         <div class="table-responsive">
@@ -52,7 +52,7 @@ $screenshots = ScreenshotsData::getpagnated($pagination->getLimitSql());
 
     <center>
 <?php
-if (!$screenshots) {echo '<div class="alert alert-danger">Não Existem Screenshots na Galeria!</div>'; }
+if (!$screenshots) {echo '<div class="alert alert-danger">No ScreenShots in the Gallery!</div>'; }
 else {
     echo '<table class="table">';
     $tiles=0;

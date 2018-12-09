@@ -24,10 +24,10 @@
     <div class="container" id="tourpackages-carousel">
 
       <div class="row">
-        <div class="profile">
+
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="thumbnail animate-box">
-              <img src="<?php echo SITE_URL?>/lib/images/noavatar.png" class="imagem" alt="">
+              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/staffs/NSV001.jpg" class="imagem" alt="">
               <div class="caption">
                 <h4 class="text-center">
                   Sid <b>Dasilva</b>
@@ -46,94 +46,184 @@
 
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="thumbnail animate-box">
-              <img src="<?php echo SITE_URL?>/lib/images/noavatar.png" class="imagem" alt="">
+              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/staffs/NSV002.jpg" class="imagem" alt="">
               <div class="caption">
                 <h4 class="text-center">
                   Paulo <b>Roberto</b>
                 </h4>
                 <hr>
                 <p class="text-center">
-                 COO - Chief Operations Officer
+                 COO - Chief Of Operations
                 </p>
                 <hr>
                 <div class="team-social-link">
-                  <a href="http://aviancavirtual.net.br/PT/index.php/profile/view/5" class="btn btn-primary" style="margin-left: 20%;">Details</a>
+                  <a href="<?php echo SITE_URL?>/index.php/profile/view/2" class="btn btn-primary" style="margin-left: 20%;">Details</a>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="thumbnail wow fadeInUp" data-wow-delay=".5s">
-              <img src="<?php echo SITE_URL?>/lib/skins/Avianca/img/team/SLA.png" alt="">
+            <div class="thumbnail animate-box">
+              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/staffs/NSV003.jpg" class="imagem" alt="">
               <div class="caption">
                 <h4 class="text-center">
-                 Soon
+                  Rodrigo <b>Souza</b>
                 </h4>
                 <hr>
                 <p class="text-center">
-                --
+                 CAO - Chief Administrative Officer
                 </p>
                 <hr>
                 <div class="team-social-link">
-                  <a href="https://www.facebook.com/NikoAnnd">
-                    <i class="fa fa-facebook">
-                    </i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-twitter">
-                    </i>
-                  </a>
-                  <a href="https://www.youtube.com/channel/UCRPG1g1g9hjwaxNjTv_07AA">
-                    <i class="fa fa-youtube">
-                    </i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-instagram">
-                    </i>
-                  </a>
+                  <a href="<?php echo SITE_URL?>/index.php/profile/view/3" class="btn btn-primary" style="margin-left: 20%;">Details</a>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="thumbnail wow fadeInUp" data-wow-delay=".7s">
-              <img src="<?php echo SITE_URL?>/lib/skins/Avianca/img/team/SLA.png" alt="">
+            <div class="thumbnail animate-box">
+              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/staffs/NSV004.jpg" class="imagem" alt="">
               <div class="caption">
                 <h4 class="text-center">
-                  Soon
+                  Arthur <b>Hetem</b>
                 </h4>
                 <hr>
                 <p class="text-center">
-                  --
+                 CIT - Chief IT Officer
                 </p>
                 <hr>
                 <div class="team-social-link">
-                  <a href="#">
-                    <i class="fa fa-facebook">
-                    </i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-twitter">
-                    </i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-youtube">
-                    </i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-instagram">
-                    </i>
-                  </a>
+                  <a href="<?php echo SITE_URL?>/index.php/profile/view/4" class="btn btn-primary" style="margin-left: 20%;">Details</a>
                 </div>
               </div>
             </div>
           </div>
+
+		  </div>
+		  <br>
+		  <div class="row">
+		  
+		  <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="thumbnail animate-box">
+              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/staffs/NSV005.jpg" class="imagem" alt="">
+              <div class="caption">
+                <h4 class="text-center">
+                  Gabriel <b>França</b>
+                </h4>
+                <hr>
+                <p class="text-center">
+                 CCO - Chief Of Comunications
+                </p>
+                <hr>
+                <div class="team-social-link">
+                  <a href="<?php echo SITE_URL?>/index.php/profile/view/5" class="btn btn-primary" style="margin-left: 20%;">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+		  
+		  <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="thumbnail animate-box">
+              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/staffs/NSV006.jpg" class="imagem" alt="">
+              <div class="caption">
+                <h4 class="text-center">
+                  Moisés <b>Fuga</b>
+                </h4>
+                <hr>
+                <p class="text-center">
+                 CAO - Chief Arts Officer
+                </p>
+                <hr>
+                <div class="team-social-link">
+                  <a href="<?php echo SITE_URL?>/index.php/profile/view/6" class="btn btn-primary" style="margin-left: 20%;">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+		  
+		  <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="thumbnail animate-box">
+              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/staffs/NSV010.jpg" class="imagem" alt="">
+              <div class="caption">
+                <h4 class="text-center">
+                  Gabriel <b>Antunes</b>
+                </h4>
+                <hr>
+                <p class="text-center">
+                 Designer - Director of Arts and Creations
+                </p>
+                <hr>
+                <div class="team-social-link">
+                  <a href="<?php echo SITE_URL?>/index.php/profile/view/10" class="btn btn-primary" style="margin-left: 20%;">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+		  
+		  <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="thumbnail animate-box">
+              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/staffs/NSV007.jpg" class="imagem" alt="">
+              <div class="caption">
+                <h4 class="text-center">
+                  Leonardo <b>Arraes</b>
+                </h4>
+                <hr>
+                <p class="text-center">
+                 CFO - Chief Financial Officer
+                </p>
+                <hr>
+                <div class="team-social-link">
+                  <a href="<?php echo SITE_URL?>/index.php/profile/view/7" class="btn btn-primary" style="margin-left: 20%;">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+		  
+		  </div>
+		  <br>
+		  <div class="row">
+		  
+		  <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="thumbnail animate-box">
+              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/staffs/NSV008.jpg" class="imagem" alt="">
+              <div class="caption">
+                <h4 class="text-center">
+                  Davi <b>Sousa</b>
+                </h4>
+                <hr>
+                <p class="text-center">
+                 RFO - Routes and Fleet Officer
+                </p>
+                <hr>
+                <div class="team-social-link">
+                  <a href="<?php echo SITE_URL?>/index.php/profile/view/8" class="btn btn-primary" style="margin-left: 20%;">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+		  
+		  <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="thumbnail animate-box">
+              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/staffs/NSV011.jpg" class="imagem" alt="">
+              <div class="caption">
+                <h4 class="text-center">
+                  Bruno <b>Borges</b>
+                </h4>
+                <hr>
+                <p class="text-center">
+                 DRH - Human Recourses Director
+                </p>
+                <hr>
+                <div class="team-social-link">
+                  <a href="<?php echo SITE_URL?>/index.php/profile/view/11" class="btn btn-primary" style="margin-left: 20%;">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         </div>
-        <!-- End row -->
-
-      </div>
       <!-- End container -->
     </div>

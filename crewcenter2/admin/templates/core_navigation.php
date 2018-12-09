@@ -20,6 +20,7 @@ if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_NEWS)
 		{ 
 		?>
 		<li><a href="<?php echo adminurl('/sitecms/viewnews'); ?>">News</a></li>
+		<li><a href="<?php echo adminurl('/sitecms/viewnotam'); ?>">NOTAMS</a></li>
 		<?php 
 		}
 		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_PAGES)) 

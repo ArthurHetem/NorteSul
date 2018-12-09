@@ -28,7 +28,7 @@
 			            <?php 
 		if(!$ranks)
 		{
-			echo '<div class="col-lg-12"><div class="alert alert-info"><h4>Nenhum Download</h4><p>Nenhum download foi adicionado.</p></div></div>';
+			echo '<div class="col-lg-12"><div class="alert alert-info"><h4>Nenhuma Patente</h4><p>Nenhuma patente foi adicionada.</p></div></div>';
 		} else {
 			foreach($ranks as $rank) {
         ?>

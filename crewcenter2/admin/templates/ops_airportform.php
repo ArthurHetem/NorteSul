@@ -24,6 +24,20 @@
 <dt>Chart Link</dt>
 <dd><input id="chartlink" class="form-control" name="chartlink" type="text" value="<?php echo $airport->chartlink?>" /></dd>
 
+<dd><input id="airportaltitude" name="altitude" type="text" value="<?php echo $airport->altitude ?>" /></dd>
+
+<dt>City</dt>
+<dd><input id="airportcity" name="city" type="text" value="<?php echo $airport->city?>" /></dd>
+
+<dt>Timezone offset (hours)</dt>
+<dd><input id="airporttimezone" name="timezone" type="text" value="<?php echo $airport->timezone?>" /></dd>
+
+<dt>Timezone name</dt>
+<dd><input id="airportdbtimezone" name="dbtimezone" type="text" value="<?php echo $airport->dbtimezone?>" /></dd>
+
+<dt>IATA code</dt>
+<dd><input id="airportiata" name="iata" type="text" value="<?php echo $airport->iata?>" /></dd>
+
 <dt>Fuel Price *</dt>
 <dd><input id="fuelprice" class="form-control" name="fuelprice" type="text" value="<?php echo $airport->fuelprice?>" />
 <p>This is the price per <?php echo Config::Get('LIQUID_UNIT_NAMES', Config::Get('LiquidUnit'))?>. Leave blank or 0 (zero) to use the default value of <?php echo Config::Get('FUEL_DEFAULT_PRICE');?> (when live pricing is disabled).</p>

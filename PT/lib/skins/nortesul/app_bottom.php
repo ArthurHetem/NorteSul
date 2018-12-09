@@ -6,9 +6,9 @@
 				<div class="col-md-4">
 					<div class="gtco-widget">
 						<h3>Quem Somos</h3>
-						<p>A NorteSul é uma organização virtual movida por entusiastas da aviação que busca simular com seriedade, qualidade e precisão as operações de uma Companhia Aérea na rede de voo online IVAO.</p>
+						<p>A NorteSul é uma organização virtual movida por entusiastas da aviação que busca simular com seriedade, qualidade e precisão as operações de uma Companhia Aérea nas principais redes de voo online.</p>
 
-<p>Utilizando como plataforma de voo o Microsoft Flight Simulator, XPlane ou Prepar3D e <b>NÃO POSSUÍMOS FINS LUCRATIVOS</b>.</p>
+<p>Utilizamos como plataforma de voo o Microsoft Flight Simulator, XPlane ou Prepar3D e <b>NÃO POSSUÍMOS FINS LUCRATIVOS</b>.</p>
 					</div>
 				</div>
 
@@ -54,7 +54,7 @@ else { echo "Cruise"; }?>
 						<ul class="gtco-quick-contact">
 						Entre em contato com a nossa equipe e tire dúvidas.
 							<li><i class="far fa-envelope"></i><a href="mailto:support@nortesulvirtual.com">support@nortesulvirtual.com</a></li>
-							<li><a href="https://www.facebook.com/aviancavirtualbr/" class="fab fa-facebook"></a> <a href="https://www.instagram.com/aviancav/" class="fab fa-instagram"></a></li>
+							<li><a href="https://www.facebook.com/nortesulvirtual" class="fab fa-facebook"></a> <a href="https://www.instagram.com/nortesulvirtual/" class="fab fa-instagram"></a> <a href="https://twitter.com/NortesulV" class="fab fa-twitter"></a></li>
 						</ul>
 					</div>
 				</div>

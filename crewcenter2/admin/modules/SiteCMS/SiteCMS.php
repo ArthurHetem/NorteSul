@@ -80,6 +80,50 @@ class SiteCMS extends CodonModule
 		$this->render('news_additem.php');
 	}
 	
+	public function viewnotam() {
+        $this->checkPermission(EDIT_NEWS);
+		$isset = isset($this->post->action);
+
+		if($isset && $this->post->action == 'addnotam') {
+			$this->AddNotamItem();		
+		} elseif($isset && $this->post->action == 'editnotam') {
+			$res = SiteData::EditNotamItem($this->post->id, $this->post->subject, $this->post->body);
+			
+			if($res == false) {
+				$this->set('message', Lang::gs('notam.updated.error'));
+				$this->render('core_error.php');
+			} else {
+				LogData::addLog(Auth::$userinfo->pilotid, 'Editou a notam "'.$this->post->subject.'"');
+				
+				$this->set('message', Lang::gs('notam.updated.success'));
+				$this->render('core_success.php');
+			}
+		} elseif($isset && $this->post->action == 'deleteitem') {
+			$this->DeleteNotamItem();	
+			echo json_encode(array('status' => 'ok'));
+		}
+		
+		$this->set('allnotams', SiteData::GetAllNotam());
+		$this->render('notam_list.php');
+	}
+	
+	public function addnotam() {
+        $this->checkPermission(EDIT_NEWS);
+		$this->set('title', Lang::gs('notam.add.title'));
+		$this->set('action', 'addnotam');
+		
+		$this->render('notam_add.php');
+	}
+	
+	public function editnotam() {
+        $this->checkPermission(EDIT_NEWS);
+		$this->set('title', Lang::gs('notam.edit.title'));
+		$this->set('action', 'editnotam');
+		$this->set('notamitem', SiteData::GetNotamItem($this->get->id));
+		
+		$this->render('notam_add.php');
+	}
+	
 	public function addpageform() {
         $this->checkPermission(EDIT_PAGES);
 		$this->set('title', Lang::gs('page.add.title'));

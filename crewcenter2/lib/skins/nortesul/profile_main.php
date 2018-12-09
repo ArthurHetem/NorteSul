@@ -175,7 +175,7 @@
                   ?>
                    <ul>
                     <?php foreach($allawards as $award){ ?>
-                    <img src="<?php echo $award->image?>" alt="<?php echo $award->descrip?>" width="100px" height="50px" />
+                    <img src="<?php echo $award->image?>" alt="<?php echo $award->descrip?>" width="200px" height="200px" />
                   </ul>  
                   <?php } ?>
                   <?php } ?>
@@ -208,6 +208,35 @@
             <!-- /.box-header -->
             <div class="box-body">
                   <?php MainController::Run('Screenshots','show_random_screenshot'); ?>
+            </div>
+            <!-- /.box-body -->
+          </div>
+         </div>
+        </div>
+				<div class="row">
+           		 <div class="col-md-4 col-sm-8">
+            <div class="box box-default">
+            <div class="box-header with-border">
+              <i class="fa fa-info"></i>
+
+              <h3 class="box-title">Informações Rápidas</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+			<?php MainController::Run('Activity', 'frontpage', 5); ?>
+							</div>
+							</div>
+							</div>
+			<div class="col-md-8 col-sm-12">
+            <div class="box box-default">
+            <div class="box-header with-border">
+              <i class="fa fa-comments"></i>
+
+              <h3 class="box-title">Chat de Pilotos</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                  <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowtransparency="true" src="https://chatroll.com/embed/chat/nortesul-virtual-airlines?id=STYmt_qf_6E&platform=html"></iframe>
             </div>
             <!-- /.box-body -->
           </div>

@@ -39,9 +39,9 @@
 		<td align="left">Month</td>
 		<td align="center">Flights</td>
 		<td align="left">Profit</td>
-		<td align="center" nowrap>Pilots Pay</td>
-		<td align="left">Expenses</td>
-		<td align="left">Fuel</td>
+		<td align="center" nowrap>Pilots Earnings</td>
+		<td align="left">Salaries Expenses</td>
+		<td align="left">Fuel cost</td>
 		<td align="center">Total</td>
 	</tr>
 

@@ -250,7 +250,7 @@ function lookupICAO() {
 	$("#statusbox").html("Fetching airport data...");
 	$("#lookupicao").hide();
 
-	url = phpvms_api_server + "/airport/get/" + icao + "&callback=?";
+	url = phpvms_api_server + "/airports.php?icao="+ icao+ "&callback=?";
 
 	$.getJSON(url,
 		function(data) {
@@ -267,6 +267,11 @@ function lookupICAO() {
 				$("#airportcountry").val(item.countryName);
 				$("#airportlat").val(item.lat);
 				$("#airportlong").val(item.lng);
+				$("#airportcity").val(item.city);
+	            $("#airportiata").val(item.iata);
+	            $("#airporttimezone").val(item.timezone);
+	            $("#airportdbtimezone").val(item.dbtimezone);
+	            $("#airportaltitude").val(item.altitude);
 				$("#fuelprice").val(item.jeta);
 
 				$("#statusbox").html("");

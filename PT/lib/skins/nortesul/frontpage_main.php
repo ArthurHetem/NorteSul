@@ -30,7 +30,7 @@
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
 					<h2>A sua <b>melhor</b> Virtual Airline</h2>
-					<p>Operating real operations in flight simulation</p>
+					<p>Operações de voos reais nos principais simuladores</p>
 				</div>
 			</div>
 			
@@ -46,7 +46,7 @@ else {
 $resp = "Boa noite";}
 echo "$resp";
 ?>, bem vindo a NorteSul Linhas Aéreas Virtuais</h2>
-					<h4>A <b>NorteSul</b> é uma Companhia Aérea Virtual sem fins lucrativos que busca simular com a maior fidelidade possível operações de uma Companhia Aérea Real. <p>Atualmente contamos com <b><?php echo StatsData::PilotCount(); ?></b> membros que simulam através da rede de voo online IVAO, utilizando as plataformas Microsoft Flight Simulator, XPlane, Prepar3D e softwares próprios que deixam a simulação mais próxima da realidade.</p></h4>
+					<h4>A <b>NorteSul</b> é uma Companhia Aérea Virtual sem fins lucrativos que busca simular com a maior fidelidade possível operações de uma Companhia Aérea Real. <p>Atualmente contamos com <b><?php echo StatsData::PilotCount(); ?></b> membros que simulam através da redes de voo online utilizando as plataformas Microsoft Flight Simulator, XPlane, Prepar3D e softwares próprios que deixam a simulação mais próxima da realidade.</p></h4>
 				</div>
 				<div class="col-md-6">
 				     <!-- Nav tabs -->
@@ -114,7 +114,7 @@ echo "$resp";
 		<div class="gtco-container text-center">
 			<div class="display-t">
 				<div class="display-tc">
-					<h1>Possuímos sistemas e aplicativos que temos certeza que você irá adorar!</h1>
+					<h1 style="color:#C72430;">Possuímos sistemas e aplicativos que temos certeza que você irá adorar!</h1>
 				</div>	
 			</div>
 		</div>
@@ -125,8 +125,8 @@ echo "$resp";
 
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
-					<h2>Detentora oficial do callsign <b>NOR</b> nos céus virtuais</h2>
-					<p>Utilizamos a rede de simulação aérea virtual, a <b>IVAO</b></p>
+					<h2>Detentora oficial do callsign <b>NSV</b> nos céus virtuais</h2>
+					<p>Utilizamos as principais redes de simulação aérea virtual</p>
 				</div>
 			</div>
  
@@ -283,9 +283,7 @@ echo "$resp";
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
 					<h2>Nossos <b>Parceiros</b></h2>
 					<div class="owl-carousel owl-theme">
-    <div class="item"><a href="http://vatsim.net"><img src="<?php echo SITE_URL; ?>/lib/skins/nortesul/images/parceiros/vatsim.png"></a></div>
-    <div class="item"><h4></h4></div>
-    <div class="item"><h4></h4></div>
+    <div class="item"><h4>Entre em contato para se tornar um Parceiro atráves da pagina de contato!</h4></a></div>
 </div>
 				</div>
 			</div>

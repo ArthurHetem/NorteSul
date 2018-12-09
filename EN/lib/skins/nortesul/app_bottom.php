@@ -6,9 +6,9 @@
 				<div class="col-md-4">
 					<div class="gtco-widget">
 						<h3>About US</h3>
-						<p>NorteSul is a virtual organization created by aviation enthusiasts that simulate with profissionalism, quality and precision as we operate  NorteSul Linhas Aéreas on IVAO and VATSIM Networks.</p>
+						<p>NorteSul is a virtual organization created by aviation enthusiasts that simulate with professionalism, quality and precision as we operate  NorteSul Arlines on the best Virtual Flight Networks.</p>
 
-<p>We support Microsoft Flight Simulator, XPlane or Prepar3D and <b>we are a Non-Profit Organization</b>.</p>
+<p>We support Microsoft Flight Simulator X, X-Plane and Prepar3D. <b>NorteSul Virtual is a Non-Profit Organization</b>.</p>
 					</div>
 				</div>
 
@@ -16,7 +16,7 @@
 					<div class="gtco-widget">
 						<h3>Latest News</h3>
 						<ul class="gtco-footer-links">
-                              0 Files Found!
+                              No News Found!
 						</ul>
 					</div>
 				</div>
@@ -53,8 +53,8 @@ else { echo "Cruise"; }?>
 						<h3>Contacts</h3>
 						<ul class="gtco-quick-contact">
 						Contact Us and a Staff will answer your questions.
-							<li><i class="far fa-envelope"></i><a href="mailto:staff@nortesulvirtual.com">staff@nortesulvirtual.com</a></li>
-							<li><a href="https://www.facebook.com/nortesulvirtual/" class="fab fa-facebook"></a> <a href="https://www.instagram.com/nortesulvirtual/" class="fab fa-instagram"></a></li>
+							<li><i class="far fa-envelope"></i><a href="mailto:support@nortesulvirtual.com">support@nortesulvirtual.com</a></li>
+							<li><a href="https://www.facebook.com/nortesulvirtual/" class="fab fa-facebook"></a> <a href="https://www.instagram.com/nortesulvirtual/" class="fab fa-instagram"></a> <a href="https://twitter.com/NortesulV" class="fab fa-twitter"></a></li>
 						</ul>
 					</div>
 				</div>

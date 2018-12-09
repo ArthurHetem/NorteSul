@@ -23,7 +23,7 @@
 	
 <div class="container" id="tourpackages-carousel">
 
-      <div class="row">
+      <div class="row ooo">
         <div class="profile">
 			            <?php 
 		if(!$ranks)
@@ -35,7 +35,23 @@
 		<div class="col-xs-12 col-sm-6 col-md-3">
             <div class="thumbnail animate-box">
 			<h4 class="text-center">
-                  <?php echo $rank->rank; ?>
+                  <?php
+                        if ($rank->rank == "Primeiro Oficial"){
+							echo "First Officer";
+						}
+						if ($rank->rank == "Comandante"){
+							echo "Pilot";
+						}
+                        if ($rank->rank == "Comandante Sênior"){
+							echo "Senior Pilot";
+						}
+						if ($rank->rank == "Piloto Chefe"){
+							echo "Chief Pilot";
+						}
+						if ($rank->rank == "Piloto Executivo"){
+							echo "Executive Pilot";
+						}
+				  ?>
                 </h4>
               <img src="<?php echo $rank->rankimage; ?>" alt="">
               <div class="caption">

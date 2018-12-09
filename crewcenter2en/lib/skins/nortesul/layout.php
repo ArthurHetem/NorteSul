@@ -18,6 +18,8 @@
   <link rel="stylesheet" href="<?php echo SITE_URL ?>/lib/skins/nortesul/dist/css/skins/skin-blue.min.css">
     <!-- iCheck -->
   <link rel="stylesheet" href="<?php echo SITE_URL ?>/lib/skins/nortesul/plugins/iCheck/square/blue.css">
+  <script type="text/javascript" src="<?php echo SITE_URL ?>/lib/js/phpvms.js"></script>
+  <script type="text/javascript" src="<?php echo fileurl('lib/js/simbrief.apiv1.js');?>"></script>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -61,9 +63,8 @@
 }
 
  </style>
- <script type="text/javascript" src="<?php echo fileurl('lib/js/simbrief.apiv1.js');?>"></script>
  <!--Your Google Maps API Key here-->
-    <script src="http://maps.google.com/maps/api/js?v=3&libraries=geometry&language=en_gr&key=AIzaSyDbwylblt3-Nz21yNoDJWbHyqTjTNogYcg" type="text/javascript"></script>
+    <script src="http://maps.google.com/maps/api/js?v=3&key=AIzaSyDbwylblt3-Nz21yNoDJWbHyqTjTNogYcg&callback=main.CreateMap"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js" type="text/javascript"></script>
 
 </head>

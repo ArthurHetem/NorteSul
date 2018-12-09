@@ -43,7 +43,7 @@
 
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="<?php echo SITE_URL; ?>/lib/skins/nortesul/css/style.css">
-
+    <link rel="stylesheet" href="<?php echo SITE_URL; ?>/lib/skins/nortesul/css/flag-icon.css">
 	<!-- Modernizr JS -->
 	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -95,13 +95,17 @@
 	<!-- Datepicker -->
 	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/bootstrap-datepicker.min.js"></script>
 	
-
+<style>
+.item{
+	width:600px;
+}
+</style>	
 	<!-- Main -->
 	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/main.js"></script>
 <script>
 $('.owl-carousel').owlCarousel({
     loop:false,
-    margin:10,
+    margin:50,
     nav:false,
     responsive:{
         0:{

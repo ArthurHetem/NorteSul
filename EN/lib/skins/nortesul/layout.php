@@ -43,7 +43,7 @@
 
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="<?php echo SITE_URL; ?>/lib/skins/nortesul/css/style.css">
-
+    <link rel="stylesheet" href="<?php echo SITE_URL; ?>/lib/skins/nortesul/css/flag-icon.css">
 	<!-- Modernizr JS -->
 	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->

@@ -6,7 +6,7 @@
 			
 			<div class="row">
 				<div class="col-sm-4 col-xs-12">
-					<div id="gtco-logo"><a href="<?php echo SITE_URL; ?>/index.php/"><img src="<?php echo SITE_URL; ?>/lib/skins/nortesul/images/logo.png" height="35px" width="175px"></a></div>
+					<div id="gtco-logo"><a href="<?php echo SITE_URL; ?>/index.php/"><img src="<?php echo SITE_URL; ?>/lib/skins/nortesul/images/logo.png" height="70px" width="350px"></a></div>
 				</div>
 				<div class="col-xs-8 text-right menu-1">
 					<ul>
@@ -14,7 +14,7 @@
 						<li class="has-dropdown">
 							<a href="#">Corporation</a>
 							<ul class="dropdown">
-								<li><a href="<?php echo SITE_URL; ?>/index.php/staff">Executive</a></li>
+								<li><a href="<?php echo SITE_URL; ?>/index.php/staff">Staff</a></li>
 								<li><a href="<?php echo SITE_URL; ?>/index.php/rules">Enroll</a></li>
 								<li><a href="<?php echo SITE_URL; ?>/index.php/contact">Contact Us</a></li>
 							</ul>
@@ -50,6 +50,7 @@
                           <?php
 						  }
                           ?>
+						<li><a href="http://nortesulvirtual.com/pt/index.php"><span class="flag-icon flag-icon-br"></span></a></li>
 					</ul>	
 				</div>
 			</div>

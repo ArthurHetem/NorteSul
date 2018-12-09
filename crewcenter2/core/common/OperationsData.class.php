@@ -116,6 +116,29 @@ class OperationsData extends CodonData {
         return $all_aircraft;
     }
 
+        /**
+     * Get single variant of all aircraft in the fleet
+     */
+    public static function getAllAircraftSingle($onlyenabled = false) {
+        if ($onlyenabled == true) {
+        $sql = "SELECT * FROM ".TABLE_PREFIX."aircraft a
+                 LEFT JOIN ".TABLE_PREFIX."ranks r ON r.rankid = a.minrank
+                 WHERE enabled = 1
+                 GROUP BY(a.icao)
+                 ORDER BY a.icao ASC";
+        } else {
+        $sql = "SELECT * FROM ".TABLE_PREFIX."aircraft a
+                 LEFT JOIN ".TABLE_PREFIX."ranks r ON r.rankid = a.minrank
+                 GROUP BY(a.icao)
+                 ORDER BY a.icao ASC";
+        }
+                 $all_aircraft = DB::get_results($sql);
+                 if(!$all_aircraft) {
+                         $all_aircraft = array();
+                 }
+                 return $all_aircraft;
+        }
+
 
     /**
      * Get the aircraft a pilot can fly, pass in their rank level
@@ -376,7 +399,6 @@ class OperationsData extends CodonData {
         'enabled'=>$this->post->enabled);*/
 
         $data['icao'] = DB::escape(strtoupper($data['icao']));
-		$data['airline'] = DB::escape(strtoupper($data['airline']));
         $data['name'] = DB::escape(strtoupper($data['name']));
         $data['registration'] = DB::escape(strtoupper($data['registration']));
 
@@ -416,18 +438,6 @@ class OperationsData extends CodonData {
 				({$cols}) VALUES ({$col_values})";
 
         $res = DB::query($sql);
-		
-		/* $sql = "INSERT INTO ".TABLE_PREFIX."aircraft (
-					`icao`, `airline`, `name`, `fullname`, `registration`, `downloadlink`,
-					`imagelink`, `range`, `weight`, `cruise`, 
-					`maxpax`, `maxcargo`, `minrank`, `ranklevel`, `enabled`)
-				VALUES (
-					'{$data['icao']}', '{$data['airline']}', '{$data['name']}', '{$data['fullname']}', '{$data['registration']}', 
-					'{$data['downloadlink']}', '{$data['imagelink']}', '{$data['range']}', '{$data['weight']}', 
-					'{$data['cruise']}', '{$data['maxpax']}', '{$data['maxcargo']}', {$data['minrank']}, 
-					{$rank_level}, {$data['enabled']})";
-		
-		$res = DB::query($sql); */
 
         if (DB::errno() != 0) return false;
 
@@ -445,7 +455,6 @@ class OperationsData extends CodonData {
     public static function editAircraft($data) {
         
         $data['icao'] = DB::escape(strtoupper($data['icao']));
-		$data['airline'] = DB::escape(strtoupper($data['airline']));
         $data['name'] = DB::escape(strtoupper($data['name']));
         $data['registration'] = DB::escape(strtoupper($data['registration']));
 
@@ -477,7 +486,7 @@ class OperationsData extends CodonData {
         $sql .= " WHERE `id`={$data['id']}";
 
         /*$sql = "UPDATE " . TABLE_PREFIX."aircraft
-        SET `icao`='{$data['icao']}', `airline`='{$data['airline']}', `name`='{$data['name']}', `fullname`='{$data['fullname']}',
+        SET `icao`='{$data['icao']}', `name`='{$data['name']}', `fullname`='{$data['fullname']}',
         `registration`='{$data['registration']}', `downloadlink`='{$data['downloadlink']}', 
         `imagelink`='{$data['imagelink']}', `range`='{$data['range']}', `weight`='{$data['weight']}',
         `cruise`='{$data['cruise']}', `maxpax`='{$data['maxpax']}', `maxcargo`='{$data['maxcargo']}',
@@ -575,11 +584,17 @@ class OperationsData extends CodonData {
             $data['chartlink'] = '';
         }
 
-        $sql = "INSERT INTO " . TABLE_PREFIX . "airports 
-					(	`icao`, `name`, `country`, `lat`, `lng`, `hub`, `chartlink`, `fuelprice`)
-					VALUES (
-						'{$data['icao']}', '{$data['name']}', '{$data['country']}', 
-						{$data['lat']}, {$data['lng']}, {$data['hub']}, '{$data['chartlink']}', {$data['fuelprice']})";
+        if($data['timezone'] == '')
+		
+			$data['timezone'] = 0;
+				
+			if($data['altitude'] == '')
+		
+			$data['altitude'] = 0; 
+		
+			
+		
+			$sql = "INSERT INTO " . TABLE_PREFIX ."airports( `icao`, `name`, `country`, `lat`, `lng`, `hub`, `chartlink`, `fuelprice`, `iata`, `city`, `altitude`, `timezone`, `dbtimezone`)VALUES ('{$data['icao']}', '{$data['name']}', '{$data['country']}',{$data['lat']}, {$data['lng']}, {$data['hub']}, '{$data['chartlink']}', {$data['fuelprice']}, '{$data['iata']}', '{$data['city']}', {$data['altitude']}, {$data['timezone']}, '{$data['dbtimezone']}')";
 
         $res = DB::query($sql);
 
@@ -612,11 +627,29 @@ class OperationsData extends CodonData {
 
         if ($data['fuelprice'] == '') $data['fuelprice'] = 0;
 
-        $sql = "UPDATE " . TABLE_PREFIX . "airports
-					SET `icao`='{$data['icao']}', `name`='{$data['name']}', `country`='{$data['country']}', 
-						`lat`={$data['lat']}, `lng`={$data['lng']}, `hub`={$data['hub']}, 
-						`chartlink`='{$data['chartlink']}', `fuelprice`={$data['fuelprice']}
-					WHERE `icao`='{$data['icao']}'";
+        if($data['timezone'] == '')
+		
+			$data['timezone'] = 0;
+		
+			
+		
+			if($data['altitude'] == '')
+		
+			$data['altitude'] = 0; 
+		
+			
+		
+			$sql = "UPDATE " . TABLE_PREFIX . "airports
+		
+			SET `icao`='{$data['icao']}', `name`='{$data['name']}', `country`='{$data['country']}',
+		
+			`lat`={$data['lat']}, `lng`={$data['lng']}, `hub`={$data['hub']},
+		
+			`chartlink`='{$data['chartlink']}', `fuelprice`={$data['fuelprice']}
+		
+			,`iata`='{$data['iata']}',`city`='{$data['city']}',`altitude`={$data['altitude']},`timezone`={$data['timezone']},`dbtimezone`='{$data['dbtimezone']}'
+		
+			WHERE `icao`='{$data['icao']}'";
 
         $res = DB::query($sql);
 

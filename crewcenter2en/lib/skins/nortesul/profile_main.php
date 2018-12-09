@@ -44,7 +44,7 @@
 		<div class="alert alert-success alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                 <h4><i class="icon fa fa-check"></i> Hello <?php echo $userinfo->firstname ?>, welcome back to NorteSul.</h4>
-                <?php echo $resp?>, today is <?php  echo $semana["$data"] . ", {$dia} of " . $mes_extenso["$mes"] . " of {$ano}"; ?>
+                <?php echo $resp?>, today is <?php  echo $semana["$data"] . ", {$mes_extenso["$mes"]} " . $dia . " , {$ano}"; ?>
               </div>
     </section>
 
@@ -60,7 +60,23 @@
               <div class="inner">
                 <h3><?php echo $pilotcode; ?></h3>
 
-                <p><?php echo Auth::$userinfo->rank;?></p>
+                <p><?php
+				if (Auth::$userinfo->rank == "Primeiro Oficial"){
+							echo "First Officer";
+						}
+						if (Auth::$userinfo->rank == "Comandante"){
+							echo "Pilot";
+						}
+                        if (Auth::$userinfo->rank == "Comandante Sênior"){
+							echo "Senior Pilot";
+						}
+						if (Auth::$userinfo->rank == "Piloto Chefe"){
+							echo "Chief Pilot";
+						}
+						if (Auth::$userinfo->rank == "Piloto Executivo"){
+							echo "Executive Pilot";
+						}
+				?></p>
               </div>
               <div class="icon">
                 <i class="fa fa-user"></i>
@@ -99,7 +115,7 @@
               <div class="inner">
                 <h3><?php echo StatsData::TotalFlightsToday(); ?></h3>
 
-                <p>Today Flights</p>
+                <p>Today's Flights</p>
               </div>
               <div class="icon">
                 <i class="fa fa-globe"></i>
@@ -175,7 +191,7 @@
                   ?>
                    <ul>
                     <?php foreach($allawards as $award){ ?>
-                    <img src="<?php echo $award->image?>" alt="<?php echo $award->descrip?>" width="100px" height="50px" />
+                    <img src="<?php echo $award->image?>" alt="<?php echo $award->descrip?>" width="200px" height="200px" />
                   </ul>
                   <?php } ?>
                   <?php } ?>
@@ -208,6 +224,35 @@
             <!-- /.box-header -->
             <div class="box-body">
                   <?php MainController::Run('Screenshots','show_random_screenshot'); ?>
+            </div>
+            <!-- /.box-body -->
+          </div>
+         </div>
+        </div>
+		<div class="row">
+           		 <div class="col-md-4 col-sm-8">
+            <div class="box box-default">
+            <div class="box-header with-border">
+              <i class="fa fa-info"></i>
+
+              <h3 class="box-title">Quick Info</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+			<?php MainController::Run('Activity', 'frontpage', 5); ?>
+							</div>
+							</div>
+							</div>
+			<div class="col-md-8 col-sm-12">
+            <div class="box box-default">
+            <div class="box-header with-border">
+              <i class="fa fa-comments"></i>
+
+              <h3 class="box-title">Pilot Chat</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                  <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowtransparency="true" src="https://chatroll.com/embed/chat/nortesul-virtual-airlines?id=STYmt_qf_6E&platform=html"></iframe>
             </div>
             <!-- /.box-body -->
           </div>

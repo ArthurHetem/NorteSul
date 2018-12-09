@@ -880,7 +880,10 @@ class Operations extends CodonModule {
         $data = array('icao' => $this->post->icao, 'name' => $this->post->name,
             'country' => $this->post->country, 'lat' => $this->post->lat, 'lng' => $this->post->lng,
             'hub' => $this->post->hub, 'chartlink' => $this->post->chartlink, 'fuelprice' =>
-            $this->post->fuelprice);
+            $this->post->fuelprice, 'city'=> $this->post->city,
+		'timezone'=> $this->post->timezone,
+		'dbtimezone'=> $this->post->dbtimezone,
+		'iata'=> $this->post->iata);
 
         OperationsData::AddAirport($data);
 
@@ -921,7 +924,10 @@ class Operations extends CodonModule {
         $data = array('icao' => $this->post->icao, 'name' => $this->post->name,
             'country' => $this->post->country, 'lat' => $this->post->lat, 'lng' => $this->post->lng,
             'hub' => $this->post->hub, 'chartlink' => $this->post->chartlink, 'fuelprice' =>
-            $this->post->fuelprice);
+            $this->post->fuelprice, 'city'=> $this->post->city,
+		'timezone'=> $this->post->timezone,
+		'dbtimezone'=> $this->post->dbtimezone,
+		'iata'=> $this->post->iata);
 
         OperationsData::editAirport($data);
 

@@ -26,7 +26,7 @@
 			</div>
 		</div>
 	</header>
-    <div class="container" id="tourpackages-carousel">
+    <div class="container ooo" id="tourpackages-carousel">
 	<h2 class="text-center">There are <b><?php echo ACARSData::getLiveFlightCount();?> Flights</b> in progress</h2>
 	  <h2 class="text-center"><small>Here you can follow live online Flights</small></h2>
        <?php

@@ -8,12 +8,15 @@
 * Edited By Arthur Hetem 28/07/2018 V1.0D
 */
 ?> 			
-<!-- Main content -->
-    <section class="content container-fluid">	 
-		<div class="row">
-		  <h1 class="page-title">Escala de Voo <small>Escala Gerada Pelo Sistema</small></h1>
+<section class="content container-fluid">
 			<div class="row">
-                       <table width="98%" border="0" cellspacing="0">
+			<div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Gerador de Escalas</h3>
+            </div>
+			<div class="box-body table-responsive">
+                       <table class="table" border="0" cellspacing="0">
                                             <table class="table table-hover table-light">
                                                 <thead>
                                                     <tr>
@@ -73,6 +76,14 @@ else
                                                 </button>
                                                 </td>
             </table>                        
-        </div>		
+        </div>
+        </div>
+        </div>
+        </div>
+		        </div>
+        </div>
+        </div>
+</div>		
+</div>				
     </section>
     <!-- /.content -->			

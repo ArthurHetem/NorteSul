@@ -10,7 +10,7 @@
 //@license http://creativecommons.org/licenses/by-nc-sa/3.0/
 
 class ExamsData extends Codondata {
-    public function check_admin($id) {
+    public static function check_admin($id) {
         $query = "SELECT *
                 FROM ".TABLE_PREFIX."exams_admin
                 WHERE pilot_id = '$id'";
@@ -18,7 +18,7 @@ class ExamsData extends Codondata {
         return DB::get_row($query);
     }
 
-    public function get_admin($level) {
+    public static function get_admin($level) {
         $query = "SELECT *
                 FROM ".TABLE_PREFIX."exams_admin
                 WHERE admin_level='$level'";
@@ -26,7 +26,7 @@ class ExamsData extends Codondata {
         return DB::get_results($query);
     }
 
-    public function get_admin_data($id) {
+    public static function get_admin_data($id) {
         $query = "SELECT *
                 FROM ".TABLE_PREFIX."exams_admin
                 WHERE pilot_id='$id'";
@@ -34,27 +34,27 @@ class ExamsData extends Codondata {
         return DB::get_row($query);
     }
 
-    public function add_admin($pilot_id, $admin_level)  {
+    public static function add_admin($pilot_id, $admin_level)  {
         $query="INSERT INTO ".TABLE_PREFIX."exams_admin (pilot_id, admin_level)
                 VALUES ('$pilot_id', '$admin_level')";
 
         DB::query($query);
     }
 
-    public function edit_admin($pilot_id, $admin_level) {
+    public static function edit_admin($pilot_id, $admin_level) {
         $upd = "UPDATE ".TABLE_PREFIX."exams_admin SET admin_level='$admin_level' WHERE pilot_id='$pilot_id'";
 
         DB::query($upd);
     }
 
-    public function delete_admin($pilot_id) {
+    public static function delete_admin($pilot_id) {
         $query = "DELETE FROM ".TABLE_PREFIX."exams_admin
                 WHERE pilot_id='$pilot_id'";
 
         DB::query($query);
     }
 
-    public function get_exams() {
+    public static function get_exams() {
         $query = "SELECT *
                 FROM ".TABLE_PREFIX."exams
                 WHERE active='1'
@@ -63,7 +63,7 @@ class ExamsData extends Codondata {
         return DB::get_results($query);
     }
 
-    public function get_exams_admin() {
+    public static function get_exams_admin() {
         $query = "SELECT *
                 FROM ".TABLE_PREFIX."exams
                 ORDER BY cost ASC";
@@ -71,7 +71,7 @@ class ExamsData extends Codondata {
         return DB::get_results($query);
     }
 
-    public function get_setting_info($id) {
+    public static function get_setting_info($id) {
         $query = "SELECT *
                 FROM ".TABLE_PREFIX."exams_settings
                 WHERE id='$id'";
@@ -79,7 +79,7 @@ class ExamsData extends Codondata {
         return DB::get_row($query);
     }
 
-    public function edit_setting_value($id, $value) {
+    public static function edit_setting_value($id, $value) {
         $upd = "UPDATE ".TABLE_PREFIX."exams_settings
             SET value='$value'
             WHERE id='$id'";
@@ -87,14 +87,14 @@ class ExamsData extends Codondata {
         DB::query($upd);
     }
 
-    public function get_exam_count() {
+    public static function get_exam_count() {
         $query = "SELECT COUNT(*) AS total
 		FROM ".TABLE_PREFIX."exams";
 
         return DB::get_row($query);
     }
 
-    public function get_exams_unapproved() {
+    public static function get_exams_unapproved() {
         $query = "SELECT *
                 FROM ".TABLE_PREFIX."exams_results
                 WHERE approved=0";
@@ -102,7 +102,7 @@ class ExamsData extends Codondata {
         return  DB::get_results($query);
     }
 
-    public function get_pilot_data($id) {
+    public static function get_pilot_data($id) {
         $query = "SELECT *
                 FROM ".TABLE_PREFIX."exams_results
                 WHERE pilot_id='$id'
@@ -111,7 +111,7 @@ class ExamsData extends Codondata {
         return DB::get_results($query);
     }
 
-    public function get_pilot_record($id) {
+    public static function get_pilot_record($id) {
         $query = "SELECT *
 		FROM ".TABLE_PREFIX."exams_results
 		WHERE id='$id'";
@@ -119,7 +119,7 @@ class ExamsData extends Codondata {
         return DB::get_row($query);
     }
 
-    public function edit_pilot_record($id, $approved) {
+    public static function edit_pilot_record($id, $approved) {
         $upd = "UPDATE ".TABLE_PREFIX."exams_results
             SET approved='$approved'
             WHERE id='$id'";
@@ -127,7 +127,7 @@ class ExamsData extends Codondata {
         DB::query($upd);
     }
 
-    public function get_exams_taken_total($id) {
+    public static function get_exams_taken_total($id) {
         $query = "SELECT COUNT(*) AS total
 		FROM ".TABLE_PREFIX."exams_results
 		WHERE pilot_id='$id'";
@@ -135,7 +135,7 @@ class ExamsData extends Codondata {
         return DB::get_row($query);
     }
 
-    public function get_exams_average_total($id, $num_exams) {
+    public static function get_exams_average_total($id, $num_exams) {
         if ($num_exams==0) {
             $percentage = 'No Exams Taken';
             return $percentage;
@@ -154,14 +154,14 @@ class ExamsData extends Codondata {
         }
     }
 
-    public function get_question_count() {
+    public static function get_question_count() {
         $query = "SELECT COUNT(*) AS total
 		FROM ".TABLE_PREFIX."exams_questions";
 
         return DB::get_row($query);
     }
 
-    public function get_exams_taken() {
+    public static function get_exams_taken() {
         $query = "SELECT passfail
 		FROM ".TABLE_PREFIX."exams_results";
         $counts = DB::get_results($query);
@@ -177,7 +177,7 @@ class ExamsData extends Codondata {
         return array($totalpass, $total);
     }
 
-    public function get_questions_admin() {
+    public static function get_questions_admin() {
         $query = "SELECT *
 		FROM ".TABLE_PREFIX."exams_questions
 		ORDER BY id ASC";
@@ -185,14 +185,14 @@ class ExamsData extends Codondata {
         return DB::get_results($query);
     }
 
-    public function request_exam($pilot_id, $id)    {
+    public static function request_exam($pilot_id, $id)    {
         $query = "INSERT INTO ".TABLE_PREFIX."exams_requests (pilot_id, exam_id)
                  VALUES ('$pilot_id', '$id')";
 
         DB::query($query);
     }
 
-    public function check_for_request($pilot_id, $id)   {
+    public static function check_for_request($pilot_id, $id)   {
         $query = "SELECT COUNT(*) AS total
                 FROM ".TABLE_PREFIX."exams_requests
                 WHERE pilot_id='$pilot_id'
@@ -201,14 +201,14 @@ class ExamsData extends Codondata {
         return DB::get_row($query);
     }
 
-    public function get_exam_requests() {
+    public static function get_exam_requests() {
         $query = "SELECT *
                 FROM ".TABLE_PREFIX."exams_requests";
 
         return DB::get_results($query);
     }
 
-    public function unrequest_exam($pilot_id, $exam_id) {
+    public static function unrequest_exam($pilot_id, $exam_id) {
         $query = "DELETE FROM ".TABLE_PREFIX."exams_requests
                 WHERE pilot_id='$pilot_id'
                 AND exam_id='$exam_id'";
@@ -216,7 +216,7 @@ class ExamsData extends Codondata {
         DB::query($query);
     }
 
-    public function buy_exam($id) {
+    public static function buy_exam($id) {
         $query = "SELECT *
 		FROM   ".TABLE_PREFIX."exams
 		WHERE id='$id'";
@@ -224,7 +224,7 @@ class ExamsData extends Codondata {
         return DB::get_row($query);
     }
 
-    public function pay_for_exam($pid, $exam_id) {
+    public static function pay_for_exam($pid, $exam_id) {
         $query = "SELECT *
 		FROM   ".TABLE_PREFIX."exams
 		WHERE id='$exam_id'";
@@ -251,7 +251,7 @@ class ExamsData extends Codondata {
         return DB::get_row($query3);
     }
 
-    public function get_exam($id) {
+    public static function get_exam($id) {
         $query = "SELECT *
 		FROM ".TABLE_PREFIX."exams
 		WHERE id='$id'";
@@ -266,7 +266,7 @@ class ExamsData extends Codondata {
         return DB::get_results($query2);
     }
 
-    public function get_exam_edit($id) {
+    public static function get_exam_edit($id) {
         $query = "SELECT *
 		FROM ".TABLE_PREFIX."exams
 		WHERE id='$id'";
@@ -274,7 +274,7 @@ class ExamsData extends Codondata {
         return DB::get_row($query);
     }
 
-    public function get_exam_title($id) {
+    public static function get_exam_title($id) {
         $query = "SELECT id, exam_description, passing, version
 		FROM   ".TABLE_PREFIX."exams
 		WHERE id='$id'";
@@ -282,7 +282,7 @@ class ExamsData extends Codondata {
         return DB::get_row($query);
     }
 
-    public function get_howmany_questions($id) {
+    public static function get_howmany_questions($id) {
         $query = "SELECT COUNT(*) AS total
 		FROM ".TABLE_PREFIX."exams_questions
 		WHERE exam_id='$id'
@@ -291,7 +291,7 @@ class ExamsData extends Codondata {
         return DB::get_row($query);
     }
 
-    public function get_howmany_questions_active($id) {
+    public static function get_howmany_questions_active($id) {
         $query = "SELECT COUNT(*) AS total
 		FROM ".TABLE_PREFIX."exams_questions
                 WHERE exam_id='$id'
@@ -300,7 +300,7 @@ class ExamsData extends Codondata {
         return DB::get_row($query);
     }
 
-    public function compare_answer($question_id, $answer) {
+    public static function compare_answer($question_id, $answer) {
         $query = "SELECT correct_answer
                 FROM ".TABLE_PREFIX."exams_questions
                 WHERE id='$question_id'";
@@ -308,26 +308,26 @@ class ExamsData extends Codondata {
         return DB::get_row($query);
     }
 
-    public function record_results($pid, $exam_id, $exam_description, $result, $passfail, $version) {
+    public static function record_results($pid, $exam_id, $exam_description, $result, $passfail, $version) {
         $query="INSERT INTO ".TABLE_PREFIX."exams_results (pilot_id, exam_id, exam_title, result, passfail, date, exam_version)
                 VALUES ('$pid', '$exam_id', '$exam_description', '$result', '$passfail', NOW(), '$version')";
 
         DB::query($query);
     }
 
-    public function approve_result($id, $approve) {
+    public static function approve_result($id, $approve) {
         $upd = "UPDATE ".TABLE_PREFIX."exams_results SET approved='$approve' WHERE id='$id'";
 
         DB::query($upd);
     }
 
-    public function edit_exam($active, $id, $description, $passing, $cost) {
+    public static function edit_exam($active, $id, $description, $passing, $cost) {
         $upd = "UPDATE ".TABLE_PREFIX."exams SET active='$active', cost='$cost', passing='$passing', exam_description='$description' WHERE id='$id'";
 
         DB::query($upd);
     }
 
-    public function get_question($id) {
+    public static function get_question($id) {
         $query = "SELECT *
                 FROM ".TABLE_PREFIX."exams_questions
                 WHERE id='$id'";
@@ -335,7 +335,7 @@ class ExamsData extends Codondata {
         return DB::get_row($query);
     }
 
-    public function edit_question($id, $question, $answer_1, $answer_2, $answer_3, $answer_4, $correct_answer, $active, $new_exam) {
+    public static function edit_question($id, $question, $answer_1, $answer_2, $answer_3, $answer_4, $correct_answer, $active, $new_exam) {
         $upd = "UPDATE ".TABLE_PREFIX."exams_questions
                 SET exam_id='$new_exam',
                         question='$question',
@@ -350,7 +350,7 @@ class ExamsData extends Codondata {
         DB::query($upd);
     }
 
-    public function increase_exam_version($id) {
+    public static function increase_exam_version($id) {
         $sql = "SELECT version
             FROM ".TABLE_PREFIX."exams
             WHERE id='$id'";
@@ -366,7 +366,7 @@ class ExamsData extends Codondata {
         DB::query($upd);
     }
 
-    public function increase_exam_changed_date($id) {
+    public static function increase_exam_changed_date($id) {
         $upd = "UPDATE ".TABLE_PREFIX."exams
             SET last_changed=NOW()
             WHERE id='$id'";
@@ -374,7 +374,7 @@ class ExamsData extends Codondata {
         DB::query($upd);
     }
 
-    public function create_new_test($exam_description, $cost, $passing) {
+    public static function create_new_test($exam_description, $cost, $passing) {
         $created_by = Auth::$userinfo->pilotid;
 
         $query="INSERT INTO ".TABLE_PREFIX."exams (exam_description, passing, cost, created_date, last_changed, created_by)
@@ -392,7 +392,7 @@ class ExamsData extends Codondata {
         DB::query($query3);
     }
 
-    public function create_new_question($exam_id, $question, $answer_1, $answer_2, $answer_3, $answer_4, $correct_answer, $active) {
+    public static function create_new_question($exam_id, $question, $answer_1, $answer_2, $answer_3, $answer_4, $correct_answer, $active) {
         $created_by = Auth::$userinfo->pilotid;
 
         $query = "INSERT INTO ".TABLE_PREFIX."exams_questions (exam_id, question, answer_1, answer_2, answer_3, answer_4, correct_answer, active)
@@ -415,7 +415,7 @@ class ExamsData extends Codondata {
         DB::query($query4);
     }
 
-    public function get_last_exam_revision($id) {
+    public static function get_last_exam_revision($id) {
         $query = "SELECT *
                 FROM ".TABLE_PREFIX."exams_exam_revisions
                 WHERE exam_id='$id'";
@@ -423,14 +423,14 @@ class ExamsData extends Codondata {
         return DB::get_row($query);
     }
 
-    public function add_exam_revision($exam_id, $revised_by, $revision) {
+    public static function add_exam_revision($exam_id, $revised_by, $revision) {
         $query="INSERT INTO ".TABLE_PREFIX."exams_exam_revisions (exam_id, revised_by, revision, date_revised)
 		VALUES ('$exam_id', '$revised_by', '$revision', NOW())";
 
         DB::query($query);
     }
 
-    public function get_exam_revisions($id) {
+    public static function get_exam_revisions($id) {
         $query = "SELECT *
                 FROM ".TABLE_PREFIX."exams_exam_revisions
                 WHERE exam_id='$id'
@@ -439,7 +439,7 @@ class ExamsData extends Codondata {
         return DB::get_results($query);
     }
 
-    public function save_new_revision($revision) {
+    public static function save_new_revision($revision) {
         $created_by = Auth::$userinfo->pilotid;
 
         $query="INSERT INTO ".TABLE_PREFIX."exams_revisions_types (revision, editable, date_created, created_by)
@@ -448,7 +448,7 @@ class ExamsData extends Codondata {
         DB::query($query);
     }
 
-    public function get_revision_type($id) {
+    public static function get_revision_type($id) {
         $query = "SELECT *
                 FROM ".TABLE_PREFIX."exams_revisions_types
                 WHERE id='$id'";
@@ -456,14 +456,14 @@ class ExamsData extends Codondata {
         return DB::get_row($query);
     }
 
-    public function get_revision_total() {
+    public static function get_revision_total() {
         $query = "SELECT COUNT(*)AS total
 		FROM ".TABLE_PREFIX."exams_revisions_types";
 
         return DB::get_row($query);
     }
 
-    public function get_revision_reasons() {
+    public static function get_revision_reasons() {
         $query = "SELECT *
                 FROM ".TABLE_PREFIX."exams_revisions_types
                 ORDER BY id ASC";
@@ -471,7 +471,7 @@ class ExamsData extends Codondata {
         return DB::get_results($query);
     }
 
-    public function get_revision($id) {
+    public static function get_revision($id) {
         $query = "SELECT *
                 FROM ".TABLE_PREFIX."exams_revisions_types
                 WHERE id='$id'";
@@ -479,7 +479,7 @@ class ExamsData extends Codondata {
         return DB::get_row($query);
     }
 
-    public function edit_revision($id, $revision, $active) {
+    public static function edit_revision($id, $revision, $active) {
         $upd = "UPDATE ".TABLE_PREFIX."exams_revisions_types
                 SET revision='$revision', active='$active'
                 WHERE id='$id'";
@@ -489,14 +489,14 @@ class ExamsData extends Codondata {
 
 //exam asignment functions
 
-    public function assigned_exams()    {
+    public static function assigned_exams()    {
         $query = "SELECT *
                 FROM ".TABLE_PREFIX."exams_available";
         
         return DB::get_results($query);
     }
 
-    public function get_assigned_exams($id) {
+    public static function get_assigned_exams($id) {
         $query = "SELECT *
                 FROM ".TABLE_PREFIX."exams_available
                 WHERE pilot_id='$id'";
@@ -504,7 +504,7 @@ class ExamsData extends Codondata {
         return DB::get_results($query);
     }
 
-    public function check_exam_assigned($id, $exam_id) {
+    public static function check_exam_assigned($id, $exam_id) {
         $query = "SELECT COUNT(*) AS total
                 FROM ".TABLE_PREFIX."exams_available
                 WHERE pilot_id='$id'
@@ -513,14 +513,14 @@ class ExamsData extends Codondata {
         return DB::get_row($query);
     }
 
-    public function assign_exam($pilot_id, $exam_id) {
+    public static function assign_exam($pilot_id, $exam_id) {
         $query = "INSERT INTO ".TABLE_PREFIX."exams_available (exam_id, pilot_id)
 		VALUES ('$exam_id', '$pilot_id')";
 
         DB::query($query);
     }
 
-    public function unassign_exam($pilot_id, $exam_id) {
+    public static function unassign_exam($pilot_id, $exam_id) {
         $query = "DELETE FROM ".TABLE_PREFIX."exams_available
                 WHERE exam_id='$exam_id'
                 AND pilot_id='$pilot_id'";
@@ -528,14 +528,14 @@ class ExamsData extends Codondata {
         DB::query($query);
     }
 
-    public function delete_pilot_record($id) {
+    public static function delete_pilot_record($id) {
         $query = "DELETE FROM ".TABLE_PREFIX."exams_results
 		WHERE id='$id'";
 
         DB::query($query);
     }
 
-    public function get_howmany_assigned($id) {
+    public static function get_howmany_assigned($id) {
         $query = "SELECT COUNT(*) AS total
                 FROM ".TABLE_PREFIX."exams_available
                 WHERE pilot_id='$id'";
@@ -543,7 +543,7 @@ class ExamsData extends Codondata {
         return DB::get_row($query);
     }
 
-    public function check_exam_passed($pilot_id, $exam_id) {
+    public static function check_exam_passed($pilot_id, $exam_id) {
         $query = "SELECT COUNT(*) AS total
                 FROM ".TABLE_PREFIX."exams_results
                 WHERE pilot_id='$pilot_id'
