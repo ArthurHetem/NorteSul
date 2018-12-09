@@ -11,7 +11,7 @@
 ?>
 <section class="content-header">
       <h1>
-        Centro de Exames
+        Exam Center 
       </h1>
     </section>
 	<section class="content container-fluid">
@@ -24,7 +24,7 @@
             <!-- /.box-header -->
 			<div class="box-body table-responsive">
 <center>
-    <b><div class="alert alert-danger">Atualizar esta pagína ou retornar irá enviar o exame!</div></b><br /><br />
+    <b><div class="alert alert-danger">Update this page or return to will resend the exam!</div></b><br /><br />
 
     <form name="myform" action="<?php echo SITE_URL ?>/index.php/Exams/grade_exam" method="POST">
         <table class="table table-hover">
@@ -50,7 +50,7 @@
                     <input type="hidden" name="passing" value="<?php echo $title->passing; ?>" />
                     <input type="hidden" name="exam_description" value="<?php echo $title->exam_description; ?>" />
                     <input type="hidden" name="howmany" value="<?php echo $howmany_questions->total; ?>" />
-                    <input type="submit" class="btn btn-flat btn-block btn-info" value="Enviar Exame">
+                    <input type="submit" class="btn btn-flat btn-block btn-info" value="Send Exame">
                 </td></tr>
         </table>
     </form>
