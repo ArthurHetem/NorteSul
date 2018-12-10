@@ -247,7 +247,7 @@ $admin = ExamsData::check_admin(Auth::$userinfo->pilotid);
             </td>
             <td>
                 <form method="link" action="<?php echo SITE_URL ?>/index.php/Exams_admin/new_revision_form">
-                    <input type="submit" class="btn btn-flat btn-info" value="generate Reson for Review"></form>
+                    <input type="submit" class="btn btn-flat btn-info" value="Generate Reason for Review"></form>
             </td>
         </tr>
     </table>
