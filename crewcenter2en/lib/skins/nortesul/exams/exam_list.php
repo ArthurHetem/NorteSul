@@ -63,7 +63,7 @@
             ?>
     </table>
     <br />
-    You have <b>v$<?php echo Auth::$userinfo->totalpay; ?></b> in your account.<br />
+    You have <b>$<?php echo Auth::$userinfo->totalpay; ?></b> in your account.<br />
     <?php
     }
     ?>
