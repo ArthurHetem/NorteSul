@@ -15,7 +15,7 @@
     <form action="<?php echo url('/Exams_admin');?>" method="post" enctype="multipart/form-data" onReset="return confirm('Do you really want to reset the form?')">
         <table>
             <tr>
-                <td>New Revision Reason</td>
+                <td>Reason for New Revision</td>
                 <td><textarea rows="2" cols="40" name="revision" value=""></textarea></td>
             </tr>
         </table>
