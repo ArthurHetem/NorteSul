@@ -24,7 +24,7 @@
             <!-- /.box-header -->
 			<div class="box-body table-responsive">
 <center>
-    <b><div class="alert alert-danger">Update this page or return to will resend the exam!</div></b><br /><br />
+    <b><div class="alert alert-danger">Update this page or return to resend the exam!</div></b><br /><br />
 
     <form name="myform" action="<?php echo SITE_URL ?>/index.php/Exams/grade_exam" method="POST">
         <table class="table table-hover">
