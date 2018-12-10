@@ -19,7 +19,7 @@
 		   <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Disponible Exams</h3>
+              <h3 class="box-title">Available Exams</h3>
             </div>
             <!-- /.box-header -->
 			<div class="box-body table-responsive">
@@ -34,7 +34,7 @@
             $assign = ExamsData::get_setting_info('5');
             if ($assign->value == '1') {echo '<tr>
                         <td colspan="3" class="alert alert-info">Actually, The exams need to be requested by the pilots.
-                        Use the button on the side to request it.</td></tr>';
+                        Use the button on the side to do so.</td></tr>';
             } ?>
         <tr>
             <td><b>Exam Name</b></td>
