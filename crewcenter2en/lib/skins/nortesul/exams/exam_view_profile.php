@@ -57,7 +57,7 @@ if (isset($message)) {echo '<br />'; echo $message;}
                     $msg='Approved';
                 }
                 if ($pilot->approved == '2') {
-                    $msg='Repproved';
+                    $msg='Failed';
                     $div='error';
                 }
                 echo '<div id="'.$div.'">'.$msg.'</div>';
