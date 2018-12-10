@@ -11,7 +11,7 @@
 ?>
 <section class="content-header">
       <h1>
-        Centro de Exames
+        Exam Center
       </h1>
     </section>
 	<section class="content container-fluid">
@@ -19,14 +19,14 @@
 		   <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Confirmar início do Exame</h3>
+              <h3 class="box-title">Exam Start Confirmation</h3>
             </div>
             <!-- /.box-header -->
 			<div class="box-body table-responsive">
 <center>
-		<h4>Você deseja continuar?</h4>
+		<h4>Would you like to continue?</h4>
 		<br>
-		<a href="<?php echo SITE_URL ?>/index.php/Exams"><b class="badge bg-red">NÃO</b></a> | <a href="<?php echo SITE_URL ?>/index.php/Exams/purchase_exam?id=<?php echo $examid ?>"><b class="badge bg-green">SIM</b></a>
+		<a href="<?php echo SITE_URL ?>/index.php/Exams"><b class="badge bg-red">NO</b></a> | <a href="<?php echo SITE_URL ?>/index.php/Exams/purchase_exam?id=<?php echo $examid ?>"><b class="badge bg-green">YES</b></a>
 </center>
 </div>
 </div>
