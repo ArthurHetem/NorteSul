@@ -11,7 +11,7 @@
 ?>
 <section class="content-header">
       <h1>
-        Centro de Exames
+        Exam Center
       </h1>
     </section>
 	<section class="content container-fluid">
@@ -19,7 +19,7 @@
 		   <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Editar: <?php echo $exam->exam_description; ?></h3>
+              <h3 class="box-title">Edit: <?php echo $exam->exam_description; ?></h3>
             </div>
             <!-- /.box-header -->
 			<div class="box-body table-responsive">
@@ -29,11 +29,11 @@
     ?>
     <table class="table table-bordered table-hover">
         <tr>
-            <td>Data Criação:</td>
+            <td>Setup Date :</td>
             <td><?php echo date(DATE_FORMAT, strtotime($exam->created_date)) ?></td>
         </tr>
         <tr>
-            <td>Exame Criado por:</td>
+            <td>Exam Setup by:</td>
             <td>
 <?php $pilot = PilotData::GetPilotData($exam->created_by); ?>
                 <?php echo ''.$pilot->firstname.' '.$pilot->lastname.' - '; ?>
@@ -41,15 +41,15 @@
             </td>
         </tr>
         <tr>
-            <td>Versão Atual:</td>
+            <td>Actual Version:</td>
             <td>ver-<?php echo $exam->version; ?></td>
         </tr>
         <tr>
-            <td>Data da úlrima Revisão:</td>
+            <td>Last Review Date:</td>
             <td><?php echo date(DATE_FORMAT, strtotime($exam->last_changed)) ?></td>
         </tr>
         <tr>
-            <td>Última revisão por:</td>
+            <td>Last Reviewed by:</td>
             <td>
 <?php 
 
@@ -61,41 +61,41 @@
             </td>
         </tr>
         <tr>
-            <td>Ver lista de Revisões</td>
-            <td><a href="<?php echo SITE_URL ?>/index.php/Exams_admin/see_exam_revisions?id=<?php echo $exam->id; ?>" class="btn btn-flat btn-info">Lista de Revisões</a></td>
+            <td>View Review List</td>
+            <td><a href="<?php echo SITE_URL ?>/index.php/Exams_admin/see_exam_revisions?id=<?php echo $exam->id; ?>" class="btn btn-flat btn-info">Review List</a></td>
         </tr>
         <tr>
-            <td>Total de Questões designadas ao Exame:</td>
+            <td>Total Questions Assigned to the Exam:</td>
             <td><?php $questions = ExamsData::get_howmany_questions($exam->id); echo $questions->total; ?></td>
         </tr>
         <tr>
-            <td>Total de Questões Ativas no Exame:</td>
+            <td>Total Exame Active Questions:</td>
             <td><?php $active = ExamsData::get_howmany_questions_active($exam->id); echo $active->total; ?></td>
         </tr>
         <tr>
-            <td>Editar Questões</td>
-            <td><a href="<?php echo SITE_URL ?>/index.php/Exams_admin/edit_questions?id=<?php echo $exam->id; ?>" class="btn btn-flat btn-info">Editar Questões</a></td>
+            <td>Edit Questions</td>
+            <td><a href="<?php echo SITE_URL ?>/index.php/Exams_admin/edit_questions?id=<?php echo $exam->id; ?>" class="btn btn-flat btn-info">Edit Questions</a></td>
         </tr>
     </table>
 
     <form action="<?php echo url('/Exams_admin');?>" method="post" enctype="multipart/form-data">
         <table class="table table-bordered table-hover">
             <tr>
-                <td>Campo</td>
-                <td>Valor Atual</td>
-                <td>Novo Valor</td>
+                <td>Field</td>
+                <td>Actual Value</td>
+                <td>New Value</td>
             </tr>
             <tr>
-                <td>Exame Ativo</td>
+                <td>Exam Active/td>
                 <td><?php
 if ($exam->active == 0) {
                         $cur_active = '0';
-                        $active = 'Não';
+                        $active = 'No';
                         echo '<div id="error">'.$active.'</div>';
                     }
                     else {
                         $cur_active = '1';
-                        $active = 'Sim';
+                        $active = 'Yes';
                         echo '<div id="success">Sim</div>';
                     }
                     ?>
@@ -111,22 +111,22 @@ if ($cur_active == '0') {	echo '<option value="1">Sim</option>';	}
                 </td>
             </tr>
             <tr>
-                <td>Título do Exame</td>
+                <td>Exam Title</td>
                 <td><?php echo $exam->exam_description ?></td>
                 <td><textarea type="text" name="description" rows="2" cols="40" value=""><?php echo $exam->exam_description ?></textarea></td>
             </tr>
             <tr>
-                <td>Custo</td>
+                <td>Cost</td>
                 <td>$<?php echo $exam->cost; ?></td>
                 <td>$<input type="text" name="cost" value="<?php echo $exam->cost; ?>" /></td>
             </tr>
             <tr>
-                <td>Porcentagem para Aprovação</td>
+                <td>Percentagem to Approval</td>
                 <td><?php echo $exam->passing; ?></td>
                 <td><input type="text" name="passing" value="<?php echo $exam->passing; ?>" /></td>
             </tr>
             <tr>
-                <td colspan="2">Razão da Revisão:</td>
+                <td colspan="2">Reason for Review:</td>
                 <td><select type="text" name="reason">
 <?php
 $reasons = (ExamsData::get_revision_reasons());
@@ -139,7 +139,7 @@ foreach ($reasons as $reason) {	echo '<option value="'.$reason->id.'">'.$reason-
         <input type="hidden" name="exam_id" value="<?php echo $exam->id; ?>" />
         <input type="hidden" name="current" value="<?php echo $num_questions->total; ?>" />
         <input type="hidden" name="action" value="save_changes" />
-        <input type="submit" class="btn btn-flat btn-info" value="Salvar Mudanças" />
+        <input type="submit" class="btn btn-flat btn-info" value="Save Changes" />
     </form>
 </center>
 </div>
