@@ -104,7 +104,7 @@
 $assigned = ExamsData::assigned_exams();
 if (!$assigned) {echo '<tr><td colspan="6" class="badge bg-red">No Exam Assigned at the moment!</td></tr>'; }
         else {      echo '<tr>';
-            echo '<td colspan="3">Piloto</td>';
+            echo '<td colspan="3">Pilot</td>';
             echo '<td colspan="3">Taken Exam</td>';
             echo '</tr>';
 
@@ -141,7 +141,7 @@ else {echo '<span class="badge bg-red">None</span>';}?>
             </td>
         </tr>
         <tr>
-            <td>Total Exams Approved:</td>
+            <td>Total Approved Exams :</td>
             <td><?php
                 if ($totals[1] > 0) {echo $totals[0];}
                 else {echo '<span class="badge bg-red">None</span>';}?>
@@ -193,7 +193,7 @@ $admin = ExamsData::check_admin(Auth::$userinfo->pilotid);
         <tr>
             <td>Exam Center Staff Members:<br /><b><?php
                     $authors = ExamsData::get_admin('2');
-                    if (!$authors) {echo 'The Are No Staff Members Currently';}
+                    if (!$authors) {echo 'The Are No Staff Members Currently on';}
                     else {
                         foreach ($authors as $author) {   $admin = PilotData::GetPilotData($author->pilot_id);
                             echo $admin->firstname.' '.$admin->lastname.' - ';
@@ -210,7 +210,7 @@ $admin = ExamsData::check_admin(Auth::$userinfo->pilotid);
                         echo '<br /><b>'.$setting->value.'</b>';
                         ?>
             </td>
-            <td><a href="<?php echo SITE_URL ?>/index.php/Exams_admin/get_setting_info?id=4" class="btn btn-flat btn-info">Editar Mensagem</a></td>
+            <td><a href="<?php echo SITE_URL ?>/index.php/Exams_admin/get_setting_info?id=4" class="btn btn-flat btn-info">Edit Menssage</a></td>
         </tr>
         <tr>
             <td>Message When is the Exam Center open: <?php
@@ -224,10 +224,10 @@ $admin = ExamsData::check_admin(Auth::$userinfo->pilotid);
             <td>Admin Assigned Active Exames : <?php
     $setting = ExamsData::get_setting_info('5');
                     if ($setting->value == 0) { echo '<span class="badge bg-red">No</span>'; }
-                    else { echo '<span class="badge bg-green">Sim</span>'; }
+                    else { echo '<span class="badge bg-green">Yes</span>'; }
                     ?>
             </td>
-            <td><a href="<?php echo SITE_URL ?>/index.php/Exams_admin/get_setting_info?id=5" class="btn btn-flat btn-info">Edit Admins Assignements</a></td>
+            <td><a href="<?php echo SITE_URL ?>/index.php/Exams_admin/get_setting_info?id=5" class="btn btn-flat btn-info">Edit Admins Assigned Exams</a></td>
         </tr>
     </table>
     <hr />
