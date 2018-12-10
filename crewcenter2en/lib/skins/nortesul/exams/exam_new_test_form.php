@@ -23,7 +23,7 @@
                 <td>$<input name="cost" value"" /></td>
             </tr>
             <tr>
-                <td>Percentage Need To Pass Exam</td>
+                <td>Percentage Needed To Pass Exam</td>
                 <td><input name="passing" value"" />%</td>
             </tr>
         </table>
