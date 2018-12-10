@@ -11,7 +11,7 @@
 ?>
 <section class="content-header">
       <h1>
-        Centro de Exames
+        Exam Center
       </h1>
     </section>
 	<section class="content container-fluid">
@@ -19,27 +19,27 @@
 		   <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Administração dos Exames Existentes</h3>
+              <h3 class="box-title">Administration of Active Exams</h3>
             </div>
             <!-- /.box-header -->
 			<div class="box-body table-responsive">
 <center>
     <table class="table table-bordered table-hover">
         <tr bgcolor="#cccccc">
-            <td>Ativo</td>
-            <td>Título</td>
-            <td>Custo</td>
-            <td>Data da Criação</td>
-            <td>Última Atualização</td>
-            <td>Versão</td>
-            <td colspan="2">Editar</td>
+            <td>Active</td>
+            <td>Title</td>
+            <td>Cost</td>
+            <td>Setup Date</td>
+            <td>Last Update</td>
+            <td>Version</td>
+            <td colspan="2">Edit</td>
         </tr>
         <?php
         foreach ($exams as $data) {
             ?> 	<tr>
             <td><?php
-    if ($data->active == 0) { echo '<div class="label label-danger">Não</div>';}
-                    else { echo '<div class="label label-success">Sim</div>';}
+    if ($data->active == 0) { echo '<div class="label label-danger">No</div>';}
+                    else { echo '<div class="label label-success">Yes</div>';}
                     ?></td>
                     <?php echo
                     '<td>'.$data->exam_description.'</td>
@@ -47,8 +47,8 @@
                         <td>'.date(DATE_FORMAT, strtotime($data->created_date)).'</td>
                         <td>'.date(DATE_FORMAT, strtotime($data->last_changed)).'</td>
                         <td>ver-'.$data->version.'</td>
-                        <td> <a href="'.SITE_URL.'/index.php/Exams_admin/edit_exam?id='.$data->id.'" class="btn btn-flat btn-info">Exame</a></td>
-                        <td> <a href="'.SITE_URL.'/index.php/Exams_admin/edit_questions?id='.$data->id.'" class="btn btn-flat btn-info">Questões do Exame</a></td>
+                        <td> <a href="'.SITE_URL.'/index.php/Exams_admin/edit_exam?id='.$data->id.'" class="btn btn-flat btn-info">Exam</a></td>
+                        <td> <a href="'.SITE_URL.'/index.php/Exams_admin/edit_questions?id='.$data->id.'" class="btn btn-flat btn-info">Exame Questions</a></td>
                 <tr>';
                 }?>
 
@@ -57,7 +57,7 @@
 
 
     <form method="link" action="<?php echo SITE_URL ?>/index.php/Exams_admin">
-        <input type="submit" class="btn btn-flat btn-info" value="Voltar ao Painel de Administração do Centro de Exames"></form>
+        <input type="submit" class="btn btn-flat btn-info" value="Go Back to Exam Center Settings"></form>
 </center>
 </div>
 </div>
