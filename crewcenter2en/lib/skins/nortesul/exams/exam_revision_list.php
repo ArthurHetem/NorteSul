@@ -11,7 +11,7 @@
 ?>
 <section class="content-header">
       <h1>
-        Centro de Exames
+        Exam Center
       </h1>
     </section>
 	<section class="content container-fluid">
@@ -19,7 +19,7 @@
 		   <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Confirmar início do Exame</h3>
+              <h3 class="box-title">Exam Start Confirmation</h3>
             </div>
             <!-- /.box-header -->
 			<div class="box-body table-responsive">
