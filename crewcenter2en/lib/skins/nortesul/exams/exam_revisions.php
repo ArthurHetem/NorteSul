@@ -11,7 +11,7 @@
 ?>
 <section class="content-header">
       <h1>
-        Centro de Exames
+        Exam Center
       </h1>
     </section>
 	<section class="content container-fluid">
@@ -19,7 +19,7 @@
 		   <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Revisões</h3>
+              <h3 class="box-title">Reviews</h3>
             </div>
             <!-- /.box-header -->
 			<div class="box-body table-responsive">
@@ -40,9 +40,9 @@
     else {?>
     <table class="table table-bordered table-hover">
         <tr>
-            <td><b>Razão da Revisão</b></td>
-            <td><b>Data da Revisão</b></td>
-            <td><b>Revisado Por</b></td>
+            <td><b>Reason for Review</b></td>
+            <td><b>Review Date</b></td>
+            <td><b>Reviewed by</b></td>
         </tr>
     <?php
     foreach ($revisions as $revision) {
@@ -63,7 +63,7 @@
         }
         ?>
         <tr>
-            <td colspan="3"><a href="<?php echo SITE_URL ?>/index.php/Exams_admin/edit_exam?id=<?php echo $exam_id; ?>" class="btn btn-flat btn-info">Retornar</a></td>
+            <td colspan="3"><a href="<?php echo SITE_URL ?>/index.php/Exams_admin/edit_exam?id=<?php echo $exam_id; ?>" class="btn btn-flat btn-info">Back</a></td>
         </tr>
     </table>
 	</center>
