@@ -34,7 +34,7 @@
             $assign = ExamsData::get_setting_info('5');
             if ($assign->value == '1') {echo '<tr>
                         <td colspan="3" class="alert alert-info">Actually, The exams need to be requested by the pilots.
-                        Use the button on the side to request.</td></tr>';
+                        Use the button on the side to request it.</td></tr>';
             } ?>
         <tr>
             <td><b>Exam Name</b></td>
@@ -55,7 +55,7 @@
                         if ($total->total >= '1') { echo '<span class="badge bg-yellow">Exam resquest in analysis</span>'; }
                         else { echo '<a href="'.SITE_URL.'/index.php/Exams/request_exam?id='.$data->id.'"><span class="badge bg-green">Request exam</span></a>';}
                     }
-                    else {echo '<a href="'.SITE_URL.'/index.php/Exams/buy_exam?id='.$data->id.'"><span class="badge bg-aqua">Exam disponible</span></a>';}
+                    else {echo '<a href="'.SITE_URL.'/index.php/Exams/buy_exam?id='.$data->id.'"><span class="badge bg-aqua">Exam available</span></a>';}
                 }
                 echo '</td>
 		</tr>';
