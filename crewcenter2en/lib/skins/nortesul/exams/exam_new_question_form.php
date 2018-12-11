@@ -9,6 +9,20 @@
 //@copyright Copyright (c) 2009-2010, David Clark
 //@license http://creativecommons.org/licenses/by-nc-sa/3.0/
 ?>
+<section class="content-header">
+      <h1>
+        Exam Center
+      </h1>
+    </section>
+	<section class="content container-fluid">
+	<div class="row">
+		   <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Exam Administration</h3>
+            </div>
+            <!-- /.box-header -->
+			<div class="box-body table-responsive">
 <center>
     <?php
     if (isset($message)) {echo $message;}
@@ -67,3 +81,7 @@
         </form>
     </table>
 </center>
+</div>
+</div>
+</div>
+</section>
