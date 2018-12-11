@@ -36,12 +36,12 @@
         if (!$unapproved) {echo '<tr><td colspan="6" class="badge bg-red">No Exams.</td></tr>';}
         else {
             echo '<tr>
-                    <td colspan="4" align="right">Exam Approved</td>
+                    <td colspan="4" align="right">Approved</td>
                     <td colspan="1"><div id="success">Score</div></td>
                     <td rowspan="2">Manage Exam<br />Submissions</td>
                 </tr>
                 <tr>
-                    <td colspan="4" align="right">Failed Exam</td>
+                    <td colspan="4" align="right">Failed</td>
                     <td colspan="1"><div id="error">Score</div></td>
 
                 </tr>
@@ -68,22 +68,22 @@
                 if ($awaiting->passfail == 0) {$div = 'error';}
                 else {$div = 'success';}
                 echo '<div id="'.$div.'">'.$awaiting->result.'%</div></td>
-		<td><a href="'.SITE_URL.'/index.php/Exams_admin/save_approve_result?id='.$awaiting->id.'&approve=1" class="badge bg-green">Approve</a> / <a href="'.SITE_URL.'/index.php/Exams_admin/save_approve_result?id='.$awaiting->id.'&approve=2" class="badge bg-red">Repprove</a></td>
+		<td><a href="'.SITE_URL.'/index.php/Exams_admin/save_approve_result?id='.$awaiting->id.'&approve=1" class="badge bg-green">Approve</a> / <a href="'.SITE_URL.'/index.php/Exams_admin/save_approve_result?id='.$awaiting->id.'&approve=2" class="badge bg-red">Reject</a></td>
 		</tr>';
             }
         }
         ?>
         <tr>
-            <td colspan="6" bgcolor="#cccccc"><b>Exams Inquired:</b></td>
+            <td colspan="6" bgcolor="#cccccc"><b>Exams Requested:</b></td>
         </tr>
 
         <?php
-        if (!$requests) {echo '<tr><td colspan="6" class="badge bg-red">There are no Exams inquire at the moment!</td></tr>'; }
+        if (!$requests) {echo '<tr><td colspan="6" class="badge bg-red">There are no Exams request at the moment!</td></tr>'; }
         else {
             echo '<tr>';
             echo '<td colspan="2">Pilot</td>';
             echo '<td colspan="2">Exam</td>';
-            echo '<td colspan="2">Inquire Approval</td>';
+            echo '<td colspan="2">Request Approval</td>';
             echo '</tr>';
 
             foreach ($requests as $request) {
@@ -92,7 +92,7 @@
                 echo '<tr>';
                 echo '<td colspan="2">'.$pilot->firstname.' '.$pilot->lastname.' '.PilotData::GetPilotCode($pilot->code, $request->pilot_id).'</td>';
                 echo '<td colspan="2">'.$exam->exam_description.'</td>';
-                echo '<td colspan="2"><a href="'.SITE_URL.'/index.php/Exams_admin/assign_exam_admin?id='.$exam->id.'&pilot_id='.$request->pilot_id.'" class="badge bg-green">Inquire Approval</a></td>';
+                echo '<td colspan="2"><a href="'.SITE_URL.'/index.php/Exams_admin/assign_exam_admin?id='.$exam->id.'&pilot_id='.$request->pilot_id.'" class="badge bg-green">Request Approval</a></td>';
                 echo '</tr>';
             }
         }
