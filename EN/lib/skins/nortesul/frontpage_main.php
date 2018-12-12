@@ -1,25 +1,39 @@
-﻿	<!-- Sequence Modern Slider -->
+﻿   <!-- Sequence Modern Slider -->
     <header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url(<?php echo SITE_URL; ?>/lib/skins/nortesul/images/img_bg_3.jpg)">
-		<div class="overlay"></div>
-		<div class="gtco-container">
-			<div class="row">
-				<div class="col-md-12 col-md-offset-0 text-left">
-					
+				<div class="overlay"></div>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+	<li data-target="#myCarousel" data-slide-to="3"></li>
+	<li data-target="#myCarousel" data-slide-to="4"></li>
+  </ol>
 
-					<div class="row row-mt-15em">
-						<div class="col-md-7 mt-text animate-box dividir" data-animate-effect="fadeInUp">
-							<h1>Do you travel to know new locations?</h1>	
-						</div>
-						<div class="col-md-4 col-md-push-1 mt-text animate-box" data-animate-effect="fadeInRight">
-									
-									        <h1>Come and fly with</h1>
-											<img src="<?php echo SITE_URL; ?>/lib/skins/nortesul/images/logo.png" height="55px" width="255px">
-									</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="<?php echo SITE_URL; ?>/lib/skins/nortesul/images/front/01.jpg">
+    </div>
+
+    <div class="item">
+      <img src="<?php echo SITE_URL; ?>/lib/skins/nortesul/images/front/02.jpg">
+    </div>
+
+    <div class="item">
+      <img src="<?php echo SITE_URL; ?>/lib/skins/nortesul/images/front/03.jpg">
+    </div>
+	
+	<div class="item">
+      <img src="<?php echo SITE_URL; ?>/lib/skins/nortesul/images/front/04.jpg">
+    </div>
+	
+	<div class="item">
+      <img src="<?php echo SITE_URL; ?>/lib/skins/nortesul/images/front/05.jpg">
+    </div>
+  </div>
+  
 	</header>
 	
 	<div class="gtco-section">
@@ -106,7 +120,7 @@ echo "$resp";
 	</div>
 
 
-	<div class="gtco-cover gtco-cover-sm amarelo" style="background-image: url(images/img_bg_1.jpg)"  data-stellar-background-ratio="0.5">
+	<div class="gtco-cover gtco-cover-sm amarelo" style="background-image: url(<?php echo SITE_URL; ?>/lib/skins/nortesul/images/img_bg_10.jpg)"  data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="gtco-container text-center">
 			<div class="display-t">

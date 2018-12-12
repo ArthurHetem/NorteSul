@@ -50,7 +50,7 @@
 	<!--[if lt IE 9]>
 	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/respond.min.js"></script>
 	<![endif]-->
-
+<link rel="stylesheet" href="<?php echo SITE_URL; ?>/lib/skins/nortesul/css/carousel.css">
 	<style>
 	.dividir {
   border-right: 1px solid #fff;
@@ -95,7 +95,11 @@
 	<!-- Datepicker -->
 	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/bootstrap-datepicker.min.js"></script>
 	
-
+<style>
+.item2{
+	width:600px;
+}
+</style>	
 	<!-- Main -->
 	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/main.js"></script>
 <script>
@@ -121,5 +125,8 @@ $('#myTabs a').click(function (e) {
   $(this).tab('show')
 })
 </script>
+	<script>
+	$("#myCarousel").carousel();
+	</script>
   </body>
 </html>

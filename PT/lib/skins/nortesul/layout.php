@@ -50,7 +50,7 @@
 	<!--[if lt IE 9]>
 	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/respond.min.js"></script>
 	<![endif]-->
-
+<link rel="stylesheet" href="<?php echo SITE_URL; ?>/lib/skins/nortesul/css/carousel.css">
 	<style>
 	.dividir {
   border-right: 1px solid #fff;
@@ -96,7 +96,7 @@
 	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/bootstrap-datepicker.min.js"></script>
 	
 <style>
-.item{
+.item2{
 	width:600px;
 }
 </style>	

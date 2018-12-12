@@ -437,7 +437,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .gtco-cover {
-  height: 900px;
+  height: 720px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -1923,6 +1923,8 @@ border-radius:50%;
 -moz-border-radius:50%;
 -webkit-border-radius:50%;
 border: 2px solid #dc3f6a;
+width:270px;
+height:270px;
 }
 
 .alert .fas{
