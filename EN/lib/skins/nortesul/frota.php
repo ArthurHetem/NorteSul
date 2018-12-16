@@ -334,7 +334,7 @@
                  Passengers
                 </p>
 				<p class="pull-right">
-				120
+				160
 				</p>
                 <br>
 				                <hr>
@@ -342,7 +342,7 @@
                  Length
                 </p>
 				<p class="pull-right">
-				31,45m
+				42m
 				</p>
                 <br>
 				                <hr>
@@ -350,7 +350,7 @@
                  Wingspan
                 </p>
 				<p class="pull-right">
-				34.10m
+				35.79m
 				</p>
                 <br>
 				                <hr>
@@ -358,7 +358,7 @@
                  Tail Height
                 </p>
 				<p class="pull-right">
-				12,56m
+				12m
 				</p>
                 <br>
 				                <hr>
@@ -366,7 +366,7 @@
                  Engines
                 </p>
 				<p class="pull-right">
-				2xPW6124A
+				2xCFM56-7 series
 				</p>
                 <br>
 				<hr>
@@ -374,7 +374,7 @@
                  Maximum Take Off Weight
                 </p>
 				<p class="pull-right">
-				68,000kg
+				65,500kg
 				</p>
                 <br>
 				<hr>
@@ -382,7 +382,7 @@
                  Cruising Speed
                 </p>
 				<p class="pull-right">
-				875km/h
+				838km/h
 				</p>
                 <br>
 				<hr>
@@ -390,7 +390,7 @@
                  Range,Typical Payload
                 </p>
 				<p class="pull-right">
-				5,750km
+				5,575km
 				</p>
                 <br>
 				<hr>
@@ -398,7 +398,7 @@
                  Ceiling
                 </p>
 				<p class="pull-right">
-				39,100 - 41000 FT
+				41000 FT
 				</p>
                 <br>
 				<hr>
@@ -433,7 +433,7 @@
                  Passengers
                 </p>
 				<p class="pull-right">
-				120
+				178
 				</p>
                 <br>
 				                <hr>
@@ -441,7 +441,7 @@
                  Length
                 </p>
 				<p class="pull-right">
-				31,45m
+				43,8m
 				</p>
                 <br>
 				                <hr>
@@ -449,7 +449,7 @@
                  Wingspan
                 </p>
 				<p class="pull-right">
-				34.10m
+				35.92m
 				</p>
                 <br>
 				                <hr>
@@ -457,7 +457,7 @@
                  Tail Height
                 </p>
 				<p class="pull-right">
-				12,56m
+				12,29m
 				</p>
                 <br>
 				                <hr>
@@ -465,7 +465,7 @@
                  Engines
                 </p>
 				<p class="pull-right">
-				2xPW6124A
+				2xCFM LEAP-1B
 				</p>
                 <br>
 				<hr>
@@ -473,7 +473,7 @@
                  Maximum Take Off Weight
                 </p>
 				<p class="pull-right">
-				68,000kg
+				80,300kg
 				</p>
                 <br>
 				<hr>
@@ -481,7 +481,7 @@
                  Cruising Speed
                 </p>
 				<p class="pull-right">
-				875km/h
+				838km/h
 				</p>
                 <br>
 				<hr>
@@ -489,7 +489,7 @@
                  Range,Typical Payload
                 </p>
 				<p class="pull-right">
-				5,750km
+				6,110km
 				</p>
                 <br>
 				<hr>
@@ -497,7 +497,7 @@
                  Ceiling
                 </p>
 				<p class="pull-right">
-				39,100 - 41000 FT
+				41000 FT
 				</p>
                 <br>
 				<hr>
@@ -532,7 +532,7 @@
                  Passengers
                 </p>
 				<p class="pull-right">
-				120
+				114
 				</p>
                 <br>
 				                <hr>
@@ -540,7 +540,7 @@
                  Length
                 </p>
 				<p class="pull-right">
-				31,45m
+				36,24m
 				</p>
                 <br>
 				                <hr>
@@ -556,7 +556,7 @@
                  Tail Height
                 </p>
 				<p class="pull-right">
-				12,56m
+				10,57m
 				</p>
                 <br>
 				                <hr>
@@ -564,7 +564,7 @@
                  Engines
                 </p>
 				<p class="pull-right">
-				2xPW6124A
+				2xCF34-10E
 				</p>
                 <br>
 				<hr>
@@ -572,7 +572,7 @@
                  Maximum Take Off Weight
                 </p>
 				<p class="pull-right">
-				68,000kg
+				50,300kg
 				</p>
                 <br>
 				<hr>
@@ -580,7 +580,7 @@
                  Cruising Speed
                 </p>
 				<p class="pull-right">
-				875km/h
+				870km/h
 				</p>
                 <br>
 				<hr>
@@ -588,7 +588,7 @@
                  Range,Typical Payload
                 </p>
 				<p class="pull-right">
-				5,750km
+				4,445km
 				</p>
                 <br>
 				<hr>
@@ -596,7 +596,7 @@
                  Ceiling
                 </p>
 				<p class="pull-right">
-				39,100 - 41000 FT
+				41000 FT
 				</p>
                 <br>
 				<hr>
@@ -618,109 +618,6 @@
               </div>
             </div>
           </div>
-		  
-		            <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="thumbnail animate-box">
-              <!--<img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/frota/A318.png" alt="">-->
-              <div class="caption">
-                <h4 class="text-center">
-                  Airbus <b>A318</b>
-                </h4>
-                <hr>
-                <p class="pull-left">
-                 Passengers
-                </p>
-				<p class="pull-right">
-				120
-				</p>
-                <br>
-				                <hr>
-                <p class="pull-left">
-                 Length
-                </p>
-				<p class="pull-right">
-				31,45m
-				</p>
-                <br>
-				                <hr>
-                <p class="pull-left">
-                 Wingspan
-                </p>
-				<p class="pull-right">
-				34.10m
-				</p>
-                <br>
-				                <hr>
-                <p class="pull-left">
-                 Tail Height
-                </p>
-				<p class="pull-right">
-				12,56m
-				</p>
-                <br>
-				                <hr>
-                <p class="pull-left">
-                 Engines
-                </p>
-				<p class="pull-right">
-				2xPW6124A
-				</p>
-                <br>
-				<hr>
-                <p class="pull-left">
-                 Maximum Take Off Weight
-                </p>
-				<p class="pull-right">
-				68,000kg
-				</p>
-                <br>
-				<hr>
-                <p class="pull-left">
-                 Cruising Speed
-                </p>
-				<p class="pull-right">
-				875km/h
-				</p>
-                <br>
-				<hr>
-                <p class="pull-left">
-                 Range,Typical Payload
-                </p>
-				<p class="pull-right">
-				5,750km
-				</p>
-                <br>
-				<hr>
-                <p class="pull-left">
-                 Ceiling
-                </p>
-				<p class="pull-right">
-				39,100 - 41000 FT
-				</p>
-                <br>
-				<hr>
-                <p class="pull-left">
-                 Cockpit Crew
-                </p>
-				<p class="pull-right">
-				2
-				</p>
-                <br>
-				<hr>
-                <p class="pull-left">
-                 Cabin Crew
-                </p>
-				<p class="pull-right">
-				4
-				</p>
-                <br>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End row -->
-
-      </div>
       <!-- End container -->
     </div>
 	<div id="gtco-subscribe">
