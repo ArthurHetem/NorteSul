@@ -157,7 +157,7 @@ class SiteData extends CodonData {
      */
     public static function getNotamItem($id) {
         return DB::get_row('SELECT *, UNIX_TIMESTAMP(postdate) AS postdate
-									FROM ' . TABLE_PREFIX . 'notam WHERE id=' . $id);
+									FROM phpvms_notam WHERE id=' . $id);
     }
 
     /**
@@ -167,7 +167,7 @@ class SiteData extends CodonData {
      */
     public static function getAllNotam() {
         return DB::get_results('SELECT id, subject, body, UNIX_TIMESTAMP(postdate) as postdate, postedby
-									FROM ' . TABLE_PREFIX . 'notam ORDER BY postdate DESC');
+									FROM phpvms_notam ORDER BY postdate DESC');
     }
 
     /**
@@ -208,7 +208,7 @@ class SiteData extends CodonData {
         $subject = DB::escape($subject);
         $body = DB::escape($body);
 
-        $sql = 'UPDATE '.TABLE_PREFIX.'notam SET subject=\''.$subject.'\', body=\''.$body.'\'
+        $sql = 'UPDATE phpvms_notam SET subject=\''.$subject.'\', body=\''.$body.'\'
         		WHERE id='.$id;
 
         $res = DB::query($sql);
@@ -225,7 +225,7 @@ class SiteData extends CodonData {
      * @return
      */
     public static function DeleteNotamItem($id) {
-        $sql = 'DELETE FROM ' . TABLE_PREFIX . 'notam WHERE id=' . $id;
+        $sql = 'DELETE FROM phpvms_notam WHERE id=' . $id;
 
         $res = DB::query($sql);
 

@@ -27,105 +27,6 @@
         <div class="profile">
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="thumbnail animate-box">
-              <!--<img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/frota/A318.png" alt="">-->
-              <div class="caption">
-                <h4 class="text-center">
-                  Airbus <b>A318</b>
-                </h4>
-                <hr>
-                <p class="pull-left">
-                 Passengers
-                </p>
-				<p class="pull-right">
-				120
-				</p>
-                <br>
-				                <hr>
-                <p class="pull-left">
-                 Length
-                </p>
-				<p class="pull-right">
-				31,45m
-				</p>
-                <br>
-				                <hr>
-                <p class="pull-left">
-                 Wingspan
-                </p>
-				<p class="pull-right">
-				34.10m
-				</p>
-                <br>
-				                <hr>
-                <p class="pull-left">
-                 Tail Height
-                </p>
-				<p class="pull-right">
-				12,56m
-				</p>
-                <br>
-				                <hr>
-                <p class="pull-left">
-                 Engines
-                </p>
-				<p class="pull-right">
-				2xPW6124A
-				</p>
-                <br>
-				<hr>
-                <p class="pull-left">
-                 Maximum Take Off Weight
-                </p>
-				<p class="pull-right">
-				68,000kg
-				</p>
-                <br>
-				<hr>
-                <p class="pull-left">
-                 Cruising Speed
-                </p>
-				<p class="pull-right">
-				875km/h
-				</p>
-                <br>
-				<hr>
-                <p class="pull-left">
-                 Range,Typical Payload
-                </p>
-				<p class="pull-right">
-				5,750km
-				</p>
-                <br>
-				<hr>
-                <p class="pull-left">
-                 Ceiling
-                </p>
-				<p class="pull-right">
-				39,100 - 41000 FT
-				</p>
-                <br>
-				<hr>
-                <p class="pull-left">
-                 Cockpit Crew
-                </p>
-				<p class="pull-right">
-				2
-				</p>
-                <br>
-				<hr>
-                <p class="pull-left">
-                 Cabin Crew
-                </p>
-				<p class="pull-right">
-				4
-				</p>
-                <br>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="thumbnail animate-box">
               <!--<img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/frota/A319.png" alt="">-->
               <div class="caption">
                 <h4 class="text-center">
@@ -421,6 +322,401 @@
             </div>
 			</div>
 
+			          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="thumbnail animate-box">
+              <!--<img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/frota/A318.png" alt="">-->
+              <div class="caption">
+                <h4 class="text-center">
+                  Airbus <b>A318</b>
+                </h4>
+                <hr>
+                <p class="pull-left">
+                 Passengers
+                </p>
+				<p class="pull-right">
+				120
+				</p>
+                <br>
+				                <hr>
+                <p class="pull-left">
+                 Length
+                </p>
+				<p class="pull-right">
+				31,45m
+				</p>
+                <br>
+				                <hr>
+                <p class="pull-left">
+                 Wingspan
+                </p>
+				<p class="pull-right">
+				34.10m
+				</p>
+                <br>
+				                <hr>
+                <p class="pull-left">
+                 Tail Height
+                </p>
+				<p class="pull-right">
+				12,56m
+				</p>
+                <br>
+				                <hr>
+                <p class="pull-left">
+                 Engines
+                </p>
+				<p class="pull-right">
+				2xPW6124A
+				</p>
+                <br>
+				<hr>
+                <p class="pull-left">
+                 Maximum Take Off Weight
+                </p>
+				<p class="pull-right">
+				68,000kg
+				</p>
+                <br>
+				<hr>
+                <p class="pull-left">
+                 Cruising Speed
+                </p>
+				<p class="pull-right">
+				875km/h
+				</p>
+                <br>
+				<hr>
+                <p class="pull-left">
+                 Range,Typical Payload
+                </p>
+				<p class="pull-right">
+				5,750km
+				</p>
+                <br>
+				<hr>
+                <p class="pull-left">
+                 Ceiling
+                </p>
+				<p class="pull-right">
+				39,100 - 41000 FT
+				</p>
+                <br>
+				<hr>
+                <p class="pull-left">
+                 Cockpit Crew
+                </p>
+				<p class="pull-right">
+				2
+				</p>
+                <br>
+				<hr>
+                <p class="pull-left">
+                 Cabin Crew
+                </p>
+				<p class="pull-right">
+				4
+				</p>
+                <br>
+              </div>
+            </div>
+          </div>
+		  
+		            <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="thumbnail animate-box">
+              <!--<img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/frota/A318.png" alt="">-->
+              <div class="caption">
+                <h4 class="text-center">
+                  Airbus <b>A318</b>
+                </h4>
+                <hr>
+                <p class="pull-left">
+                 Passengers
+                </p>
+				<p class="pull-right">
+				120
+				</p>
+                <br>
+				                <hr>
+                <p class="pull-left">
+                 Length
+                </p>
+				<p class="pull-right">
+				31,45m
+				</p>
+                <br>
+				                <hr>
+                <p class="pull-left">
+                 Wingspan
+                </p>
+				<p class="pull-right">
+				34.10m
+				</p>
+                <br>
+				                <hr>
+                <p class="pull-left">
+                 Tail Height
+                </p>
+				<p class="pull-right">
+				12,56m
+				</p>
+                <br>
+				                <hr>
+                <p class="pull-left">
+                 Engines
+                </p>
+				<p class="pull-right">
+				2xPW6124A
+				</p>
+                <br>
+				<hr>
+                <p class="pull-left">
+                 Maximum Take Off Weight
+                </p>
+				<p class="pull-right">
+				68,000kg
+				</p>
+                <br>
+				<hr>
+                <p class="pull-left">
+                 Cruising Speed
+                </p>
+				<p class="pull-right">
+				875km/h
+				</p>
+                <br>
+				<hr>
+                <p class="pull-left">
+                 Range,Typical Payload
+                </p>
+				<p class="pull-right">
+				5,750km
+				</p>
+                <br>
+				<hr>
+                <p class="pull-left">
+                 Ceiling
+                </p>
+				<p class="pull-right">
+				39,100 - 41000 FT
+				</p>
+                <br>
+				<hr>
+                <p class="pull-left">
+                 Cockpit Crew
+                </p>
+				<p class="pull-right">
+				2
+				</p>
+                <br>
+				<hr>
+                <p class="pull-left">
+                 Cabin Crew
+                </p>
+				<p class="pull-right">
+				4
+				</p>
+                <br>
+              </div>
+            </div>
+          </div>
+		  
+		            <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="thumbnail animate-box">
+              <!--<img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/frota/A318.png" alt="">-->
+              <div class="caption">
+                <h4 class="text-center">
+                  Airbus <b>A318</b>
+                </h4>
+                <hr>
+                <p class="pull-left">
+                 Passengers
+                </p>
+				<p class="pull-right">
+				120
+				</p>
+                <br>
+				                <hr>
+                <p class="pull-left">
+                 Length
+                </p>
+				<p class="pull-right">
+				31,45m
+				</p>
+                <br>
+				                <hr>
+                <p class="pull-left">
+                 Wingspan
+                </p>
+				<p class="pull-right">
+				34.10m
+				</p>
+                <br>
+				                <hr>
+                <p class="pull-left">
+                 Tail Height
+                </p>
+				<p class="pull-right">
+				12,56m
+				</p>
+                <br>
+				                <hr>
+                <p class="pull-left">
+                 Engines
+                </p>
+				<p class="pull-right">
+				2xPW6124A
+				</p>
+                <br>
+				<hr>
+                <p class="pull-left">
+                 Maximum Take Off Weight
+                </p>
+				<p class="pull-right">
+				68,000kg
+				</p>
+                <br>
+				<hr>
+                <p class="pull-left">
+                 Cruising Speed
+                </p>
+				<p class="pull-right">
+				875km/h
+				</p>
+                <br>
+				<hr>
+                <p class="pull-left">
+                 Range,Typical Payload
+                </p>
+				<p class="pull-right">
+				5,750km
+				</p>
+                <br>
+				<hr>
+                <p class="pull-left">
+                 Ceiling
+                </p>
+				<p class="pull-right">
+				39,100 - 41000 FT
+				</p>
+                <br>
+				<hr>
+                <p class="pull-left">
+                 Cockpit Crew
+                </p>
+				<p class="pull-right">
+				2
+				</p>
+                <br>
+				<hr>
+                <p class="pull-left">
+                 Cabin Crew
+                </p>
+				<p class="pull-right">
+				4
+				</p>
+                <br>
+              </div>
+            </div>
+          </div>
+		  
+		            <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="thumbnail animate-box">
+              <!--<img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/frota/A318.png" alt="">-->
+              <div class="caption">
+                <h4 class="text-center">
+                  Airbus <b>A318</b>
+                </h4>
+                <hr>
+                <p class="pull-left">
+                 Passengers
+                </p>
+				<p class="pull-right">
+				120
+				</p>
+                <br>
+				                <hr>
+                <p class="pull-left">
+                 Length
+                </p>
+				<p class="pull-right">
+				31,45m
+				</p>
+                <br>
+				                <hr>
+                <p class="pull-left">
+                 Wingspan
+                </p>
+				<p class="pull-right">
+				34.10m
+				</p>
+                <br>
+				                <hr>
+                <p class="pull-left">
+                 Tail Height
+                </p>
+				<p class="pull-right">
+				12,56m
+				</p>
+                <br>
+				                <hr>
+                <p class="pull-left">
+                 Engines
+                </p>
+				<p class="pull-right">
+				2xPW6124A
+				</p>
+                <br>
+				<hr>
+                <p class="pull-left">
+                 Maximum Take Off Weight
+                </p>
+				<p class="pull-right">
+				68,000kg
+				</p>
+                <br>
+				<hr>
+                <p class="pull-left">
+                 Cruising Speed
+                </p>
+				<p class="pull-right">
+				875km/h
+				</p>
+                <br>
+				<hr>
+                <p class="pull-left">
+                 Range,Typical Payload
+                </p>
+				<p class="pull-right">
+				5,750km
+				</p>
+                <br>
+				<hr>
+                <p class="pull-left">
+                 Ceiling
+                </p>
+				<p class="pull-right">
+				39,100 - 41000 FT
+				</p>
+                <br>
+				<hr>
+                <p class="pull-left">
+                 Cockpit Crew
+                </p>
+				<p class="pull-right">
+				2
+				</p>
+                <br>
+				<hr>
+                <p class="pull-left">
+                 Cabin Crew
+                </p>
+				<p class="pull-right">
+				4
+				</p>
+                <br>
+              </div>
+            </div>
+          </div>
         </div>
         <!-- End row -->
 

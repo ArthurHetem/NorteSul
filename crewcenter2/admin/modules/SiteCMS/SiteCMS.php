@@ -26,6 +26,11 @@ class SiteCMS extends CodonModule
 				$this->set('sidebar', 'sidebar_news.php');
 				break;
 			
+			case 'addnotam':
+			case 'viewnotam':
+				$this->set('sidebar', 'sidebar_notam.php');
+				break;
+				
 			case 'viewpages':
 				$this->set('sidebar', 'sidebar_pages.php');
 				break;
@@ -281,5 +286,36 @@ class SiteCMS extends CodonModule
 		$this->render('core_success.php');
 		
 		LogData::addLog(Auth::$userinfo->pilotid, 'Deleted news '.$this->post->id);
+	}
+	
+	protected function AddNotamItem() {
+        $this->checkPermission(EDIT_NEWS);
+		if($this->post->subject == '')
+			return;
+		
+		if($this->post->body == '')
+			return;
+			
+		if(!SiteData::AddNotamItem($this->post->subject, $this->post->body)) {
+			$this->set('message', 'There was an error adding the NOTAM deu erro');
+		}
+		
+		$this->render('core_message.php');
+		
+		LogData::addLog(Auth::$userinfo->pilotid, 'Added notam "'.$this->post->subject.'"');
+	}
+	
+	protected function DeleteNotamItem() {
+        $this->checkPermission(EDIT_NEWS);
+		if(!SiteData::DeleteItem($this->post->id)) {
+			$this->set('message', Lang::gs('news.delete.error'));
+			$this->render('core_error.php');
+			return;
+		}
+		
+		$this->set('message', Lang::gs('news.item.deleted'));
+		$this->render('core_success.php');
+		
+		LogData::addLog(Auth::$userinfo->pilotid, 'Deleted NOTAM '.$this->post->id);
 	}
 }

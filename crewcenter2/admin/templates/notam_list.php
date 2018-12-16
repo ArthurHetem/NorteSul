@@ -1,7 +1,7 @@
 <?php if(!defined('IN_PHPVMS') && IN_PHPVMS !== true) { die(); } ?>
 <h3>NOTAMS Atuais</h3>
 <?php
-if(!$allnews) {
+if(!$allnotams) {
 	echo '<p>Nenhuma NOTAM em uso</p>';
 	return;
 }

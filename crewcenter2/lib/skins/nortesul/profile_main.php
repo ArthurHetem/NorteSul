@@ -39,6 +39,9 @@
     else {
     $resp = "Boa noite";}
   ?>
+  <?php
+  $hrssomadas = Auth::$userinfo->totalhours + $userinfo->transferhours;
+  ?>
     <!-- Content Header (Page header) -->
     <section class="content-header">
 		<div class="alert alert-success alert-dismissible">
@@ -84,7 +87,7 @@
             <!-- small box -->
             <div class="small-box bg-yellow">
               <div class="inner">
-                <h3><?php echo $pilot->totalhours; ?></h3>
+                <h3><?php echo $hrssomadas; ?></h3>
 			  
                 <p>Horas Voadas</p>
               </div>

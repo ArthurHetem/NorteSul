@@ -6,8 +6,7 @@
 <p>
 <p><strong>News Text: </strong></p>
 <p>
-<textarea id="editor" name="body" width="100%" 
-style="width: 100%; height: 250px;"><?php if(isset($newsitem->body)) { echo $newsitem->body;}?></textarea>
+<textarea id="editor" name="body" width="100%" style="width: 100%; height: 250px;"><?php if(isset($newsitem->body)) { echo $newsitem->body;}?></textarea>
 </p>
 <input type="hidden" name="action" value="<?php echo $action?>" />
 <input type="hidden" name="id" value="<?php echo $newsitem->id; ?>" />
