@@ -53,7 +53,7 @@
                  Wingspan
                 </p>
 				<p class="pull-right">
-				35.8m
+				34.09m
 				</p>
                 <br>
 				                <hr>
@@ -69,7 +69,7 @@
                  Engines
                 </p>
 				<p class="pull-right">
-				2xCFM 56-5B7
+				2xCFM 56-5B5
 				</p>
                 <br>
 				<hr>
@@ -85,7 +85,7 @@
                  Cruising Speed
                 </p>
 				<p class="pull-right">
-				829km/h
+				900km/h
 				</p>
                 <br>
 				<hr>
@@ -93,7 +93,7 @@
                  Range, Typical Payload
                 </p>
 				<p class="pull-right">
-				6,950km
+				6,801km
 				</p>
                 <br>
 				<hr>
@@ -101,7 +101,7 @@
                  Service Ceiling
                 </p>
 				<p class="pull-right">
-				39,100 - 41,000FT
+				41,100FT
 				</p>
                 <br>
 				<hr>
@@ -152,7 +152,7 @@
                  Wingspan
                 </p>
 				<p class="pull-right">
-				35.80m
+				34.09m
 				</p>
                 <br>
 				                <hr>
@@ -176,7 +176,7 @@
                  Maximum Take Off Weight
                 </p>
 				<p class="pull-right">
-				78,000kg
+				77,000kg
 				</p>
                 <br>
 				<hr>
@@ -184,7 +184,7 @@
                  Cruising Speed
                 </p>
 				<p class="pull-right">
-				871km/h
+				904km/h
 				</p>
                 <br>
 				<hr>
@@ -192,7 +192,7 @@
                  Range, Typical Payload
                 </p>
 				<p class="pull-right">
-				6,100km
+				5,700km
 				</p>
                 <br>
 				<hr>
@@ -200,7 +200,7 @@
                  Service Ceiling
                 </p>
 				<p class="pull-right">
-				39,100 - 41000FT
+				39,800FT
 				</p>
                 <br>
 				<hr>
@@ -267,7 +267,7 @@
                  Engines
                 </p>
 				<p class="pull-right">
-				2xCFM 1A26
+				2xCFM LEAP-1A
 				</p>
                 <br>
 				<hr>
@@ -283,7 +283,7 @@
                  Cruising Speed
                 </p>
 				<p class="pull-right">
-				876km/h
+				828km/h
 				</p>
                 <br>
 				<hr>
@@ -299,7 +299,7 @@
                  Service Ceiling
                 </p>
 				<p class="pull-right">
-				39,100 - 39,800FT
+				39,800FT
 				</p>
                 <br>
 				<hr>
