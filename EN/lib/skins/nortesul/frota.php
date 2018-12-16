@@ -327,7 +327,7 @@
               <!--<img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/frota/A318.png" alt="">-->
               <div class="caption">
                 <h4 class="text-center">
-                  Airbus <b>A318</b>
+                  Boeing <b>B738</b>
                 </h4>
                 <hr>
                 <p class="pull-left">
@@ -426,7 +426,7 @@
               <!--<img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/frota/A318.png" alt="">-->
               <div class="caption">
                 <h4 class="text-center">
-                  Airbus <b>A318</b>
+                  Boeing <b>B738 MAX</b>
                 </h4>
                 <hr>
                 <p class="pull-left">
@@ -525,7 +525,7 @@
               <!--<img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/frota/A318.png" alt="">-->
               <div class="caption">
                 <h4 class="text-center">
-                  Airbus <b>A318</b>
+                  Embraer <b>E190</b>
                 </h4>
                 <hr>
                 <p class="pull-left">
