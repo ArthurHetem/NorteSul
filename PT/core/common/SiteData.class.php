@@ -149,6 +149,91 @@ class SiteData extends CodonData {
         return true;
     }
 
+	    /** NOTAM
+     * SiteData::getNewsItem()
+     *
+     * @param mixed $id
+     * @return
+     */
+    public static function getNotamItem($id) {
+        return DB::get_row('SELECT *, UNIX_TIMESTAMP(postdate) AS postdate
+									FROM phpvms_notam WHERE id=' . $id);
+    }
+
+    /**
+     * SiteData::getAllNews()
+     *
+     * @return
+     */
+    public static function getAllNotam() {
+        return DB::get_results('SELECT id, subject, body, UNIX_TIMESTAMP(postdate) as postdate, postedby
+									FROM phpvms_notam ORDER BY postdate DESC');
+    }
+
+    /**
+     * SiteData::AddNewsItem()
+     *
+     * @param mixed $subject
+     * @param mixed $body
+     * @return
+     */
+    public static function AddNotamItem($subject, $body) {
+
+        $subject = DB::escape($subject);
+        $body = DB::escape($body);
+        $postedby = Auth::$userinfo->firstname . ' ' . Auth::$userinfo->lastname;
+
+        //added to combat pilot names with apostrophes
+        $postedby = addslashes($postedby);
+
+        $sql = 'INSERT INTO ' . TABLE_PREFIX . "notam (subject, body, postdate, postedby)
+					VALUES ('$subject', '$body', NOW(), '$postedby')";
+
+        $res = DB::query($sql);
+
+        if (DB::errno() != 0) return false;
+
+        return true;
+    }
+	
+    /**
+     * SiteData::EditNewsItem()
+     *
+     * @param mixed $id
+     * @param mixed $subject
+     * @param mixed $body
+     * @return
+     */
+    public static function EditNotamItem($id, $subject, $body) {
+        $subject = DB::escape($subject);
+        $body = DB::escape($body);
+
+        $sql = 'UPDATE phpvms_notam SET subject=\''.$subject.'\', body=\''.$body.'\'
+        		WHERE id='.$id;
+
+        $res = DB::query($sql);
+
+        if (DB::errno() != 0) return false;
+
+        return true;
+    }
+
+    /**
+     * SiteData::DeleteItem()
+     *
+     * @param mixed $id
+     * @return
+     */
+    public static function DeleteNotamItem($id) {
+        $sql = 'DELETE FROM phpvms_notam WHERE id=' . $id;
+
+        $res = DB::query($sql);
+
+        if (DB::errno() != 0) return false;
+
+        return true;
+    }
+	
     /**
      * SiteData::GetAllPages()
      *

@@ -4,7 +4,7 @@
 	<title>NorteSul Virtual Airlines</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
+<!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -22,13 +22,11 @@
 <!--===============================================================================================-->
 </head>
 <body>
-	
-	
+
 	<div class="bg-g1 size1 flex-w flex-col-c-sb p-l-15 p-r-15 p-t-55 p-b-35 respon1">
-<!--<div style="position: fixed; z-index: 2; width: 100%; height: 100%">
-<iframe frameborder="0" height="100%" width="100%" src="https://youtube.com/embed/BOHFS_4kY4c?autoplay=1&controls=0&showinfo=0&autohide=1" allowfullscree>
-</iframe>
-</div>-->
+		<video autoplay loop id="myVideo">
+		  <source src="docs/videos/Trailer1.mp4" type="video/mp4">
+		</video>
 		<span></span>
 		<div class="flex-col-c p-t-50 p-b-50" style="z-index: 10;">
 			<h3 class="l1-txt1 txt-center p-b-10">
@@ -44,7 +42,7 @@
  <select id="soflow" onchange="this.options[this.selectedIndex].value &amp;&amp; (window.location = this.options[this.selectedIndex].value);" class="form-control">
 
   <option value="#">Choose / Escolha
- 
+
   </option><option value="en/">English
 
   </option><option value="pt">Portuguese
@@ -55,15 +53,15 @@
 			</div>
 
 		</div>
-		
+
 		<span class="s1-txt2 txt-center" style="z-index: 10;">
 			<p>© 2018 NorteSul. All Rights Reserved | Developed by  Arthur Hetem</p>
 			<p>© 2018 NorteSul. Todos Os Direitos Reservados | Desenvolvido por  Arthur Hetem</p>
 		</span>
-		
+
 	</div>
 
-<!--===============================================================================================-->	
+<!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/bootstrap/js/popper.js"></script>
@@ -75,7 +73,7 @@
 	<script src="vendor/countdowntime/moment-timezone.min.js"></script>
 	<script src="vendor/countdowntime/moment-timezone-with-data.min.js"></script>
 	<script src="vendor/countdowntime/countdowntime.js"></script>
-	<script>
+	<!--<script>
 		$('.cd100').countdown100({
 			// Set Endtime here
 			// Endtime must be > current time
@@ -85,11 +83,11 @@
 			endtimeHours: 0,
 			endtimeMinutes: 0,
 			endtimeSeconds: 0,
-			timeZone: "America/Sao_Paulo" 
+			timeZone: "America/Sao_Paulo"
 			// ex:  timeZone: "America/New_York", can be empty
 			// go to " http://momentjs.com/timezone/ " to get timezone
 		});
-	</script>
+	</script>-->
 <!--===============================================================================================-->
 	<script src="vendor/tilt/tilt.jquery.min.js"></script>
 	<script >

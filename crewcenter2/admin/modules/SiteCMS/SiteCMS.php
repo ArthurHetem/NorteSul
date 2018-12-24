@@ -114,7 +114,7 @@ class SiteCMS extends CodonModule
 	
 	public function addnotam() {
         $this->checkPermission(EDIT_NEWS);
-		$this->set('title', Lang::gs('notam.add.title'));
+		$this->set('title', 'Adicionar NOTAM');
 		$this->set('action', 'addnotam');
 		
 		$this->render('notam_add.php');
@@ -297,7 +297,7 @@ class SiteCMS extends CodonModule
 			return;
 			
 		if(!SiteData::AddNotamItem($this->post->subject, $this->post->body)) {
-			$this->set('message', 'There was an error adding the NOTAM deu erro');
+			$this->set('message', 'There was an error adding the NOTAM');
 		}
 		
 		$this->render('core_message.php');
