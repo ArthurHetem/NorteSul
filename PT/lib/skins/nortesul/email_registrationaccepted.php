@@ -5,7 +5,7 @@ Bem-vindo a NorteSul Linhas Aéreas Virtuais
 
 Em primeiro lugar, queremos te agradecer por fazer parte de nossa família. É um prazer tê-lo conosco!
 
-Este é um dia muito especial para você e para nós da NorteSul. Apartir de agora você faz parte de uma nova era de simulação aérea virtual. Para que isso se efetive oficialmente, abaixo, se encontra o link do formulário que deverá ser preenchido por você. Não se preocupe! Faz parte de um processo rápido e fácil de efetivação de sua parceria conosco.
+Este é um dia muito especial para você e para nós da NorteSul. Apartir de agora você faz parte de uma nova era na simulação aérea virtual. Para que isso se efetive oficialmente, abaixo, se encontra o link do formulário que deverá ser preenchido por você. Não se preocupe! Faz parte de um processo rápido e fácil de efetivação de sua parceria conosco.
 
 https://goo.gl/forms/fuIXKSzbYAVi18ex2
 
@@ -13,7 +13,9 @@ https://goo.gl/forms/fuIXKSzbYAVi18ex2
 
 
 
-Após o recebimento deste formulário, nosso Departamento de RH fará contato contigo para te informar o próximo passo a ser seguido por você.
+Após o recebimento deste formulário, nosso Departamento de RH fará contato contigo para te informar o próximo passo a ser seguido por você. 
+
+Este processo poderá durar até 24hrs. Pedimos sua paciência e compreenção.
 
 Mais uma vez te agradecemos e desejamos a você bons voos e muito sucesso na NorteSul Virtual.
 
