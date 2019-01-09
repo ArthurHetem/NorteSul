@@ -18,7 +18,7 @@
  */
 
 class FinanceData extends CodonData {
-    
+
     public static $lasterror;
 
     public static function formatMoney($number) {
@@ -58,7 +58,7 @@ class FinanceData extends CodonData {
         }
 
         $total = ($fuel_amount * $price);
-        
+
         # Surcharge amount
          $total += ((Config::Get('FUEL_SURCHARGE') / 100) * $fuel_amount) * $price;
 
@@ -69,28 +69,28 @@ class FinanceData extends CodonData {
     /**
      * This populates the expenses for a monthly-listing from
      * PIREPData::getIntervalDatabyMonth(array(), months). This goes
-     * monthly. Pass in just one month returned by that array. 
-     * 
+     * monthly. Pass in just one month returned by that array.
+     *
      * This will add a index called 'expenses' which will contain
-     * all of the expenses for that month	
+     * all of the expenses for that month
      *
      * @param mixed $month_info This is a description
      * @return mixed This is the return value description
      *
      */
     public static function calculateFinances($month_info) {
-        
-        
+
+
         $pilot_pay = LedgerData::getTotalForMonth($month_info->timestamp);
-    
+
         /* Where the bulk of our work is done for expenses */
         $running_total = 0;
-        
+
         $expenses = self::getExpensesForMonth($month_info->timestamp);
         foreach ($expenses as $ex) {
-            
+
             $ex->type = strtolower($ex->type);
-            
+
             if($ex->type == 'm') {
                 $ex->total = $ex->cost;
             } elseif($ex->type == 'f') { /* per-flight expense */
@@ -104,24 +104,42 @@ class FinanceData extends CodonData {
             $running_total += $ex->total;
         }
 
-        $month_info->expenses = $expenses;
-        $month_info->expenses_total = $running_total;
+        $profits = self::getProfitsForMonth($month_info->timestamp);
+        foreach ($profits as $pr) {
+
+            $pr->type = strtolower($pr->type);
+
+            if($pr->type == 'm') {
+                $pr->total = $pr->cost;
+            } elseif($pr->type == 'f') { /* per-flight expense */
+                $pr->total = $month_info->total * $pr->cost;
+            } elseif($pr->type == 'p') { /* percent of gross per month */
+                $pr->total = $month_info->gross * ($pr->cost / 100);
+            } elseif($pr->type == 'g') { /* perfect revenue, per flight */
+                $pr->total = $month_info->gross * ($pr->cost / 100);
+            }
+
+            $running_total += $pr->total;
+        }
+
+        $month_info->profits = $profits;
+        $month_info->profits_total = $running_total;
         $month_info->pilotpay = $pilot_pay;
-        
-        $month_info->revenue = 
-            $month_info->gross - $month_info->fuelprice - $month_info->pilotpay - $running_total;
+
+        $month_info->revenue =
+            $month_info->gross - $month_info->fuelprice - $month_info->pilotpay + $running_total;
 
         return $month_info;
     }
 
     /**
      * FinanceData::getExpensesForMonth()
-     * 
+     *
      * @param mixed $timestamp
      * @return
      */
     public static function getExpensesForMonth($timestamp) {
-        
+
         $time = date('Ym', $timestamp);
         # If it's the current month, just return the latest expenses
         if ($time == date('Ym')) {
@@ -132,7 +150,7 @@ class FinanceData extends CodonData {
 				WHERE `dateadded`=' . $time;
 
         $ret = DB::get_results($sql);
-        
+
         if(!$ret) {
             return array();
         }
@@ -142,14 +160,14 @@ class FinanceData extends CodonData {
 
     /**
      * FinanceData::setExpensesforMonth()
-     * 
+     *
      * @param mixed $timestamp
      * @return
      */
     public static function setExpensesforMonth($timestamp) {
-        
+
         $all_expenses = self::getAllExpenses();
-        
+
         if(!$all_expenses || count($all_expenses) == 0) {
             return true;
         }
@@ -202,7 +220,7 @@ class FinanceData extends CodonData {
 
     /**
      * FinanceData::removeExpensesforMonth()
-     * 
+     *
      * @param mixed $timestamp
      * @return void
      */
@@ -216,15 +234,15 @@ class FinanceData extends CodonData {
      * Get a list of all the expenses
      */
     public static function getAllExpenses() {
-        
-        $sql = 'SELECT * 
+
+        $sql = 'SELECT *
 				FROM ' . TABLE_PREFIX . 'expenses';
 
         $res = DB::get_results($sql);
         if(!$res) {
             return array();
         }
-        
+
         return $res;
     }
 
@@ -297,7 +315,7 @@ class FinanceData extends CodonData {
      * Edit a certain expense
      */
     public static function editExpense($id, $name, $cost, $type) {
-        
+
         if ($name == '' || $cost == '') {
             self::$lasterror = 'Name and cost must be entered';
             return false;
@@ -325,6 +343,221 @@ class FinanceData extends CodonData {
     public static function removeExpense($id) {
         $sql = 'DELETE FROM ' . TABLE_PREFIX . 'expenses
 					WHERE `id`=' . $id;
+
+        DB::query($sql);
+    }
+
+    /**
+     * FinanceData::getExpensesForMonth()
+     *
+     * @param mixed $timestamp
+     * @return
+     */
+    public static function getProfitsForMonth($timestamp) {
+
+        $time = date('Ym', $timestamp);
+        # If it's the current month, just return the latest expenses
+        if ($time == date('Ym')) {
+            return self::getAllProfits();
+        }
+
+        $sql = 'SELECT * FROM ' . TABLE_PREFIX . 'profitlog
+        WHERE `dateadded`=' . $time;
+
+        $ret = DB::get_results($sql);
+
+        if(!$ret) {
+            return array();
+        }
+
+        return $ret;
+    }
+
+    /**
+     * FinanceData::setExpensesforMonth()
+     *
+     * @param mixed $timestamp
+     * @return
+     */
+    public static function setProfitsforMonth($timestamp) {
+
+        $all_profits = self::getAllProfits();
+
+        if(!$all_profits || count($all_profits) == 0) {
+            return true;
+        }
+
+        # Remove expenses first
+        self::removeProfitsforMonth($timestamp);
+
+        $time = date('Ym', $timestamp);
+        foreach ($all_profits as $profit) {
+            $sql = 'INSERT INTO ' . TABLE_PREFIX . "profitlog
+          (`dateadded`, `name`, `type`, `cost`)
+          VALUES ('{$time}', '{$profit->name}', '{$profit->type}', '{$profit->cost}');";
+
+            DB::query($sql);
+        }
+    }
+
+
+    /**
+     * Populates any expenses which are missing from the table
+     * Goes month by month
+     *
+     */
+    public static function updateAllProfits() {
+        $times = StatsData::GetMonthsSinceStart();
+
+        foreach ($times as $timestamp) {
+            $exp = self::getProfitsForMonth($timestamp);
+
+            if (!$exp) {
+                self::setProfitsforMonth($timestamp);
+            }
+        }
+    }
+
+
+    /**
+     * Re-populates all expenses, deleteing all the old ones
+     *
+     * @return mixed This is the return value description
+     *
+     */
+    public static function populateAllProfits() {
+        $times = StatsData::GetMonthsSinceStart();
+
+        foreach ($times as $timestamp) {
+            self::setProfitsforMonth($timestamp);
+        }
+    }
+
+    /**
+     * FinanceData::removeExpensesforMonth()
+     *
+     * @param mixed $timestamp
+     * @return void
+     */
+    public static function removeProfitsforMonth($timestamp) {
+        $time = date('Ym', $timestamp);
+        $sql = 'DELETE FROM ' . TABLE_PREFIX . 'profitlog WHERE `dateadded`=' . $time;
+        DB::query($sql);
+    }
+
+    /**
+     * Get a list of all the expenses
+     */
+    public static function getAllProfits() {
+
+        $sql = 'SELECT *
+        FROM ' . TABLE_PREFIX . 'profits';
+
+        $res = DB::get_results($sql);
+        if(!$res) {
+            return array();
+        }
+
+        return $res;
+    }
+
+    /**
+     * Get an expense details based on ID
+     */
+    public static function getProfitDetail($id) {
+        $sql = 'SELECT * FROM ' . TABLE_PREFIX . 'profits
+          WHERE `id`=' . $id;
+
+        return DB::get_row($sql);
+    }
+
+    /**
+     * Get an expense by the name (mainly to check for
+     *	duplicates)
+     */
+    public static function getProfitByName($name) {
+        $sql = 'SELECT * FROM ' . TABLE_PREFIX . 'profits
+          WHERE `name`=' . $name;
+
+        return DB::get_row($sql);
+    }
+
+    /**
+     * Get all of the expenses for a flight
+     */
+    public static function getFlightProfits() {
+        $sql = "SELECT * FROM " . TABLE_PREFIX . "profits WHERE `type`='F'";
+        return DB::get_results($sql);
+    }
+
+
+    /**
+     *  Get any percentage expenses per flight
+     *
+     */
+    public static function getFlightPercentProfits() {
+        $sql = "SELECT * FROM " . TABLE_PREFIX . "profits WHERE `type`='G'";
+        return DB::get_results($sql);
+    }
+
+    /**
+     * Add an expense
+     */
+    public static function addProfit($name, $cost, $type) {
+
+        if ($name == '' || $cost == '') {
+            self::$lasterror = 'Name and cost must be entered';
+            return false;
+        }
+
+        $name = DB::escape($name);
+        $cost = DB::escape($cost);
+        $type = strtoupper($type);
+        if ($type == '') $type = 'M'; // Default as monthly
+
+        $sql = 'INSERT INTO ' . TABLE_PREFIX . "profits
+           (`name`, `cost`, `type`)
+          VALUES('$name', '$cost', '$type')";
+
+        DB::query($sql);
+
+        if (DB::errno() != 0) return false;
+
+        return true;
+    }
+
+    /**
+     * Edit a certain expense
+     */
+    public static function editProfit($id, $name, $cost, $type) {
+
+        if ($name == '' || $cost == '') {
+            self::$lasterror = 'Name and cost must be entered';
+            return false;
+        }
+
+        $name = DB::escape($name);
+        $cost = DB::escape($cost);
+        $type = strtoupper($type);
+        if ($type == '') $type = 'M'; // Default as monthly
+
+        $sql = 'UPDATE ' . TABLE_PREFIX . "profits
+          SET `name`='$name', `cost`='$cost', `type`='$type'
+          WHERE `id`=$id";
+
+        DB::query($sql);
+
+        if (DB::errno() != 0) return false;
+
+        return true;
+    }
+
+    /**
+     * Delete an expense
+     */
+    public static function removeProfit($id) {
+        $sql = 'DELETE FROM ' . TABLE_PREFIX . 'profits
+          WHERE `id`=' . $id;
 
         DB::query($sql);
     }

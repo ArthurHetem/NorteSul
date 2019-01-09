@@ -37,9 +37,8 @@
 	<!-- Magnific Popup -->
 	<link rel="stylesheet" href="<?php echo SITE_URL; ?>/lib/skins/nortesul/css/bootstrap-datepicker.min.css">
 
-	<!-- Owl Carousel  -->
-	<link rel="stylesheet" href="<?php echo SITE_URL; ?>/lib/skins/nortesul/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="<?php echo SITE_URL; ?>/lib/skins/nortesul/css/owl.theme.default.min.css">
+	<!-- FlexSlider2  -->
+	<link rel="stylesheet" href="<?php echo SITE_URL; ?>/lib/skins/nortesul/css/flexslider.css" type="text/css">
 
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="<?php echo SITE_URL; ?>/lib/skins/nortesul/css/style.css">
@@ -80,8 +79,6 @@
 	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
 	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/jquery.waypoints.min.js"></script>
-	<!-- Carousel -->
-	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/owl.carousel.min.js"></script>
 	<!-- countTo -->
 	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/jquery.countTo.js"></script>
 
@@ -95,6 +92,8 @@
 	<!-- Datepicker -->
 	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/bootstrap-datepicker.min.js"></script>
 	
+	<!-- FlexSlider2 -->
+	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/jquery.flexslider.js"></script>
 <style>
 .item2{
 	width:600px;
@@ -102,24 +101,30 @@
 </style>	
 	<!-- Main -->
 	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/main.js"></script>
-<script>
-$('.owl-carousel').owlCarousel({
-    loop:false,
-    margin:50,
-    nav:false,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:3
-        },
-        1000:{
-            items:5
-        }
-    }
-})
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function() {
+	$('#myCarousel').carousel({
+	interval: 10000
+	})
+    
+    $('#myCarousel').on('slid.bs.carousel', function() {
+    	//alert("slid");
+	});
+    
+});
 
+</script>
+<script type="text/javascript" charset="utf-8">
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide",
+    animationLoop: false,
+    itemWidth: 210,
+    itemMargin: 5
+  });
+});
+</script>
+<script type="text/javascript" charset="utf-8">
 $('#myTabs a').click(function (e) {
   e.preventDefault()
   $(this).tab('show')

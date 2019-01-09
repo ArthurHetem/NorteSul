@@ -291,17 +291,26 @@ echo "$resp";
 	<div id="gtco-subscribe">
 		<div class="gtco-container">
 			<div class="row animate-box azul">
-				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-					<h2>Nossos <b>Parceiros</b></h2>
-					<div class="owl-carousel owl-theme">
-    <div class="item2"><h4>Entre em contato para se tornar um Parceiro atráves da pagina de contato!</h4></a></div>
+				<div class="col-md-8 col-md-offset-2 gtco-heading text-center">
+				<h2>Nossos <b>Parceiros</b></h2>
+<div class="flexslider">
+  <ul class="slides">
+    <li>
+      <img src="<?php echo SITE_URL;?>/lib/skins/nortesul/images/parceiros/VATBRZ.png" height="250px" width="auto" />
+    </li>
+    <li>
+      <img src="<?php echo SITE_URL;?>/lib/skins/nortesul/images/parceiros/fshost.png" />
+    </li>
+	<li>
+      <img src="<?php echo SITE_URL;?>/lib/skins/nortesul/images/parceiros/VATBRZ.png" height="250px" width="auto" />
+    </li>
+    <li>
+      <img src="<?php echo SITE_URL;?>/lib/skins/nortesul/images/parceiros/fshost.png" />
+    </li>
+    <!-- items mirrored twice, total of 12 -->
+  </ul>
 </div>
-				</div>
-			</div>
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2">
-					
-				</div>
-			</div>
 		</div>
+	</div>
+			</div>
 	</div>

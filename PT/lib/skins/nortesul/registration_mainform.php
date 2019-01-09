@@ -1,5 +1,4 @@
-<?php if(!defined('IN_PHPVMS') && IN_PHPVMS !== true) { die(); } ?>
-<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-image: url(<?php echo SITE_URL; ?>/lib/skins/avianca/images/img_bg_2.jpg)">
+<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-image: url(<?php echo SITE_URL; ?>/lib/skins/avianca/images/img_bg_1.png)">
 		<div class="overlay"></div>
 		<div class="gtco-container">
 			<div class="row">
@@ -7,11 +6,11 @@
 					<div class="row row-mt-15em">
 
 						<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
-							<h1><?php echo $pilot->firstname . ' ' . $pilot->lastname?></h1>
+							<h1>Registro</h1>
                             <small><ol class="breadcrumb">
   <li>Home</li>
-  <li>Membros</li>
-  <li class="active"><b><?php echo $pilot->firstname . ' ' . $pilot->lastname?></b></li>
+  <li>Organização</li>
+  <li class="active"><b>Inscreva-se</b></li>
 </ol></small>							
 						</div>
 						
@@ -21,12 +20,12 @@
 			</div>
 		</div>
 	</header>
-<div class="container" id="tourpackages-carousel">
-<h3>Registration</h3>
-<p>Welcome to the registration form for <?php echo SITE_NAME; ?>. After you register, you will be notified by a staff member about your membership.</p>
+	
+    <div class="container" id="tourpackages-carousel">
+<?php if(!defined('IN_PHPVMS') && IN_PHPVMS !== true) { die(); } ?>
 <form method="post" action="<?php echo url('/registration');?>">
 <dl>
-	<dt>First Name: *</dt>
+	<dt>Nome: *</dt>
 	<dd><input type="text" name="firstname" value="<?php echo Vars::POST('firstname');?>" />
 		<?php
 			if($firstname_error == true)
@@ -34,7 +33,7 @@
 		?>
 	</dd>
 
-	<dt>Last Name: *</dt>
+	<dt>Sobrenome: *</dt>
 	<dd><input type="text" name="lastname" value="<?php echo Vars::POST('lastname');?>" />
 		<?php
 			if($lastname_error == true)
@@ -42,7 +41,7 @@
 		?>
 	</dd>
 
-	<dt>Email Address: *</dt>
+	<dt>Email: *</dt>
 	<dd><input type="text" name="email" value="<?php echo Vars::POST('email');?>" />
 		<?php
 			if($email_error == true)
@@ -50,7 +49,7 @@
 		?>
 	</dd>
 
-	<dt>Select Airline: *</dt>
+	<dt>Companhia Aérea: *</dt>
 	<dd>
 		<select name="code" id="code">
 		<?php/*
@@ -62,7 +61,7 @@
 		</select>
 	</dd>
 
-	<dt>Hub: *</dt>
+	<dt>HUB: *</dt>
 	<dd>
 		<select name="hub" id="hub">
 		<?php
@@ -73,7 +72,7 @@
 		</select>
 	</dd>
 
-	<dt>Location: *</dt>
+	<dt>País: *</dt>
 	<dd><select name="location">
 		<?php
 			foreach($country_list as $countryCode=>$countryName) {
@@ -94,10 +93,10 @@
 		?>
 	</dd>
 
-	<dt>Password: *</dt>
+	<dt>Senha: *</dt>
 	<dd><input id="password" type="password" name="password1" value="" /></dd>
 
-	<dt>Enter your password again: *</dt>
+	<dt>Senha Novamente: *</dt>
 	<dd><input type="password" name="password2" value="" />
 		<?php
 			if($password_error != '')
@@ -115,14 +114,13 @@
 	<dt>reCaptcha</dt>
 	<dd>
             <?php if(isset($captcha_error)){echo '<p class="error">'.$captcha_error.'</p>';} ?>
-            <div class="g-recaptcha" data-sitekey="<?php echo $sitekey;?>"></div>
+            <div class="g-recaptcha" data-sitekey="6Le90gkTAAAAACMNeU0l_b7jeRv3XguKlmZIid2x"></div>
             <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=<?php echo $lang;?>">
             </script>
 	</dd>
 
 	<dt></dt>
-	<dd><p>By clicking register, you're agreeing to the terms and conditions</p></dd>
-	<dt></dt>
 	<dd><input type="submit" name="submit" value="Register!" /></dd>
 </dl>
 </form>
+</div>

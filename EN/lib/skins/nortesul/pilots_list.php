@@ -48,7 +48,12 @@
 	          <td><b><a href="<?php echo url('/profile/view/'.$pilot->pilotid);?>"><?php echo PilotData::GetPilotCode($pilot->code, $pilot->pilotid)?></a></b></td>
 	          <td><?php echo $pilot->firstname.' <b>'.$pilot->lastname?></b></td>
               <td><img src="<?php echo Countries::getCountryImage($pilot->location);?>" alt="<?php echo Countries::getCountryName($pilot->location);?>" /></td>
-			  <td><img src="<?php echo $pilot->rankimage?>" alt="<?php echo $pilot->rank;?>" width="80px" height="30px"/></td>
+			  <td><?php
+               if($pilot->rank == 'New Hire')
+               {echo '<img src="'.SITE_URL.'/lib/skins/nortesul/images/new hire.png" alt="Novato" width="80px" height="30px"/>';}
+               else
+               {echo '<img src="'.$pilot->rankimage.'" alt="'.$pilot->rank.'" width="80px" height="30px"/>';}
+           ?></td>
 			  <td><?php echo $pilot->totalflights; ?></td>
               <td><?php echo Util::AddTime($pilot->totalhours, $pilot->transferhours); ?></td>
 			  <td><b><?php echo $pilot->hub?></b></td>

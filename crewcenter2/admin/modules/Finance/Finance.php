@@ -27,7 +27,14 @@ class Finance extends CodonModule {
 
                 $this->set('sidebar', 'sidebar_expenses.php');
 
-                break;
+        }
+        switch ($this->controller->function) {
+            case 'addprofit':
+            case 'editprofit':
+            case 'viewprofits':
+
+                $this->set('sidebar', 'sidebar_profits.php');
+
         }
     }
 
@@ -63,6 +70,27 @@ class Finance extends CodonModule {
         echo OFCharts::create_pie_graph('Expenses breakdown');
     }
 
+    public function viewprofitchart() {
+        $this->checkPermission(VIEW_FINANCES);
+        $type = $this->get->type;
+        $type = str_replace('m', '', $type);
+        $check = date('Ym', $type);
+
+        $finance_data = $this->getmonthly($check);
+        $finance_data = FinanceData::calculateFinances($finance_data[0]);
+
+        // Now expenses
+        if (!is_array($finance_data->profits)) {
+            $finance_data->profits = array();
+        }
+
+        foreach ($finance_data->profits as $profit) {
+            OFCharts::add_data_set($profit->name, floatval($profit->total));
+        }
+
+        echo OFCharts::create_pie_graph('Profits breakdown');
+    }
+
     public function viewmonthchart() {
         $this->checkPermission(VIEW_FINANCES);
         $params = $this->formfilter();
@@ -71,7 +99,7 @@ class Finance extends CodonModule {
          * Check the first letter in the type
          * m#### - month
          * y#### - year
-         * 
+         *
          * No type indicates to view the 'overall'
          */
         $type = $this->get->type;
@@ -94,17 +122,20 @@ class Finance extends CodonModule {
         $gross_data = array();
         $fuel_data = array();
         $expense_data = array();
+        $profit_data = array();
 
         foreach ($finance_data as $month) {
             $titles[] = $month->ym;
             $gross_data[] = intval($month->revenue);
             $fuel_data[] = intval($month->fuelprice);
             $expense_data[] = intval($month->expenses_total);
+            $profit_data[] = intval($month->profits_total);
         }
 
         // Add each set
         OFCharts::add_data_set($titles, $gross_data, 'Total Revenue', '#FF6633');
         OFCharts::add_data_set($titles, $expense_data, 'Expenses', '#2EB800');
+        OFCharts::add_data_set($titles, $profit_data, 'Profits', '#FF6633');
         OFCharts::add_data_set($titles, $fuel_data, 'Fuel Costs', '#008AB8');
 
         //echo OFCharts::create_line_graph('Months Balance Data');
@@ -120,7 +151,7 @@ class Finance extends CodonModule {
          * Check the first letter in the type
          * m#### - month
          * y#### - year
-         * 
+         *
          * No type indicates to view the 'overall'
          */
         if ($type[0] == 'm') {
@@ -170,7 +201,7 @@ class Finance extends CodonModule {
 
     /**
      * Loop through month by month, and pull any data for that month.
-     * If there's nothing for that month, then blank it 
+     * If there's nothing for that month, then blank it
      */
     protected function getyearly($year) {
         $this->checkPermission(VIEW_FINANCES);
@@ -194,6 +225,7 @@ class Finance extends CodonModule {
                 $data->fuelprice = 0;
                 $data->price = 0;
                 $data->expenses = 0;
+                $data->profits = 0;
                 $data->pilotpay = 0;
             } else {
                 $data = FinanceData::calculateFinances($data[0]);
@@ -294,6 +326,88 @@ class Finance extends CodonModule {
             FinanceData::setExpensesforMonth(time());
 
             LogData::addLog(Auth::$userinfo->pilotid, 'Edited expense "' . $this->post->name . '"');
+        }
+
+        if (!$ret) {
+            $this->set('message', 'Error: ' . DB::error());
+            $this->render('core_error.php');
+
+            return;
+        }
+
+        $this->render('core_success.php');
+    }
+
+    public function viewprofits() {
+        $this->checkPermission(VIEW_FINANCES);
+        if ($this->post->action == 'addprofit' || $this->post->action == 'editprofit') {
+            $this->processProfit();
+        }
+
+        if ($this->post->action == 'deleteprofit') {
+            FinanceData::removeProfit($this->post->id);
+            FinanceData::setProfitforMonth(time());
+
+            echo json_encode(array('status' => 'ok'));
+            return;
+        }
+
+        $this->set('allprofits', FinanceData::GetAllProfits());
+        $this->render('finance_profitlist.php');
+    }
+
+    public function addprofit() {
+        $this->checkPermission(EDIT_EXPENSES);
+        $this->set('title', 'Add Profit');
+        $this->set('action', 'addprofit');
+
+        $this->render('finance_profitform.php');
+    }
+
+    public function editprofit($id) {
+        $this->checkPermission(EDIT_EXPENSES);
+        $this->set('title', 'Edit Profit');
+        $this->set('action', 'editprofit');
+        $this->set('profit', FinanceData::getProfitDetail($id));
+
+        $this->render('finance_profitform.php');
+    }
+
+    public function processProfit() {
+        $this->checkPermission(EDIT_EXPENSES);
+        if ($this->post->name == '' || $this->post->cost == '') {
+            $this->set('message', 'Name and cost must be entered');
+            $this->render('core_error.php');
+            return;
+        }
+
+        if (!is_numeric($this->post->cost)) {
+            $this->set('message', 'Cost must be a numeric amount, no symbols');
+            $this->render('core_error.php');
+            return;
+        }
+
+        if ($this->post->action == 'addprofit') {
+            # Make sure it doesn't exist
+            if (FinanceData::GetProfitByName($this->post->name)) {
+                $this->set('message', 'Profit already exists!');
+                $this->render('core_error.php');
+                return;
+            }
+
+            $ret = FinanceData::AddProfit($this->post->name, $this->post->cost, $this->post->type);
+            $this->set('message', 'The profit "' . $this->post->name . '" has been added');
+
+            FinanceData::setProfitsforMonth(time());
+
+            LogData::addLog(Auth::$userinfo->pilotid, 'Added profit "' . $this->post->name . '"');
+        } elseif ($this->post->action == 'editprofit') {
+            $ret = FinanceData::EditProfit($this->post->id, $this->post->name, $this->post->cost, $this->post->type);
+            $this->set('message', 'The profit "' . $this->post->name . '" has been edited');
+
+            FinanceData::setProfitsforMonth(time());
+
+            LogData::addLog(Auth::$userinfo->pilotid, 'Edited profit "' . $this->post->name . '"');
         }
 
         if (!$ret) {
