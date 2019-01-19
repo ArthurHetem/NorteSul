@@ -220,6 +220,7 @@ if(PilotGroups::group_has_perm(Auth::$usergroups, VIEW_FINANCES)
 		{
 		?>
 		<li><a href="<?php echo adminurl('/finance/viewexpenses'); ?>">Expenses</a></li>
+		<li><a href="<?php echo adminurl('/finance/viewprofits'); ?>">Profits</a></li>
 		<?php 
 		} 
 		?>

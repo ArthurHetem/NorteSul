@@ -352,7 +352,7 @@ class Finance extends CodonModule {
             return;
         }
 
-        $this->set('allprofits', FinanceData::GetAllProfits());
+        $this->set('allprofits', FinanceData::getAllProfits());
         $this->render('finance_profitlist.php');
     }
 
@@ -389,13 +389,13 @@ class Finance extends CodonModule {
 
         if ($this->post->action == 'addprofit') {
             # Make sure it doesn't exist
-            if (FinanceData::GetProfitByName($this->post->name)) {
+            if (FinanceData::getProfitByName($this->post->name)) {
                 $this->set('message', 'Profit already exists!');
                 $this->render('core_error.php');
                 return;
             }
 
-            $ret = FinanceData::AddProfit($this->post->name, $this->post->cost, $this->post->type);
+            $ret = FinanceData::addProfit($this->post->name, $this->post->cost, $this->post->type);
             $this->set('message', 'The profit "' . $this->post->name . '" has been added');
 
             FinanceData::setProfitsforMonth(time());

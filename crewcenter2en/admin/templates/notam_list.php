@@ -9,10 +9,10 @@ if(!$allnotams) {
 <table id="tabledlist" class="table">
 <thead>
 <tr>
-	<th>LETRA</th>
-	<th>Emissor</th>
-	<th>Data Postagem</th>
-	<th>Opções</th>
+	<th>LETTER</th>
+	<th>Issuer</th>
+	<th>Date</th>
+	<th>Options</th>
 </tr>
 </thead>
 <tbody>
@@ -25,10 +25,10 @@ foreach($allnotams as $notam) {
 	<td align="center"><?php echo date(DATE_FORMAT, $notam->postdate);?></td>
 	<td align="center" width="1%" nowrap>
         <button class="btn btn-info {button:{icons:{primary:'ui-icon-wrench'}}}" onclick="window.location='<?php echo adminurl('/sitecms/editnotam?id='.$notam->id);?>';">
-			Editar
+			Edit
 		</button>
 		<button class="deleteitem btn btn-danger {button:{icons:{primary:'ui-icon-trash'}}}" 
-			href="<?php echo adminaction('/sitecms/viewnotam');?>" action="deleteitem" id="<?php echo $notam->id;?>">Deletar</button>
+			href="<?php echo adminaction('/sitecms/viewnotam');?>" action="deleteitem" id="<?php echo $notam->id;?>">Delete</button>
 	</td>
 </tr>
 <?php

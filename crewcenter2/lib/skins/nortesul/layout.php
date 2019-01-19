@@ -18,6 +18,9 @@
   <link rel="stylesheet" href="<?php echo SITE_URL ?>/lib/skins/nortesul/dist/css/skins/skin-blue.min.css">
     <!-- iCheck -->
   <link rel="stylesheet" href="<?php echo SITE_URL ?>/lib/skins/nortesul/plugins/iCheck/square/blue.css">
+  <!-- SweetAlert2 -->
+   <link rel="stylesheet" href="<?php echo SITE_URL ?>/lib/skins/nortesul/css/sweetalert2.min.css">
+   <!-- phpVMS -->
   <script type="text/javascript" src="<?php echo SITE_URL ?>/lib/js/phpvms.js"></script>
   <script type="text/javascript" src="<?php echo fileurl('lib/js/simbrief.apiv1.js');?>"></script>
 
@@ -127,7 +130,8 @@ desired effect
 <script src="<?php echo SITE_URL ?>/lib/skins/nortesul/dist/js/adminlte.min.js"></script>
 <!-- iCheck -->
 <script src="<?php echo SITE_URL ?>/lib/skins/nortesul/plugins/iCheck/icheck.min.js"></script>
-
+<!-- SweetAlert2 -->
+<script src="<?php echo SITE_URL ?>/lib/skins/nortesul/js/sweetalert2.min.js"></script>
 <script>
 jQuery.noConflict();
 </script>

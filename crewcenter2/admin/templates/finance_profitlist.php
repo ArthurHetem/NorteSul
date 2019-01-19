@@ -1,9 +1,9 @@
 <?php if(!defined('IN_PHPVMS') && IN_PHPVMS !== true) { die(); } ?>
 <h3>Current Profits</h3>
 <?php
-if(!$allexpenses)
+if(!$allprofits)
 {
-	echo '<p>No expenses have been added</p>';
+	echo '<p>No profits have been added</p>';
 	return;
 }
 
@@ -20,27 +20,27 @@ $expense_list = Config::Get('EXPENSE_TYPES');
 </thead>
 <tbody>
 <?php
-foreach($allexpenses as $expense)
+foreach($allprofits as $profits)
 {
 ?>
-<tr id="row<?php echo $expense->id;?>">
-	<td align="center"><?php echo $expense->name; ?></td>
+<tr id="row<?php echo $profit->id;?>">
+	<td align="center"><?php echo $profit->name; ?></td>
 	<td align="center"><?php 
 	
-	if($expense->type == 'P' || $expense->type == 'G')
-		echo $expense->cost.'%'; 
+	if($profit->type == 'P' || $profit->type == 'G')
+		echo $profit->cost.'%'; 
 	else
-		echo Config::Get('MONEY_UNIT').$expense->cost; 
+		echo Config::Get('MONEY_UNIT').$profit->cost; 
 	
 	?></td>
-	<td align="center"><?php echo $expense_list[$expense->type]; ?></td>
+	<td align="center"><?php echo $expense_list[$profit->type]; ?></td>
 	<td align="center" width="1%" nowrap>
 		<button id="dialog" class="jqModal button" 
-			href="<?php echo adminaction('/finance/editexpense/'.$expense->id);?>">
+			href="<?php echo adminaction('/finance/editprofit/'.$profit->id);?>">
 		Edit</button>
 		
-		<button href="<?php echo adminaction('/finance/viewexpenses');?>" action="deleteexpense"
-			id="<?php echo $expense->id;?>" class="deleteitem button">Delete</button>
+		<button href="<?php echo adminaction('/finance/viewprofits');?>" action="deleteexpense"
+			id="<?php echo $profit->id;?>" class="deleteitem button">Deletar</button>
 	</td>
 </tr>
 	<?php

@@ -2,9 +2,9 @@
 <h3><?php echo $title?></h3>
 
 <form action="<?php echo adminurl('/sitecms/viewnotam');?>" method="post">
-<p><strong>LETRA DO NOTAM: </strong><input type="text" class="form-control" name="subject" value="<?php if(isset($notamitem)) { echo $notamitem->subject; }?>" /></p>
+<p><strong>NOTAM LETTER: </strong><input type="text" class="form-control" name="subject" value="<?php if(isset($notamitem)) { echo $notamitem->subject; }?>" /></p>
 <p>
-<p><strong>Texto NOTAM: </strong></p>
+<p><strong>NOTAM TEXT: </strong></p>
 <p>
 <textarea id="editor" name="body" width="100%" style="width: 100%; height: 250px;"><?php if(isset($notamitem->body)) { echo $notamitem->body; }?></textarea>
 </p>

@@ -18,6 +18,8 @@
   <link rel="stylesheet" href="<?php echo SITE_URL ?>/lib/skins/nortesul/dist/css/skins/skin-blue.min.css">
     <!-- iCheck -->
   <link rel="stylesheet" href="<?php echo SITE_URL ?>/lib/skins/nortesul/plugins/iCheck/square/blue.css">
+    <!-- SweetAlert2 -->
+   <link rel="stylesheet" href="<?php echo SITE_URL ?>/lib/skins/nortesul/css/sweetalert2.min.css">
   <script type="text/javascript" src="<?php echo SITE_URL ?>/lib/js/phpvms.js"></script>
   <script type="text/javascript" src="<?php echo fileurl('lib/js/simbrief.apiv1.js');?>"></script>
 
@@ -62,6 +64,9 @@
     transition: .5s ease;
 }
 
+.swal2-popup {
+  font-size: 1.6rem !important;
+}
  </style>
  <!--Your Google Maps API Key here-->
     <script src="http://maps.google.com/maps/api/js?v=3&key=AIzaSyDbwylblt3-Nz21yNoDJWbHyqTjTNogYcg&callback=main.CreateMap"></script>
@@ -127,7 +132,8 @@ desired effect
 <script src="<?php echo SITE_URL ?>/lib/skins/nortesul/dist/js/adminlte.min.js"></script>
 <!-- iCheck -->
 <script src="<?php echo SITE_URL ?>/lib/skins/nortesul/plugins/iCheck/icheck.min.js"></script>
-
+<!-- SweetAlert2 -->
+<script src="<?php echo SITE_URL ?>/lib/skins/nortesul/js/sweetalert2.min.js"></script>
 <script>
 jQuery.noConflict();
 </script>

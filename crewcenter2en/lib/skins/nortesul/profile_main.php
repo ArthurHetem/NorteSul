@@ -56,6 +56,11 @@
 		  <!--<div class="callout callout-warning callout-dismissable" role="alert">
              <b><center>The NorteSul System may be unstable today because of routes Update<p>Thank you for your understanding.</p><p>Staff Team.</p></center></b>
           </div>-->
+		  <div class="alert alert-danger alert-dismissable" role="alert">
+		   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+		   <h4><i class="icon fa fa-question"></i> Do you know</h4>
+             NosteSul Virtual is hiring!, see more <b><a href="<?php echo SITE_URL;?>/index.php/application">HERE</a></b>
+          </div>
 		<div class="row">
 		  <div class="col-lg-3 col-xs-6">
             <!-- small box -->
@@ -331,3 +336,14 @@
         </div>
     </section>
     <!-- /.content -->
+<script>
+  $(window).load(function(){
+    Swal({
+  title: 'New NOTAM!',
+  text: 'Please read the NOTAMs',
+  type: 'info',
+  heightAuto: false,
+  confirmButtonText: 'Cool'
+})
+  });
+</script>

@@ -37,7 +37,7 @@
                                     ?></span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">Notificações aos Admins</li>
+              <li class="header">Staff Notifications</li>
               <li>
                 <!-- inner menu: contains the actual data -->
                 <ul class="menu">
@@ -220,6 +220,7 @@
         <li><a href="<?php echo SITE_URL?>/index.php/wthr"><i class="fa fa-cloud"></i> <span>WX Briefing</span><span class="label label-success pull-right">New</span></a></li>
 		<li class="header">PROFILE</li>
         <li><a href="<?php echo SITE_URL?>/index.php/profile/editprofile"><i class="fa fa-gear"></i> <span>Edit Profile</span></a></li>
+		<li><a href="<?php echo SITE_URL?>/index.php/pireps/mine"><i class="fa fa-list"></i> <span>My Flights</span></a></li>
 		<li class="header">OPERATIONAL</li>
 		<li><a href="<?php echo SITE_URL?>/index.php/mail"><i class="fa fa-envelope-o"></i> <span>Intra-mail</span></a></li>
 		<li><a href="http://nortesulvirtual.com/hesk/"><i class="fa fa-headphones"></i> <span>HelpDesk</span></a></li>
