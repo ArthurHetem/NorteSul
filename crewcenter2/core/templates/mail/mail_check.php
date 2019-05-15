@@ -10,13 +10,16 @@
 //@copyright Copyright (c) 2009-2011, David Clark
 //@license http://creativecommons.org/licenses/by-nc-sa/3.0/
 ?>
+<center>
 <?php
     if ($items > 0)
 		{
-			echo $items(count);
+			echo '<img src="'.SITE_URL.'/core/modules/Mail/mailimages/new_mail.gif" border="0" /><br />';
+			echo 'You Have Mail';
 		}
 		else
 		{
-			echo '0';
+			echo 'You have no new mail';
 		}
 ?>
+</center>

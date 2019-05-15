@@ -133,7 +133,7 @@ foreach($allroutes as $route) {
 				if($hours > "9" AND $minutes > "9") {
 					echo $hours.':'.$minutes ;
 				} else {
-					echo '0'.$hours.':0'.$minutes ;
+					echo '0'.$hours.':'.$minutes ;
 				}
 				?> Hrs
 				</strong>

@@ -275,7 +275,6 @@ class Schedules extends CodonModule {
         
         $this->set('allroutes', $schedules);
         $this->set('schedule_list', $schedules);
-        $this->render('schedule_list.tpl');
     }
 
     /**

@@ -1,7 +1,10 @@
  <!-- Main Footer -->
   <footer class="main-footer">
     <!-- Default to the left -->
-    <strong>Copyright &copy; <?php echo date('Y')?> NorteSul Virtual Airlines.</strong> Todos os Direitos Reservados.
+    CrewCenter v2 Pro &copy; AHsystems
+      <div class="pull-right hidden-xs">
+          Criado com <i class="fa fa-heart text-red"></i> para a <a href="http://nortesulvirtual.com" class="text-red">NorteSul Virtual</a>
+    </div>
   </footer>
 
   <!-- Control Sidebar -->
@@ -11,85 +14,49 @@
     <div class="tab-content">
       <!-- Home tab content -->
       <div class="tab-pane active" id="control-sidebar-home-tab">
-        <h3 class="control-sidebar-heading">Acontecimentos</h3>
+        <h3 class="control-sidebar-heading">Online <i class="fa fa-circle text-success"></i></h3>
         <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:;">
-              <i class="menu-icon fa fa-play bg-green"></i>
+          <?php
 
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Inauguração</h4>
+$usersonline = StatsData::UsersOnline();
+?>
 
-                <p>Foi em Agosto/2018</p>
-              </div>
-            </a>
-          </li>
+
+<?php
+$shown = array();
+foreach($usersonline as $pilot)
+{
+
+if(in_array($pilot->pilotid, $shown))
+continue;
+else
+$shown[] = $pilot->pilotid;
+
+echo "<li>";
+echo '<img src="'.PilotData::getPilotAvatar($pilotid).'" class="img-circle" width="30px" height="auto" style="border: 1px solid white; margin-left: 10px;" />';
+echo " {$pilot->firstname} {$pilot->lastname}";
+echo "</li>";
+
+}
+
+?>
+
         </ul>
         <!-- /.control-sidebar-menu -->
         <hr>
-        <h3 class="control-sidebar-heading">Metas NorteSul Virtual</h3>
+        <h3 class="control-sidebar-heading">Última noticia</h3>
         <ul class="control-sidebar-menu">
           <li>
             <a href="javascript:;">
-              <h4 class="control-sidebar-subheading">
-                Site
-                <span class="pull-right-container">
-                    <span class="label label-success pull-right">100%</span>
-                  </span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-success" style="width: 100%"></div>
-              </div>
-            </a>
-          </li>
-		  <li>
-            <a href="javascript:;">
-              <h4 class="control-sidebar-subheading">
-                CrewCenter
-                <span class="pull-right-container">
-                    <span class="label label-success pull-right">99%</span>
-                  </span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-success" style="width: 99%"></div>
-              </div>
-            </a>
+            <?php PopUpNews::PopUpNewsList(1); ?>
+          </a>
           </li>
         </ul>
         <!-- /.control-sidebar-menu -->
-		<hr>
-	  <h3 class="control-sidebar-heading">Pilotos Online</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:;">
-              <i class="menu-icon fa fa-play bg-green"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Inauguração</h4>
-
-                <p>Foi em Agosto/2018</p>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-         <hr>
-		 <div class="tab-pane" id="control-sidebar-settings-tab">
-              <h3 class="control-sidebar-heading">Informações Gerais</h3>
-                <h3 class="control-sidebar-subheading" align="center">
-                 Desenvolvido por <a href="https://www.facebook.com/arthur.hetem">Arthur Hetem</a></h3>
-                <p align="center">
-                  Versão 1.0
-                </p>
-          </div><!-- /.tab-pane -->
       </div>
       <!-- /.tab-pane -->
       <!-- Stats tab content -->
       <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-      <!-- /.tab-pane -->
-    </div>
   </aside>
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed

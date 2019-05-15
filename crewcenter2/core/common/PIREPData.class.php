@@ -805,11 +805,11 @@ class PIREPData extends CodonData {
      * @return
      */
     public static function updateFlightReport($pirepid, $pirepdata, $recalc_finances = true) {
-
+		
         if (!is_array($pirepdata)) {
             return false;
         }
-
+PirepAcData::search($pirepid);
         if ($pirepdata['depicao'] == '' || $pirepdata['arricao'] == '') {
             return false;
         }

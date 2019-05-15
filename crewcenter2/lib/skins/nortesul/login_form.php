@@ -1,54 +1,45 @@
 <?php if(!defined('IN_PHPVMS') && IN_PHPVMS !== true) { die(); } ?>
 
-<div class="login-box">
-  
-  <!-- /.login-logo -->
-  <div class="login-box-body">
+<div class="login-box pulse animated">
   <div class="login-logo">
-    <img src="<?php echo SITE_URL?>/lib/skins/nortesul/img/LogoCrew.png" alt="logo" class="logo-default" width="256px" height="144px" />
+    <img src="<?php echo SITE_URL?>/lib/skins/nortesul/img/crew_logo.png" alt="logo" class="logo-default" style="height: 80%; width: 80%;" />
   </div>
-    <p class="login-box-msg"><h3>Acessar CrewCenter</h3></p>
-
-    <form action="<?php echo url('/login');?>" method="post">
-      <div class="form-group has-feedback">
-        <input type="email" name="email" class="form-control" placeholder="Email">
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+    <!-- /.login-logo -->
+  <div class="login-box-body">
+    <form action="<?php echo url('/login');?>" method="post" class="form-horizontal form-bordered form-control-borderless">
+      <div class="input-group">
+	  <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+	          <input type="email" name="email" class="form-control" placeholder="Email ou ID de Piloto">
       </div>
-      <div class="form-group has-feedback">
-        <input type="password" name="password" class="form-control" placeholder="Senha">
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+	  <hr>
+	  <div class="input-group">
+	  <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
+	          <input type="password" name="password" class="form-control" placeholder="Senha">
       </div>
-      <div class="row">
+      <div class="row bege-espacado">
         <div class="col-xs-8">
-          <div class="checkbox icheck">
-            <label>
-              <div class="icheckbox_square-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> Lembrar Me
-            </label>
-          </div>
+			<div class="switch__container">
+  <input id="switch-flat" class="switch switch--flat" type="checkbox">
+  <label for="switch-flat"></label>
+</div>
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
 		  <input type="hidden" name="redir" value="index.php/profile" />
 		  <input type="hidden" name="action" value="login" />
-          <button type="submit" name="submit" value="submit" class="btn aqua-gradient btn-block btn-rounded z-depth-1a btn-flat">Logar</button>
+          <button type="submit" name="submit" value="submit" class="btn btn-default btn-block btn-rounded" style="margin-top: 10px;"><i class="fa fa-power-off"></i> Logar</button>
         </div>
         <!-- /.col -->
       </div>
 	  <hr>
-	  <h4>Esqueceu Sua Senha?</h4>
-	<p class="h5">
-				 Sem problemas, clique <b><a href="<?php echo SITE_URL; ?>/index.php/login/forgotpassword" id="forget-password">
-				AQUI </a></b>
-				para resetar sua senha.
+	  <div class="form-group">
+	<p class="h6 text-center">
+	<a href="<?php echo SITE_URL; ?>/index.php/login/forgotpassword" id="forget-password" class="text-muted">Esqueceu a Senha?</a>
 			</p>
-				<hr>
-	  <div class="social-auth-links text-center">
-      <p>Curta Nossas Redes Sociais:</p>
-      <a href="http://www.facebook.com/nortesulvirtual" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Página do Facebook</a>
-      <a href="https://twitter.com/NortesulV" class="btn btn-block btn-social btn-twitter btn-flat"><i class="fa fa-twitter"></i> Perfil do Twitter</a>
-	  <a href="https://www.instagram.com/nortesulvirtual/" class="btn btn-block btn-social btn-instagram btn-flat"><i class="fa fa-instagram"></i> Perfil do Instagram</a>
-    </div>
-    <!-- /.social-auth-links -->
+			<div class="col-xs-12 text-center">
+                    <small>NorteSul Virtual © <?php echo date("Y");?>. Todos os direitos reservados.</small>
+                </div>
+				</div>
     </form>
 
    
@@ -56,12 +47,3 @@
   <!-- /.login-box-body -->
 </div>
 <!-- /.login-box -->
-<script>
-  $(function () {
-    $('input').iCheck({
-      checkboxClass: 'icheckbox_square-blue',
-      radioClass: 'iradio_square-blue',
-      increaseArea: '20%' /* optional */
-    });
-  });
-</script>

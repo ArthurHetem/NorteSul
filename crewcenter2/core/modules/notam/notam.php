@@ -20,11 +20,11 @@ class Notam extends CodonModule
 {
 	public function index()
 	{
-		$this->MostraNotam(50);
+		$this->show('notamindex.php');
 	}
 	
 	// This function gets called directly in the template
-	public function MostraNotam($count=50)
+	public function MostraNotam($count=100)
 	{
 		$sql='SELECT id, subject, body, postedby, UNIX_TIMESTAMP(postdate) AS postdate
 				FROM ' . TABLE_PREFIX .'notam
@@ -39,6 +39,7 @@ class Notam extends CodonModule
 		foreach($res as $row)
 		{
 			//TODO: change the date format to a setting in panel
+			$this->set('id', $row->id);
 			$this->set('subject', $row->subject);
 			$this->set('body', $row->body);
 			$this->set('postedby', $row->postedby);
@@ -47,4 +48,19 @@ class Notam extends CodonModule
 			$this->show('notam.php');
 		}
 	}
+	public function View($id)
+	{
+		$sql='SELECT id, subject, body, postedby, UNIX_TIMESTAMP(postdate) AS postdate
+				FROM ' . TABLE_PREFIX .'notam 
+				WHERE id = '.$id;
+		
+		$res = DB::get_row($sql);
+			
+			$this->set('subject', $res->subject);
+			$this->set('body', $res->body);
+			$this->set('postedby', $res->postedby);
+			$this->set('postdate', date(DATE_FORMAT, $res->postdate));
+		
+			$this->show('vernotam.php');
+	}	
 }

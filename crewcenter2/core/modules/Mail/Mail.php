@@ -49,6 +49,7 @@ class Mail extends CodonModule {
             $this->render('core_error');
             return;
         }else{
+            $this->menu();
             $this->show('mail/mail_message');
         }
     }
@@ -57,6 +58,7 @@ class Mail extends CodonModule {
     public function inbox() {
         $this->set('mail', MailData::getallmail(Auth::$userinfo->pilotid));
         $this->set('pilotcode', PilotData::GetPilotCode(Auth::$userinfo->code, Auth::$userinfo->pilotid));
+        $this->menu();
         $this->show('mail/mail_inbox');
     }
 
@@ -75,6 +77,7 @@ class Mail extends CodonModule {
         }
         else {
             $this->set('mail', MailData::getmailcontent($thread_id, $who_to));
+            $this->menu();
             $this->show('mail/mail_open');
         }
     }
@@ -88,6 +91,7 @@ class Mail extends CodonModule {
         }
         else {
             $this->set('allpilots', $pilots=(PilotData::findPilots(array('p.retired' => '0'))));
+            $this->menu();
             $this->show('mail/mail_new');
         }
     }
@@ -167,6 +171,7 @@ class Mail extends CodonModule {
         $pid = Auth::$userinfo->pilotid;
         $this->set('mail', MailData::getsentmail($pid));
         $this->set('pilotcode', PilotData::GetPilotCode(Auth::$userinfo->code, Auth::$userinfo->pilotid));
+        $this->menu();
         $this->show('mail/mail_sentitems');
     }
 
@@ -177,6 +182,7 @@ class Mail extends CodonModule {
             $this->render('core_error');
             return;
         }
+        $this->menu();
         $this->show('mail/mail_settings');
     }
 
@@ -254,6 +260,7 @@ class Mail extends CodonModule {
             return;
         }
         $this->set('mail', MailData::getmailcontent($thread_id));
+        $this->menu();
         $this->show('mail/mail_reply');
     }
 
@@ -267,7 +274,7 @@ class Mail extends CodonModule {
             $this->show('mail/mail_check');
         }
     }
-	
+
     public function checkforfolders($pid) {
         $query = "SELECT *
                     FROM airmail_folders
@@ -283,6 +290,7 @@ class Mail extends CodonModule {
             $this->render('core_error');
             return;
         }
+        $this->menu();
         $this->show('mail/mail_newfolder');
     }
 
@@ -306,6 +314,7 @@ class Mail extends CodonModule {
         }
         $this->set('folder', MailData::getfoldercontents($id));
         $this->set('mail', MailData::getfoldermail($id));
+        $this->menu();
         $this->show('mail/mail_inbox');
     }
 
@@ -317,6 +326,7 @@ class Mail extends CodonModule {
         }
         $this->set('mail_id', $id);
         $this->set('folders', MailData::checkforfolders(Auth::$userinfo->pilotid));
+        $this->menu();
         $this->show('mail/move_message');
     }
 
@@ -339,6 +349,7 @@ class Mail extends CodonModule {
             return;
         }
         $this->set('folder', MailData::getfoldercontents($id));
+        $this->menu();
         $this->show('mail/mail_editfolder');
     }
 
@@ -348,6 +359,7 @@ class Mail extends CodonModule {
             $this->render('core_error');
             return;
         }
+        $this->menu();
         $this->show('mail/mail_deletefolder');
     }
 

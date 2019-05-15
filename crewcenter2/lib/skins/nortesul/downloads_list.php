@@ -1,47 +1,81 @@
 <?php if(!defined('IN_PHPVMS') && IN_PHPVMS !== true) { die(); } ?>
-<section class="content">
+<section class="content-header bg-white espaca">
+    <div class="pull-right"><i class="fa fa-download fa-4x text-muted"></i></div>
+    <h1><strong>Downloads</strong></h1>
+    <h1><small>Recursos para os tripulantes | NorteSul Virtual &copy;
+            <?php echo date("Y");?></small>
+        <br>
+</section>
+<section class="content container-fluid">
     <div class="row">
-        <?php 
-		if(!$allcategories)
-		{
-			echo '<div class="col-lg-12 card"><div class="callout callout-info"><h4>No Downloads</h4><p>No downloads have been added yet.</p></div></div>';
-		} else {
-			foreach($allcategories as $category) {
-        ?>
-        
-        <div class="col-md-4">
-            <div class="box box-primary">
+        <div class="col-md-12">
+            <div class="box box-solid">
                 <div class="box-header with-border">
-                    <h3 class="box-title"><?php echo $category->name?></h3>
+                    <h3 class="box-title">Essenciais para operações de <strong>voo</strong></h3>
                 </div>
                 <div class="box-body">
-                    <?php	
-                        # This loops through every download available in the category
-                        $alldownloads = DownloadData::GetDownloads($category->id);
-                        if(!$alldownloads)
-                        {
-echo '<p class="text-muted">There are no downloads in this category.</p>';
-                            $alldownloads = array();
-                        }
-                        foreach($alldownloads as $download)
-                        {
-                    ?>
-                    <div class="card" style="padding:1%;">
-                        <strong><?php echo $download->name?></strong>
-						<img src="<?php echo $download->image?>" style="float:right;" /><br />
-                        <p class="text-muted"><?php echo $download->description?></p>
-                        <a href="<?php echo url('/downloads/dl/'.$download->id);?>" class="btn btn-flat btn-info pull-right">Download</a>
-                        <br>
-                    </div>
-                    <?php
-                        }
-                    ?>
+                  <div class="col-md-6">
+                  <!-- small box -->
+                    <div class="small-box levanta"><a href="https://tfdidesign.com/smartcars/app.php?action=download&airlineid=872&language=en-US">
+                          <div class="pull-right">
+                <button type="button" class="btn btn-default btn-box-tool"><i class="fa fa-download"></i>
+                </button>
+              </div>
+            </a>
+                            <div class="inner">
+                                <h4 class="text-center text-black"><i class="fa fa-safari fa-4x fa-spin"></i></h4>
+
+                                <h4 class="text-center text-black">SmartCARS 2.0</h4>
+                                <h4 class="text-center"><smalL>Software de registro de voos da NorteSul Virtual desenvolvido pela TFDi Design (Nescessário para registro de voos)</small></h4>
+
+                            </div>
                 </div>
+                </div>
+                <div class="col-md-6">
+                                          <!-- small box -->
+                  <div class="small-box levanta"><a href="https://tfdidesign.com/dl.php?type=d&id=15">
+                    <div class="pull-right">
+          <button type="button" class="btn btn-default btn-box-tool"><i class="fa fa-download"></i>
+          </button>
+        </div>
+      </a>
+                          <div class="inner">
+                              <h4 class="text-center text-green"><i class="fa fa-file fa-4x"></i></h4>
+
+                              <h4 class="text-center text-black">Manual de usuário do SmartCARS</h4>
+                              <h4 class="text-center"><smalL>smartCARS é um moderno e de fácil uso software de registro de voos virtual idealizado e desenvolvido pela TFDi Design. Baixe este manual para saber mais.</small></h4>
+
+                          </div>
+                  </a>
+              </div>
+              </div>
             </div>
         </div>
-        <?php
-            }
-		}
-        ?>
     </div>
+    <!-- End container -->
+    <div class="col-md-12">
+        <div class="box box-solid">
+            <div class="box-header with-border">
+                <h3 class="box-title"><i class="fa fa-cloud-download"></i> Download <strong>manager</strong></h3>
+            </div>
+            <div class="box-body">
+              <!-- small box -->
+                <div class="small-box levanta"><a href="http://nortesulvirtual.com/downs">
+                      <div class="pull-right">
+            <button type="button" class="btn btn-default btn-box-tool"><i class="fa fa-feed"></i>
+            </button>
+          </div>
+        </a>
+                        <div class="inner">
+                            <h4 class="text-center text-black"><i class="fa fa-cloud-download fa-4x"></i></h4>
+
+                            <h4 class="text-center text-black">Download manager</h4>
+                            <h4 class="text-center"><smalL>Plataforma digital em que todos os downloads oficiais da NorteSul Virtual se encontram.</small></h4>
+
+                        </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End container -->
 </section>

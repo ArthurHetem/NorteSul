@@ -100,7 +100,7 @@
 .countDiv2{}
 .countSeconds{}
 .countDiv{
-	width:5px !important;
+	width:5px ;
 }
 	.countdownHolder {
 	padding-top:0.2em;

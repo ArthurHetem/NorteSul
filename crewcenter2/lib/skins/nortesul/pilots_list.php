@@ -1,0 +1,119 @@
+<?php if(!defined('IN_PHPVMS') && IN_PHPVMS !== true) { die(); } ?>
+<section class="content container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-solid">
+                <div class="box-header with-border">
+
+                    <h3 class="box-title"><i class="fa fa-map-marker"></i>
+                        <?php echo $title?>
+                    </h3>
+                </div>
+
+                <div class="box-body table-responsive">
+                    <?php
+if(!$pilot_list) {
+	echo 'There are no pilots!';
+	return;
+}
+?>
+                    <table class="table table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <h4 class="text-center">ID</h4>
+                                </th>
+                                <th>
+                                    <h4 class="text-center">País</h4>
+                                </th>
+                                <th>
+                                    <h4 class="text-center">Nome</h4>
+                                </th>
+                                <th>
+                                    <h4 class="text-center">Rank</h4>
+                                </th>
+                                <th>
+                                    <h4 class="text-center">IVAO</h4>
+                                </th>
+                                <th>
+                                    <h4 class="text-center">VATSIM</h4>
+                                </th>
+                                <th>
+                                    <h4 class="text-center">Imagem do rank</h4>
+                                </th>
+                                <th>
+                                    <h4 class="text-center">Ver piloto</h4>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+foreach($pilot_list as $pilot)
+{
+	/* 
+		To include a custom field, use the following example:
+
+		<td>
+			<?php echo PilotData::GetFieldValue($pilot->pilotid, 'VATSIM ID'); ?>
+                            </td>
+
+                            For instance, if you added a field called "IVAO Callsign":
+
+                            echo PilotData::GetFieldValue($pilot->pilotid, 'IVAO Callsign');
+                            */
+
+                            // To skip a retired pilot, uncomment the next line:
+                            if($pilot->retired == 1) { continue; }
+                            ?>
+                            <tr>
+                                <td width="1%" nowrap>
+                                        <?php echo PilotData::GetPilotCode($pilot->code, $pilot->pilotid)?>
+                                </td>
+                                <td>
+                                    <img src="<?php echo Countries::getCountryImage($pilot->location);?>" alt="<?php echo Countries::getCountryName($pilot->location);?>" />
+                                    <?php echo Countries::getCountryName($pilot->location);?>
+                                </td>
+                                <td>
+                                    <?php echo $pilot->firstname.' '.$pilot->lastname?>
+                                </td>
+                                <td align="center">
+                                    <?php echo $pilot->rank;?>
+                                </td>
+                                <td align="center">
+                                    <?php 
+                                    $ivaoId = PilotData::GetFieldValue($pilot->pilotid, 'IVAO ID');
+                                        if($ivaoId < 1){
+                                            echo "<span class='text-muted'>Não Linkado</span>";
+                                        } else {
+                                            echo "<span class='text-gren'>".$ivaoId."</span>";
+                                        }
+                                        
+			 ?>
+                                </td>
+                                <td align="center">
+                                    <?php 
+                                    $vatsimId = PilotData::GetFieldValue($pilot->pilotid, 'VATSIM ID');
+                                        if($vatsimId < 1){
+                                            echo "<span class='text-muted'>Não Linkado</span>";
+                                        } else {
+                                            echo "<span class='text-gren'>".$vatsimId."</span>";
+                                        }
+                                        
+			 ?>
+                                </td>
+                                <td align="center">
+                                    <img src="<?php echo $pilot->rankimage?>" alt="<?php echo $pilot->rank;?>" />
+                                </td>
+                                <td align="center">
+                                    <a href="<?php echo url('/profile/view/'.$pilot->pilotid);?>"><div class="btn btn-default btn-rounded btn-sm"><i class="fa fa-eye"></i></div></a>
+                                </td>
+                                <?php
+}
+?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

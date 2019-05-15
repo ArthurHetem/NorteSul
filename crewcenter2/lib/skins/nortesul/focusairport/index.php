@@ -1,8 +1,8 @@
   <?php 
     // Set the Focus Airport here :
-    $icao = 'SBGL';
+    $icao = 'SBFZ';
     // Set the Image URL here : 
-    $url = SITE_URL.'/lib/skins/nortesul/focusairport/gig.jpg';
+    $url = SITE_URL.'/lib/skins/nortesul/focusairport/for.jpg';
   ?>
   
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -14,7 +14,7 @@
             <img src="<?php echo $url; ?>" />
           <div class="carousel-caption">
             <h3>#FOCUSAIRPORT</h3> 
-            <p>O Focus Airport dessa semana é <strong><?php echo $icao ?></strong></p>
+            <p>O Focus Airport desse mês é <strong><?php echo $icao ?></strong></p>
           </div>
           </div>
         </div>

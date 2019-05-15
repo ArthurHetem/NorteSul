@@ -17,7 +17,7 @@ class RandomFlights extends CodonModule
 		
 	public function getRandomFlights()
 		{		
-			$dep 		= $this->post->depicao;
+			$dep 		= FltbookData::getLocation(Auth::$userinfo->pilotid)->arricao;
 			$equip 		= $this->post->equipment;
 			$code	 	= $this->post->airline;
 			$count 		= $this->post->count;

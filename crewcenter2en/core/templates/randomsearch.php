@@ -9,9 +9,9 @@
 */
 
 $pilotid = Auth::$userinfo->pilotid;
-$last_location = PIREPData::getLastReports($pilotid, 1);
+$last_location = FltbookData::getLocation(Auth::$userinfo->pilotid)->arricao;
 if(!$last_location) $last_location->arricao = Auth::$userinfo->hub;
-$last_name = OperationsData::getAirportInfo($last_location->arricao);
+$last_name = OperationsData::getAirportInfo($last_location);
 $equipment = OperationsData::GetAllAircraftSearchList(true);
 $airlines = OperationsData::getAllAirlines(true);
 ?>
@@ -28,7 +28,7 @@ $airlines = OperationsData::getAllAirlines(true);
         <tr>
 			<td><b>Actual Location:</b></td>
 			<td><select id="depicao" name="depicao" class="form-control" disabled>
-				<option value="<?php echo $last_location->arricao?>"><?php echo $last_location->arricao?> (<?php echo $last_name->name?>)</option>
+				<option value="<?php echo $last_location;?>"><?php echo $last_location;?> (<?php echo $last_name->name;?>)</option>
 			</td>
 		</tr>
 		<tr>

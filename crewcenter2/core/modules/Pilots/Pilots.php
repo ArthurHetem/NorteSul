@@ -165,4 +165,21 @@ class Pilots extends CodonModule
         
 		$this->render('frontpage_recentpilots.tpl');
 	}
+	public function morrisstatsbymonthdata()
+	{
+
+		 $data = PIREPData::getIntervalDataByMonth(array('p.accepted'=>1), 3);
+		 header("Content-type: application/json");
+		 echo json_encode($data);
+
+	}
+
+	public function morrisstatsaircraftdata($pilotid)
+	{
+
+		 $data = StatsData::PilotAircraftFlownCountsMorris($pilotid);
+		 header("Content-type: application/json");
+		 echo json_encode($data);
+
+	}
 }

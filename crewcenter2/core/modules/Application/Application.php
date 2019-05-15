@@ -79,7 +79,7 @@ class Application extends CodonModule
 			
 			$message = nl2br($message);
 			$message = utf8_encode($message);
-			Util::SendEmail(ADMIN_EMAIL, $subject, $message, $positions, $idade);
+			Util::SendEmail("rh@nortesulvirtual.com", $subject, $message, $positions, $idade);
 			
 			$this->render('application/application_sent.php');
 			return;

@@ -1,14 +1,26 @@
 <?php if(!defined('IN_PHPVMS') && IN_PHPVMS !== true) { die(); } ?>
+<?php
+$data = $postdate;
+list($dia, $mes, $ano) = explode("/", $data);
+
+switch ($mes) {
+        case "01":    $mes = Jan;    	break;
+        case "02":    $mes = Fev;   	break;
+        case "03":    $mes = Mar;       break;
+        case "04":    $mes = Abr;       break;
+        case "05":    $mes = Mai;       break;
+        case "06":    $mes = Jun;       break;
+        case "07":    $mes = Jul;       break;
+        case "08":    $mes = Ago;       break;
+        case "09":    $mes = Set;       break;
+        case "10":    $mes = Out;       break;
+        case "11":    $mes = Nov;       break;
+        case "12":    $mes = Dez;       break; 
+ }
+?>
 <meta charset="utf-8"/>
-<div class="box box-default box">
-    <div class="box-header with-border avianca">
-       <h3 class="box-title"><?php echo $subject;?></h3>
-<div class="box-tools pull-right">
-   <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
-</div><!-- /.box-tools -->
-</div><!-- /.box-header -->
-<div class="box-body">
-<p>Criado por <?php echo $postedby;?>, Emitido Em <b><?php echo $postdate;?></b></p>
-<p><?php echo html_entity_decode($body);?></p>
-</div><!-- /.box-body -->
-</div><!-- /.box -->
+<tr>
+	<td><?php echo $dia ." ". $mes ." ". $ano;?></td>
+	<td><a href="<?php echo SITE_URL;?>/index.php/notam/view/<?php echo $id;?>" class="text-muted"><?php echo $subject;?></a></td>
+	<td><span class="label label-danger">Não lida</span></td>
+</tr>

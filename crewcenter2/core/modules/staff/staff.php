@@ -4,7 +4,7 @@ class Staff extends CodonModule
 {
 	public function index()
 	{
-      $this->show('staff.tpl');
+      $this->show('staff.php');
 	}
 }
 ?>

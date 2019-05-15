@@ -80,7 +80,21 @@ class FltbookData extends CodonData {
 		DB::query($sql);
 
 		self::updatePilotLocation($pilotid, $arricao);
-
+		
+		/* Add this into the activity feed */
+        $message = Lang::get('activity.pilot.jumpseat');
+        foreach($pilotdata as $key=>$value) {
+            $message = str_replace('$'.$key, $value, $message);
+        }
+        
+        # Add it to the activity feed
+        ActivityData::addActivity(array(
+            'pilotid' => $pilotid,
+            'type' => ACTIVITY_JUMPSEAT,
+            'refid' => $pilotid,
+            'message' => htmlentities($message),
+        ));
+		
 		// Update the pay column in the table in case we need to reset pilot pay after, then only a hook is needed
 		$data = DB::get_row("SELECT * FROM fltbook_location WHERE `pilot_id` = '$pilotid'");
 		$total = $data->total_jumpseat_pay + $cost;

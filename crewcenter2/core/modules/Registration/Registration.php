@@ -91,7 +91,6 @@ class Registration extends CodonModule
 			'email' => $this->post->email,
 			'password' => $this->post->password1,
 			'code' => $this->post->code,
-			'location' => $this->post->location,
 			'hub' => $this->post->hub,
 			'confirm' => false
 		);

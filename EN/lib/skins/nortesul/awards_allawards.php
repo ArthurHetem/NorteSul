@@ -39,7 +39,7 @@ foreach($awards as $aw)
 	<td align="center"><?php echo $aw->name; ?></td>
     <td align="center"><?php echo $aw->descrip; ?></td>
 
-	<td align="center"><img src="<?php echo $aw->image; ?>" /></td>
+	<td align="center"><img src="<?php echo $aw->image; ?>" width="200px" heihgt="200px" /></td>
 	
 	</tr>
 <?php

@@ -176,31 +176,31 @@ class Pagination extends CodonData
 		}
 
 		if ($loopStart != 1){
-			$output .= sprintf('<li class="disabledpage"><a href="' . $link . '">&#171;</a></li>', '1');
+			$output .= sprintf('<li><a href="' . $link . '">&#171;</a></li>', '1');
 		}
 		
 		if ($currentPage > 1){
-			$output .= sprintf('<li class="nextpage"><a href="' . $link . '">Previous</a></li>', $currentPage - 1);
+			$output .= sprintf('<li><a href="' . $link . '">Anterior</a></li>', $currentPage - 1);
 		}
 		
 		for ($i = $loopStart; $i <= $loopEnd; $i++)
 		{
 			if ($i == $currentPage){
-				$output .= '<li class="currentpage">' . $i . '</li> ';
+				$output .= '<li class="active"><a href="#">' . $i . '</a></li> ';
 			} else {
 				$output .= sprintf('<li><a href="' . $link . '">', $i) . $i . '</a></li> ';
 			}
 		}
 
 		if ($currentPage < $totalPages){
-			$output .= sprintf('<li class="nextpage"><a href="' . $link . '">Next</a></li>', $currentPage + 1);
+			$output .= sprintf('<li class="nextpage"><a href="' . $link . '">Próxima</a></li>', $currentPage + 1);
 		}
 		
 		if ($loopEnd != $totalPages){
 			$output .= sprintf('<li class="nextpage"><a href="' . $link . '">&#187;</a></li>', $totalPages);
 		}
 
-		return '<div class="pagination"><ul>' . $output . '</ul></div>';
+		return '<div class="text-center"><ul class="pagination">' . $output . '</ul></div>';
 	}
 }
 

@@ -22,7 +22,7 @@ class WTHR extends CodonModule
 				$urlmet = 'https://www.aviationweather.gov/adds/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=xml&stationString='.$icao.'&hoursBeforeNow=1';
 				$xmlmet = simplexml_load_file($urlmet); 
 				$metar = $xmlmet->data->METAR->raw_text;
-				$altimeter = $xmlmet->data->METAR->altim_in_hpa;
+				$altimeter = $xmlmet->data->METAR->altim_in_hg;
 				$dewpoint = $xmlmet->data->METAR->dewpoint_c;
 				$flightrules = $xmlmet->data->METAR->flight_category;
 				$temperature = $xmlmet->data->METAR->temp_c;
@@ -35,6 +35,10 @@ class WTHR extends CodonModule
 				$skycondition3 = $xmlmet->data->METAR->sky_condition[1]['sky_cover'];
 				$skycondition4 = $xmlmet->data->METAR->sky_condition[1]['cloud_base_ft_agl'];
 				
+				//TAF Info
+				$urltaf = 'https://www.aviationweather.gov/adds/dataserver_current/httpparam?dataSource=tafs&requestType=retrieve&format=xml&stationString='.$icao.'&hoursBeforeNow=1';
+				$xmltaf = simplexml_load_file($urltaf); 
+				$taf = $xmltaf->data->TAF->raw_text;
 				
 				//Station Info
 				$urlinf = 'https://www.aviationweather.gov/adds/dataserver_current/httpparam?dataSource=stations&requestType=retrieve&format=xml&stationString='.$icao;
@@ -60,6 +64,7 @@ class WTHR extends CodonModule
 				$this->set('skycondition1', $skycondition1);
 				$this->set('skycondition3', $skycondition3);
 				$this->set('skycondition4', $skycondition4);
+				$this->set('taf', $taf);
 				
 				//Variables For Info
 				$this->set('lat', $lat);
@@ -76,7 +81,7 @@ class WTHR extends CodonModule
 				$count = $xml->airport->chart;
 				$this->set('charts', $charts);
 				$this->set('count', $count);
-				$this->render('weather/weather.php');
+				$this->render('weather/weather2.php');
 				
 			}
 		

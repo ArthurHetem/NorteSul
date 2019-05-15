@@ -86,9 +86,11 @@ $trans = array(
     'activity.new.pirep' => 'has filed a PIREP from $depicao to $arricao',
 	
     /* You can use $<column name> from the pilot's table */
-    'activity.new.pilot' => 'has just joined, welcome aboard!',
+    'activity.new.pilot' => 'acabou de ser aceito!',
     
     'activity.pilot.promotion' => 'has been promoted to $rank!',
+	
+	'activity.pilot.jumpseat' => 'realizou um jumpseat para $arricao',
 	
 	/*
 	 * Template language replacements
