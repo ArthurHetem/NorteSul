@@ -37,12 +37,13 @@ $v_taxa = "0";
         <div class="box box-widget widget-user">
             <!-- Add the bg color to the header using any of the bg-* classes -->
             <div class="widget-user-header bg-black" style="background: url('http://getwallpapers.com/wallpaper/full/e/0/c/242085.jpg');">
-                <h3 class="widget-user-username text-center">NorteSul Virtual</h3>
+							<br>
+                <h3 class="widget-user-username text-center fonte">NorteSul Virtual</h3>
                 <h5 class="widget-user-desc text-center">Bem-vindo ao futuro.</h5>
             </div>
             <div class="box-footer">
                 <div class="row col-md-12">
-                    <div class="alert alert-<?php if ($resp == " Bom dia"){ echo "warning" ;}else if ($resp=="Boa tarde" ){ echo "success" ;}else {echo "info" ;}?>">
+                    <div class="alert alert-<?php if ($resp == "Bom dia"){ echo "warning" ;}else if ($resp=="Boa tarde" ){ echo "success" ;}else {echo "info" ;}?>">
                         <h4 class="text-center"><strong>
                                 <?php echo $resp?>,
                                 <?php echo $userinfo->firstname ?>!</strong></h4>
@@ -57,8 +58,10 @@ $v_taxa = "0";
                         if(!$reports){
 						echo 'Você ainda não realizou nenhum voo, está esperando o que? Clique <a href="<?php echo SITE_URL;?>/index.php/fltbook">AQUI</a> para reservar um voo!';
                             }else{
-                            echo "Seu PIREP do voo
-                            <?php echo $reports;?>";
+															var_dump($reports);
+															?>
+                            Seu PIREP do voo <?php echo $reports[0]->code;?><?php echo $reports[0]->flightnum;?> (<?php echo $reports[0]->depicao;?> - <?php echo $reports[0]->arricao;?>) foi e $<?php echo $reports[0]->pilotpay;?> vMoney foram creditados para sua conta. Clique <a href="<?php echo SITE_URL;?>/index.php/pireps/view/<?php echo $reports[0]->pirepid;?>">aqui</a> para ver a avaliação pós voo.
+														<?php
                             }?>
                         </p>
                     </div>
@@ -358,10 +361,7 @@ foreach($results as $flight)
 
 	 ?>
                         <tr>
-                            <td align="center">
-                                <?php if($flight->phasedetail == "Boarding") { echo "<img style='padding-left:3px;' src=''>"; } elseif($flight->phasedetail == "Arrived") { echo "<img style='padding-left:3px;' src=''>"; } elseif($flight->phasedetail == "On Approach") { echo "<img style='padding-left:3px;' src=''>"; } ?>
-                            </td>
-                            <td align="center"><img src="<?php echo SITE_URL;?>/lib/skins/nortesul/img/airlines/NSV.png" width="120" height="35" alt="<?php echo $airline->name;?>" /></td>
+                            <td align="center"><img src="<?php echo SITE_URL;?>/lib/skins/nortesul/img/airlines/NSV.png" alt="<?php echo $airline->name;?>" /></td>
                             <td align="center">
                                 <?php echo $flight->flightnum;?>
                             </td>
