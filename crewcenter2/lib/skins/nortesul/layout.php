@@ -7,6 +7,13 @@
   <title>CrewCenter&trade; | NorteSul Virtual</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <?php
+
+    // Turn off error reporting
+    error_reporting(0);
+    /* This is required, so phpVMS can output the necessary libraries it needs */
+    echo $page_htmlhead;
+    ?>
   <link rel="stylesheet" href="<?php echo SITE_URL ?>/lib/skins/nortesul/css/bootstrap.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="<?php echo SITE_URL ?>/lib/skins/nortesul/css/font-awesome/css/font-awesome.min.css">

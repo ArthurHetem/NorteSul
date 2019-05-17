@@ -1,5 +1,5 @@
 <table class="table">
-	<tr><th><h4>Pilot ID</h4></th><th><h4>Name</h4></th><th><h4>Rank</h4></th><th><h4>Landing Rate</h4></th></tr>
+	<tr><th width="10%"><h4>Pilot ID</h4></th><th><h4>Name</h4></th><th><h4>Rank</h4></th><th><h4>Landing Rate</h4></th></tr>
 	<?php
 	if(!$bestlandingdays)
 		{

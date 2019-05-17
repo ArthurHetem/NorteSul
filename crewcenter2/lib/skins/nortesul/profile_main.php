@@ -58,9 +58,8 @@ $v_taxa = "0";
                         if(!$reports){
 						echo 'Você ainda não realizou nenhum voo, está esperando o que? Clique <a href="<?php echo SITE_URL;?>/index.php/fltbook">AQUI</a> para reservar um voo!';
                             }else{
-															var_dump($reports);
 															?>
-                            Seu PIREP do voo <?php echo $reports[0]->code;?><?php echo $reports[0]->flightnum;?> (<?php echo $reports[0]->depicao;?> - <?php echo $reports[0]->arricao;?>) foi e $<?php echo $reports[0]->pilotpay;?> vMoney foram creditados para sua conta. Clique <a href="<?php echo SITE_URL;?>/index.php/pireps/view/<?php echo $reports[0]->pirepid;?>">aqui</a> para ver a avaliação pós voo.
+                            Seu PIREP do voo <?php echo $reports[0]->code;?><?php echo $reports[0]->flightnum;?> (<?php echo $reports[0]->depicao;?> - <?php echo $reports[0]->arricao;?>) foi aprovado e $<?php echo $reports[0]->pilotpay;?> vMoney foram creditados para sua conta. Clique <a href="<?php echo SITE_URL;?>/index.php/pireps/view/<?php echo $reports[0]->pirepid;?>">aqui</a> para ver a avaliação pós voo.
 														<?php
                             }?>
                         </p>
@@ -151,7 +150,7 @@ $v_taxa = "0";
             <div class="box-body">
                 <div class="col-lg-4 col-xs-8">
                     <!-- small box -->
-                    <div class="small-box">
+                    <div class="small-box levanta2">
                         <div class="inner">
                             <h4>
                                 <?php echo $v_taxa; ?> fpm</h4>
@@ -163,10 +162,10 @@ $v_taxa = "0";
                 </div>
                 <div class="col-lg-4 col-xs-8">
                     <!-- small box -->
-                    <div class="small-box">
+                    <div class="small-box levanta2">
                         <div class="inner">
                             <h4>
-                                <?php/** echo getTotalPassengersPilot();?*/?>
+                                <?php echo StatsData::getTotalPassengersPilot($userinfo->pilotid);?>
                             </h4>
 
                             <h4><small>Passageiros <strong>Transportados</strong></small></h4>
@@ -176,10 +175,10 @@ $v_taxa = "0";
                 </div>
                 <div class="col-lg-4 col-xs-8">
                     <!-- small box -->
-                    <div class="small-box">
+                    <div class="small-box levanta2">
                         <div class="inner">
                             <h4>
-                                <?php/** echo getTotalMilesPilot();?*/?> <strong>NM</strong></h4>
+                                <?php echo StatsData::getTotalMilesPilot($userinfo->pilotid);?> <strong>NM</strong></h4>
 
                             <h4><small>Milhas <strong>Voadas</strong></small></h4>
                         </div>
@@ -262,7 +261,7 @@ echo $page;
                                     <?php
 			if($report)
 			{ ?>
-                                    <?php echo $report->code . $report->flightnum; ?>
+                                    <?php echo $report->code . $report->flightnum .', '. $report->depicao.' <i class="fa fa-plane"></i> '. $report->arricao; ?>
                                     <?php
 			} else { echo 'Nenhum voo encontrado!'; }
 			?></small></h4>
@@ -274,7 +273,7 @@ echo $page;
         </div>
         <div class="col-md-4 col-xs-8">
             <!-- small box -->
-            <div class="small-box levanta">
+            <div class="small-box">
                 <div class="inner">
                     <h4 class="text-black text-center">Voo em <strong>grupo</strong> <span class="label label-success">Em Breve</span></h4>
                     <h4 class="text-center"><small>Em breve mais um recurso para nossos pilotos, aguardem!</small></h4>
@@ -343,7 +342,7 @@ echo $page;
 
                 <div class="box-body table-responsive">
                     <table class="table table-bordered table-hover">
-                        <tr>
+                        <thead>
                             <th align="center">Airline</th>
                             <th align="center">Voo</th>
                             <th align="center">Piloto</th>
@@ -351,7 +350,7 @@ echo $page;
                             <th align="center">Chegada</th>
                             <th align="center">Aeronave</th>
                             <th align="center">Status</th>
-                        </tr>
+                        </thead>
                         <?php
 $results = ACARSData::GetACARSData();
 if (count($results) > 0)
@@ -381,15 +380,14 @@ foreach($results as $flight)
                                 <?php if($flight->phasedetail
 != 'Paused') { echo $flight->phasedetail; }
 else { echo "Cruise"; }?>
-                                </font>
                             </td>
+														<td>
+															<?php var_dump($flight);?>
                         </tr>
                         <?php
 		 }
 	 } else { ?>
-                        <tr>
-                            <td width="100% align=" center" class="text-center"><span class="label label-danger">Nenhum voo no momento!</span></td>
-                        </tr>
+                            <span class="label label-danger text-center">Nenhum voo no momento!</span>
                         <?php
 	 }
 	 ?>
@@ -401,6 +399,16 @@ else { echo "Cruise"; }?>
     </div>
     <div class="row">
         <div class="col-md-6">
+					<div class="box box-widget widget-user">
+            <!-- Add the bg color to the header using any of the bg-* classes -->
+            <div class="widget-user-header bg-black" style="background: url('../dist/img/photo1.png') center center;">
+              <h3 class="widget-user-username">Pilot of the month</h3>
+              <h5 class="widget-user-desc">Web Designer</h5>
+            </div>
+            <div class="widget-user-image">
+              <img class="img-circle" src="../dist/img/user3-128x128.jpg" alt="User Avatar">
+            </div>
+          </div>
             <div class="box box-solid">
                 <div class="box-header with-border">
                     <i class="fa fa-exclamation"></i>

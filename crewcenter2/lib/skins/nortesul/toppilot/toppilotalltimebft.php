@@ -1,7 +1,7 @@
-<table class="toppilot">
-	<tr><th>Pilot ID</th><th>Name</th><th>Rank</th><th>Amount</th></tr>
+<table class="table">
+	<tr><th width="10%"><h4>Pilot ID</h4></th><th><h4>Name</h4></th><th><h4>Rank</h4></th><th><h4>Time</h4></th></tr>
 	<?php
-	if(!$bestflighttimealltimes)		
+	if(!$bestflighttimealltimes)
 		{
 	?>
 			<tr><td align="center" colspan="4">No Records All Time!</td></tr>
@@ -21,14 +21,14 @@
 					{
 						$hrss = $hrs + 1;
 						$mins = $min - 60;
-											
+
 		?>
 						<tr>
 							<td><?php echo $pilotcode ;?></td>
 							<td><?php echo $bestflighttimealltime->firstname.' '.$bestflighttimealltime->lastname ;?></td>
 							<td><img src="<?php echo $rank ;?>"></td><td><?php echo $hrss.':'.$mins ;?> HRS</td>
 						</tr>
-		<?php						
+		<?php
 					}
 				elseif($min < 10)
 					{
@@ -38,7 +38,7 @@
 							<td><?php echo $bestflighttimealltime->firstname.' '.$bestflighttimealltime->lastname ;?></td>
 							<td><img src="<?php echo $rank ;?>"></td><td><?php echo $hrs.':0'.$min ;?> HRS</td>
 						</tr>
-		<?php 
+		<?php
 					}
 				else
 					{
@@ -48,9 +48,9 @@
 							<td><?php echo $bestflighttimealltime->firstname.' '.$bestflighttimealltime->lastname ;?></td>
 							<td><img src="<?php echo $rank ;?>"></td><td><?php echo $hrs.':'.$min ;?> HRS</td>
 						</tr>
-		<?php							
+		<?php
 					}
-				} 
+				}
 		}
 			?>
 </table>

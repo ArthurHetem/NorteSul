@@ -652,4 +652,25 @@ class StatsData extends CodonData {
         );
                
     }
+	
+	
+	/**
+	 *TotaL Passengers transported by pilot
+	*/	
+	public static function getTotalPassengersPilot($pilotid)
+   {
+       $query = "SELECT SUM(`load`) AS passengers FROM ".TABLE_PREFIX."pireps WHERE pilotid = $pilotid AND accepted = 1";
+       $result = DB::get_row($query);
+       if (!$result) return 0;
+       return ($result->passengers == '') ? 0 : $result->passengers;
+   }
+   
+   
+   public static function getTotalMilesPilot($pilotid)
+	{
+	$query = "SELECT SUM(`distance`) AS distance FROM ".TABLE_PREFIX."pireps WHERE pilotid = $pilotid AND accepted = 1";
+       $result = DB::get_row($query);
+       if (!$result) return 0;
+       return ($result->distance == '') ? 0 : $result->distance;
+	}
 }

@@ -1,7 +1,7 @@
-<table class="toppilot">
-	<tr><th>Pilot ID</th><th>Name</th><th>Rank</th><th>Amount</th></tr>
-	<?php 
-	if(!$bestlandingalltimes)		
+<table class="table">
+	<tr><th width="10%"><h4>Pilot ID</h4></th><th><h4>Name</h4></th><th><h4>Rank</h4></th><th><h4>Landing Rate</h4></th></tr>
+	<?php
+	if(!$bestlandingalltimes)
 		{
 	?>
 			<tr><td align="center" colspan="4">No Records All Time!</td></tr>
@@ -21,8 +21,8 @@
 						<td><?php echo $bestlandingalltime->firstname.' '.$bestlandingalltime->lastname ;?></td>
 						<td><img src="<?php echo $rank ;?>"></td><td><?php echo $bestlandingalltime->landingrate ;?> /FPS</td>
 					</tr>
-	<?php 
+	<?php
 				}
-		} 
+		}
 	?>
 </table>

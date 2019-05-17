@@ -902,4 +902,17 @@ class SchedulesData extends CodonData {
 
         return $data;
     }
+	public static function getpilotmonth(){
+        $sql = 'SELECT COUNT(*) as count,pilotid FROM ' . TABLE_PREFIX . 'pireps WHERE MONTH(submitdate) = MONTH(CURRENT_DATE())
+AND YEAR(submitdate) = YEAR(CURRENT_DATE()) GROUP BY pilotid ORDER BY count DESC';
+        $result = DB::get_row($sql);
+        if(!$result){
+            $res = 'N/A';
+        }
+        else{
+            $pd = PilotData::getPilotData($result->pilotid);
+            $res = $pd->firstname.' '.$pd->lastname;
+        }
+        return $res;
+    }
 }

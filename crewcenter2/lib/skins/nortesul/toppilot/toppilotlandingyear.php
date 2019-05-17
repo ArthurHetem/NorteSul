@@ -1,7 +1,7 @@
 <table class="toppilot">
-	<tr><th>Pilot ID</th><th>Name</th><th>Rank</th><th>Amount</th></tr>
-	<?php 
-	if(!$bestlandingyears)		
+	<tr><th width="10%">Pilot ID</th><th>Name</th><th>Rank</th><th>Amount</th></tr>
+	<?php
+	if(!$bestlandingyears)
 		{
 	?>
 			<tr><td align="center" colspan="4">No Records This Year!</td></tr>
@@ -22,8 +22,8 @@
 				<td><img src="<?php echo $rank ;?>"></td>
 				<td><?php echo $bestlandingyear->landingrate ;?> /FPS</td>
 			</tr>
-	<?php 
+	<?php
 				}
-		} 
+		}
 	?>
 </table>

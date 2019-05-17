@@ -1,10 +1,10 @@
-<table class="toppilot">
-	<tr><th>Pilot ID</th><th>Name</th><th>Rank</th><th>Amount</th></tr>
-	<?php 
-	if(!$bestflighttimemonths)		
+<table class="table">
+	<tr><th width="10%"><h4>Pilot ID</h4></th><th><h4>Name</h4></th><th><h4>Rank</h4></th><th><h4>Time</h4></th></tr>
+	<?php
+	if(!$bestflighttimemonths)
 		{
 	?>
-			<tr><td align="center" colspan="4">No Records This Month!</td></tr>
+			<tr><td align="center" colspan="4" class="label label-danger text-center">Nenhum reporte este mês!</td></tr>
 	<?php
 		}
 	else
@@ -39,10 +39,10 @@
 										<td><?php echo $bestflighttimemonth->firstname.' '.$bestflighttimemonth->lastname ;?></td>
 										<td><img src="<?php echo $rank ;?>"></td><td><?php echo $hrss.':'.$mins ;?> HRS</td>
 									</tr>
-	<?php	
+	<?php
 								}
-										
-									
+
+
 						}
 					elseif($min < 10)
 						{
@@ -52,7 +52,7 @@
 								<td><?php echo $bestflighttimemonth->firstname.' '.$bestflighttimemonth->lastname ;?></td>
 								<td><img src="<?php echo $rank ;?>"></td><td><?php echo $hrs.':0'.$min ;?> HRS</td>
 							</tr>
-<?php 
+<?php
 						}
 					else
 						{
@@ -62,10 +62,10 @@
 								<td><?php echo $bestflighttimemonth->firstname.' '.$bestflighttimemonth->lastname ;?></td>
 								<td><img src="<?php echo $rank ;?>"></td><td><?php echo $hrs.':'.$min ;?> HRS</td>
 							</tr>
-<?php							
+<?php
 						}
-										
-				} 
+
+				}
 		}
 ?>
 </table>
