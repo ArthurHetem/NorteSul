@@ -83,12 +83,12 @@ $trans = array(
     
     /* Activity Feed Language strings, you can fill 
         in the $<column name> from the PIREP table */
-    'activity.new.pirep' => 'has filed a PIREP from $depicao to $arricao',
+    'activity.new.pirep' => 'voou de $depicao para $arricao. #flynortesul',
 	
     /* You can use $<column name> from the pilot's table */
-    'activity.new.pilot' => 'acabou de ser aceito!',
+    'activity.new.pilot' => 'acabou de ser contratado! #bemvindo',
     
-    'activity.pilot.promotion' => 'has been promoted to $rank!',
+    'activity.pilot.promotion' => 'foi promovido para $rank! #parabéns',
 	
 	'activity.pilot.jumpseat' => 'realizou um jumpseat para $arricao',
 	

@@ -172,7 +172,7 @@
                         <div class="well">
                             <div class="media">
                                 <div class="pull-left">
-                                    <img class="media-object imagem" src="http://nortesulvirtual.com/pt/lib/skins/nortesul/images/staffs/NSV010.jpg">
+                                    <img class="media-object imagem" src="http://nortesulvirtual.com/pt/lib/skins/nortesul/images/staffs/NSV076.jpg">
                                 </div>
                                 <div class="media-body">
                                     <h4 class="media-heading">Kayo <b>Martins</b></h4>

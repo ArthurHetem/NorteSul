@@ -309,7 +309,7 @@ echo $page;
                             </div>
                             <!-- /.tab-pane -->
                             <div class="tab-pane" id="tab_2">
-                                <iframe src="https://vatmap.jsound.org/" width="100%" height="670px"></iframe>
+                                <iframe src="https://app.projectfly.co.uk/app/#/radar" width="100%" height="670px"></iframe>
                             </div>
                             <!-- /.tab-pane -->
                             <div class="tab-pane" id="tab_3">
@@ -348,8 +348,11 @@ echo $page;
                             <th align="center">Piloto</th>
                             <th align="center">Partida</th>
                             <th align="center">Chegada</th>
+														<th align="center">Status</th>
                             <th align="center">Aeronave</th>
-                            <th align="center">Status</th>
+														<th align="center">Progresso</th>
+														<th align="center">Network</th>
+														<th align="center">Última Atualização</th>
                         </thead>
                         <?php
 $results = ACARSData::GetACARSData();
@@ -360,7 +363,7 @@ foreach($results as $flight)
 
 	 ?>
                         <tr>
-                            <td align="center"><img src="<?php echo SITE_URL;?>/lib/skins/nortesul/img/airlines/NSV.png" alt="<?php echo $airline->name;?>" /></td>
+                            <td align="center"><img src="<?php echo SITE_URL;?>/lib/skins/nortesul/img/airlines/<?php echo $flight->code;?>.png" alt="<?php echo $flight->code;?>"  height="50%" width="auto" /></td>
                             <td align="center">
                                 <?php echo $flight->flightnum;?>
                             </td>
@@ -373,16 +376,27 @@ foreach($results as $flight)
                             <td align="center">
                                 <?php echo $flight->arrname;?>
                             </td>
+														<td align="center">
+																<?php if($flight->phasedetail
+!= 'Paused') { echo '<span class="label label-success">'.$flight->phasedetail.'</span>'; }
+else { echo '<span class="label label-success">Cruising</span>'; }?>
+														</td>
                             <td align="center">
                                 <?php echo $flight->aircraftname;?>
                             </td>
-                            <td align="center">
-                                <?php if($flight->phasedetail
-!= 'Paused') { echo $flight->phasedetail; }
-else { echo "Cruise"; }?>
-                            </td>
 														<td>
-															<?php var_dump($flight);?>
+															<?php $totaldistance = round(SchedulesData::distanceBetweenPoints($flight->deplat, $flight->deplng, $flight->arrlat, $flight->arrlng));
+            $percomplete = ABS(number_format(((($totaldistance - $flight->distremain) / $totaldistance) * 100), 2));?>
+															<div class="progress">
+    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $percomplete;?>%"><?php echo $percomplete;?>%
+    <span class="sr-only"><?php echo $percomplete;?>%</span>
+  </div>
+</div>
+</td>
+<td>
+	<?php if($flight->online == "VATSIM"){ echo '<span class="label label-info">VATSIM</span>';}elseif($flight->online == "IVAO"){ echo '<span class="label bg-yellow">IVAO</span>';}else{ echo '<span class="label bg-maroon">OFFLINE</span>';}?>
+</td>
+<td><?php echo $flight->lastupdate;?> UTC</td>
                         </tr>
                         <?php
 		 }
@@ -401,16 +415,22 @@ else { echo "Cruise"; }?>
         <div class="col-md-6">
 					<div class="box box-widget widget-user">
             <!-- Add the bg color to the header using any of the bg-* classes -->
-            <div class="widget-user-header bg-black" style="background: url('../dist/img/photo1.png') center center;">
-              <h3 class="widget-user-username">Pilot of the month</h3>
-              <h5 class="widget-user-desc">Web Designer</h5>
-            </div>
-            <div class="widget-user-image">
-              <img class="img-circle" src="../dist/img/user3-128x128.jpg" alt="User Avatar">
+            <div class="widget-user-header bg-black" style="background: url('https://icrew.ariaairways.org/iCrew/images/737onground.jpg') center center;">
+							<div class="escurece">
+								<?php
+	                $pom = SchedulesData::getpilotmonth();
+									$pom2 = PilotData::getPilotData($pom);
+	                ?>
+									<div class="pull-right box-tools" style="margin-right: 10px;">
+                        <i class="fa fa-user fa-4x"></i>
+                    </div>
+              <h3 class="widget-user-username"><a href="<?php echo SITE_URL;?>/index.php/profile/view/<?php echo $pom;?>"><?php echo $pom2->firstname.' '.$pom2->lastname;?></a></h3>
+              <h5 class="widget-user-desc">Pilot of the month</h5>
+						</div>
             </div>
           </div>
             <div class="box box-solid">
-                <div class="box-header with-border">
+                <div class="box-header with-border" style="margin-right:10px;">
                     <i class="fa fa-exclamation"></i>
 
                     <h3 class="box-title">NOTAMs da <strong>Companhia</strong></h3>
@@ -472,8 +492,6 @@ else { echo "Cruise"; }?>
                 </div>
 
                 <div class=" box-body table-responsive">
-                    <!--Remove this line if you dont want the departures box to be on a fixed scale-->
-                    <div style="overflow: auto; height: 270px; border: 0px solid #666; margin-bottom: 20px; padding: 5px; padding-top: 0px; padding-bottom: 20px;">
                         <table class="table table-hover table-striped">
                             <thead>
                                 <tr>
@@ -514,9 +532,9 @@ else { echo "Cruise"; }?>
 							$flightid = $lastbid->id
 							?>
                                 <td height="25" width="10%" align="center">
-                                    <font face="Bauhaus"><span>
+                                  <span>
                                             <?php echo $lastbid->code; ?>
-                                            <?php echo $lastbid->flightnum; ?></span></font>
+                                            <?php echo $lastbid->flightnum; ?></span>
                                 </td>
                                 <?php
 							$params = $lastbid->pilotid;
@@ -563,7 +581,6 @@ else { echo "Cruise"; }?>
 
                             </tbody>
                         </table>
-                    </div>
                 </div>
             </div>
             <!--END Upcoming Departures Block-->
@@ -636,7 +653,7 @@ else
             <div class="box box-widget widget-user">
                 <!-- Add the bg color to the header using any of the bg-* classes -->
                 <div class="widget-user-header">
-                    <h3 class="widget-user-username text-center">Estátisticas <strong>Mensais</strong></h3>
+                    <h3 class="widget-user-username text-center">Estatísticas <strong>Mensais</strong></h3>
                 </div>
                 <div class="widget-icon cinza">
                     <i class="fa fa-calendar img-circle"></i>
@@ -659,8 +676,31 @@ else
                     <i class="fa fa-hourglass-start img-circle"></i>
                 </div>
                 <div class="box-footer text-center">
-                    <h3><span class="label label-success">Em Breve</span></h3>
-                    <!-- /.row -->
+										<div style="overflow: auto; height: 270px; border: 0px solid #666; margin-bottom: 20px; padding: 5px; padding-top: 0px; padding-bottom: 20px; background-color:#f2f2f2;">
+										<ul class="timeline">
+											<li class="time-label">
+                  <span class="bg-black">
+                    #flynortesul
+                  </span>
+            </li>
+						<?php MainController::Run('Activity', 'frontpage', 1000); ?>
+            <li>
+							<i class="fa fa-clock-o bg-gray"></i>
+
+              <div class="timeline-item">
+                <span class="time"><i class="fa fa-clock-o"></i>
+									<?php $inicio = new DateTime("18-05-2019 21:00:00"); $hoje = new DateTime(); $calcula = $inicio->diff($hoje);if($calcula->d < 1 && $calcula->y == 0){ echo "{$calcula->h} hora(s) atrás";}
+									elseif($calcula->d >= 1){echo "{$calcula->d} dia(s) atrás";}elseif($calcula->m >= 1){echo "{$calcula->m} mes(es) atrás";}elseif($calcula->y >= 1){echo "{$calcula->y} ano(s) atrás";}?></span>
+
+                <h3 class="timeline-header">Início</h3>
+
+                <div class="timeline-body">
+                  Nosso feed de atividades começou agora, todos os acontecimentos da NorteSul Virtual serão mostrados aqui!
+                </div>
+              </div>
+            </li>
+          </ul>
+				</div>
                 </div>
             </div>
         </div>
@@ -678,7 +718,5 @@ else
             </div>
         </div>
     </div>
-
-    <?php MainController::Run('Activity', 'frontpage', 5); ?>
 </section>
 <!-- /.content -->

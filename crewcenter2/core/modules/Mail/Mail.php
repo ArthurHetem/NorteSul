@@ -370,6 +370,23 @@ class Mail extends CodonModule {
         $this->index();
     }
 
+	public function GetProfileMail($limit){
+        $pid = Auth::$userinfo->pilotid;
+        $this->set('mail', MailData::getallmail($pid, $limit));
+        $this->set('pilotcode', PilotData::GetPilotCode(Auth::$userinfo->code, Auth::$userinfo->pilotid));
+        $this->show('mail/mail_profile.php');
+    }
+    
+    public function GetNotificationMail() {
+        if (!Auth::LoggedIn()) {
+        } else {
+            $item = MailData::checkformail();
+            $items = $item->total;
+            $this->set('items', $items);
+            $this->show('mail/mail_count');
+        }
+    }
+	
      protected function confirm_edit_folder()   {
         $folder_id = DB::escape($this->post->folder_id);
         $folder_title = DB::escape($this->post->folder_title);

@@ -23,7 +23,7 @@
 		  <li class="dropdown notifications-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
-              <span class="label label-warning"><?php
+              <?php
                                         $pendingpireps = count(PIREPData::findPIREPS(array('p.accepted' => PIREP_PENDING)));
                                         $pendingpilots = count(PilotData::findPilots(array('p.confirmed' => PILOT_PENDING)));
 
@@ -32,9 +32,13 @@
                                         if(!$count) {
                                             echo '';
                                         } else {
-                                            echo $count ;
+                                            echo '
+                                            <div class="notify">
+            								    <span class="heartbit"></span>
+            								    <span class="point"></span>
+            								</div>';
                                         }
-                                    ?></span>
+                                    ?>
             </a>
             <ul class="dropdown-menu">
               <li class="header">Notificações aos Admins</li>
@@ -74,22 +78,7 @@
               <li>
                 <!-- inner menu: contains the actual data -->
                 <ul class="menu">
-                  <li><!-- start message -->
-                    <?php MainController::Run('Mail', 'GetProfileMail', 4);?>
-                  </li>
-                  <!-- end message -->
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Reviewers
-                        <small><i class="fa fa-clock-o"></i> 2 days</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
+                    <?php MainController::Run('Mail', 'GetProfileMail', 6);?>
                 </ul>
               </li>
               <li class="footer"><a href="<?php echo url('/Mail'); ?>"><strong>Ver Todos</strong> <i class="fa fa-angle-right"></i></a></li>

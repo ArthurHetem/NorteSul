@@ -30,7 +30,6 @@
     </div>
 </div>
 <span class="label label-warning" id="status"></span>
-                       <table class="table" border="0" cellspacing="0">
                                             <table class="table table-hover table-light">
                                                 <thead>
                                                     <tr>
@@ -47,50 +46,52 @@ $pilotid = Auth::PilotID();
 $user = PilotData::getPilotData($pilotid);
 
 if (!$schedules)
-    { ?> 
-		<span class="badge badge-roundless badge-danger">Nenhuma Rota Encontrada!</span>
-		<?php 
-	}
-else
     { ?>
-		<?php foreach($schedules as $result) 
-		{ 			
-			$info = OperationsData::getAircraftByReg($result->registration);			
+		<span class="badge badge-roundless badge-danger">Nenhuma Rota Encontrada!</span>
+		<?php
+	}else{
+foreach($schedules as $result){
+			$info = OperationsData::getAircraftByReg($result->registration);
 		?>
-	<tr>    
-        <td><?php echo $result->code.$result->flightnum;?></td>		
-		<td><?php echo $info->registration;?></td>		      
-        <td><?php echo $result->depicao;?></td>        
-      	<td><?php echo $result->arricao;?></td>      	
-      	<td><?php echo $result->flighttime;?></td>      	
+	<tr>
+        <td><?php echo $result->code.$result->flightnum;?></td>
+		<td><?php echo $info->registration;?></td>
+        <td><?php echo $result->depicao;?></td>
+      	<td><?php echo $result->arricao;?></td>
+      	<td><?php echo $result->flighttime;?></td>
   </tr>
 <?php 	}
 	} ?>
-												</tbody>	
-            </table> 												
+												</tbody>
+            </table>
 <form name="bidAll" id="bidAll" action="<?php echo SITE_URL?>/index.php/randomflights/bidAll" method="post">
 
-		
+
 	<input type="hidden" name="count" value = "<?php echo count($schedules);?>"/>
 	<input type="hidden" name="pilotid" value="<?php echo $pilotid;?>"/>
+  <?php
+	for($i = 0; $i < count($schedules); $i++)
+	{
+		?>
+		<input type="hidden" name="schedules[<?php echo $i;?>]" value="<?php echo $schedules[$i]->id;?>">
+	<?php
+	}
+	?>
 	<p>
-             
+
                                                 <div class="form-group">
                                                 <div class="col-md-12">
                                                 <input type="submit" name="submit" value="Bid this roster" type="button" class="btn btn-success btn-block">
-                       
+                                              </div>
         </div>
-        </div>
+                </form>
         </div>
         </div>
 		        </div>
         </div>
-        </div>
-</div>		
-</div>				
     </section>
     <!-- /.content -->
-<script>
+<script type="text/javascript">
 $(document).ready(function(){
 $('table').hide();
 $('input').hide();

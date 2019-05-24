@@ -9,7 +9,7 @@
      <div class="alert alert-warning">
        <strong>Aviso!</strong>
        <br>
-       O bid será deletado automaticamente se o voo não for voado até 48 horas após reservado.
+       O bid será deletado automaticamente se o voo não for realizado em até 48h após sua reserva.
      </div>
 		<div class="row">
 		   <div class="col-xs-12">

@@ -39,11 +39,11 @@ return;
         <tr>
         <td valign="top"><?php echo $contract->cid; ?></td>
         <td valign="top"><?php echo $contract->code; echo $contract->flightnum; ?></td>
-        <td valign="top"><strong><?php echo $contract->depicao; ?></strong>
+        <td valign="top"><strong><?php echo ucwords($contract->depicao); ?></strong>
         <br/>
         <?php echo $contract->depname; ?>
         </td>
-        <td valign="top"><strong><?php echo $contract->arricao; ?></strong>
+        <td valign="top"><strong><?php echo ucwords($contract->arricao); ?></strong>
         <br/>
         <?php echo $contract->arrname; ?>
         </td>

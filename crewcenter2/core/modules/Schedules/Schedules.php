@@ -24,9 +24,48 @@ class Schedules extends CodonModule {
      * @return
      */
     public function index() {
+		if(!Auth::LoggedIn()) {
+			$this->set('message', 'You must be logged in to access this feature!');
+			$this->show('core_error');
+			return;
+		} else {
+			if(isset($this->post->action)) {
+				switch(DB::escape($this->post->action)) {
+					case 'search':
+					$this->search();
+					break;
+				}
+			} else {
+				$this->set('airports', OperationsData::GetAllAirports());
+				$this->set('airlines', OperationsData::getAllAirlines());
+				$this->set('aircrafts', OperationsData::getAllAircraft('true'));
+			}
+		}
         $this->view();
     }
+public function get_jumpseat_cost() {
+		if($_SERVER['REQUEST_METHOD'] !== 'POST') {
+			header('Location: '.url('/Fltbook'));
+			exit;
+		}
 
+		$depicao = OperationsData::getAirportInfo(DB::escape($this->post->depicao));
+		$arricao = OperationsData::getAirportInfo(DB::escape($this->post->arricao));
+
+		$distance = round(SchedulesData::distanceBetweenPoints($depicao->lat, $depicao->lng, $arricao->lat, $arricao->lng), 0);
+		$jumpseat_cost = $settings['jumpseat_cost'];
+		$total_cost = ($jumpseat_cost * $distance);
+
+		$pilot = PilotData::getPilotData(DB::escape($this->post->pilotid));
+		if($pilot->totalpay < $total_cost) {
+			echo json_encode(array('error' => 'pilotpay_less_than_cost',));
+		} else {
+			// Set these in the session for cross-page reference
+			unset($_SESSION['jumpseat_arricao']);
+			$_SESSION['jumpseat_cost'] = $total_cost;
+			echo json_encode(array('distance' => $distance, 'total_cost' => $total_cost,));
+		}
+	}
     /**
      * Schedules::view()
      * 

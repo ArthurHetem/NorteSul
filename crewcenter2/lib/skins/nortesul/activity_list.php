@@ -34,12 +34,30 @@ foreach($allactivities as $activity) {
         $link_title = '<b>Ver Perfil</b>';
     }
 ?>
-    <p>
-        <?php
+
+        <li>
+              <i class="fa fa-clock-o bg-<?php
+        if($activity->type == ACTIVITY_PROMOTION) {
+            echo 'red';
+        }else{echo "gray";} 
+        ?>"></i>
+
+              <div class="timeline-item">
+                <span class="time"><i class="fa fa-clock-o"></i> <?php $inicio = new  DateTime($activity->submitdate); $hoje = new DateTime(); $calcula = $inicio->diff($hoje);if($calcula->d < 1 && $calcula->y == 0){ echo "{$calcula->h} hora(s) atrás";}
+									elseif($calcula->d >= 1 && $calcula->m == 0 && $calcula->y == 0){echo "{$calcula->d} dia(s) atrás";}elseif($calcula->m >= 1 && $calcula->y == 0){echo "{$calcula->m} mes(es) atrás";}else {echo "{$calcula->y} ano(s) atrás";}?></span>
+                <h3 class="timeline-header"><?php
         /*  Example, if it's a twitter status update (ACTIVITY_TWITTER),
             then show an image (in this case, a small Twitter icon) */
         if($activity->type == ACTIVITY_PROMOTION) {
-            echo '<img src="'.fileurl('/lib/images/twitter.png').'" alt="twitter update" />';
+            echo 'Ranks bot';
+        }
+        
+        ?>
+		<?php
+        /*  Example, if it's a twitter status update (ACTIVITY_TWITTER),
+            then show an image (in this case, a small Twitter icon) */
+        if($activity->type == ACTIVITY_JUMPSEAT) {
+            echo 'Jumpseat monitor bot';
         }
         
         ?>
@@ -47,7 +65,7 @@ foreach($allactivities as $activity) {
         /*  Example, if it's a twitter status update (ACTIVITY_TWITTER),
             then show an image (in this case, a small Twitter icon) */
         if($activity->type == ACTIVITY_NEW_PIREP) {
-            echo '<i class="fa fa-plane"></i>';
+            echo 'Flight Operations bot';
         }
         
         ?>
@@ -55,11 +73,13 @@ foreach($allactivities as $activity) {
         /*  Example, if it's a twitter status update (ACTIVITY_TWITTER),
             then show an image (in this case, a small Twitter icon) */
         if($activity->type == ACTIVITY_NEW_PILOT) {
-            echo '<i class="fa fa-user"></i>';
+            echo 'Membership monitor bot';
         }
         
-        ?>
-        <?php
+        ?></h3>
+
+                <div class="timeline-body">
+				<?php
         /*  If there is a pilot associated with this feed update, show their name
             and a link to their profile page */ 
         if($activity->pilotid != 0) { 
@@ -73,18 +93,23 @@ foreach($allactivities as $activity) {
         <?php 
         } /* End if pilot ID != 0 */ 
         ?>
-        
-        <?php 
+					        <?php 
             /* Show the activity message itself */
-            echo stripslashes($activity->message); 
+            echo stripslashes($activity->message);		
         ?>
+                </div>
+
+
         
         <?php
         if($link_href != '') {
-            echo ' <a href="'.$link_href.'">'.$link_title.'</a>';
+            echo '<div class="timeline-footer">
+                  <a href="'.$link_href.'"" class="btn btn-xs bg-blue">'.$link_title.'</a>
+                </div>';
         }
         ?>
-    </p>
+                  </div>
+            </li>
 <?php
 }
 ?>

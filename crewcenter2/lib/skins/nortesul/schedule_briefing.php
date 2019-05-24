@@ -181,8 +181,8 @@
                  <tr>
                          <td>Detailed Navlog</td>
                          <td><input type="hidden" name="navlog" value="0"><div class="switch__container">
-                     <input id="switch-flat2" class="switch switch--flat2" type="checkbox" name="navlog" value="1" checked="">
-                     <label for="switch-flat2"></label>
+                     <input id="switch-flat" class="switch switch--flat2" type="checkbox" name="navlog" value="1" checked="">
+                     <label for="switch-flat"></label>
                    </div></td>
                  </tr>
                  <tr>
@@ -194,26 +194,26 @@
                  <tr>
                          <td>Plan stepclimbs</td>
                          <td><input type="hidden" name="stepclimbs" value="0"><div class="switch__container">
-                     <input id="switch-flat2" class="switch switch--flat2" type="checkbox" name="stepclimbs" value="1" checked="">
-                     <label for="switch-flat2"></div></td>
+                     <input id="switch-flat3" class="switch switch--flat2" type="checkbox" name="stepclimbs" value="1" checked="">
+                     <label for="switch-flat3"></div></td>
                  </tr>
                  <tr>
                          <td>Runway analysis</td>
                          <td><input type="hidden" name="tlr" value="0"><div class="switch__container">
-                     <input id="switch-flat2" class="switch switch--flat2" type="checkbox" name="tlr" value="1" checked="">
-                     <label for="switch-flat2"></div></td>
+                     <input id="switch-flat4" class="switch switch--flat2" type="checkbox" name="tlr" value="1" checked="">
+                     <label for="switch-flat4"></div></td>
                  </tr>
                  <tr>
                          <td>Include NOTAMs</td>
                          <td><input type="hidden" name="notams" value="0"><div class="switch__container">
-                     <input id="switch-flat2" class="switch switch--flat2" type="checkbox" name="notams" value="1" checked="">
-                     <label for="switch-flat2"></div></td>
+                     <input id="switch-flat5" class="switch switch--flat2" type="checkbox" name="notams" value="1" checked="">
+                     <label for="switch-flat5"></div></td>
                  </tr>
                  <tr>
                          <td>FIR NOTAMs</td>
                          <td><input type="hidden" name="firnot" value="0"><div class="switch__container">
-                     <input id="switch-flat2" class="switch switch--flat2" type="checkbox" name="firnot" value="1" checked="">
-                     <label for="switch-flat2"></div></td>
+                     <input id="switch-flat6" class="switch switch--flat2" type="checkbox" name="firnot" value="1" checked="">
+                     <label for="switch-flat6"></div></td>
                  </tr>
          </tbody>
  </table>

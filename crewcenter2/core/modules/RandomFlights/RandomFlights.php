@@ -63,13 +63,13 @@ class RandomFlights extends CodonModule
 	public function bidAll()
 		{			
 			$count = $this->post->count;			
-			
+				
 			for ($i = 0; $i < $count; $i++)
-			{				
+			{
 				$ret = SchedulesData::addBid($this->post->pilotid, $this->post->schedules[$i]);
 				$flight = SchedulesData::getSchedule($this->post->schedules[$i]);				
 				if($ret) echo 'Flight - '.$flight->code.$flight->flightnum.' added <br/>';
-			}			
+			}
 			echo 'Finished';		
 		}
 }

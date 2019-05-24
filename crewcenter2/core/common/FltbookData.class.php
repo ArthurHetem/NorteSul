@@ -83,9 +83,7 @@ class FltbookData extends CodonData {
 		
 		/* Add this into the activity feed */
         $message = Lang::get('activity.pilot.jumpseat');
-        foreach($pilotdata as $key=>$value) {
-            $message = str_replace('$'.$key, $value, $message);
-        }
+            $message = str_replace('$arricao', $arricao, $message);
         
         # Add it to the activity feed
         ActivityData::addActivity(array(

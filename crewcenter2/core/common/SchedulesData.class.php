@@ -677,7 +677,7 @@ class SchedulesData extends CodonData {
         return DB::get_results($sql);
     }
 
-    public function getLatestBid($pilotid) {
+    public static function getLatestBid($pilotid) {
         $pilotid = DB::escape($pilotid);
 
         $sql = 'SELECT s.*, b.bidid, a.id as aircraftid, a.name as aircraft, a.registration, a.maxpax, a.maxcargo
@@ -903,15 +903,21 @@ class SchedulesData extends CodonData {
         return $data;
     }
 	public static function getpilotmonth(){
-        $sql = 'SELECT COUNT(*) as count,pilotid FROM ' . TABLE_PREFIX . 'pireps WHERE MONTH(submitdate) = MONTH(CURRENT_DATE())
-AND YEAR(submitdate) = YEAR(CURRENT_DATE()) GROUP BY pilotid ORDER BY count DESC';
+			$sql="SELECT t1.pilotid,t1.flighttime,t2.firstname,t2.lastname,t2.code,t2.rank FROM 
+					(SELECT 
+						pilotid, sum(flighttime) as flighttime 
+							FROM ".TABLE_PREFIX."pireps 
+								WHERE YEAR(submitdate) = YEAR(now()) AND MONTH(submitdate) = MONTH(now()) AND accepted = 1
+									GROUP BY pilotid) t1
+										LEFT JOIN ".TABLE_PREFIX."pilots t2 ON t1.pilotid = t2.pilotid 
+											ORDER BY flighttime DESC LIMIT 1";
         $result = DB::get_row($sql);
         if(!$result){
             $res = 'N/A';
         }
         else{
             $pd = PilotData::getPilotData($result->pilotid);
-            $res = $pd->firstname.' '.$pd->lastname;
+            $res = $pd->pilotid;
         }
         return $res;
     }

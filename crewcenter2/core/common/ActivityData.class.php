@@ -25,7 +25,7 @@
      * @param integer $count
      * @return void
      */
-    public static function getActivity($where = '', $limit = 10, $start = '') {
+    public static function getActivity($where = '', $limit = '', $start = '') {
         
         $sql = "SELECT p.*, a.*
 				FROM `".TABLE_PREFIX."activityfeed` a

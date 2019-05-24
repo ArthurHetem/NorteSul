@@ -14,7 +14,6 @@
 <?php
     if ($items > 0)
 		{
-			echo '<img src="'.SITE_URL.'/core/modules/Mail/mailimages/new_mail.gif" border="0" /><br />';
 			echo 'You Have Mail';
 		}
 		else

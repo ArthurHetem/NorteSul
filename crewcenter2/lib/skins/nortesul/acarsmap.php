@@ -1,511 +1,117 @@
-<?php 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<script type="text/javascript" src="<?php echo fileurl('lib/js/jquery.form.js');?>"></script>
+<script type="text/javascript" src="<?php echo fileurl('lib/js/phpvms.js');?>"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=weather&sensor=false&key=AIzaSyDNXF-5w4vpCLtqL0hNmxlp9ieGvoVJNCg"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKSPxD0Ty8TRo10gl9OP1_k05O4FTT4Bo"
+type="text/javascript?sensor=true"></script>
+	 <?php
 /**
- * These are some options for the ACARS map, you can change here
- * 
- * By default, the zoom level and center are ignored, and the map 
- * will try to fit the all the flights in. If you want to manually set
- * the zoom level and center, set "autozoom" to false.
- * 
- * You can use these MapTypeId's:
- * http://code.google.com/apis/maps/documentation/v3/reference.html#MapTypeId
- * 
- * Change the "TERRAIN" to the "Constant" listed there - they are case-sensitive
- * 
- * Also, how to style the acars pilot list table. You can use these style selectors:
- * 
- * table.acarsmap { }
- * table.acarsmap thead { }
- * table.acarsmap tbody { }
- * table.acarsmap tbody tr.even { }
- * table.acarsmap tbody tr.odd { } 
- */
+* These are some options for the ACARS map, you can change here
+*
+* By default, the zoom level and center are ignored, and the map
+* will try to fit the all the flights in. If you want to manually set
+* the zoom level and center, set "autozoom" to false.
+*
+* You can use these MapTypeId's:
+* http://code.google.com/apis/maps/documentation/v3/reference.html#MapTypeId
+*
+* Change the "TERRAIN" to the "Constant" listed there - they are case-sensitive
+*
+* Also, how to style the acars pilot list table. You can use these style selectors:
+*
+* table.acarsmap { }
+* table.acarsmap thead { }
+* table.acarsmap tbody { }
+* table.acarsmap tbody tr.even { }
+* table.acarsmap tbody tr.odd { }
+*/
 ?>
 <script type="text/javascript">
-<?php 
+<?php
 /* These are the settings for the Google map. You can see the
-	Google API reference if you want to add more options.
-	
-	There's two options I've added:
-	
-	autozoom: This will automatically center in on/zoom 
-	  so all your current flights are visible. If false,
-	  then the zoom and center you specify will be used instead
-	  
-	refreshTime: Time, in seconds * 1000 to refresh the map.
-	  The default is 10000 (10 seconds)
+Google API reference if you want to add more options.
+
+There's two options I've added:
+
+autozoom: This will automatically center in on/zoom
+so all your current flights are visible. If false,
+then the zoom and center you specify will be used instead
+
+refreshTime: Time, in seconds * 1000 to refresh the map.
+The default is 10000 (10 seconds)
 */
 ?>
-
 var acars_map_defaults = {
-	autozoom: true,
-	zoom: 4,
-    center: new google.maps.LatLng("-13.4253003", "-61.2748939"),
+autozoom: true,
+zoom: 4,
+center: new google.maps.LatLng("-13.4253003", "-61.2748939"),
 	streetViewControl: false,
 	mapTypeControl: false,
-    mapTypeId: google.maps.MapTypeId.TERRAIN,
-    refreshTime: 12000,
-    styles: [
-    {
-        "featureType": "all",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "saturation": 36
-            },
-            {
-                "color": "#000000"
-            },
-            {
-                "lightness": 40
-            }
-        ]
-    },
-    {
-        "featureType": "all",
-        "elementType": "labels.text.stroke",
-        "stylers": [
-            {
-                "visibility": "on"
-            },
-            {
-                "color": "#000000"
-            },
-            {
-                "lightness": 16
-            }
-        ]
-    },
-    {
-        "featureType": "all",
-        "elementType": "labels.icon",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#000000"
-            },
-            {
-                "lightness": 20
-            }
-        ]
-    },
-    {
-        "featureType": "administrative",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "color": "#000000"
-            },
-            {
-                "lightness": 17
-            },
-            {
-                "weight": 1.2
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.country",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.country",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.country",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.province",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.province",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.province",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.locality",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.locality",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "visibility": "on"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.locality",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.neighborhood",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.neighborhood",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.neighborhood",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.land_parcel",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.land_parcel",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.land_parcel",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#000000"
-            },
-            {
-                "lightness": 20
-            },
-            {
-                "visibility": "on"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape.man_made",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape.man_made",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape.man_made",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#000000"
-            },
-            {
-                "lightness": 21
-            }
-        ]
-    },
-    {
-        "featureType": "poi.attraction",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi.business",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi.government",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi.medical",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi.park",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi.place_of_worship",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi.school",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi.sports_complex",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#000000"
-            },
-            {
-                "lightness": 17
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "color": "#000000"
-            },
-            {
-                "lightness": 29
-            },
-            {
-                "weight": 0.2
-            }
-        ]
-    },
-    {
-        "featureType": "road.arterial",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#000000"
-            },
-            {
-                "lightness": 18
-            }
-        ]
-    },
-    {
-        "featureType": "road.local",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#000000"
-            },
-            {
-                "lightness": 16
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#000000"
-            },
-            {
-                "lightness": 19
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#1c2224"
-            },
-            {
-                "lightness": 17
-            }
-        ]
-    }
-]
+	mapTypeId: google.maps.MapTypeId.HYBRID,
+refreshTime: 10000,
+disableDefaultUI: true,
+zoomControl: true
 };
+
 </script>
-
-<div id="acarsmap" style="width: 100%; height: 670px;"></div>
-
-<?php
-/* See below for details and columns you can use in this table */
-?>
-
-
+<div class="mapcenter" align="center">
+<div id="acarsmap" style="width:100%; height:670px;"></div>
+</div>
 <script type="text/javascript" src="<?php echo fileurl('/lib/js/acarsmap.js');?>"></script>
 <?php
-/* This is the template which is used in the table above, for each row. 
-	Be careful modifying it. You can simply add/remove columns, combine 
-	columns too. Keep each "section" (<%=...%>) intact
-	
-	Variables you can use (what they are is pretty obvious)
-	
-	Variable:							Notes:
-	<%=flight.pilotid%>
-	<%=flight.firstname%>
-	<%=flight.lastname%>
-	<%=flight.pilotname%>				First and last combined
-	<%=flight.flightnum%>
-	<%=flight.depapt%>					Gives the airport name
-	<%=flight.depicao%>
-	<%=flight.arrapt%>					Gives the airport name
-	<%=flight.arricao%>
-	<%=flight.phasedetail%>
-	<%=flight.heading%>
-	<%=flight.alt%>
-	<%=flight.gs%>
-	<%=flight.disremaining%>
-	<%=flight.timeremaning%>
-	<%=flight.aircraft%>				Gives the registration
-	<%=flight.aircraftname%>			Gives the full name
-	<%=flight.client%>					FSACARS/Xacars/FSFK, etc
-	<%=flight.trclass%>					"even" or "odd"
-	
-	You can also use logic in the templating, if you so choose:
-	http://ejohn.org/blog/javascript-micro-templating/
+/* This is the template which is used in the table above, for each row.
+Be careful modifying it. You can simply add/remove columns, combine
+columns too. Keep each "section" (<%=...%>) intact
+
+Variables you can use (what they are is pretty obvious)
+
+Variable:							Notes:
+<%=flight.pilotid%>
+<%=flight.firstname%>
+<%=flight.lastname%>
+<%=flight.pilotname%>				First and last combined
+<%=flight.flightnum%>
+<%=flight.depapt%>					Gives the airport name
+<%=flight.depicao%>
+<%=flight.arrapt%>					Gives the airport name
+<%=flight.arricao%>
+<%=flight.phasedetail%>
+<%=flight.heading%>
+<%=flight.alt%>
+<%=flight.gs%>
+<%=flight.disremaining%>
+<%=flight.timeremaning%>
+<%=flight.aircraft%>				Gives the registration
+<%=flight.aircraftname%>			Gives the full name
+<%=flight.client%>					FSACARS/Xacars/FSFK, etc
+<%=flight.trclass%>					"even" or "odd"
+
+You can also use logic in the templating, if you so choose:
+http://ejohn.org/blog/javascript-micro-templating/
 */
 ?>
-
+<script type="text/html" id="acars_map_row">
+<tr class="<%=flight.trclass%>">
+<td><a href="<?php echo url('/profile/view');?>/<%=flight.pilotid%>"><%=flight.pilotid%> - <%=flight.pilotname%></a></td>
+<td><%=flight.flightnum%></td>
+<td><%=flight.depicao%> <i class="fa fa-plane"> <%=flight.arricao%></td>
+<td><%=flight.alt%></td>
+<td><%=flight.gs%></td>
+<td>
+<div class="progress">
+<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: <%=flight.percomplete%>%"><%=flight.percomplete%>%
+<span class="sr-only"><%=flight.percomplete%><%=flight.percomplete%>%</span>
+</div>
+</div>
+</td>
+</tr>
+</script>
 
 <?php
 /*	This is the template for the little map bubble which pops up when you click on a flight
-	Same principle as above, keep the <%=...%> tags intact. The same variables are available
-	to use here as are available above.
+Same principle as above, keep the <%=...%> tags intact. The same variables are available
+to use here as are available above.
 */
 ?>
 <script type="text/html" id="acars_map_bubble">
@@ -518,17 +124,17 @@ var acars_map_defaults = {
 </script>
 
 <?php
-/*	This is a small template for information about a navpoint popup 
-	
-	Variables available:
-	
-	<%=nav.title%>
-	<%=nav.name%>
-	<%=nav.freq%>
-	<%=nav.lat%>
-	<%=nav.lng%>
-	<%=nav.type%>	2=NDB 3=VOR 4=DME 5=FIX 6=TRACK
- */
+/*	This is a small template for information about a navpoint popup
+
+Variables available:
+
+<%=nav.title%>
+<%=nav.name%>
+<%=nav.freq%>
+<%=nav.lat%>
+<%=nav.lng%>
+<%=nav.type%>	2=NDB 3=VOR 4=DME 5=FIX 6=TRACK
+*/
 ?>
 <script type="text/html" id="navpoint_bubble">
 <span style="font-size: 10px; text-align:left; width: 100%" align="left">

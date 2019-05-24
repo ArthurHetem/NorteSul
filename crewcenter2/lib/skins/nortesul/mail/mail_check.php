@@ -13,10 +13,10 @@
 <?php
     if ($items > 0)
 		{
-			echo count($items);
+			echo "Você possui novos iMails";
 		}
 		else
 		{
-			echo '0';
+			echo 'Você não possui nenhum iMail';
 		}
 ?>

@@ -14,13 +14,13 @@
             </div>
 			<div class="box-body">
 				<ol>
-					<li>O/A piloto deve ser membro da NorteSul Virtual por no mínimo três (3) meses para ter direito a:
+					<li>O/A piloto(a) deve ser membro da NorteSul Virtual por no mínimo três (3) meses para ter direito a:
 					<ol>
-						<li><b>Licença prêmio</b>, que é a licença garantida aos pilotos por motivos de qualquer natureza, a licença é um privilégio, não um direito, tendo uma duração de não mais de 180 dias, cabendo ao RH a autorização ou não da licença.</li>
-						<li><b>Licença militar</b>, que é destinada aos pilotos que ao completarem 18 anos, de acordo com as leis brasileiras foram convocados a servir a nação. Nós da NorteSul, em gratidão pelo serviço àquekes que, com afinco decidiram servir as Forças Armadas. Tempo máximo da licença: 365 dias.</li>
+						<li><b>Licença prêmio</b>, que é a licença garantida aos pilotos por motivos de qualquer natureza. A licença é um privilégio, não um direito, tendo uma duração de não mais de 180 dias, cabendo ao RH a autorização ou não da licença.</li>
+						<li><b>Licença militar</b>, que é destinada aos pilotos que ao completarem 18 anos, de acordo com as leis brasileiras foram convocados à servir a nação. Nós da NorteSul, em gratidão pelo serviço àqueles que, com afinco decidiram servir as Forças Armadas concedemos esta licença. Tempo máximo da licença: 365 dias.</li>
 					</ol>
 					<li>O piloto pode retornar as atividades a qualquer momento.</li>
-					<li>Durante o afastamento, o piloto tem liberdade de aceitar o CrewCenter.</li>
+					<li>Durante o afastamento, o piloto tem liberdade de acessar o CrewCenter.</li>
 					<li>Quando autorizado o afastamento, o piloto não pode pedir extensão do tempo, tendo que esperar o término do mesmo, para requisitar novamente.</li>
 				</li>
 				</ol>
