@@ -155,7 +155,7 @@
                         <div class="well">
                             <div class="media">
                                 <div class="pull-left">
-                                    <img class="media-object imagem" src="http://nortesulvirtual.com/pt/lib/skins/nortesul/images/staffs/NSV087.jpg">
+                                    <img class="media-object imagem" src="http://nortesulvirtual.com/pt/lib/skins/nortesul/images/staffs/NSV086.jpg">
                                 </div>
                                 <div class="media-body">
                                     <h4 class="media-heading">João Pedro <b>Santoro</b></h4>
