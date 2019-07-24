@@ -9,7 +9,7 @@ if(!$last_location) {
 ?>
 <section class="content-header bg-white espaca">
     <div class="pull-right"><i class="fa fa-plane fa-4x text-muted"></i></div>
-    <h1><strong>Reserva</strong> de voos</h1>
+    <h1><strong>Centro de Operações</strong> de voos</h1>
     <h1><small>Operações de voo | NorteSul Virtual &copy;
             <?php echo date("Y");?></small>
         <br>
@@ -20,21 +20,21 @@ if(!$last_location) {
 	<div class="col-md-6">
 	<div class="box box-solid">
 		<div class="box-header with-border">
-			<h3 class="box-title"><strong>Schedule</strong> search</h3>
+			<h3 class="box-title"><strong>Busca</strong> de voos</h3>
 			<div class="pull-right box-tools">
-				<span class="label label-success">Departing form <?php echo $last_location->arricao;?></span>
+				<span class="label label-success">Decolando de <?php echo $last_location->arricao;?></span>
 			</div>
 		</div>
 		<div class="box-body">
 			<div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
-              <li class="active"><a href="#tab_1" data-toggle="tab">Destination</a></li>
-              <li><a href="#tab_2" data-toggle="tab">Aircraft</a></li>
+              <li class="active"><a href="#tab_1" data-toggle="tab">Destino</a></li>
+              <li><a href="#tab_2" data-toggle="tab">Aeronave</a></li>
             </ul>
             <div class="tab-content">
               <div class="tab-pane active" id="tab_1">
                 <select class="search form-control" name="arricao">
-                  <option value="">Select destination</option>
+                  <option value="">Escolha o Destino</option>
                   <?php
                   if($settings['search_from_current_location'] == 1) {
                     $airs = FltbookData::arrivalairport($last_location->arricao);
@@ -57,12 +57,12 @@ if(!$last_location) {
               <!-- /.tab-pane -->
               <div class="tab-pane" id="tab_2">
                 <select class="search form-control" name="aircraft">
-                  <option value="" selected>Select aircraft</option>
+                  <option value="" selected>Escolha a Aeronave</option>
                   <?php
                   if($settings['search_from_current_location'] == 1) {
         $airc = FltbookData::routeaircraft($last_location->arricao);
         if(!$airc) {
-              echo '<option>No Aircraft Available!</option>';
+              echo '<option>Nenhuma aeronave disponível!</option>';
               } else {
               foreach ($airc as $air) {
           $ai = FltbookData::getaircraftbyID($air->aircraft);
@@ -72,7 +72,7 @@ if(!$last_location) {
                   } else {
                     $airc = FltbookData::routeaircraft_depnothing();
                     if(!$airc) {
-          echo '<option>No Aircraft Available!</option>';
+          echo '<option>Nenhuma aeronave disponível!</option>';
               } else {
                       foreach($airc as $ai) {
                         echo '<option value="'.$ai->icao.'">'.$ai->name.'</option>';
@@ -87,7 +87,7 @@ if(!$last_location) {
             <!-- /.tab-content -->
           </div>
           <input type="hidden" name="action" value="search" />
-          <div class="text-center"><input border="0" type="submit" name="submit" value="Search" class="btn btn-default"></div>
+          <div class="text-center"><input border="0" type="submit" name="submit" value="Buscar" class="btn btn-default"></div>
           </form>
     </div>
 	</div>
@@ -97,11 +97,11 @@ if(!$last_location) {
 <div class="col-md-6">
 <div class="box box-solid">
 	<div class="box-header with-border">
-		<h3 class="box-title"><strong>Generate</strong> rosters</h3>
+		<h3 class="box-title"><strong>Gerar</strong> escala</h3>
 		</div>
 	<div class="box-body">
     <div class="form-group">
-			<label class="col-sm-4 control-label" for="depicao">Current Location:</label>
+			<label class="col-sm-4 control-label" for="depicao">Local atual:</label>
 				<div class="col-sm-6">
 					<select id="depicao" name="depicao" class="form-control" size="1">
 						<option value="<?php echo $last_location->arricao;?>">
@@ -111,10 +111,10 @@ if(!$last_location) {
 				</div>
 		</div>
     <div class="form-group">
-			<label class="col-sm-4 control-label" for="airline">Airline:</label>
+			<label class="col-sm-4 control-label" for="airline">Linha aérea:</label>
 				<div class="col-sm-6">
       <select id="airline" name="airline" class="form-control">
-	            <option value="">Select airline</option>
+	            <option value="">Selecionar Linha aérea</option>
               <?php
                 if(Auth::LoggedIn() && PilotGroups::group_has_perm(Auth::$usergroups, ACCESS_ADMIN))
                 {
@@ -130,10 +130,10 @@ if(!$last_location) {
               </div>
           </div>
           <div class="form-group">
-            <label class="col-sm-4 control-label" for="equipment">Aircraft:</label>
+            <label class="col-sm-4 control-label" for="equipment">Aeronave:</label>
               <div class="col-sm-6">
                 <select id="equipment" name="equipment" class="form-control">
-	            <option value="">Select Aircraft</option>
+	            <option value="">Selecionar aeronave</option>
             <?php
                 if(!$equipment) $equipment = array();
                 foreach($equipment as $equip)
@@ -145,7 +145,7 @@ if(!$last_location) {
           </div>
   		</div>
       <div class="form-group">
-        <label class="col-sm-4 control-label" for="count">Rosters:</label>
+        <label class="col-sm-4 control-label" for="count">Pernas:</label>
           <div class="col-sm-6">
       <select id="count" name="count" class="form-control">
 			  <option value="2">2</option>
@@ -157,7 +157,7 @@ if(!$last_location) {
     </div>
 </div>
 
-<input type="submit" name="submit" value="Generate" class="btn-block btn btn-default">
+<input type="submit" name="submit" value="Gerar" class="btn-block btn btn-default">
 	</div>
 </div>
 </form>
@@ -168,13 +168,13 @@ if(!$last_location) {
 	<div class="col-md-6">
 	<div class="box box-solid">
 		<div class="box-header with-border">
-			<h3 class="box-title"><strong>JumpSeat</strong> travel</h3>
+			<h3 class="box-title"><strong>JumpSeat</strong></h3>
 			<div class="pull-right box-tools">
-				<span class="label label-success">Active</span>
+				<span class="label label-success">Ativo</span>
 			</div>
 		</div>
 		<div class="box-body">
-      <div class="col-sm-5 control-label">Current account balance: v<?php echo FinanceData::FormatMoney($userinfo->totalpay); ?></div>
+      <div class="col-sm-5 control-label">Saldo atual: v<?php echo FinanceData::FormatMoney(Auth::$userinfo->totalpay); ?></div>
       <div class="form-group">
         <div class="col-sm-12">
           <div id="errors"></div>
@@ -193,7 +193,7 @@ if(!$last_location) {
               </div>
               </div>
               <div class="text-center"><div id="jump_purchase_cost"></div></div>
-                <input type="submit" id="purchase_button" value="Confirm" class="btn btn-info" />
+                <input type="submit" id="purchase_button" value="Confirmar" class="btn btn-info" />
           </form>
 </div>
 </div>
@@ -201,7 +201,7 @@ if(!$last_location) {
 <div class="col-md-6">
 <div class="box box-solid">
   <div class="box-header with-border">
-    <h3 class="box-title"><i class="fa fa-chevron-up"></i> <strong>Crew</strong> information</h3>
+    <h3 class="box-title"><i class="fa fa-chevron-up"></i> <strong>Informação</strong> da tripulação</h3>
   </div>
   <div class="box-body">
     <div class="well">
@@ -212,14 +212,6 @@ if(!$last_location) {
       ID: <?php echo Auth::$userinfo->code;?><?php echo Auth::$userinfo->pilotid;?>
       <br>
       HUB: <?php echo Auth::$userinfo->hub;?>
-      <br>
-      Last flight: <?php
-if($report)
-{ ?>
-      <?php echo $report->code . $report->flightnum; ?>
-      <?php
-} else { echo 'Nenhum voo encontrado!'; }
-?>
     </div>
 </div>
 </div>
@@ -229,7 +221,7 @@ if($report)
 <div class="col-md-6">
 <div class="box box-solid">
   <div class="box-header with-border">
-    <h3 class="box-title"><i class="fa fa-chevron-up"></i> <strong>Airport</strong> information</h3>
+    <h3 class="box-title"><i class="fa fa-chevron-up"></i> <strong>Informações</strong> do Aeroporto</h3>
   </div>
   <div class="box-body">
     <strong>METAR</strong> <?php
@@ -241,7 +233,7 @@ echo $page;
 ?>
 <hr>
 <br>
-<h4>Airline <strong>NOTAMs</strong></h4>
+<h4><strong>NOTAMs</strong></h4>
 <br>
 <table class="table table-bordered table-striped table-hover">
     <thead>
@@ -265,7 +257,7 @@ function calculate_transfer(arricao) {
   var distancediv = $('#distance_travelling')[0];
   var costdiv     = $('#jump_purchase_cost')[0];
   var errorsdiv     = $('#errors')[0];
-  var baseurl = "http://nortesulvirtual.com/crewcenter2pt"
+  var baseurl = "https://nortesulvirtual.com/beta"
   errorsdiv.innerHTML = '';
 
   $.ajax({

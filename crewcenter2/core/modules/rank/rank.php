@@ -13,7 +13,7 @@ class Rank extends CodonModule
 		public function index()
 {
 		$this->set('ranks', RanksData::GetAllRanks());
-		$this->render('ranks_allranks.tpl');
+		$this->render('ranks_allranks.php');
 		
 		}
 }

@@ -31,8 +31,7 @@
 								<p>ID de piloto: <?php echo PilotData::GetPilotCode(Auth::$userinfo->code, Auth::$userinfo->pilotid) ?></p>
 								<p>HUB: <?php echo Auth::$userinfo->hub;?></p>
 								<p>Email: <?php echo Auth::$userinfo->email;?></p>
-								<p>Status da conta: <?php echo Auth::$userinfo->rank;?></p>
-								<p>Status da conta: <?php if (Auth::$userinfo->retired == 3){
+								<p>Status da conta: <?php if (Auth::$userinfo->retired = 3){
 									echo '<span class="label label-success"><i class="fa fa-check"></i> Ativa</span>';
 								} else{
 									echo '<span class="label label-warning"><i class="fa fa-exclamation-triangle"></i> Verificar com RH</span>';

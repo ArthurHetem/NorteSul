@@ -36,7 +36,7 @@ $v_taxa = "0";
     <div class="col-md-12">
         <div class="box box-widget widget-user">
             <!-- Add the bg color to the header using any of the bg-* classes -->
-            <div class="widget-user-header bg-black" style="background: url('http://getwallpapers.com/wallpaper/full/e/0/c/242085.jpg');">
+            <div class="widget-user-header bg-black" style="background: url('<?php echo fileurl('lib/skins/nortesul/img/2.jpg');?>');">
 							<br>
                 <h3 class="widget-user-username text-center fonte">NorteSul Virtual</h3>
                 <h5 class="widget-user-desc text-center">Bem-vindo ao futuro.</h5>
@@ -133,7 +133,7 @@ $v_taxa = "0";
                     <!-- /.col -->
                     <div class="col-sm-2">
                         <div class="description-block">
-                            <h3 class="description-header"><img src="<?php echo $userinfo->rankimage?>" alt="" data-toggle="tooltip" title="<?php echo Auth::$userinfo->rank; ?>" /></h3>
+                            <h3 class="description-header"><img src="<?php echo $userinfo->rankimage?>" width="75%" height="auto" alt="" data-toggle="tooltip" title="<?php echo Auth::$userinfo->rank; ?>" /></h3>
                             <h3><small><i class="fa fa-star"></i> Meu Ranking</small></h3>
                         </div>
                         <!-- /.description-block -->
@@ -153,7 +153,7 @@ $v_taxa = "0";
                     <div class="small-box levanta2">
                         <div class="inner">
                             <h4>
-                                <?php echo $v_taxa; ?> fpm</h4>
+                                <?php echo round($v_taxa); ?> fpm</h4>
 
                             <h4><small><strong>Média</strong> de Toque</small></h4>
                         </div>
@@ -309,7 +309,7 @@ echo $page;
                             </div>
                             <!-- /.tab-pane -->
                             <div class="tab-pane" id="tab_2">
-                                <iframe src="https://app.projectfly.co.uk/app/#/radar" width="100%" height="670px"></iframe>
+                                <iframe src="https://v2preview.vattastic.com/" width="100%" height="670px"></iframe>
                             </div>
                             <!-- /.tab-pane -->
                             <div class="tab-pane" id="tab_3">
@@ -555,15 +555,15 @@ else { echo '<span class="label label-success">Cruising</span>'; }?>
                                         <?php echo $date; ?></span></td>
                                 <td height="25" width="10%" align="center"><span>
                                         <font face="">
-                                            <?php echo '<a class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="top" title="Click to view Airport Information!" href="  '.SITE_URL.'/index.php/airports/get_airport?icao='.$lastbid->depicao.'">'.$lastbid->depicao.'</a>';?>
+                                            <?php echo '<a class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="top" title="Clique para ver informações do Aeroporto!" href="  '.SITE_URL.'/index.php/airports/get_airport?icao='.$lastbid->depicao.'">'.$lastbid->depicao.'</a>';?>
                                         </font>
                                     </span></td>
                                 <td height="25" width="10%" align="center"><span>
                                         <font face="">
-                                            <?php echo '<a class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="top" title="Click to view Airport Information!" href= '.SITE_URL.'/index.php/airports/get_airport?icao='.$lastbid->arricao.'">'.$lastbid->arricao.'</a>';?>
+                                            <?php echo '<a class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="top" title="Clique para ver informações do Aeroporto!" href='.SITE_URL.'/index.php/airports/get_airport?icao='.$lastbid->arricao.'>'.$lastbid->arricao.'</a>';?>
                                         </font>
                                     </span></td>
-                                <td height="25" width="10%" align="center"><span><a class="btn btn- btn-sm" data-toggle="tooltip" data-placement="top" title="Click to view Aircraft Information!" href="<?php echo SITE_URL?>/index.php/vFleetTracker/view/<?php echo '' . $lastbid->registration . ''; ?>">
+                                <td height="25" width="10%" align="center"><span><a class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="top" title="Clique para ver informações da Aeronave!" href="<?php echo SITE_URL?>/index.php/vFleetTracker/view/<?php echo '' . $lastbid->registration . ''; ?>">
                                             <?php echo $lastbid->registration; ?></a></td>
                                 </tr>
                                 <?php

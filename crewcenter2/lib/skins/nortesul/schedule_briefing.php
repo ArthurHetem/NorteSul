@@ -16,7 +16,8 @@
               <div class="widget-user-image">
                 <h2 class="text-center"><span class="label label-default"><?php echo $schedule->code; ?><?php echo $schedule->flightnum; ?></span></h2>
                 <h3 class="text-center"><?php echo $schedule->depicao; ?> <i class="fa fa-plane animated pulse infinite"></i> <?php echo $schedule->arricao; ?></h3>
-                <h3 class="text-center"><?php echo ucwords(strftime("%d %B %Y"));?></h3>
+                <h3 class="text-center"><?php setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+date_default_timezone_set('America/Sao_Paulo'); echo ucwords(strftime("%d %B %Y"));?></h3>
               </div>
               <div class="box-footer bg-black">
                 <div class="row">
@@ -43,38 +44,25 @@
             <!-- /.widget-user -->
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-12">
-          <div class="box box-solid">
-            <div class="box-header with-border">
-              <h3 class="box-title"><i class="fa fa-map-marker"></i> <strong>Route</strong> map</h3>
-            </div>
-            <div class="box-body">
-            <p class="text-center"><?php echo $schedule->depname; ?> - <?php echo $schedule->arrname; ?></p>
-              <img style="margin-left:30%;" src="http://www.gcmap.com/map?P=<?php echo $schedule->depicao; ?>+-+<?php echo $schedule->arricao; ?>%0d%0a&MS=wls&MR=120&MX=540x540&PM=*" />
-            </div>
-          </div>
-        </div>
-      </div>
 		<div class="row">
 		   <div class="col-xs-12">
           <div class="box box-solid">
             <div class="box-header with-border">
-              <h3 class="box-title"><strong>Schedule</strong> details</h3>
+              <h3 class="box-title"><strong>Detalhes</strong> do voo</h3>
             </div>
             <!-- /.box-header -->
 			<div class="box-body table-responsive">
-        <div class="alert alert-info">Please make sure you have double checked all the details given here!</div>
+        <div class="alert alert-info">Lembre-se de checar e pré-checar os dados inseridos abaixo! #nortesul</div>
                 <form id="sbapiform">
                 <table class="table table-hover">
                    <tbody><tr>
-                <th>Airline</th>
-                <th>Flight no.</th>
-                <th>Dep ICAO</th>
-                <th>Arr ICAO</th>
-                <th>Distance</th>
-                <th>Date</th>
-                <th>Dep time (UTC)</th>
+                <th>Linha aérea</th>
+                <th>Voo#</th>
+                <th>Decolagem</th>
+                <th>Pouso</th>
+                <th>Distância</th>
+                <th>Data</th>
+                <th>Horário de Decolagem (UTC)</th>
                 </tr>
                 <tr>
                 <td><?php echo $schedule->code;?></td>
@@ -101,7 +89,7 @@
    <div class="col-xs-8">
       <div class="box box-solid">
         <div class="box-header with-border">
-          <h3 class="box-title"><strong>Dispatch</strong> configuration</h3>
+          <h3 class="box-title"><strong>Configurações</strong> do Despacho</h3>
         </div>
         <!-- /.box-header -->
   <div class="box-body table-responsive">
@@ -134,7 +122,7 @@
 
           if($aircraft->registration == $schedule->registration)
           {
-            $pctcargo = rand(1, 100);
+            $pctcargo = rand(50, 100);
             $pctpassacargo = $pctcargo/100;
                              $carga =  round($aircraft->maxcargo * $pctpassacargo, 0) ;
                  echo $carga/1000;
@@ -172,39 +160,39 @@
 <div class="col-xs-4">
    <div class="box box-solid">
      <div class="box-header with-border">
-       <h3 class="box-title"><strong>OFP</strong> configuration</h3>
+       <h3 class="box-title"><strong>Configurações</strong> do OFP</h3>
      </div>
      <!-- /.box-header -->
 <div class="box-body table-responsive">
  <table class="table table-hover">
                  <tbody>
                  <tr>
-                         <td>Detailed Navlog</td>
+                         <td>Navegação Detalhada</td>
                          <td><input type="hidden" name="navlog" value="0"><div class="switch__container">
                      <input id="switch-flat" class="switch switch--flat2" type="checkbox" name="navlog" value="1" checked="">
                      <label for="switch-flat"></label>
                    </div></td>
                  </tr>
                  <tr>
-                         <td>ETOPS Planning</td>
+                         <td>Planejamneto ETOPS</td>
                          <td><input type="hidden" name="etops" value="0"><div class="switch__container">
                      <input id="switch-flat2" class="switch switch--flat2" type="checkbox" name="etops" value="1" checked="">
                      <label for="switch-flat2"></div></label></td>
                  </tr>
                  <tr>
-                         <td>Plan stepclimbs</td>
+                         <td>Planejar Stepclimbs</td>
                          <td><input type="hidden" name="stepclimbs" value="0"><div class="switch__container">
                      <input id="switch-flat3" class="switch switch--flat2" type="checkbox" name="stepclimbs" value="1" checked="">
                      <label for="switch-flat3"></div></td>
                  </tr>
                  <tr>
-                         <td>Runway analysis</td>
+                         <td>Análise de Pistas</td>
                          <td><input type="hidden" name="tlr" value="0"><div class="switch__container">
                      <input id="switch-flat4" class="switch switch--flat2" type="checkbox" name="tlr" value="1" checked="">
                      <label for="switch-flat4"></div></td>
                  </tr>
                  <tr>
-                         <td>Include NOTAMs</td>
+                         <td>Incluir NOTAMs</td>
                          <td><input type="hidden" name="notams" value="0"><div class="switch__container">
                      <input id="switch-flat5" class="switch switch--flat2" type="checkbox" name="notams" value="1" checked="">
                      <label for="switch-flat5"></div></td>
@@ -225,20 +213,20 @@
 <div class="col-xs-12">
    <div class="box box-solid">
      <div class="box-header with-border">
-       <h3 class="box-title"><strong>Route</strong> planner</h3>
+       <h3 class="box-title"><strong>Planejador</strong> de Rota</h3>
      </div>
      <!-- /.box-header -->
 <div class="box-body table-responsive">
  <table class="table table-hover">
                  <tbody>
                  <tr>
-                         <td><a href="http://rfinder.asalink.net/free/" id="rflink" target="_blank"><img class="routeimg" style="width:70px;height:30px;padding:2px 0px;margin-right:0px;margin-left:0px" src="https://www.simbrief.com/images/routefinder.png" alt="RouteFinder" title="RouteFinder"></a></td>
+                         <td><a href="https://rfinder.asalink.net/free/" id="rflink" target="_blank"><img class="routeimg" style="width:70px;height:30px;padding:2px 0px;margin-right:0px;margin-left:0px" src="https://www.simbrief.com/images/routefinder.png" alt="RouteFinder" title="RouteFinder"></a></td>
                  </tr>
                  <tr>
                          <td><textarea rows="8" cols="50" class="form-control" type="text" name="route" placeholder="<?php echo $schedule->route; ?>" value=""></textarea></td>
                  </tr>
                  <tr>
-                         <td><div class="alert alert-warning">Remove any references to "SID" & "STAR" or you will get errors in your route.</div></td>
+                         <td><div class="alert alert-warning">Remova qualquer referencias da SID e da STAR ou você irá encontrar erros!</div></td>
                  </tr>
          </tbody>
  </table>
@@ -272,7 +260,7 @@ foreach($allaircraft as $aircraft)
 
                         <input type="hidden" class="form-control" name="manualrmk" placeholder="Remarks" value="Limites da NorteSul Virutal">
 
-                               <input type="hidden" name="airline" value="NS">
+                               <input type="hidden" name="airline" value="NSV">
                                 <input type="hidden" name="fltnum" value="<?php echo $schedule->flightnum; ?> ">
 
 
@@ -296,7 +284,7 @@ foreach($allaircraft as $aircraft)
                                 <input type="hidden" name="altn_1_route" value="">
 
 
-                                <div class="text-center"><input type="button" class="btn btn-success" onclick="simbriefsubmit('http://nortesulvirtual.com/crewcenter2pt/index.php/SimBrief');" value="Generate OFP">
+                                <div class="text-center"><input type="button" class="btn btn-success" onclick="simbriefsubmit('https://nortesulvirtual.com/beta/index.php/SimBrief');" value="Gerar OFP">
 
                     </div>
                 </div></section>

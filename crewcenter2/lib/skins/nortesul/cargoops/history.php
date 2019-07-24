@@ -2,27 +2,24 @@
     <div class="col-md-12">
       <div class="box box-solid">
       <div class="box-header with-border">
-      <h3 class="box-title"><strong>My</strong> cargo flights</h3>
-      <div class="pull-right box-tools">
-          <span class="label label-info">Flights: <?php echo $contractcount; ?></span>
-      </div>
+      <h3 class="box-title"><strong>Meus</strong> voos de carga</h3>
       </div>
       <div class="box-body">
         <table class="table">
           <tr>
-          <th>Flight</th>
-          <th>From</th>
-          <th>To</th>
-          <th>Aircraft</th>
-          <th>Time</th>
-          <th>Landingrate</th>
-          <th>Date</th>
+          <th>Voo#</th>
+          <th>Decolagem</th>
+          <th>Pouso</th>
+          <th>Aeronave</th>
+          <th>Duração</th>
+          <th>Landing Rate</th>
+          <th>Data</th>
           </tr>
           <?php
           if(!$pireps)
           {
           ?>
-          <tr><td colspan="7">No Cargo Flights found!</td></tr>
+          <tr><td colspan="7">Nenhum voo de carga encontrado!</td></tr>
           <?php
           }
           else

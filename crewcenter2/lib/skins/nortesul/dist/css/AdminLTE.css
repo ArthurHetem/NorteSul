@@ -457,7 +457,6 @@ a:focus {
   border-color: transparent;
 }
 .user-panel {
-  position: relative;
   width: 100%;
   padding: 10px;
   overflow: hidden;

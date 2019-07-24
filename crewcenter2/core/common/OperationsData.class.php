@@ -765,4 +765,45 @@ class OperationsData extends CodonData {
 
         return self::GetAirportInfo($icao);
     }
+	
+	public static function pilot_pay($pilotid)
+{
+#Get the flight time from last submitted pirep by the pilot
+$ft = "SELECT flighttime FROM phpvms_pireps WHERE pilotid = '$pilotid' ORDER BY submitdate DESC";
+$flttme = DB::get_row($ft);
+
+#Extract the hour from it
+$hr = intval($flttme->flighttime);
+
+#Now the minutes
+$mn = ($flttme->flighttime - $hr) * 100;
+
+#Put everything together as minutes
+$min = ($hr * 60) + $mn;
+
+#How much the pilotpay is    
+$fr = "SELECT pilotpay FROM phpvms_pireps WHERE pilotid = '$pilotid' ORDER BY submitdate DESC";
+$payrate = DB::get_row($fr);
+
+#pilot pay per minute
+$pay = $payrate->pilotpay / 60;
+
+#We need total money for the pilot
+$pp = "SELECT totalpay FROM phpvms_pilots WHERE pilotid = '$pilotid'";
+$ppay = DB::get_row($pp);
+$pipay = $payrate->totalpay;
+
+#Multiply it by the minutes
+$ftupdt = $min * $pay;
+
+#Add it to pilot money
+$ttalpay = $ftupdt + $pipay;
+$totalpay = ROUND($ttalpay, 2);
+
+#Update the table
+$updt = "UPDATE phpvms_pilots SET totalpay = '$totalpay' + totalpay WHERE pilotid = '$pilotid'";
+
+DB::query($updt);
+
+}
 }

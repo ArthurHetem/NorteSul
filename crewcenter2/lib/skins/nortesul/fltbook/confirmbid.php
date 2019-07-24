@@ -8,13 +8,13 @@
 <div class="container-fluid">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal">&times;</button>
-      <h4 class="modal-title">Confirm Booking</h4>
+      <h4 class="modal-title">Confirmar Reserva</h4>
     </div>
     <div class="modal-body">
-      <h3>Select Aircraft Registration</h3>
+      <h3>Selecionar Matrícula da Aeronave</h3>
 	<form action="<?php echo url('/Fltbook/addbid'); ?>" method="post">
 		<select class="form-control" name="aircraftid" id="aircraftid">
-			<option value="" selected disabled>Select Your Aircraft</option>
+			<option value="" selected disabled>Selecionar Aeronave</option>
 			<?php
 			$allaircraft = FltbookData::getAllAircraftFltbook($airline, $aicao);
 			foreach($allaircraft as $aircraft) {
@@ -41,19 +41,8 @@
 		</select>
 	      <hr />
 	      <input type="hidden" name="routeid" value="<?php echo $routeid; ?>" />
-	      <input type="submit" name="submit" class="btn btn-success" value="Book" onclick="notifica();" />
-	      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+	      <input type="submit" name="submit" class="btn btn-success" value="Reservar" onclick="notifica();" />
+	      <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
 	</form>
   </div>
 </div>
-<script>
-  $notifica(){
-    Swal({
-  title: 'Bid added!',
-  text: 'Now you can fly #nortesulvirtual',
-  type: 'success',
-  heightAuto: false,
-  confirmButtonText: 'Thanks'
-})
-  });
-</script>

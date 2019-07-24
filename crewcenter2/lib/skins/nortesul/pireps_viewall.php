@@ -52,9 +52,9 @@
                     <thead>
                     <tr>
                       <th><h4 class="text-center"><strong>DATA DO VOO</strong></h4></th>
-                      <th><h4 class="text-center"><strong>CALL SIGN</strong></h4></th>
-                      <th><h4 class="text-center"><strong>DEPARTURE</strong></h4></th>
-                      <th><h4 class="text-center"><strong>ARRIVAL</strong></h4></td>
+                      <th><h4 class="text-center"><strong>CALLSIGN</strong></h4></th>
+                      <th><h4 class="text-center"><strong>DECOLAGEM</strong></h4></th>
+                      <th><h4 class="text-center"><strong>POUSO</strong></h4></td>
                       <th><h4 class="text-center"><strong>TEMPO DE VOO</strong></h4></th>
                       <th></th>
                       <?php
@@ -73,7 +73,7 @@
                       <td align="center">(ICAO)</td>
                       <td align="center">(ICAO)</td>
                       <td align="center">(HH:MM)</td>
-                      <th><h4 class="text-center"><strong>PIC NAME</strong></h4></th>
+                      <th><h4 class="text-center"><strong>NOME DO PILOTO</strong></h4></th>
                       <?php
                       // Only show this column if they're logged in, and the pilot viewing is the
                       //	owner/submitter of the PIREPs
@@ -93,14 +93,14 @@
                       <td align="center"><?php echo $pirep->depicao; ?></td>
                       <td align="center"><?php echo $pirep->arricao; ?></td>
                         <td align="center"><?php echo $pirep->flighttime; ?></td>
-                      <td align="center">Capt. <?php echo $pilot->firstname;?> <?php echo $pilot->lastname;?></td>
+                      <td align="center"><?php echo $pilot->firstname;?> <?php echo $pilot->lastname;?></td>
                       <?php
                       // Only show this column if they're logged in, and the pilot viewing is the
                       //	owner/submitter of the PIREPs
                       if(Auth::LoggedIn() && Auth::$pilot->pilotid == $pirep->pilotid) {
                         ?>
                       <td align="center">
-                        <a href="<?php echo url('/pireps/view/'.$pirep->pirepid);?>" data-toggle="tooltip" title="POST FLIGHT REPORT" class="btn btn-default btn-xs"><i class="fa fa-eye"></i> PFR</a><br />
+                        <a href="<?php echo url('/pireps/view/'.$pirep->pirepid);?>" data-toggle="tooltip" title="REPORTE PÓS VOO" class="btn btn-default btn-xs"><i class="fa fa-eye"></i> RPV</a><br />
                       </td>
                       <?php
                       }

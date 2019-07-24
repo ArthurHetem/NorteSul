@@ -10,7 +10,7 @@
 ?>
 <section class="content-header bg-white espaca">
     <div class="pull-right"><i class="fa fa-plane fa-4x text-muted"></i></div>
-    <h1><strong>Roster</strong> generator</h1>
+    <h1><strong>Gerador</strong> de escalas</h1>
     <h1><small>Operações de voo | NorteSul Virtual &copy;
             <?php echo date("Y");?></small>
         <br>
@@ -20,24 +20,24 @@
 			<div class="col-xs-12">
           <div class="box box-solid">
             <div class="box-header with-border">
-              <h3 class="box-title">Available itinerary</h3>
+              <h3 class="box-title">Escala disponível</h3>
             </div>
 			<div class="box-body table-responsive">
-			<div class="alert alert-success">Attention!<br>If you aren't confortable with this roster, remember that you can always regenerate.</div>
+			<div class="alert alert-success">Atenção!<br>Se você não está confortavél com sua escala, lembre-se que você pode sempre gerar outra.</div>
 			<div class="col-xs-12 col-sm-12 progress-container">
     <div class="progress progress-striped active">
         <div class="progress-bar progress-bar-success" style="width:0%"></div>
     </div>
 </div>
 <span class="label label-warning" id="status"></span>
-                                            <table class="table table-hover table-light">
+                                            <table class="table table-hover table-light table-bordered">
                                                 <thead>
                                                     <tr>
-                                                        <th> <center>Flight#</th>
-														<th> <center>Departure</th>
-                                                        <th> <center>Arrival</th>
-                                                        <th> <center>Registration</th>
-                                                        <th> <center>Duration</th>
+                                                        <th> <center>Voo#</center></th>
+														<th> <center>Decolagem</center></th>
+                                                        <th> <center>Pouso</center></th>
+                                                        <th> <center>Matrícula</center></th>
+                                                        <th> <center>Duração</center></th>
                                                     </tr>
                                                 </thead>
 												<tbody>
@@ -54,11 +54,11 @@ foreach($schedules as $result){
 			$info = OperationsData::getAircraftByReg($result->registration);
 		?>
 	<tr>
-        <td><?php echo $result->code.$result->flightnum;?></td>
-		<td><?php echo $info->registration;?></td>
-        <td><?php echo $result->depicao;?></td>
-      	<td><?php echo $result->arricao;?></td>
-      	<td><?php echo $result->flighttime;?></td>
+        <td><center><?php echo $result->code.$result->flightnum;?></center></td>
+        <td><center><?php echo $result->depicao;?></center></td>
+      	<td><center><?php echo $result->arricao;?></center></td>
+		<td><center><?php echo $info->registration;?></center></td>
+      	<td><center><?php echo $result->flighttime;?></center></td>
   </tr>
 <?php 	}
 	} ?>
@@ -81,7 +81,7 @@ foreach($schedules as $result){
 
                                                 <div class="form-group">
                                                 <div class="col-md-12">
-                                                <input type="submit" name="submit" value="Bid this roster" type="button" class="btn btn-success btn-block">
+                                                <input type="submit" name="submit" value="Reservar Escala" type="button" class="btn btn-success btn-block">
                                               </div>
         </div>
                 </form>
@@ -95,14 +95,14 @@ foreach($schedules as $result){
 $(document).ready(function(){
 $('table').hide();
 $('input').hide();
-$("#status").text("Generating itinerary");
+$("#status").text("Gerando Escala");
   $(".progress-bar").animate({
     width: "100%"
 }, 15000);
 $('table').delay( 15000 ).show('slow');
 $('input').delay( 15000 ).show('slow');
 setTimeout(function(){
-  $("#status").text("Completed").removeClass("label-warning").addClass("label-success");
+  $("#status").text("Terminado").removeClass("label-warning").addClass("label-success");
 }, 15000);
 });
 </script>

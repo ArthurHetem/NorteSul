@@ -52,8 +52,7 @@
 							$lastName = Auth::$userinfo->lastname;
 							$lastName = strtolower($lastName);
 							?>
-                                            <?php echo $firstName; ?>.
-                                            <?php echo $lastName; ?>@nortesulvirtual.com</span>
+                                            <?php echo $firstName; ?>.<?php echo $lastName; ?>@nortesulvirtual.com</span>
                                     </td>
                                 </tr>
                             </tbody>
@@ -116,7 +115,7 @@
                                             <a href="<?php echo SITE_URL;?>/index.php/Mail/item/<?php echo $data->thread_id; ?>"><button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Ver"><i class="fa fa-eye"></i></button></a>
                                         </div>
                                     </td>
-                                    <td align="center"><span class="label label-default">NSV
+                                    <td align="center"><span class="label label-default">
                                             <?php echo $pilot; ?></span> |
                                         <?php echo "$user->firstname $user->lastname"; ?>
                                     </td>
@@ -144,4 +143,5 @@
                 </div>
             </div>
         </div>
+      </div>
 </section>

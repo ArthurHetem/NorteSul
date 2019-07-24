@@ -133,7 +133,8 @@ class PIREPAdmin extends CodonModule {
             #PilotData::GenerateSignature($pirep_details->pilotid);
             #StatsData::UpdateTotalHours();
             CodonEvent::Dispatch('pirep_accepted', 'PIREPAdmin', $pirep_details);
-
+			# Add correct pay for the pilot
+OperationsData::pilot_pay($pirep_details->pilotid);
             $count++;
         }
 
@@ -298,10 +299,11 @@ class PIREPAdmin extends CodonModule {
             return;
 
         # Update pilot stats
-        
+      
         PIREPData::ChangePIREPStatus($pirepid, PIREP_ACCEPTED); // 1 is accepted
         LogData::addLog(Auth::$userinfo->pilotid, 'Approved PIREP #' . $pirepid);
-
+		# Add correct pay for the pilot
+OperationsData::pilot_pay($pirep_details->pilotid);
         # Call the event
         CodonEvent::Dispatch('pirep_accepted', 'PIREPAdmin', $pirep_details);
     }

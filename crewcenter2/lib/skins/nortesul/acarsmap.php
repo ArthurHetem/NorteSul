@@ -1,5 +1,5 @@
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script type="text/javascript" src="<?php echo fileurl('lib/js/jquery.form.js');?>"></script>
 <script type="text/javascript" src="<?php echo fileurl('lib/js/phpvms.js');?>"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=weather&sensor=false&key=AIzaSyDNXF-5w4vpCLtqL0hNmxlp9ieGvoVJNCg"></script>

@@ -187,6 +187,18 @@ class OperationsData extends CodonData {
 
         return DB::get_row($sql);
     }
+	/**
+     * Get an aircraft by type
+     */
+    public static function getAllAircraftByType($tipo) {
+        $tipo = DB::escape(strtoupper($tipo));
+
+        $sql = 'SELECT * 
+				FROM ' . TABLE_PREFIX . 'aircraft 
+				WHERE UPPER(`icao`)=\'' . $tipo . '\'';
+			$all_aircraft = DB::get_results($sql);
+        return $all_aircraft;
+    }
 
     /**
      * Check an aircraft registration, against an ID and a 

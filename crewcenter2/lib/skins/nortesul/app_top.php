@@ -71,7 +71,7 @@
 		  <li class="dropdown messages-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
-              <span class="label label-success"><?php MainController::Run('Mail', 'GetNotificationMail');?></span>
+              <?php MainController::Run('Mail', 'GetNotificationMail');?>
             </a>
             <ul class="dropdown-menu">
               <li class="header"><?php MainController::Run('Mail', 'checkmail'); ?></li>
@@ -141,7 +141,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="<?php echo SITE_URL;?>/index.php/logout">
                       <i class="fa fa-power-off text-muted"></i> Logout
                     </a>
                   </li>
@@ -162,13 +162,13 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel bg-gray">
         <div class="pull-left image">
-          <img src="<?php echo PilotData::getPilotAvatar($pilotcode); ?>" class="img-circle" alt="User Image">
+          <img src="<?php echo PilotData::getPilotAvatar(Auth::$userinfo->pilotcode); ?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p><?php echo Auth::$userinfo->firstname;?> <?php echo Auth::$userinfo->lastname;?></p>
           <!-- Status -->
       <a href="<?php echo SITE_URL?>/index.php/profile/view/<?php echo $pilotcode; ?>" data-toggle="tooltip" title="Perfil"><i class="fa fa-user fa-1-5x"></i></a>
-		  <a href="<?php echo SITE_URL?>/index.php/Mail" data-toggle="tooltip" title="Mesnsagens"><i class="fa fa-envelope fa-1-5x"></i></a>
+		  <a href="<?php echo SITE_URL?>/index.php/Mail" data-toggle="tooltip" title="Mensagens"><i class="fa fa-envelope fa-1-5x"></i></a>
 		  <a href="<?php echo SITE_URL?>/index.php/Profile/editprofile" data-toggle="tooltip" title="Configurações"><i class="fa fa-cog fa-1-5x"></i></a>
 		  <a href="<?php echo SITE_URL?>/../pt/index.php/logout" data-toggle="tooltip" title="Logout"><i class="fa fa-sign-out fa-1-5x"></i></a>
         </div>
@@ -181,22 +181,22 @@
 		<li><a href="<?php echo SITE_URL?>/index.php/Mail"><i class="fa fa-envelope-o"></i> <span>iMail</span></a></li>
 		<li><a href="http://nortesulvirtual.com/hesk/"><i class="fa fa-life-ring"></i> <span>HelpDesk</span></a></li>
 		<li class="treeview">
-          <a href="#"><i class="fa fa-plane"></i> <span>Operações de voo <span class="label label-success">New</span></span>
+          <a href="#"><i class="fa fa-plane"></i> <span>Operações de voo <span class="label label-success">Novo</span></span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo SITE_URL?>/index.php/schedules">Centro de operações de voos</a></li>
-            <li><a href="<?php echo SITE_URL?>/index.php/cargoops">Cargo operations center <span class="label label-success pull-right">New</span></a></li>
-            <li><a href="<?php echo SITE_URL?>/index.php/wthr">WX briefing room</a></li>
-			<li><a href="<?php echo SITE_URL?>/index.php/schedules/bids">Flight briefing room</a></li>
+            <li><a href="<?php echo SITE_URL?>/index.php/cargoops">Centro de operações de carga <span class="label label-success pull-right"><i class="fa fa-arrow-left"></i></span></a></li>
+            <li><a href="<?php echo SITE_URL?>/index.php/wthr">Sala de Meteorologia</a></li>
+			<li><a href="<?php echo SITE_URL?>/index.php/schedules/bids">Sala de Briefing</a></li>
 			<li><a href="<?php echo SITE_URL?>/index.php/Pireps/mine">Logbook na companhia</a></li>
 			<li><a href="<?php echo SITE_URL?>/index.php/loa">Solicitar afastamento</a></li>
           </ul>
         </li>
 		<li><a href="<?php echo SITE_URL?>/index.php/events"><i class="fa fa-calendar"></i> <span>Centro de eventos</span></a></li>
-		<li><a href="<?php echo SITE_URL?>/index.php/profile"><i class="fa fa-globe"></i> <span>Centro de tours</span></a></li>
+		<li><a href="<?php echo SITE_URL?>/index.php/profile"><i class="fa fa-globe"></i> <span>Centro de tours <span class="label label-info pull-right">Em Breve</span></span></a></li>
 		<li class="treeview">
           <a href="#"><i class="fa fa-users"></i> <span>Organização</span>
             <span class="pull-right-container">
@@ -220,7 +220,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo SITE_URL;?>/index.php/downloads">Downloads</a></li>
-            <li><a href="<?php echo SITE_URL;?>/index.php/livestream">Livestream</a></li>
+            <li><a href="<?php echo SITE_URL;?>/index.php/livestream">Livestream<span class="label label-info pull-right">Em Breve</span></a></li>
 			<li><a href="<?php echo SITE_URL?>/index.php/screenshots">Centro de screenshots</a></li>
           </ul>
         </li>
@@ -231,14 +231,15 @@
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="https://discord.gg/aVdQQcq">Discord</a></li>
+            <li><a href="https://discord.gg/aVdQQcq" target="_blank">Discord</a></li>
             <li><a href="https://www.facebook.com/nortesulvirtual/" target="_blank">Facebook</a></li>
-			<li><a href="https://www.instagram.com/nortesulvirtual/" target="_blank">Instagram</a></li>
+			      <li><a href="https://www.instagram.com/nsv_virtual/" target="_blank">Instagram</a></li>
+            <li><a href="https://chat.whatsapp.com/E0zlQTOGctSKKbKhixEaRN" target="_blank">Whatsapp</a></li>
           </ul>
         </li>
 		<li><a href="<?php echo url('/Documentation');?>"><i class="fa fa-book"></i> <span>Documentos</span></a></li>
-		<li><a href="<?php echo url('/toppilot');?>"><i class="fa fa-trophy"></i> <span>Leaderboards</span></a></li>
-		<li><a href="<?php echo url('/Exams') ?>"><i class="fa fa-graduation-cap"></i> <span>NSV Academy</span></a></li>
+		<li><a href="<?php echo url('/toppilot');?>"><i class="fa fa-trophy"></i> <span>Melhores da Companhia</span></a></li>
+		<li><a href="<?php echo url('/Exams') ?>"><i class="fa fa-graduation-cap"></i> <span>Academia NorteSul</span></a></li>
 		<?php
               if(Auth::LoggedIn() && PilotGroups::group_has_perm(Auth::$usergroups, ACCESS_ADMIN))
               {

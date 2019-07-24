@@ -20,7 +20,7 @@
 * same directory as your Dispatch Options page.
 */
 
-var api_dir = 'http://nortesulvirtual.com/crewcenter2pt/core/modules/SimBrief/'; //Ex. "some/directory/";
+var api_dir = 'https://nortesulvirtual.com/beta/core/modules/SimBrief/'; //Ex. "some/directory/";
 
 
 

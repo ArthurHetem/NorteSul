@@ -8,9 +8,11 @@ Options All -Indexes
 # To enable clean URLs, remove the # from the lines below
 # And then, in your local.config.php, set URL_REWRITE to true
 
-#RewriteEngine on
+RewriteEngine on
 #RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{SERVER_PORT} 80
+#RewriteRule ^(.*)$ https://www.nortesulvirtual.com/beta/$1 [R,L]
 #RewriteRule ^(.*)$ index.php?q=$1  [QSA,L]
 
 # Security, block users from being able to see source files

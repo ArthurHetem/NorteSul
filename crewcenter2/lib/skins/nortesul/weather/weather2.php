@@ -1,6 +1,6 @@
 <section class="content-header bg-white espaca">
     <div class="pull-right"><i class="fa fa-sun-o fa-4x text-muted fa-spin"></i></div>
-    <h1><strong>WX</strong> briefing room</h1>
+    <h1><strong>Sala</strong> de Meteorologia</h1>
     <h1><small>Operações de voo | NorteSul Virtual &copy;
             <?php echo date("Y");?></small>
         <br>
@@ -11,7 +11,7 @@
             <div class="box box-solid">
                 <div class="box-header with-border">
                   <i class="fa fa-cloud"></i>
-                    <h3 class="box-title">Live airport <strong>WX</strong></h3>
+                    <h3 class="box-title"><strong>METAR</strong></h3>
                 </div>
                 <div class="box-body">
                   <form action="<?php echo url('/WTHR/metar');?>" method="post">
@@ -31,7 +31,7 @@
             <div class="box box-solid">
                 <div class="box-header with-border">
                   <i class="fa fa-eye"></i>
-                    <h3 class="box-title">RAW <strong>WX</strong></h3>
+                    <h3 class="box-title">METAR <strong>codificado</strong></h3>
                 </div>
                 <div class="box-body">
                   <?php echo $metar; ?>
@@ -50,7 +50,7 @@
         <div class="col-md-6">
             <div class="box box-solid">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Airport <strong>WX</strong> condition</h3>
+                    <h3 class="box-title"><strong>Operação</strong></h3>
                 </div>
                 <div class="box-body">
                   <?php
@@ -80,7 +80,7 @@
             <div class="box box-solid">
                 <div class="box-header with-border">
                   <i class="fa fa-code"></i>
-                    <h3 class="box-title">Decoded <strong>WX</strong></h3>
+                    <h3 class="box-title">METAR <strong>decodificado</strong></h3>
                 </div>
                 <div class="box-body">
                   <table id="tabledlist" class="tablesorter table table-hover">
@@ -129,7 +129,7 @@
             <div class="box box-solid">
                 <div class="box-header with-border">
                   <i class="fa fa-file"></i>
-                    <h3 class="box-title">Airport <strong>charts</strong></h3>
+                    <h3 class="box-title">Cartas <strong>Aéreas</strong></h3>
                 </div>
                 <div class="box-body">
                   <table id="tabledlist" class="tablesorter table table-hover">

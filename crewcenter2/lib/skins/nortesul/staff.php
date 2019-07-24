@@ -12,7 +12,7 @@
                         <div class="well">
                             <div class="media">
                                 <div class="pull-left">
-                                    <img class="media-object imagem" src="http://nortesulvirtual.com/pt/lib/skins/nortesul/images/staffs/NSV001.jpg">
+                                    <img class="media-object imagem" src="https://nortesulvirtual.com/pt/lib/skins/nortesul/images/staffs/NSV001.jpg">
                                 </div>
                                 <div class="media-body">
                                     <h4 class="media-heading">Sid <b>Dasilva</b></h4>
@@ -29,7 +29,7 @@
                         <div class="well">
                             <div class="media">
                                 <div class="pull-left">
-                                    <img class="media-object imagem" src="http://nortesulvirtual.com/pt/lib/skins/nortesul/images/staffs/NSV002.jpg">
+                                    <img class="media-object imagem" src="https://nortesulvirtual.com/pt/lib/skins/nortesul/images/staffs/NSV002.jpg">
                                 </div>
                                 <div class="media-body">
                                     <h4 class="media-heading">Paulo <b>Roberto</b></h4>
@@ -46,7 +46,7 @@
                         <div class="well">
                             <div class="media">
                                 <div class="pull-left">
-                                    <img class="media-object imagem" src="http://nortesulvirtual.com/pt/lib/skins/nortesul/images/staffs/NSV003.jpg">
+                                    <img class="media-object imagem" src="https://nortesulvirtual.com/pt/lib/skins/nortesul/images/staffs/NSV003.jpg">
                                 </div>
                                 <div class="media-body">
                                     <h4 class="media-heading">Rodrigo <b>Souza</b></h4>
@@ -70,7 +70,7 @@
                         <div class="well">
                             <div class="media">
                                 <div class="pull-left">
-                                    <img class="media-object imagem" src="http://nortesulvirtual.com/pt/lib/skins/nortesul/images/staffs/NSV004.jpg">
+                                    <img class="media-object imagem" src="https://nortesulvirtual.com/pt/lib/skins/nortesul/images/staffs/NSV004.jpg">
                                 </div>
                                 <div class="media-body">
                                     <h4 class="media-heading">Arthur <b>Hetem</b></h4>
@@ -87,7 +87,7 @@
                         <div class="well">
                             <div class="media">
                                 <div class="pull-left">
-                                    <img class="media-object imagem" src="http://nortesulvirtual.com/pt/lib/skins/nortesul/images/staffs/NSV006.jpg">
+                                    <img class="media-object imagem" src="https://nortesulvirtual.com/pt/lib/skins/nortesul/images/staffs/NSV006.jpg">
                                 </div>
                                 <div class="media-body">
                                     <h4 class="media-heading">Moisés <b>Fuga</b></h4>
@@ -104,24 +104,7 @@
                         <div class="well">
                             <div class="media">
                                 <div class="pull-left">
-                                    <img class="media-object imagem" src="http://nortesulvirtual.com/pt/lib/skins/nortesul/images/staffs/NSV007.jpg">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Leonardo <b>Arraes</b></h4>
-                                    <h4><b><small>CFO - Chief Financial Officer</small></b></h4>
-                                    <p>#descubra</p>
-                                    <ul class="pull-right">
-                                        <div class="team-social-link">
-                                            <a href="<?php echo SITE_URL?>/index.php/profile/view/7" class="btn btn-primary">Detalhes</a>
-                                        </div>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="well">
-                            <div class="media">
-                                <div class="pull-left">
-                                    <img class="media-object imagem" src="http://nortesulvirtual.com/pt/lib/skins/nortesul/images/staffs/NSV008.jpg">
+                                    <img class="media-object imagem" src="https://nortesulvirtual.com/pt/lib/skins/nortesul/images/staffs/NSV008.jpg">
                                 </div>
                                 <div class="media-body">
                                     <h4 class="media-heading">Davi <b>Sousa</b></h4>
@@ -138,7 +121,7 @@
                         <div class="well">
                             <div class="media">
                                 <div class="pull-left">
-                                    <img class="media-object imagem" src="http://nortesulvirtual.com/pt/lib/skins/nortesul/images/staffs/NSV010.jpg">
+                                    <img class="media-object imagem" src="https://nortesulvirtual.com/pt/lib/skins/nortesul/images/staffs/NSV010.jpg">
                                 </div>
                                 <div class="media-body">
                                     <h4 class="media-heading">Bruno <b>Borges</b></h4>
@@ -155,24 +138,7 @@
                         <div class="well">
                             <div class="media">
                                 <div class="pull-left">
-                                    <img class="media-object imagem" src="http://nortesulvirtual.com/pt/lib/skins/nortesul/images/staffs/NSV087.jpg">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">João Pedro <b>Santoro</b></h4>
-                                    <h4><b><small>MKT - Marketing</small></b></h4>
-                                    <p>#descubra</p>
-                                    <ul class="pull-right">
-                                        <div class="team-social-link">
-                                            <a href="<?php echo SITE_URL?>/index.php/profile/view/10" class="btn btn-primary">Detalhes</a>
-                                        </div>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="well">
-                            <div class="media">
-                                <div class="pull-left">
-                                    <img class="media-object imagem" src="http://nortesulvirtual.com/pt/lib/skins/nortesul/images/staffs/NSV076.jpg">
+                                    <img class="media-object imagem" src="https://nortesulvirtual.com/pt/lib/skins/nortesul/images/staffs/NSV076.jpg">
                                 </div>
                                 <div class="media-body">
                                     <h4 class="media-heading">Kayo <b>Martins</b></h4>
@@ -180,7 +146,7 @@
                                     <p>#descubra</p>
                                     <ul class="pull-right">
                                         <div class="team-social-link">
-                                            <a href="<?php echo SITE_URL?>/index.php/profile/view/10" class="btn btn-primary">Detalhes</a>
+                                            <a href="<?php echo SITE_URL?>/index.php/profile/view/76" class="btn btn-primary">Detalhes</a>
                                         </div>
                                     </ul>
                                 </div>

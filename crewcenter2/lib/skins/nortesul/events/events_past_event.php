@@ -9,53 +9,65 @@
 //@copyright Copyright (c) 2009-2010, David Clark
 //@license http://creativecommons.org/licenses/by-nc-sa/3.0/
 ?>
-
-<h3><?php echo SITE_NAME; ?> Past Event</h3>
-<center>
-    <table border="1px" width="80%" cellpadding="3px">
+<section class="content-header bg-white espaca">
+    <div class="pull-right"><i class="fa fa-plane fa-4x text-muted"></i></div>
+    <h1><strong>Centro</strong> de Eventos</h1>
+    <h1><small>Diretoria de Eventos | NorteSul Virtual &copy;
+            <?php echo date("Y");?></small>
+        <br>
+</section>
+<section class="content container-fluid">
+  <div class="row">
+  <div class="col-xs-12">
+      <div class="box box-solid">
+        <div class="box-header with-border">
+          <h3 class="box-title">Próximos Eventos</h3>
+        </div>
+  <div class="box-body">
+    <table class="table table-bordered" width="80%" cellpadding="3px">
         <?php
         if($event->image !='none') { ?>
         <tr>
-            <td colspan="2"><img src="<?php echo $event->image; ?>" alt="Event Image" /></td>
+            <td colspan="2"><img src="<?php echo $event->image; ?>" alt="Banner do Evento" /></td>
         </tr>
     <?php
         }
         ?>
         <tr>
-            <td width="25%">Event:</td>
+            <td width="25%">Evento:</td>
             <td width="75%" align="left"><b><?php echo $event->title; ?></b></td>
         </tr>
         <tr>
-            <td>Description:</td>
+            <td>Descrição:</td>
             <td align="left"><?php echo $event->description; ?></td>
         </tr>
         <tr>
-            <td>Scheduled Date:</td>
+            <td>Data programada:</td>
             <td align="left"><?php echo date('m/d/Y', strtotime($event->date)); ?></td>
         </tr>
         <tr>
-            <td>Scheduled Start Time: (GMT)</td>
+            <td>Horário de início programado: (UTC)</td>
             <td align="left"><?php echo date('G:i', strtotime($event->time)); ?></td>
         </tr>
         <tr>
-            <td>Departure Field:</td>
+            <td>Decolagem:</td>
             <td align="left"><?php echo $event->dep; ?></td>
         </tr>
         <tr>
-            <td>Arrival Field:</td>
+            <td>Pouso:</td>
             <td align="left"><?php echo $event->arr; ?></td>
         </tr>
         <tr>
-            <td>Company Schedule:</td>
+            <td>Rota:</td>
             <td align="left"><?php echo $event->schedule; ?></td>
         </tr>
         <tr>
-            <td>Participants:</td>
+            <td>Participantes:</td>
             <td align="left">
         <?php
                 if(!$signups)
                 {
-                    echo 'No Participants';
+                    echo 'Nenhum participante';
                 }
                 else
                 {
@@ -72,5 +84,9 @@
         </tr>
     </table>
     <br />
-    <a href="<?php echo SITE_URL; ?>/index.php/events"><b>Return To Events Listing</b></a>
-</center>
+    <a href="<?php echo SITE_URL; ?>/index.php/events"><b>Retornar a lista de Eventos</b></a>
+  </div>
+  </div>
+  </div>
+  </div>
+</section>

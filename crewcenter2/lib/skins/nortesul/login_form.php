@@ -19,7 +19,7 @@
       <div class="row bege-espacado">
         <div class="col-xs-8">
 			<div class="switch__container">
-  <input id="switch-flat" class="switch switch--flat" type="checkbox">
+  <input id="switch-flat" class="switch switch--flat" name="remember" type="checkbox">
   <label for="switch-flat"></label>
 </div>
         </div>
@@ -42,7 +42,7 @@
 				</div>
     </form>
 
-   
+
   </div>
   <!-- /.login-box-body -->
 </div>

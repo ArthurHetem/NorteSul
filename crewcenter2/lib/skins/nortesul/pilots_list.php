@@ -1,4 +1,9 @@
 <?php if(!defined('IN_PHPVMS') && IN_PHPVMS !== true) { die(); } ?>
+<?php
+if(!$pilot_list) {
+
+return;
+}else{?>
 <section class="content container-fluid">
     <div class="row">
         <div class="col-md-12">
@@ -11,12 +16,6 @@
                 </div>
 
                 <div class="box-body table-responsive">
-                    <?php
-if(!$pilot_list) {
-	echo 'There are no pilots!';
-	return;
-}
-?>
                     <table class="table table-hover table-bordered">
                         <thead>
                             <tr>
@@ -50,7 +49,7 @@ if(!$pilot_list) {
                             <?php
 foreach($pilot_list as $pilot)
 {
-	/* 
+	/*
 		To include a custom field, use the following example:
 
 		<td>
@@ -76,35 +75,35 @@ foreach($pilot_list as $pilot)
                                 <td>
                                     <?php echo $pilot->firstname.' '.$pilot->lastname?>
                                 </td>
-                                <td align="center">
+                                <td>
                                     <?php echo $pilot->rank;?>
                                 </td>
-                                <td align="center">
-                                    <?php 
-                                    $ivaoId = PilotData::GetFieldValue($pilot->pilotid, 'IVAO ID');
+                                <td>
+                                    <?php
+                                    $ivaoId = PilotData::GetFieldValue($pilot->pilotid, 'IVAO VID');
                                         if($ivaoId < 1){
                                             echo "<span class='text-muted'>Não Linkado</span>";
                                         } else {
                                             echo "<span class='text-gren'>".$ivaoId."</span>";
                                         }
-                                        
+
 			 ?>
                                 </td>
-                                <td align="center">
-                                    <?php 
+                                <td>
+                                    <?php
                                     $vatsimId = PilotData::GetFieldValue($pilot->pilotid, 'VATSIM ID');
                                         if($vatsimId < 1){
                                             echo "<span class='text-muted'>Não Linkado</span>";
                                         } else {
                                             echo "<span class='text-gren'>".$vatsimId."</span>";
                                         }
-                                        
+
 			 ?>
                                 </td>
-                                <td align="center">
+                                <td>
                                     <img src="<?php echo $pilot->rankimage?>" alt="<?php echo $pilot->rank;?>" />
                                 </td>
-                                <td align="center">
+                                <td>
                                     <a href="<?php echo url('/profile/view/'.$pilot->pilotid);?>"><div class="btn btn-default btn-rounded btn-sm"><i class="fa fa-eye"></i></div></a>
                                 </td>
                                 <?php
@@ -114,6 +113,5 @@ foreach($pilot_list as $pilot)
                     </table>
                 </div>
             </div>
-        </div>
-    </div>
+          <?php } ?>
 </section>

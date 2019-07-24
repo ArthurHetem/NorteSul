@@ -19,7 +19,7 @@
         <img class="attachment-img" src="<?php echo SITE_URL; ?>/lib/skins/nortesul/img/parceiros/logo_blue_bg.svg" alt="phpvms">
 
         <div class="attachment-pushed">
-          <h4 class="attachment-heading"><a href="http://phpvms.net">phpVMS</a></h4>
+          <h4 class="attachment-heading"><a href="https://phpvms.net">phpVMS</a></h4>
 
           <div class="attachment-text">
             phpVMS é a gratuita e mais popular plataforma de gerenciamento de virtual airlines, com suporte a diversos softwares ACARS
@@ -34,7 +34,7 @@
     <img class="attachment-img" src="<?php echo SITE_URL; ?>/lib/skins/nortesul/img/parceiros/vatsim-brasil.png" alt="phpvms">
 
     <div class="attachment-pushed">
-      <h4 class="attachment-heading"><a href="http://vatsim.net.br">VATSIM Brasil</a></h4>
+      <h4 class="attachment-heading"><a href="https://vatsim.net.br">VATSIM Brasil</a></h4>
 
       <div class="attachment-text">
         VATSIM ou Virtual Air Traffic Simulation Network, é uma organização sem fins lucrativos,
@@ -54,6 +54,21 @@
     Tudo desta pagina, desde as cores até os layouts foram especialmente criados pela AHsystems
   </div>
   <!-- /.attachment-text -->
+</div>
+<!-- /.attachment-pushed -->
+</div>
+<div class="attachment-block clearfix">
+<img class="attachment-img" src="<?php echo SITE_URL; ?>/lib/skins/nortesul/img/parceiros/logoJean.png" alt="phpvms">
+
+<div class="attachment-pushed">
+<h4 class="attachment-heading"><a href="https://www.youtube.com/channel/UCQxVH1hysBzmLQlqAMoJdzg/featured">Flight Sim Host</a></h4>
+
+<div class="attachment-text">
+  Simulação aérea de forma prática e objetiva. Regras e procedimentos [IFR] e [VFR]. Aprendendo a mexer no 737 NGX [FMC, MCP, Overhead, Radios, Painéis]. Sempre uma Live ou um Mini tutorial ensinando noções básicas e avançadas deste maravilhoso Addon que é o  PMDG 737 NGX.
+Simulação de voo Prática e Objetiva. levada a sério / Flight Simulation taken seriously
+Tão real quanto possível / As Real As It Gets
+</div>
+<!-- /.attachment-text -->
 </div>
 <!-- /.attachment-pushed -->
 </div>

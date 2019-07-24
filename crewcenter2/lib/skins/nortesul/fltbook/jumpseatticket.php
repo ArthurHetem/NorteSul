@@ -1,14 +1,14 @@
 <section class="content container-fluid">
 			<div class="row">
 			<div class="col-xs-12">
-          <div class="box">
-            <div class="box-header">
+          <div class="box box-solid">
+            <div class="box-header with-border">
               <h3 class="box-title">Confirmar Jumpseat</h3>
             </div>
 			<div class="box-body">
 <div id="contenttext">
   <form action="<?php echo url('/Fltbook/jumpseatPurchase');?>" method="post">
-   <table class="balancesheet" align="center">
+   <table class="table table-bordered" align="center">
       <tr>
           <td colspan="1">Confirmação de Jumpseat</td>
       </tr>
@@ -24,8 +24,8 @@
     </table>
       <br />
       <div style="text-align: center;">
-        <a href="<?php echo url('/Fltbook');?>"><input type="button" class="btn btn-success sharp" value="Cancel Jumpseat"></a>
-  	    <input type="submit" value="Confirm Jumpseat">
+        <a href="<?php echo url('/schedules');?>"><input type="button" class="btn btn-default sharp" value="Cancelar Jumpseat"></a>
+  	    <input type="submit" class="btn btn-success sharp" value="Confirmar Jumpseat">
       </div>
       <input type="hidden" name="arricao" value="<?php echo $airport->icao; ?>" />
   </form>
@@ -33,5 +33,5 @@
 </div>
 </div>
 </div>
-</div>	
+</div>
 </section>

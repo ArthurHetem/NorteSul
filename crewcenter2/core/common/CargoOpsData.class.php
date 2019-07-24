@@ -219,9 +219,11 @@ public static function EditAirport($length_ft, $icao)
 			$aircraft = self::getcontractaircraft();
 			$aircraftid = $aircraft->id;
 			$depicao = self::getranddepicao($aircraft->runway);
+			$depicao = strtoupper($depicao);
 			$mindistance = $aircraft->mindistance;
 			$maxdistance = $aircraft->range - 400;
 			$arricao = self::getsuitablearricao($depicao, $mindistance, $maxdistance, $aircraft->runway);
+			$arricao = strtoupper($arricao);
 			$cargoload = round(($aircraft->maxcargo * rand(5,10)) / 10);
 			$freighttype = self::getrandomcargotype($aircraft->cargosize);
 			$cargotype = $freighttype->id;

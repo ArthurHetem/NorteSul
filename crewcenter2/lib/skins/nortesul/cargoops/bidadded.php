@@ -1,9 +1,12 @@
-<div align="center">
-<img src="<?php echo SITE_URL?>/core/modules/CargoOps/imgs/success.png" style="max-width:250px;"  />
-<br />
-<br />
-Your Bid has succesfully been added!
-<br />
-<br />
-<a href="<?php echo SITE_URL ?>/index.php/schedules/bids">Go Flying!</a>
+<div class="alert alertsuccess">
+<h4><i class="icon fa fa-check"></i> Reservado!</h4>
+Voo reservado com sucesso
 </div>
+<script type='text/javascript'>$(window).load(function(){
+    Swal({
+  title: 'Voo Reservado!',
+  text: 'Bora Voar chefe! #flynortesul',
+  type: 'success',
+  heightAuto: true
+})
+  });</script>

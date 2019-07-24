@@ -1,6 +1,6 @@
 <section class="content-header bg-white espaca">
     <div class="pull-right"><i class="fa fa-sun-o fa-4x text-muted fa-spin"></i></div>
-    <h1><strong>WX</strong> briefing room</h1>
+    <h1><strong>Sala</strong> de Meteorologia</h1>
     <h1><small>Operações de voo | NorteSul Virtual &copy;
             <?php echo date("Y");?></small>
         <br>
@@ -11,7 +11,7 @@
             <div class="box box-solid">
                 <div class="box-header with-border">
                   <i class="fa fa-cloud"></i>
-                    <h3 class="box-title">Live airport <strong>WX</strong></h3>
+                    <h3 class="box-title"><strong>METAR</strong></h3>
                 </div>
                 <div class="box-body">
                   <form action="<?php echo url('/WTHR/metar');?>" method="post">
@@ -29,7 +29,7 @@
             <div class="box box-solid">
                 <div class="box-header with-border">
                   <i class="fa fa-floppy-o"></i>
-                    <h3 class="box-title">WX <strong>history</strong></h3>
+                    <h3 class="box-title">Local <strong>Atual</strong></h3>
                 </div>
                 <div class="box-body">
                   <h3 class="text-green">Seu local ACARS atual<p><small>

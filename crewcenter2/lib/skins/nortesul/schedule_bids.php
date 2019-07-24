@@ -1,6 +1,6 @@
 <section class="content-header bg-white espaca">
     <div class="pull-right"><i class="fa fa-plane fa-4x text-muted"></i></div>
-    <h1><strong>Voos reservados</strong></h1>
+    <h1><strong>Sala</strong> de Briefing</h1>
     <h1><small>Operações de voos | NorteSul Virtual &copy;
             <?php echo date("Y");?></small>
         <br>
@@ -20,6 +20,9 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive">
+              <?php if(!$bids){
+                echo '<div class="alert alert-danger">Nenhum voo reservado!</div>';
+              }else{?>
               <table class="table table-bordered text-center">
                 <tbody><tr>
                   <th><h4>Voo #</h4></th>
@@ -41,7 +44,7 @@
                      if ($numeroVoo < 4){
                        $resultaVoo = "<div class='text-blue'>Internacional</div>";
                      }else{
-                       $resultaVoo = "<div class='text-yellow'>Nacional</div>";
+                       $resultaVoo = "<div class='text-purple'>Doméstico</div>";
                      }
 
                      $contaRota = strlen($bid->route);
@@ -66,6 +69,7 @@
 		           </td>
 				<?php } ?>
               </tbody></table>
+            <?php } ?>
             </div>
             <!-- /.box-body -->
           </div>

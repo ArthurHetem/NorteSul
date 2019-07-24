@@ -9,18 +9,24 @@
 //@copyright Copyright (c) 2009-2010, David Clark
 //@license http://creativecommons.org/licenses/by-nc-sa/3.0/
 ?>
+<section class="content-header bg-white espaca">
+    <div class="pull-right"><i class="fa fa-plane fa-4x text-muted"></i></div>
+    <h1><strong>Centro</strong> de Eventos</h1>
+    <h1><small>Diretoria de Eventos | NorteSul Virtual &copy;
+            <?php echo date("Y");?></small>
+        <br>
+</section>
 <section class="content container-fluid">
 			<div class="row">
 			<div class="col-xs-12">
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">INTRANET Mail</h3>
+          <div class="box box-solid">
+            <div class="box-header with-border">
+              <h3 class="box-title">Evento</h3>
             </div>
 			<div class="box-body">
 			<div class="row">
-<h3><?php echo SITE_NAME; ?> Event</h3>
 <center>
-    <table border="1px" width="80%" cellpadding="3px">
+    <table class="table table-bordered">
         <?php
         if($event->image !='none') { ?>
         <tr>
@@ -30,43 +36,43 @@
         }
         ?>
         <tr>
-            <td width="25%">Event:</td>
+            <td width="25%">Evento:</td>
             <td width="75%" align="left"><b><?php echo $event->title; ?></b></td>
         </tr>
         <tr>
-            <td>Description:</td>
+            <td>Descrição:</td>
             <td align="left"><?php echo $event->description; ?></td>
         </tr>
         <tr>
-            <td>Scheduled Date:</td>
+            <td>Data programada:</td>
             <td align="left"><?php echo date('m/d/Y', strtotime($event->date)); ?></td>
         </tr>
         <tr>
-            <td>Scheduled Start Time: (GMT)</td>
+            <td>Horário de início programado: (UTC)</td>
             <td align="left"><?php echo date('G:i', strtotime($event->time)); ?></td>
         </tr>
         <tr>
-            <td>Departure Field:</td>
+            <td>Decolagem:</td>
             <td align="left"><?php echo $event->dep; ?></td>
         </tr>
         <tr>
-            <td>Arrival Field:</td>
+            <td>Pouso:</td>
             <td align="left"><?php echo $event->arr; ?></td>
         </tr>
         <tr>
-            <td>Company Schedule:</td>
+            <td>Rota:</td>
             <td align="left"><?php echo $event->schedule; ?></td>
         </tr>
 <?php
         if(!Auth::LoggedIn()) {
             ?>
         <tr>
-            <td>Current Signups:</td>
+            <td>Inscritos Atuais:</td>
             <td align="left">
     <?php
     $count=0;
                     if (!$signups) {
-                        echo 'No Signups';
+                        echo 'Nenhum inscrito';
                     }
                     else {
                         foreach ($signups as $signup) {
@@ -87,7 +93,7 @@
     <?php
             $check = EventsData::check_signup(Auth::$userinfo->pilotid, $event->id);
             if($check->total >= '1') {
-                echo '<td>You Are Already Signed Up For This Event</td>';
+                echo '<td>Você já está inscrito para esse evento</td>';
 
         echo '<td align="left">';
                     $slot_time = strtotime($event->time);
@@ -96,7 +102,7 @@
                         $test = date('G:i',$slot_time);
                         $check2 = EventsData::signup_time($event->id, $test);
                         if(!$check2) {
-                            echo date('G:i', $slot_time).' - Open<br />';
+                            echo date('G:i', $slot_time).' - Aberto<br />';
                             $slots++;
                         }
                         else {
@@ -105,7 +111,7 @@
                             echo PilotData::GetPilotCode($pilot->code, $pilot->pilotid).' - ';
                             echo $pilot->firstname.' '.$pilot->lastname;
                             if($pilot->pilotid == Auth::$pilotid)
-                            {echo ' <a href="'.SITE_URL.'/index.php/events/remove_signup?id='.$pilot->pilotid.'&event='.$event->id.'">- Remove</a>';}
+                            {echo ' <a href="'.SITE_URL.'/index.php/events/remove_signup?id='.$pilot->pilotid.'&event='.$event->id.'">- Remover</a>';}
                             echo '<br />';
                         }
                         $slot_time = $slot_time + ($event->slot_interval * 60);
@@ -114,7 +120,7 @@
                     echo '</td>';
                 }
                 else {
-                    echo '<td>Available Signups</td>';
+                    echo '<td>Inscrições Disponíveis</td>';
 
                     echo '<td align="left">';
                     $slot_time = strtotime($event->time);
@@ -123,7 +129,7 @@
                         $test = date('G:i',$slot_time);
                         $check2 = EventsData::signup_time($event->id, $test);
                         if(!$check2) {
-                            echo date('G:i', $slot_time).' - <a href="'.SITE_URL.'/index.php/events/signup?eid='.$event->id.'&pid='.Auth::$userinfo->pilotid.'&time='.date('G:i', $slot_time).'">Open</a><br />';
+                            echo date('G:i', $slot_time).' - <a href="'.SITE_URL.'/index.php/events/signup?eid='.$event->id.'&pid='.Auth::$userinfo->pilotid.'&time='.date('G:i', $slot_time).'">Aberto</a><br />';
                             $slots++;
                         }
                         else {
@@ -144,10 +150,9 @@
             ?>
     </table>
     <br />
-    <a href="<?php echo SITE_URL; ?>/index.php/events"><b>Return To Events Listing</b></a>
-</center>
+    <a href="<?php echo SITE_URL; ?>/index.php/events"><b>Retornar a lista de Eventos</b></a>
 </div>
 </div>
 </div>
-</div>	
+</div>
 </section>

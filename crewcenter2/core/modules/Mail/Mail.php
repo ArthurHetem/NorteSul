@@ -383,7 +383,7 @@ class Mail extends CodonModule {
             $item = MailData::checkformail();
             $items = $item->total;
             $this->set('items', $items);
-            $this->show('mail/mail_count');
+            $this->show('mail/mail_count.php');
         }
     }
 	

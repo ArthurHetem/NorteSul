@@ -22,6 +22,11 @@ class Fleet extends CodonModule
 	public function index()
 	{
 		$this->set('aircrafts', FleetData::GetAllAircrafts());
+		$this->set('aircrafts2', FleetData::GetAllAircrafts());
+		$this->set('aircrafts2', FleetData::GetAllAircrafts());
+		$this->set('aircrafts2', FleetData::GetAllAircrafts());
+		$this->set('aircrafts2', FleetData::GetAllAircrafts());
+		$this->set('aircrafts2', FleetData::GetAllAircrafts());
 		$this->render('fleet/fleet_list.php');
 		
 	}

@@ -174,7 +174,19 @@ class Fltbook extends CodonModule {
 		CodonEvent::Dispatch('bid_added', 'Schedules', $routeid, $aircraftid);
 
 		if($ret == true) {
-			echo 'Bid Added!';
+			echo '<div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h4><i class="icon fa fa-check"></i> Reservado!</h4>
+                Voo reservado.
+              </div>';
+			echo "<script type='text/javascript'>$(window).load(function(){
+    Swal({
+  title: 'Voo Reservado!',
+  text: 'Bora Voar chefe! #flynortesul',
+  type: 'success',
+  heightAuto: true
+})
+  });</script>";
 		} else {
 			echo 'Already In Bids!';
 		}

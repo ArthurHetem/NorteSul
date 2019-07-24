@@ -1,8 +1,8 @@
   <?php 
     // Set the Focus Airport here :
-    $icao = 'SBFZ';
+    $icao = 'SBPA';
     // Set the Image URL here : 
-    $url = SITE_URL.'/lib/skins/nortesul/focusairport/for.jpg';
+    $url = SITE_URL.'/lib/skins/nortesul/focusairport/poa.jpg';
   ?>
   
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">

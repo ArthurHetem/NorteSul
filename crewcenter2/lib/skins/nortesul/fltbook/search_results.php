@@ -15,7 +15,7 @@ $last_name = OperationsData::getAirportInfo($last_location->arricao);
 			<div class="col-xs-12">
           <div class="box box-solid">
             <div class="box-header with-border">
-              <h3 class="box-title"><i class="fa fa-search"></i> Results</h3>
+              <h3 class="box-title"><i class="fa fa-search"></i> Resultados da <strong>Busca</strong></h3>
             </div>
 			<div class="box-body">
 				<div class="row">
@@ -46,7 +46,7 @@ foreach($allroutes as $route) {
 					<h3>
 						<strong><?php echo $route->code . $route->flightnum?><sup></sup></strong><br>
                         <img src="<?php echo SITE_URL; ?>/lib/images/airlinelogos/<?php echo $route->code;?>.png" style="height: 70px; width: auto;">
-            </h3><h5>Operated by <?php if($route->code == "NSV"){ $operador = "NorteSul Virtual Airlines";}else if ($route->code == "NCS"){$operador = "CargoSul Virtual Airlines";} echo $operador;?></h5>
+            </h3><h5>Operado por <?php if($route->code == "NSV"){ $operador = "NorteSul Virtual Airlines";}else if ($route->code == "NCS"){$operador = "CargoSul Virtual Airlines";} echo $operador;?></h5>
 						<h6><?php echo $route->aircraft ;?> (<?php echo $route->registration ;?>)</h6>
 						<span class="badge"><?php
 				$dist = $route->distance;
@@ -66,10 +66,10 @@ foreach($allroutes as $route) {
 				} else {
 					echo '0'.$minutes.' Minutos';
 				}
-				?></span> <?php if ($route->flighttime < 2){$resultado = "<span class='label label-success'>SHORT HAUL</span>";}else if($route->flighttime < 7){$resultado = "<span class='label label-info'>MEDIUM HAUL</span>";}else if($route->flighttime < 10){$resultado = "<span class='label label-warning'>LONG HAUL</span>";}else {$resultado = "<span class='label label-danger'>ULTRA LONG HAUL</span>";}?><small><?php echo $resultado;?></small>
+				?></span> <?php if ($route->flighttime < 2){$resultado = "<span class='label label-success'>Curta distância</span>";}else if($route->flighttime < 7){$resultado = "<span class='label label-info'>Média distância</span>";}else if($route->flighttime < 10){$resultado = "<span class='label label-warning'>Longa distância</span>";}else {$resultado = "<span class='label label-danger'>ULTRA LONG HAUL</span>";}?><small><?php echo $resultado;?></small>
 				</center>
 				<ul class="pager">
-					<li class="previous"><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="" data-original-title="Departing @ <?php echo $route->deptime ;?> UTC"><?php echo $route->depicao ;?></a></li>
+					<li class="previous"><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="" data-original-title="Decolagem @ <?php echo $route->deptime ;?> UTC"><?php echo $route->depicao ;?></a></li>
 					<ul class="pagination text-center">
 						<li>
 							<?php
@@ -87,9 +87,9 @@ foreach($allroutes as $route) {
 						 ?>
 															</li>
 
-						<li><a href="<?php echo SITE_URL;?>/index.php/schedules/details/<?php echo $route->id;?>" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="View flight info"><i class="fa fa-info"></i></a></li>
+						<li><a href="<?php echo SITE_URL;?>/index.php/schedules/details/<?php echo $route->id;?>" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Informações do voo"><i class="fa fa-info"></i></a></li>
 					</ul>
-					<li class="next"><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="" data-original-title="Arriving @ <?php echo $route->arrtime ;?> UTC"><?php echo $route->arricao ;?></a></li>
+					<li class="next"><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="" data-original-title="Pouso @ <?php echo $route->arrtime ;?> UTC"><?php echo $route->arricao ;?></a></li>
 				</ul>
 
 			</div>

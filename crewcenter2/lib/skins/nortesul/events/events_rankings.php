@@ -9,16 +9,23 @@
 //@copyright Copyright (c) 2009-2010, David Clark
 //@license http://creativecommons.org/licenses/by-nc-sa/3.0/
 ?>
+<section class="content-header bg-white espaca">
+    <div class="pull-right"><i class="fa fa-plane fa-4x text-muted"></i></div>
+    <h1><strong>Centro</strong> de Eventos</h1>
+    <h1><small>Diretoria de Eventos | NorteSul Virtual &copy;
+            <?php echo date("Y");?></small>
+        <br>
+</section>
 <section class="content container-fluid">
 			<div class="row">
 			<div class="col-xs-12">
-          <div class="box">
-            <div class="box-header">
+          <div class="box box-solid">
+            <div class="box-header with-border">
               <h3 class="box-title">Estatísticas dos Eventos</h3>
             </div>
 			<div class="box-body">
 <center>
-    <table width="100%" border="1px">
+    <table width="100%" class="table table-bordered">
         <tr>
             <td>Piloto</td>
             <td># de Eventos Atendido</td>
@@ -45,5 +52,5 @@
 </div>
 </div>
 </div>
-</div>	
+</div>
 </section>

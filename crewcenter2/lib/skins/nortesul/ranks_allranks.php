@@ -17,7 +17,7 @@
 											<div class="callout callout-info">
                 <p>Na NorteSul Virtual, as promoções podem ou não serem realizadas automaticamente, dependendo se existe uma prova para a mesma. Horas transferidas não contam para promoções!</p>
               </div>
-		                   <table class="table table-hover">
+		                   <table class="table table-hover table-bordered">
 												 <thead>
 													 <th><h4>Título do ranking</h4></th>
 													 <th><h4>Mínimo de horas</h4></th>
@@ -30,11 +30,11 @@
 													 <?php
 				 			foreach($ranks as $rank) {
 				         ?>
-													 <td align="center"><?php echo $rank->rank;?></td>
-													 <td align="center"><?php echo $rank->minhours;?></td>
-													 <td align="center"><img src="<?php echo $rank->rankimage; ?>" alt=""></td>
-													 <td align="center">v$<?php echo $rank->payrate;?>/hr</td>
-													 <td align="center"><?php echo $rank->totalpilots;?></td>
+													 <td><?php echo $rank->rank;?></td>
+													 <td><?php echo $rank->minhours;?></td>
+													 <td><img src="<?php echo $rank->rankimage; ?>" alt=""></td>
+													 <td>v$<?php echo $rank->payrate;?>/hr</td>
+													 <td><?php echo $rank->totalpilots;?></td>
 												 </tr>
 												 <?php
 														 }

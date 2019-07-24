@@ -67,10 +67,21 @@ class RandomFlights extends CodonModule
 			for ($i = 0; $i < $count; $i++)
 			{
 				$ret = SchedulesData::addBid($this->post->pilotid, $this->post->schedules[$i]);
-				$flight = SchedulesData::getSchedule($this->post->schedules[$i]);				
-				if($ret) echo 'Flight - '.$flight->code.$flight->flightnum.' added <br/>';
+				$flight = SchedulesData::getSchedule($this->post->schedules[$i]);
+				if($ret) echo '<div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h4><i class="icon fa fa-check"></i> Reservado!</h4>
+                Voo - '.$flight->code.$flight->flightnum.' reservado.
+              </div>';
 			}
-			echo 'Finished';		
+			echo "<script type='text/javascript'>$(window).load(function(){
+    Swal({
+  title: 'Voos Reservados!',
+  text: 'Bora Voar chefe! #flynortesul',
+  type: 'success',
+  heightAuto: true
+})
+  });</script>";
 		}
 }
 ?>
