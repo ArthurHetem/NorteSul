@@ -1,78 +1,100 @@
-<div class="site-navbar-wrap">
-      <div class="site-navbar-top">
-        <div class="container py-3">
-          <div class="row align-items-center">
-            <div class="col-6">
-              <a href="https://twitter.com/nortesulvirtual" class="p-2 pl-0"><span class="icon-twitter"></span></a>
-              <a href="https://www.facebook.com/nortesulvirtual/" class="p-2 pl-0"><span class="icon-facebook"></span></a>
-              <a href="https://www.youtube.com/channel/UCxeniklwjQp2FbNFwB5jlpw" class="p-2 pl-0"><span class="icon-youtube"></span></a>
-              <a href="https://www.instagram.com/nsv_virtual/" class="p-2 pl-0"><span class="icon-instagram"></span></a>
-            </div>
-            <div class="col-6">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="site-navbar">
-        <div class="container py-1">
-          <div class="row align-items-center">
-            <div class="col-2">
-              <h1 class="mb-0 site-logo"><a href="<?php echo SITE_URL;?>"><img src="<?php echo SITE_URL;?>/lib/skins/nortesul/images/logo.png"/></a></h1>
-            </div>
-            <div class="col-10">
-              <nav class="site-navigation text-right" role="navigation">
-                <div class="container">
-                  <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+<div class="site-navbar-top">
+    <div class="container py-3">
+        <div class="row align-items-center">
+            <div class="col-9">
+                    <script>
+                        var myVar = setInterval(myTimer, 1000);
 
-                  <ul class="site-menu js-clone-nav d-none d-lg-block">
-                    <li>
-                      <a href="index.html">Home</a>
-                    </li>
-                    <li class="has-children"><a href="about.html">Organização</a>
-						<ul class="dropdown arrow-top">
+                        function myTimer() {
+                            var d = new Date(),
+                                displayDate;
+                            var data = new Date();
+                            monName = new Array("Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Out", "Nov",
+                                "Dez");
+                            var dia = data.getDate();
+                            if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+                                displayDate = d.toLocaleTimeString('pt-BR');
+                            } else {
+                                displayDate = d.toLocaleTimeString('pt-BR', {
+                                    timeZone: 'GMT'
+                                });
+                            }
+                            document.getElementById("horazulu").innerHTML = dia + " " + monName[data.getMonth()] + " " +
+                                displayDate + "z";
+                        }
+                    </script>
+                <span class="p-2 pl-0"><span class="fa fa-cloud text-muted"></span><span class="pl-2" id="horazulu"></span></span>
+                <span class="p-2 pl-2"><span class="fa fa-envelope text-muted"></span><a href="mailto:support@nortesulvirtual.com" class="pl-2 a-muted">support@nortesulvirtual.com</a></span>
+  <a class="dropdown-toggle a-muted p-2 pl-2" href="#" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <span class="flag-icon flag-icon-br"></span> <span class="a-muted">Português</span>
+                    </a>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-us"></span> <span class="a-muted">English</span></a>
+</div>
+            </div>
+            <div class="col-3">
+            <a href="https://twitter.com/nortesulvirtual" class="p-2 pl-0 btn btn-twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="https://www.facebook.com/nortesulvirtual/" class="p-2 pl-0 btn btn-facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="https://www.youtube.com/channel/UCxeniklwjQp2FbNFwB5jlpw" class="p-2 pl-0 btn btn-youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/nsv_virtual/" class="p-2 pl-0 btn btn-instagram"><i class="fa fa-instagram" aria-hidden="true"></i></span></a>
+            </div>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="<?php echo SITE_URL;?>"><img
+                src="<?php echo SITE_URL;?>/lib/skins/nortesul/images/logo.png" style="height:100px; width:auto;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+            aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item has-children"><a href="#" class="nav-link">Organização</a>
+						<ul class="dropdown">
                         <li><a href="<?php echo SITE_URL; ?>/index.php/staff">Staffs</a></li>
 						<li><a href="<?php echo SITE_URL; ?>/index.php/rules">Inscreva-se</a></li>
 						<li><a href="<?php echo SITE_URL; ?>/index.php/contact">Fale Conosco</a></li>
                       </ul>
 					</li>
-                    <li class="has-children">
-                      <a href="projects.html">Operacional</a>
+                    <li class="nav-item has-children">
+                      <a href="#" class="nav-link">Operacional</a>
                       <ul class="dropdown arrow-top">
                         <li><a href="<?php echo SITE_URL; ?>/index.php/frota">Nossa Frota</a></li>
 						<li><a href="<?php echo SITE_URL; ?>/index.php/last">Últimos Voos</a></li>
                       </ul>
                     </li>
-					<li class="has-children">
-                      <a href="projects.html">Membros</a>
+					<li class="nav-item has-children">
+                      <a href="projects.html" class="nav-link">Membros</a>
                       <ul class="dropdown arrow-top">
                         <li><a href="<?php echo SITE_URL; ?>/index.php/pilots">Nosso Time</a></li>
 						<li><a href="<?php echo SITE_URL; ?>/index.php/rank">Plano de Carreira</a></li>
 						<li><a href="<?php echo SITE_URL; ?>/index.php/awards">Nossas Awards</a></li>
                       </ul>
                     </li>
-					<li class="has-children">
-                      <a href="projects.html">Estátisticas</a>
+					<li class="nav-item has-children">
+                      <a href="projects.html" class="nav-link">Estátisticas</a>
                       <ul class="dropdown arrow-top">
                         <li><a href="#">Menu One</a></li>
                         <li><a href="#">Menu Two</a></li>
                         <li><a href="#">Menu Three</a></li>
                       </ul>
                     </li>
-                    <li><a href="<?php echo SITE_URL; ?>/index.php/ACARS">Tracking</a></li>
+                    <li class="nav-item"><a href="<?php echo SITE_URL; ?>/index.php/ACARS" class="nav-link">Tracking</a></li>
 					<?php if(!Auth::LoggedIn())
 					{
 					?>
-                    <li><a href="services.html">Login</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Login</a></li>
 					<?php }elseif(Auth::LoggedIn())
 					{
 					?>
-                    <li><a href="contact.html">CrewCenter</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">CrewCenter</a></li>
 					<?php }?>
-                  </ul>
-                </div>
-              </nav>
-            </div>
-          </div>
+            </ul>
         </div>
-      </div>
     </div>
+</nav>
+<!-- END nav -->

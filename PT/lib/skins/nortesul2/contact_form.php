@@ -1,35 +1,20 @@
-﻿    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-image: url(<?php echo SITE_URL; ?>/lib/skins/avianca/images/img_bg_3.jpg)">
-		<div class="overlay"></div>
-		<div class="gtco-container">
-			<div class="row">
-				<div class="col-md-12 col-md-offset-0 text-center">
-					<div class="row row-mt-15em">
-
-						<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
-							<h1>Fale Conosco</h1>
-                            <small><ol class="breadcrumb">
-  <li>Home</li>
-  <li>Organização</li>
-  <li class="active"><b>Fale Conosco</b></li>
-</ol></small>							
-						</div>
-						
-					</div>
-					
-				</div>
-			</div>
-		</div>
-	</header>
-	
-	
-	<div class="gtco-section border-bottom">
-		<div class="gtco-container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="col-md-6 animate-box">
-					<h3>Deixe aqui o seu recado para a nossa ouvidoria</h3>
-					<small>Entre em contato com a nossa equipe e tire dúvidas gerais a partir do nosso formulário abaixo.</small>
-					<form  method="POST" action="<?php echo url('/contact'); ?>">
+<div class="site-blocks-cover overlay" style="background-image: url(<?php echo SITE_URL;?>/lib/skins/nortesul/images/canvas/3.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-10">
+            <span class="sub-text">Home > Organização > <strong>Fale Conosco</strong></span>
+            <h1><strong>Fale Conosco</strong></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+	<div class="site-section  border-bottom">
+      <div class="container">
+		<div class="row">
+			<div class="col-md-8">
+			 <h3>Deixe sua mensagem aqui</h3>
+			 Entre em contato com a nossa equipe e tire suas dúvidas a partir do nosso formulário abaixo.
+			 <form  method="POST" action="<?php echo url('/contact'); ?>">
 						<div class="row form-group">
 							<div class="col-md-12">
 						        <?php
@@ -87,21 +72,22 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<input type="submit" name="submit" value="Enviar" class="btn btn-primary">
+							<input type="submit" name="submit" value="ENVIAR MENSAGEM" class="btn btn-nsv">
 						</div>
 
-					</form>		
+					</form>	
+			</div>
+			<div class="col-md-4">
+				<h3>Redes Sociais</h3>
+				<div class="row">
+					<a class="btn btn-facebook"><i class="fab fa-facebook-f"></i></a>
+					<a class="btn btn-twitter"><i class="fab fa-twitter"></i></a>
+					<a class="btn btn-instagram"><i class="fab fa-instagram"></i></a>
 				</div>
-				<div class="col-md-5 col-md-push-1 animate-box">
-					
-					<div class="gtco-contact-info">
-						<h3>Redes Sociais</h3>
-						<a href="https://www.facebook.com/aviancavirtualbr/" class="fab fa-facebook"></a> <a href="https://twitter.com/aviancabrv" class="fab fa-twitter"></a> <a href="https://www.instagram.com/aviancav/" class="fab fa-instagram"></a>
-					</div>
-
-
-				</div>
-				</div>
+				<br>
+				<h3>Contato</h3>
+				<a href="mailto:support@nortesulvirtual.com" class="btn btn-mail"><i class="fas fa-envelope"></i></a><a href="mailto:support@nortesulvirtual.com"><span class="chatuba">support@nortesulvirtual.com</span></a>
 			</div>
 		</div>
 	</div>
+</div>
