@@ -17,7 +17,7 @@
         echo '<a href="'.SITE_URL.'/index.php/PopUpNews/popupnewsitem/'.$item->id.'" class="d-flex">';
         echo '<div class="text">';
         echo '<span class="small text-uppercase date">'.date(DATE_FORMAT, $item->postdate).'</span>';
-        echo '<h3 class="heading font-weight-light">'.$item->subject.'</h3>';
+        echo '<h4 style="color:#fff;">'.$item->subject.'</h4>';
         echo '</div>';
         echo '</a>';
 		echo '</li>';

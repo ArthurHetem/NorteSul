@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
-    <title>Bem-vindo | Nortesul  Cargo</title>
+    <title>Aviação Virtual | Nortesul Cargo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -21,12 +21,32 @@
     <link rel="stylesheet" href="<?php echo SITE_URL;?>/lib/skins/nortesul/css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="<?php echo SITE_URL;?>/lib/skins/nortesul/css/jquery.timepicker.css">
 
-    
+    <!--Your Google Maps API Key here-->
+    <script src="https://maps.google.com/maps/api/js?v=3&key=AIzaSyDbwylblt3-Nz21yNoDJWbHyqTjTNogYcg&callback=main.CreateMap"></script>
     <link rel="stylesheet" href="<?php echo SITE_URL;?>/lib/skins/nortesul/css/flaticon.css">
 	<link rel="stylesheet" href="<?php echo SITE_URL;?>/lib/skins/nortesul/css/icomoon.css">
 	<script src="https://use.fontawesome.com/90c9086cc0.js"></script>
 	<link rel="stylesheet" href="<?php echo SITE_URL;?>/lib/skins/nortesul/css/style.css">
 	<link rel="stylesheet" href="<?php echo SITE_URL;?>/lib/skins/nortesul/css/flag-icon.min.css">
+  
+  <link rel="apple-touch-icon" sizes="57x57" href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/favicon-16x16.png">
+<link rel="manifest" href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+  
   </head>
   <body>
     
@@ -34,70 +54,10 @@
 
     <?php echo $page_content;?>
 
-    <footer class="ftco-footer ftco-bg-dark ftco-section">
-      <div class="container">
-        <div class="row mb-5 d-flex">
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Whitespace</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">Usefull Links</h2>
-              <ul class="list-unstyled">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Work</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">Blog</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Quick Links</h2>
-              <ul class="list-unstyled">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Practice Areas</a></li>
-                <li><a href="#">Appointment</a></li>
-                <li><a href="#">Terms &amp; Conditions</a></li>
-                <li><a href="#">FAQ</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
-	              </ul>
-	            </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
-
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-          </div>
-        </div>
-      </div>
-    </footer>
+  <?php Template::Show('app_bottom.php')?>
 
   <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#FFCA00"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
   <script src="<?php echo SITE_URL;?>/lib/skins/nortesul/js/jquery.min.js"></script>
@@ -116,5 +76,13 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="<?php echo SITE_URL;?>/lib/skins/nortesul/js/google-map.js"></script>
   <script src="<?php echo SITE_URL;?>/lib/skins/nortesul/js/main.js"></script>
+  <script type="text/javascript">
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+$(function(){
+    $('.selectpicker').selectpicker();
+});
+</script>
   </body>
 </html>

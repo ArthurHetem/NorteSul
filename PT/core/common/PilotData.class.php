@@ -15,7 +15,7 @@
  * @link http://www.phpvms.net
  * @license http://creativecommons.org/licenses/by-nc-sa/3.0/
  */
-
+set_time_limit(300);
 class PilotData extends CodonData {
 
     public static $pilot_data = array();
@@ -894,42 +894,22 @@ class PilotData extends CodonData {
      */
     public static function generateSignature($pilotid) {
 
+
         $pilot = self::getPilotData($pilotid);
         $pilotcode = self::getPilotCode($pilot->code, $pilot->pilotid);
 
-        if (Config::Get('TRANSFER_HOURS_IN_RANKS') === true) {
-            $totalhours = $pilot->totalhours + $pilot->transferhours;
-        } else {
-            $totalhours = $pilot->totalhours;
-        }
-
         # Configure what we want to show on each line
         $output = array();
-        $output[] = $pilotcode . ' ' . $pilot->firstname . ' ' . $pilot->lastname;
-        $output[] = $pilot->rank . ', ' . $pilot->hub;
+        $output[] = $pilotcode;
+        $output[] = $pilot->firstname . ' ' . strtoupper($pilot->lastname);
+        $output[] = $pilot->rank;
+        $output[] = $pilot->retired;
         $output[] = 'Total Flights: ' . $pilot->totalflights;
-        $output[] = 'Total Hours: ' . $totalhours;
-
-        if (Config::Get('SIGNATURE_SHOW_EARNINGS') == true) {
-            $output[] = 'Total Earnings: '.(floatval($pilot->totalpay) + floatval($pilot->payadjust));
-        }
+        $output[] = 'Total Hours: ' . $pilot->totalhours;
 
         # Load up our image
         # Get the background image the pilot selected
-        if (empty($pilot->bgimage)) {
-            $bgimage = SITE_ROOT.'/lib/signatures/background/background.png';
-        } else {
-            $bgimage = SITE_ROOT.'/lib/signatures/background/'.$pilot->bgimage;
-        }  
-
-        if (!file_exists($bgimage)) {
-            # Doesn't exist so use the default
-            $bgimage = SITE_ROOT . '/lib/signatures/background/background.png';
-
-            if (!file_exists($bgimage)) {
-                return false;
-            }
-        }
+            $bgimage = SITE_ROOT.'/lib/signatures/background/cracha.png';
 
         $img = @imagecreatefrompng($bgimage);
         if (!$img) {
@@ -939,15 +919,16 @@ class PilotData extends CodonData {
         $height = imagesy($img);
         $width = imagesx($img);
 
-        $txtcolor = str_replace('#', '', Config::Get('SIGNATURE_TEXT_COLOR'));
-        $color = sscanf($txtcolor, '%2x%2x%2x');
-        $textcolor = imagecolorallocate($img, $color[0], $color[1], $color[2]);
-        $font = 3; // Set the font-size
+        $txtcolor = str_replace('#FFFFFF', '',  Config::Get('SIGNATURE_TEXT_COLOR'));
+        $color = sscanf($txtcolor, '%xx%2x%2x');
+        $textcolor = imagecolorallocate($img, 255, 255, 255);
+        $font = "12,55"; // Set the font-size
 
-        $xoffset = Config::Get('SIGNATURE_X_OFFSET'); # How many pixels, from left, to start
+        $xoffset = 16; # How many pixels, from left, to start
         $yoffset = Config::Get('SIGNATURE_Y_OFFSET'); # How many pixels, from top, to start
 
-        $font = Config::Get('SIGNATURE_FONT_PATH');
+        $font = SITE_ROOT.'/lib/fonts/Century_Gothic.ttf';
+        $fontn = SITE_ROOT.'/lib/fonts/Century.ttf';
         $font_size = Config::Get('SIGNATURE_FONT_SIZE');
 
         if (function_exists('imageantialias')) {
@@ -981,7 +962,37 @@ class PilotData extends CodonData {
                 imagestring($img, (int)$font, $xoffset, $currline, $output[$i], $textcolor);
             } else {
                 // Use TTF
-                $tmp = imagettftext($img, $font_size, 0, $xoffset, $currline, $textcolor, $font, $output[$i]);
+                $tmp = imagettftext($img, 18.55, 0, 16.5, 225, $textcolor, $font, $output[0]);
+                $tmp = imagettftext($img, 18.55, 0, 25, 270, $textcolor, $font, $output[1]);
+                $tmp = imagettftext($img, 10.55, 0, 25, 290, $textcolor, $font, $output[2]);
+
+                switch ($pilot->pilotid) {
+                    case 1:
+                    $tmp = imagettftext($img, 10.55, 0, 45, 314, $textcolor, $font, "CEO");
+                    $tmp = imagettftext($img, 15, 0, 100, 340, $textcolor, $font, "STAFF");
+                    break;
+                    case 2:
+                      $tmp = imagettftext($img, 10.55, 0, 45, 314, $textcolor, $font, "COO");
+                      $tmp = imagettftext($img, 15, 0, 100, 340, $textcolor, $font, "STAFF");
+                    break;
+                    case 3:
+                      $tmp = imagettftext($img, 10.55, 0, 45, 314, $textcolor, $font, "CAO");
+                      $tmp = imagettftext($img, 15, 0, 100, 340, $textcolor, $font, "STAFF");
+                    break;
+                    default:
+                    $tmp = imagettftext($img, 15, 0, 80, 340, $textcolor, $font, "Piloto Ativo");
+                }
+
+if ($output[3]==1)
+{
+$tmp = imagettftext($img, $font_size, 0, 25, 300, $textcolor, $font, 'Pilot Retired');
+$tmp = imagettftext($img, 40, 50, 25, 330, $textcolor, $font, 'INVALID ID');
+}
+else
+{
+$tmp = imagettftext($img, $font_size, 0, 25, 200, $textcolor, $font,'Active Pilot');
+
+}
 
                 // Flag is placed at the end of of the first line, so have that bounding box there
                 if ($i == 0) {
@@ -991,48 +1002,43 @@ class PilotData extends CodonData {
 
             $currline += $stepsize;
         }
-
-        # Add the country flag, line it up with the first line, which is the
-        #	pilot code/name
-        $country = strtolower($pilot->location);
-        if (file_exists(SITE_ROOT . '/lib/images/countries/' . $country . '.png')) {
-            $flagimg = imagecreatefrompng(SITE_ROOT . '/lib/images/countries/' . $country .
-                '.png');
-
-            if (Config::Get('SIGNATURE_USE_CUSTOM_FONT') == false) {
-                $ret = imagecopy($img, $flagimg, strlen($output[0]) * $fontwidth, ($yoffset+($stepsize/2) - 5.5), 0, 0, 16, 11);
-            } else {
-                # figure out where it would go
-                $ret = imagecopy($img, $flagimg, $flag_bb[4] + 5, $flag_bb[5] + 2, 0, 0, 16, 11);
-            }
-        }
+        
 
         # Add the Rank image
 
-        if (Config::Get('SIGNATURE_SHOW_RANK_IMAGE') == true && $pilot->rankimage != '') {
-                
-            $cws = new CodonWebService();
-            $rankimg = @$cws->get($pilot->rankimage);
-            $rankimg = imagecreatefromstring($rankimg);
+$ext = substr($pilot->rankimage, strlen($pilot->rankimage)-3, 3);
 
-            if (!$rankimg) {
-                echo '';
-            } else {
-                $r_width = imagesx($rankimg);
-                $r_height = imagesy($rankimg);
+# Get the rank image type, just jpg, gif or png
+if($ext == 'png'){
+$rankimg = imagecreatefrompng($pilot->rankimage);
+}elseif($ext == 'gif'){
+$rankimg = imagecreatefromgif($pilot->rankimage);
+}else{
+$rankimg = imagecreatefromjpg($pilot->rankimage);
+}
+if(!$rankimg) { echo '';}
+else
+{
 
-                imagecopy($img, $rankimg, $width - $r_width - $xoffset, $yoffset, 0, 0, $r_width, $r_height);
-            }
-        }
+$ret = imagecopy($img, $rankimg, 140, 175, 0, 0, 191, 60);
+// imagecopy($img, $rankimg, $width-$r_width-$xoffset, $yoffset, 0, 0, $r_width, $r_height);
+}
+# Add the Avatar Picture, line it up with the first line, which is the
+# pilot code/name
 
-        if (Config::Get('SIGNATURE_SHOW_COPYRIGHT') == true) {
-            #
-            #  DO NOT remove this, as per the phpVMS license
-            $font = 1;
-            $text = 'powered by phpvms, ' . SITE_NAME . ' ';
-            imagestring($img, $font, $width - (strlen($text) * imagefontwidth($font)), $height -
-                imagefontheight($font), $text, $textcolor);
-        }
+if(file_exists(SITE_ROOT.'/lib/avatars/'.$pilotcode.'.png'))
+{
+
+$avatarimg = imagecreatefrompng(SITE_ROOT.'/lib/avatars/'.$pilotcode.'.png');
+
+$ret = imagecopy($img, $avatarimg, 25, 200, 0, 0, 80, 80);
+}
+else{
+$avatarimg = imagecreatefrompng(SITE_ROOT.'/lib/images/noavatar.png');
+
+$ret = imagecopy($img, $avatarimg, 25, 200, 0, 0, 80, 80);
+
+}
 
         imagepng($img, SITE_ROOT . SIGNATURE_PATH . '/' . $pilotcode . '.png', 1);
         imagedestroy($img);
