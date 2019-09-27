@@ -2,7 +2,7 @@
 <?php
 if(!$lastbids)
 {
-	echo 'No bids have been made';
+	echo 'Nenhum Reporte de voo foi enviado!';
 	return;
    
 }

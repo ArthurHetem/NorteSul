@@ -1,19 +1,7 @@
-<?php if(!defined('IN_PHPVMS') && IN_PHPVMS !== true) { die(); } ?>
 <h3>Tasks</h3>
 <ul class="filetree treeview-famfamfam">
 	<li><span class="file">
-		<a href="<?php echo adminurl('/operations/aircraft');?>">View aircraft</a>
-	</span></li>
-
-	<li><span class="file">
-		<a href="<?php echo adminurl('/operations/addaircraft');?>">Add an aircraft</a>
-	</span></li>
-
-	<li><span class="file">
-		<a href="<?php echo adminaction('/import/exportaircraft'); ?>">Export Aircraft</a>
-	</span></li>
-	<li><span class="file">
-		<a href="<?php echo adminurl('/import/importaircraft');?>">Import Aircraft</a>
+		<a  id="dialog" class="jqModal" href="<?php echo SITE_URL?>/admin/action.php/operations/addaircraft">Add an aircraft</a>
 	</span></li>
 </ul>
 <h3>Help</h3>

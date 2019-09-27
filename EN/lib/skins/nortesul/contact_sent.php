@@ -1,30 +1,19 @@
-﻿    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-image: url(<?php echo SITE_URL; ?>/lib/skins/avianca/images/img_bg_3.jpg)">
-		<div class="overlay"></div>
-		<div class="gtco-container">
-			<div class="row">
-				<div class="col-md-12 col-md-offset-0 text-center">
-					<div class="row row-mt-15em">
-
-						<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
-							<h1>Contact Us</h1>
-                            <small><ol class="breadcrumb">
-  <li>Home</li>
-  <li>Corporation</li>
-  <li class="active"><b>Contact Us</b></li>
-</ol></small>							
-						</div>
-						
-					</div>
-					
-				</div>
-			</div>
-		</div>
-	</header>
-
-    <div class="container" id="tourpackages-carousel">
-      <div class="alert alert-success">
-        <p>Message sent. It will be answered ASAP.</p>
+<div class="site-blocks-cover overlay" style="background-image: url(<?php echo SITE_URL;?>/lib/skins/nortesul/images/canvas/3.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-10">
+            <span class="sub-text">Home > Corporation > <strong>Contact us</strong></span>
+            <h1><strong>Contact us</strong></h1>
+          </div>
+        </div>
       </div>
-      <!-- End container -->
     </div>
-  
+	<div class="site-section  border-bottom">
+      <div class="container">
+		<div class="row">
+		<div class="alert alert-success">
+        <p>You message has been sent, we will be in touch ASAP.</p>
+      </div>
+		</div>
+	</div>
+</div>

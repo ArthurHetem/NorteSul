@@ -27,33 +27,8 @@ class Pilots extends CodonModule
 	 */
 	public function index()
 	{
-		// Get all of our hubs, and list pilots by hub
-		$allhubs = OperationsData::GetAllHubs();
-		
-		if(!$allhubs) $allhubs = array();
-		
-		foreach($allhubs as $hub)
-		{
-			$this->set('title', $hub->name);
-			$this->set('icao', $hub->icao);
-			
-            $pilot_list = PilotData::findPilots(array('p.hub'=>$hub->icao));
-			$this->set('allpilots', $pilot_list); # deprecated
-            $this->set('pilot_list', $pilot_list);
-								
-			$this->render('pilots_list.tpl');
-		}
-		
-		$nohub = PilotData::findPilots(array('p.hub'=>''));
-		if(!$nohub) {
-			return;
-		}
-		
-		$this->set('title', 'No Hub');
-		$this->set('icao', '');
-		$this->set('allpilots', $nohub); # deprecated
-        $this->set('pilot_list', $nohub);
-		$this->render('pilots_list.tpl');
+		$this->set('allpilots', PilotData::getAllPilots());
+      $this->render('pilots_list.tpl');
 	}
 	
 	/**

@@ -1,31 +1,20 @@
-﻿<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-image: url(<?php echo SITE_URL; ?>/lib/skins/nortesul/images/img_bg_3.jpg)">
-		<div class="overlay"></div>
-		<div class="gtco-container">
-			<div class="row">
-				<div class="col-md-12 col-md-offset-0 text-center">
-					<div class="row row-mt-15em">
-
-						<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
-							<h1>Latest Flights</h1>
-                            <small><ol class="breadcrumb">
-  <li>Home</li>
-  <li>Operations</li>
-  <li class="active"><b>Latest Flights</b></li>
-</ol></small>							
-						</div>
-						
-					</div>
-					
-				</div>
-			</div>
-		</div>
-	</header>
-
-	
-    <div class="container" id="tourpackages-carousel">
-
-      <div class="row">
-	    <?php
+<div class="site-blocks-cover overlay"
+    style="background-image: url(<?php echo SITE_URL;?>/lib/skins/nortesul/images/canvas/4.jpg);" data-aos="fade"
+    data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-10">
+                <span class="sub-text">Home > Corporation > <strong>Recent Flights</strong></span>
+                <h1><strong>Recent Flights</strong></h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <?php
     $flights = PIREPData::getRecentReportsByCount(30);																	 
     $string = "";
     foreach($flights as $flight)
@@ -34,26 +23,26 @@
     }																	 
 ?>
 
-<!--Start Table-->
-<?php
+                <!--Start Table-->
+                <?php
 $count = 30;
 $pireps = PIREPData::getRecentReportsByCount($count);
 ?>
-<table width="725 px" border="1" class="table table-hover">
-  <thead>
- <tr align="center" valign="middle">
-   <th>Pilot ID</th>
-   <th>Flight Number #</th>
-   <th>Departure</th>
-   <th>Arrival</th>
-   <th>Time</th>
-   <th>Touchdown</th>
-   <th>Aircraft</th>
- </tr>
-   </thead>
-   <tbody>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr valign="middle">
+                            <th class="quadro roxo">Pilot</th>
+                            <th class="quadro roxo">Flight #</th>
+                            <th class="quadro roxo">Departure</th>
+                            <th class="quadro roxo">Arrival</th>
+                            <th class="quadro roxo">Duration</th>
+                            <th class="quadro roxo">Touchdown</th>
+                            <th class="quadro roxo">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-<?php
+                        <?php
 if(count($pireps) > 0)
 {
  foreach ($pireps as $pirep)
@@ -67,19 +56,17 @@ if(count($pireps) > 0)
    echo "<td align=center> $pirep->arricao </td>";
    echo "<td align=center> $pirep->flighttime </td>";
    echo "<td align=center> $pirep->landingrate </td>";
-   echo "<td align=center> $pirep->aircraft </td>";
+   echo "<td align=center>". date("d/m/Y", $pirep->submitdate)." </td>";
    echo "</tr>";
  }
 }
 else
 {
-   echo "<tr><td>There are no recent flights!</td></tr>";
+   echo "<tr><td>Nothing to show!</td></tr>";
 }
 ?>
-</table>
-</td>
-        <!-- End row -->
-
-      </div>
-      <!-- End container -->
+                </table>
+            </div>
+        </div>
     </div>
+</div>

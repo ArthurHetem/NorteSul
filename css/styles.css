@@ -174,11 +174,44 @@ html {
 .right-section .footer-icons > li > a > i{ display: inline-block; height: 35px; line-height: 33px; 
 	transition: all .2s; border-radius: 40px; text-align: center; width: 35px; }
 
-.right-section .footer-icons > li > a:hover > i{ border: 1px solid; }
 
-.right-section .footer-icons > li > a > i[class*="facebook"]{ color: #2A61D6; border-color: #2A61D6; }
-.right-section .footer-icons > li > a > i[class*="twitter"]{ color: #3AA4F8; border-color: #3AA4F8; }
-.right-section .footer-icons > li > a > i[class*="google"]{ color: #F43846; border-color: #F43846; }
-.right-section .footer-icons > li > a > i[class*="instagram"]{ color: #8F614A; border-color: #8F614A; }
-.right-section .footer-icons > li > a > i[class*="pinterest"]{ color: #E1C013; border-color: #E1C013; }
+/* Style all font awesome icons */
+.fa {
+	padding: 20px;
+	font-size: 30px;
+	width: 65px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 50%;
+  }
+  
+  /* Add a hover effect if you want */
+  .fa:hover {
+	opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  .fa-facebook {
+	background: #3B5998;
+	color: white;
+  }
+  
+  /* Twitter */
+  .fa-twitter {
+	background: #55ACEE;
+	color: white;
+  }
+  
+    /* Instagram */
+	.fa-instagram {
+		background: #E2306C;
+		color: white;
+	  }
 
+    /* YouTube */
+	.fa-youtube {
+		background: #FE0000;
+		color: white;
+	  }	  

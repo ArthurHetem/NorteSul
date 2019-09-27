@@ -33,11 +33,6 @@
 	</td>
 </tr>
 <tr>
-	<td><strong>Alternet Airport:</strong></td>
-	<td><input id="alticao" name="alticao" class="airport_select" value="<?php echo $schedule->alticao;?>" onclick="" />
-	</td>
-</tr>
-<tr>
 	<td valign="top"><strong>Departure Time:</strong> </td>
 	<td><input type="text" name="deptime" value="<?php echo $schedule->deptime?>" />
 		<p>Please enter time as: HH::MM Timezone (eg: 17:30 EST, or 5:30 PM EST)</p>
@@ -102,19 +97,13 @@
 		<p><a href="#" onclick="calcDistance(); return false;">Calculate Distance</a>. Leaving blank or 0 (zero) will automatically calculate the distance.</p></td>
 </tr>
 <tr>
-	<td valign="top"><strong>Duraçao do voo:</strong> </td>
-	<td><input name="flighttime" type="text" placeholder="00.00" value="<?php echo $schedule->flighttime?>" />
-	<p>Digite como HH.MM</p>
+	<td valign="top"><strong>Flight Time:</strong> </td>
+	<td><input type="text" name="flighttime" value="<?php echo $schedule->flighttime?>" />
+	<p>Please enter as HH:MM</p>
 	</td>
 </tr>
 <tr>
-	<td valign="top"><strong>Do destino para o alternativo:</strong> </td>
-	<td><input name="fnalt" type="text" placeholder="00.00" value="<?php echo $schedule->fnalt?>" />
-		<p>Digite como HH.MM</p>
-	</td>
-</tr>
-<tr>
-	<td><strong>Equipamento: </strong></td>
+	<td><strong>Equipment: </strong></td>
 	<td><select name="aircraft">
 		<?php
 		
@@ -133,11 +122,11 @@
 <tr>
 	<td valign="top"><strong>Flight Level:</strong></td>
 	<td><input type="text" name="flightlevel" value="<?php echo $schedule->flightlevel?>" />
-	<p>Deve estar em pé, para permanecer correto com qualquer ACARS, usar numero cheio Ex: 33000.</p>
+	<p>Please enter as a full-numeric altitude. Should be in feet, to remain accurate with any ACARS.</p>
 	</td>
 </tr>
 <tr>
-	<td valign="top"><strong>Tipo de voo</strong></td>
+	<td valign="top"><strong>Flight Type</strong></td>
 	<td><select name="flighttype">
 			<?php
 			foreach($flighttypes as $flightkey=>$flighttype) {
@@ -154,29 +143,30 @@
 	</td>
 </tr>
 <tr>
-	<td valign="top"><strong>Rota (opcional)</strong></td>
+	<td valign="top"><strong>Route (optional)</strong></td>
 	<td><textarea name="route" style="width: 60%; height: 75px" id="route"><?php echo $schedule->route?></textarea>
 		<p><a id="dialog" class="preview"
-			href="<?php echo SITE_URL?>/admin/action.php/operations/viewmap?type=preview">Ver rota</a></p>
+			href="<?php echo SITE_URL?>/admin/action.php/operations/viewmap?type=preview">View Route</a></p>
 	</td>
 </tr>
 <tr>
-	<td valign="top"><strong>Preço</strong> </td>
+	<td valign="top"><strong>Price</strong> </td>
 	<td><input type="text" name="price" value="<?php echo $schedule->price?>" />
-		<p>Este é o preço do bilhete, ou o preço por <?php echo Config::Get('CARGO_UNITS'); ?> para os voo de carga.</p>
+		<p>This is the ticket price, or price per <?php echo Config::Get('CARGO_UNITS'); ?>
+			for a cargo flight.</p>
 	</td>
 </tr>
 <tr>
-	<td valign="top"><strong>Pague pelo voo</strong> </td>
+	<td valign="top"><strong>Pay for Flight</strong> </td>
 	<td><input type="text" name="payforflight" value="<?php echo $schedule->payforflight?>" />
-		<p>Se um preço for inserido aqui, um piloto receberá esse valor, em vez do salário por hora.</p>
+		<p>If a price is entered here, a pilot will be paid this amount, instead of the hourly pay.</p>
 	</td>
 </tr>
 <tr>
-	<td valign="top"><strong>Remarks</strong></td>
+	<td valign="top"><strong>Notes</strong></td>
 	<td valign="top" style="padding-top: 0px">
-		Apenas informações complementares do tipo EET/ ou RMK/.<br /><br />
-		<textarea name="notes" style="width: 60%; height: 150px" placeholder="RMK/ ou EET/"><?php echo $schedule->notes?></textarea>
+		Any notes about the flight, including frequency, dates flown, etc.<br /><br />
+		<textarea name="notes" style="width: 60%; height: 150px"><?php echo $schedule->notes?></textarea>
 	</td>
 </tr>
 <tr>

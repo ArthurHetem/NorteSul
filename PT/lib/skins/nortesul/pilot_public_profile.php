@@ -79,7 +79,7 @@ echo '<center><img src="https://indicators.vatsim.net/indicator/generate/'.$fiel
                 </h5>
             </div>
             <div class="col-md-6">
-                <img src="https://flygolv.com/account/lib/signatures/cracha/GLO2315.png"
+                <img src="<?php echo SITE_URL;?>/lib/signatures/NCV<?php echo $pilot->pilotid;?>.jpg"
                     class="img-fluid mx-auto d-block" alt="">
             </div>
         </div>

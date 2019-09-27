@@ -1,4 +1,27 @@
 <?php if(!defined('IN_PHPVMS') && IN_PHPVMS !== true) { die(); } ?>
+<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-image: url(<?php echo SITE_URL; ?>/lib/skins/avianca/images/img_bg_2.jpg)">
+		<div class="overlay"></div>
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-12 col-md-offset-0 text-center">
+					<div class="row row-mt-15em">
+
+						<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
+							<h1><?php echo $pilot->firstname . ' ' . $pilot->lastname?></h1>
+                            <small><ol class="breadcrumb">
+  <li>Home</li>
+  <li>Membros</li>
+  <li class="active"><b><?php echo $pilot->firstname . ' ' . $pilot->lastname?></b></li>
+</ol></small>							
+						</div>
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</header>
+<div class="container" id="tourpackages-carousel">
 <h3>Registration</h3>
 <p>Welcome to the registration form for <?php echo SITE_NAME; ?>. After you register, you will be notified by a staff member about your membership.</p>
 <form method="post" action="<?php echo url('/registration');?>">
@@ -30,11 +53,12 @@
 	<dt>Select Airline: *</dt>
 	<dd>
 		<select name="code" id="code">
-		<?php
+		<?php/*
 		foreach($airline_list as $airline) {
 			echo '<option value="'.$airline->code.'">'.$airline->code.' - '.$airline->name.'</option>';
-		}
+		}*/
 		?>
+		<option value="NSV">NSV - NorteSul Virtual</option>
 		</select>
 	</dd>
 

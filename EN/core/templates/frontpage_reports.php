@@ -1,7 +1,7 @@
 <?php if(!defined('IN_PHPVMS') && IN_PHPVMS !== true) { die(); } ?>
 <?php
 if(!$pirep_list) {
-	echo 'No reports have been filed';
+	echo 'Nenhum Reporte de voo foi enviado!';
 	return;
 }
 

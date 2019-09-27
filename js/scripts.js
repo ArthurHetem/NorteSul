@@ -26,10 +26,10 @@
 		var date = $('#normal-countdown').data('date');
 		$('#normal-countdown').countdown(date, function(event) {
 			var $this = $(this).html(event.strftime(''
-				+ '<div class="time-sec"><h3 class="main-time">%D</h3> <span>Dias</span></div>'
-				+ '<div class="time-sec"><h3 class="main-time">%H</h3> <span>Horas</span></div>'
+				+ '<div class="time-sec"><h3 class="main-time">%D</h3> <span>Days</span></div>'
+				+ '<div class="time-sec"><h3 class="main-time">%H</h3> <span>Hours</span></div>'
 				+ '<div class="time-sec"><h3 class="main-time">%M</h3> <span>Mins</span></div>'
-				+ '<div class="time-sec"><h3 class="main-time">%S</h3> <span>Seg</span></div>'));
+				+ '<div class="time-sec"><h3 class="main-time">%S</h3> <span>Secs</span></div>'));
 		});
 	}
 	

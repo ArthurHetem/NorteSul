@@ -1,229 +1,95 @@
-﻿<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-image: url(<?php echo SITE_URL; ?>/lib/skins/avianca/images/img_bg_1.jpg)">
-		<div class="overlay"></div>
-		<div class="gtco-container">
-			<div class="row">
-				<div class="col-md-12 col-md-offset-0 text-center">
-					<div class="row row-mt-15em">
-
-						<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
-							<h1>Staff & Careers</h1>
-                            <small><ol class="breadcrumb">
-  <li>Home</li>
-  <li>Corporation</li>
-  <li class="active"><b>Staff & Careers</b></li>
-</ol></small>							
-						</div>
-						
-					</div>
-					
-				</div>
-			</div>
-		</div>
-	</header>
-	
-    <div class="container" id="tourpackages-carousel">
-
-      <div class="row">
-
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="thumbnail animate-box">
-              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/staffs/NSV001.jpg" class="imagem" alt="">
-              <div class="caption">
-                <h4 class="text-center">
-                  Sid <b>Dasilva</b>
-                </h4>
-                <hr>
-                <p class="text-center">
-                 CEO - Chief Executive Officer
-                </p>
-                <hr>
-                                <div class="team-social-link">
-                  <a href="<?php echo SITE_URL?>/index.php/profile/view/1" class="btn btn-primary" style="margin-left: 20%;">Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="thumbnail animate-box">
-              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/staffs/NSV002.jpg" class="imagem" alt="">
-              <div class="caption">
-                <h4 class="text-center">
-                  Paulo <b>Roberto</b>
-                </h4>
-                <hr>
-                <p class="text-center">
-                 COO - Chief Of Operations
-                </p>
-                <hr>
-                <div class="team-social-link">
-                  <a href="<?php echo SITE_URL?>/index.php/profile/view/2" class="btn btn-primary" style="margin-left: 20%;">Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="thumbnail animate-box">
-              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/staffs/NSV003.jpg" class="imagem" alt="">
-              <div class="caption">
-                <h4 class="text-center">
-                  Rodrigo <b>Souza</b>
-                </h4>
-                <hr>
-                <p class="text-center">
-                 CAO - Chief Administrative Officer
-                </p>
-                <hr>
-                <div class="team-social-link">
-                  <a href="<?php echo SITE_URL?>/index.php/profile/view/3" class="btn btn-primary" style="margin-left: 20%;">Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="thumbnail animate-box">
-              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/staffs/NSV004.jpg" class="imagem" alt="">
-              <div class="caption">
-                <h4 class="text-center">
-                  Arthur <b>Hetem</b>
-                </h4>
-                <hr>
-                <p class="text-center">
-                 CIT - Chief IT Officer
-                </p>
-                <hr>
-                <div class="team-social-link">
-                  <a href="<?php echo SITE_URL?>/index.php/profile/view/4" class="btn btn-primary" style="margin-left: 20%;">Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-		  </div>
-		  <br>
-		  <div class="row">
-		  
-		  <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="thumbnail animate-box">
-              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/staffs/NSV005.jpg" class="imagem" alt="">
-              <div class="caption">
-                <h4 class="text-center">
-                  Gabriel <b>França</b>
-                </h4>
-                <hr>
-                <p class="text-center">
-                 CCO - Chief Of Comunications
-                </p>
-                <hr>
-                <div class="team-social-link">
-                  <a href="<?php echo SITE_URL?>/index.php/profile/view/5" class="btn btn-primary" style="margin-left: 20%;">Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-		  
-		  <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="thumbnail animate-box">
-              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/staffs/NSV006.jpg" class="imagem" alt="">
-              <div class="caption">
-                <h4 class="text-center">
-                  Moisés <b>Fuga</b>
-                </h4>
-                <hr>
-                <p class="text-center">
-                 CAO - Chief Arts Officer
-                </p>
-                <hr>
-                <div class="team-social-link">
-                  <a href="<?php echo SITE_URL?>/index.php/profile/view/6" class="btn btn-primary" style="margin-left: 20%;">Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-		  
-		  <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="thumbnail animate-box">
-              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/staffs/NSV010.jpg" class="imagem" alt="">
-              <div class="caption">
-                <h4 class="text-center">
-                  Gabriel <b>Antunes</b>
-                </h4>
-                <hr>
-                <p class="text-center">
-                 Designer - Director of Arts and Creations
-                </p>
-                <hr>
-                <div class="team-social-link">
-                  <a href="<?php echo SITE_URL?>/index.php/profile/view/10" class="btn btn-primary" style="margin-left: 20%;">Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-		  
-		  <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="thumbnail animate-box">
-              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/staffs/NSV007.jpg" class="imagem" alt="">
-              <div class="caption">
-                <h4 class="text-center">
-                  Leonardo <b>Arraes</b>
-                </h4>
-                <hr>
-                <p class="text-center">
-                 CFO - Chief Financial Officer
-                </p>
-                <hr>
-                <div class="team-social-link">
-                  <a href="<?php echo SITE_URL?>/index.php/profile/view/7" class="btn btn-primary" style="margin-left: 20%;">Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-		  
-		  </div>
-		  <br>
-		  <div class="row">
-		  
-		  <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="thumbnail animate-box">
-              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/staffs/NSV008.jpg" class="imagem" alt="">
-              <div class="caption">
-                <h4 class="text-center">
-                  Davi <b>Sousa</b>
-                </h4>
-                <hr>
-                <p class="text-center">
-                 RFO - Routes and Fleet Officer
-                </p>
-                <hr>
-                <div class="team-social-link">
-                  <a href="<?php echo SITE_URL?>/index.php/profile/view/8" class="btn btn-primary" style="margin-left: 20%;">Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-		  
-		  <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="thumbnail animate-box">
-              <img src="<?php echo SITE_URL?>/lib/skins/nortesul/images/staffs/NSV011.jpg" class="imagem" alt="">
-              <div class="caption">
-                <h4 class="text-center">
-                  Bruno <b>Borges</b>
-                </h4>
-                <hr>
-                <p class="text-center">
-                 DRH - Human Recourses Director
-                </p>
-                <hr>
-                <div class="team-social-link">
-                  <a href="<?php echo SITE_URL?>/index.php/profile/view/11" class="btn btn-primary" style="margin-left: 20%;">Details</a>
-                </div>
-              </div>
-            </div>
+<div class="site-blocks-cover overlay" style="background-image: url(<?php echo SITE_URL;?>/lib/skins/nortesul/images/canvas/1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-10">
+            <span class="sub-text">Home > Corporation > <strong>Staffs</strong></span>
+            <h1><strong>Staffs</strong></h1>
           </div>
         </div>
-
-        </div>
-      <!-- End container -->
+      </div>
     </div>
+	<div class="site-section  border-bottom">
+      <div class="container">
+		<div class="row">	
+			<div class="col-lg-3 col-md-3 mb-5 post-entry profile">
+				  <h4 class="text-center">
+                  CEO
+                </h4>
+            <a href="#" class="d-block figure">
+              <img src="<?php echo SITE_URL?>/lib/signatures/NCV1.jpg" alt="Image" class="img-fluid borda">
+            </a>
+			<hr>
+			<div class="col text-center">
+			<a href="<?php echo SITE_URL;?>/index.php/profile/view/1" class="btn btn-primary centro">DETAILS</a>
+			</div>
+          </div>
+		  <div class="col-lg-3 col-md-3 mb-5 post-entry profile ml-auto">
+				  <h4 class="text-center">
+                  COO
+                </h4>
+            <a href="#" class="d-block figure">
+            <img src="<?php echo SITE_URL?>/lib/signatures/NCV2.jpg" alt="Image" class="img-fluid borda">
+            </a>
+			<hr>
+			<div class="col text-center">
+			<a href="<?php echo SITE_URL;?>/index.php/profile/view/2" class="btn btn-primary centro">DETAILS</a>
+			</div>
+          </div>
+		  <div class="col-lg-3 col-md-3 mb-5 post-entry profile ml-auto">
+				  <h4 class="text-center">
+                  CAO
+                </h4>
+            <a href="#" class="d-block figure">
+            <img src="<?php echo SITE_URL?>/lib/signatures/NCV3.jpg" alt="Image" class="img-fluid borda">
+            </a>
+			<hr>
+			<div class="col text-center">
+			<a href="<?php echo SITE_URL;?>/index.php/profile/view/3" class="btn btn-primary centro">DETAILS</a>
+			</div>
+          </div>
+		  
+        <!-- End row -->
+      </div>
+	  <div class="row">
+		<div class="col-lg-3 col-md-3 mb-5 post-entry profile">
+				  <h4 class="text-center">
+                  CIT
+                </h4>
+            <a href="#" class="d-block figure">
+            <img src="<?php echo SITE_URL?>/lib/signatures/NCV4.jpg" alt="Image" class="img-fluid borda">
+            </a>
+			<hr>
+			<div class="col text-center">
+			<a href="<?php echo SITE_URL;?>/index.php/profile/view/4" class="btn btn-primary centro">DETAILS</a>
+			</div>
+          </div>
+		  <div class="col-lg-3 col-md-3 mb-5 post-entry profile ml-auto">
+				  <h4 class="text-center">
+                  CDA
+                </h4>
+            <a href="#" class="d-block figure">
+            <img src="<?php echo SITE_URL?>/lib/signatures/NCV5.jpg" alt="Image" class="img-fluid borda">
+            </a>
+			<hr>
+			<div class="col text-center">
+			<a href="<?php echo SITE_URL;?>/index.php/profile/view/6" class="btn btn-primary centro">DETAILS</a>
+			</div>
+          </div>
+		  <div class="col-lg-3 col-md-3 mb-5 post-entry profile ml-auto">
+				  <h4 class="text-center">
+                  Em Breve
+                </h4>
+            <a href="#" class="d-block figure">
+              <img src="<?php echo SITE_URL?>/lib/images/noavatar.png" alt="Image" class="img-fluid borda">
+            </a>
+			<hr>
+            <h3><span class="d-block mb-1 text-center">Cuca <strong>Beludo</strong></span></h3>
+			<hr>
+      <span class="text-muted text-center">#letsflyboss</span>
+			<div class="col text-center">
+			<a href="<?php echo SITE_URL;?>/profile/view/10" class="btn btn-primary centro">DETAILS</a>
+			</div>
+          </div>
+	  </div>
+    </div>
+	</div>

@@ -1,134 +1,88 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>NorteSul Virtual Airlines</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="NorteSul Virtual Airlines" />
-	<meta name="keywords" content="website, html5, css3, mobile first, responsive" />
-	<meta name="author" content="Arthur Hetem" />
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Virtual Aviation | Nortesul Cargo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+    <link rel="stylesheet" href="<?php echo SITE_URL;?>/lib/skins/nortesul/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo SITE_URL;?>/lib/skins/nortesul/css/animate.css">
+    
+    <link rel="stylesheet" href="<?php echo SITE_URL;?>/lib/skins/nortesul/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="<?php echo SITE_URL;?>/lib/skins/nortesul/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="<?php echo SITE_URL;?>/lib/skins/nortesul/css/magnific-popup.css">
 
-	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="<?php echo SITE_URL; ?>/lib/skins/nortesul/css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="<?php echo SITE_URL; ?>/lib/skins/nortesul/css/icomoon.css">
-	<!-- Themify Icons-->
-	<link rel="stylesheet" href="<?php echo SITE_URL; ?>/lib/skins/nortesul/css/themify-icons.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="<?php echo SITE_URL; ?>/lib/skins/nortesul/css/bootstrap.css">
+    <link rel="stylesheet" href="<?php echo SITE_URL;?>/lib/skins/nortesul/css/aos.css">
 
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="<?php echo SITE_URL; ?>/lib/skins/nortesul/css/magnific-popup.css">
+    <link rel="stylesheet" href="<?php echo SITE_URL;?>/lib/skins/nortesul/css/ionicons.min.css">
 
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="<?php echo SITE_URL; ?>/lib/skins/nortesul/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="<?php echo SITE_URL;?>/lib/skins/nortesul/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="<?php echo SITE_URL;?>/lib/skins/nortesul/css/jquery.timepicker.css">
 
-	<!-- FlexSlider2  -->
-	<link rel="stylesheet" href="<?php echo SITE_URL; ?>/lib/skins/nortesul/css/flexslider.css" type="text/css">
-
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="<?php echo SITE_URL; ?>/lib/skins/nortesul/css/style.css">
-    <link rel="stylesheet" href="<?php echo SITE_URL; ?>/lib/skins/nortesul/css/flag-icon.css">
-	<!-- Modernizr JS -->
-	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/respond.min.js"></script>
-	<![endif]-->
-<link rel="stylesheet" href="<?php echo SITE_URL; ?>/lib/skins/nortesul/css/carousel.css">
-	<style>
-	.dividir {
-  border-right: 1px solid #fff;
-}
-</style>
-	</head>
-
+    <!--Your Google Maps API Key here-->
+    <script src="https://maps.google.com/maps/api/js?v=3&key=AIzaSyDbwylblt3-Nz21yNoDJWbHyqTjTNogYcg&callback=main.CreateMap"></script>
+    <link rel="stylesheet" href="<?php echo SITE_URL;?>/lib/skins/nortesul/css/flaticon.css">
+	<link rel="stylesheet" href="<?php echo SITE_URL;?>/lib/skins/nortesul/css/icomoon.css">
+	<script src="https://use.fontawesome.com/90c9086cc0.js"></script>
+	<link rel="stylesheet" href="<?php echo SITE_URL;?>/lib/skins/nortesul/css/style.css">
+	<link rel="stylesheet" href="<?php echo SITE_URL;?>/lib/skins/nortesul/css/flag-icon.min.css">
+  
+  <link rel="apple-touch-icon" sizes="57x57" href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/favicon-16x16.png">
+  <link rel="manifest" href="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="<?php echo SITE_URL;?>/lib/skins/nortesul/images/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  
+  </head>
   <body>
-  <?php echo $page_htmlreq; ?>
-  <div class="gtco-loader"></div>
-	
-	<div id="page">
-<?php Template::Show('app_top.php'); ?>
-
-    <?php echo $page_content; ?>
-
-<?php Template::Show('app_bottom.php'); ?>
-<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-	</div>
-	
-	<!-- jQuery -->
-	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/jquery.waypoints.min.js"></script>
-	<!-- FlexSlider2 -->
-	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/jquery.flexslider.js"></script>
-	<!-- countTo -->
-	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/jquery.countTo.js"></script>
-
-	<!-- Stellar Parallax -->
-	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/jquery.stellar.min.js"></script>
-
-	<!-- Magnific Popup -->
-	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/jquery.magnific-popup.min.js"></script>
-	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/magnific-popup-options.js"></script>
-	
-	<!-- Datepicker -->
-	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/bootstrap-datepicker.min.js"></script>
-	
-<style>
-.item2{
-	width:600px;
-}
-</style>	
-	<!-- Main -->
-	<script src="<?php echo SITE_URL; ?>/lib/skins/nortesul/js/main.js"></script>
-<script type="text/javascript" charset="utf-8">
-$(document).ready(function() {
-	$('#myCarousel').carousel({
-	interval: 10000
-	})
     
-    $('#myCarousel').on('slid.bs.carousel', function() {
-    	//alert("slid");
-	});
-    
-});
+  <?php Template::Show('app_top.php');?>
 
-</script>
-<script type="text/javascript" charset="utf-8">
-$(window).load(function() {
-  $('.flexslider').flexslider({
-    animation: "slide",
-    animationLoop: false,
-    itemWidth: 210,
-    itemMargin: 5
-  });
-});
-</script>
-<script type="text/javascript" charset="utf-8">
-$('#myTabs a').click(function (e) {
-  e.preventDefault()
-  $(this).tab('show')
+    <?php echo $page_content;?>
+
+  <?php Template::Show('app_bottom.php')?>
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#FFCA00"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="<?php echo SITE_URL;?>/lib/skins/nortesul/js/jquery.min.js"></script>
+  <script src="<?php echo SITE_URL;?>/lib/skins/nortesul/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="<?php echo SITE_URL;?>/lib/skins/nortesul/js/popper.min.js"></script>
+  <script src="<?php echo SITE_URL;?>/lib/skins/nortesul/js/bootstrap.min.js"></script>
+  <script src="<?php echo SITE_URL;?>/lib/skins/nortesul/js/jquery.easing.1.3.js"></script>
+  <script src="<?php echo SITE_URL;?>/lib/skins/nortesul/js/jquery.waypoints.min.js"></script>
+  <script src="<?php echo SITE_URL;?>/lib/skins/nortesul/js/jquery.stellar.min.js"></script>
+  <script src="<?php echo SITE_URL;?>/lib/skins/nortesul/js/owl.carousel.min.js"></script>
+  <script src="<?php echo SITE_URL;?>/lib/skins/nortesul/js/jquery.magnific-popup.min.js"></script>
+  <script src="<?php echo SITE_URL;?>/lib/skins/nortesul/js/aos.js"></script>
+  <script src="<?php echo SITE_URL;?>/lib/skins/nortesul/js/jquery.animateNumber.min.js"></script>
+  <script src="<?php echo SITE_URL;?>/lib/skins/nortesul/js/jquery.mb.YTPlayer.min.js"></script>
+  <script src="<?php echo SITE_URL;?>/lib/skins/nortesul/js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="<?php echo SITE_URL;?>/lib/skins/nortesul/js/google-map.js"></script>
+  <script src="<?php echo SITE_URL;?>/lib/skins/nortesul/js/main.js"></script>
+  <script type="text/javascript">
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
 })
+$(function(){
+    $('.selectpicker').selectpicker();
+});
 </script>
   </body>
 </html>

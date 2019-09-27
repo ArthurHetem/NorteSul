@@ -1,5 +1,4 @@
 <?php if(!defined('IN_PHPVMS') && IN_PHPVMS !== true) { die(); } ?>
-<h3>PIREPs List</h3>
 <p><?php if(isset($descrip)) { echo $descrip; }?></p>
 <?php
 if(!$pirep_list) {
@@ -7,16 +6,16 @@ if(!$pirep_list) {
 	return;
 }
 ?>
-<table id="tabledlist" class="tablesorter">
+<table id="tabledlist" class="table table-stripped table-bordered">
 <thead>
 <tr>
-	<th>Flight Number</th>
-	<th>Departure</th>
-	<th>Arrival</th>
-	<th>Aircraft</th>
-	<th>Flight Time</th>
-	<th>Submitted</th>
-	<th>Status</th>
+	<th>Voo #</th>
+	<th>Origem</th>
+	<th>Destino</th>
+	<th>Aeronave</th>
+	<th>Duração</th>
+	<th>Data</th>
+	<th>Situação</th>
 	<?php
 	// Only show this column if they're logged in, and the pilot viewing is the
 	//	owner/submitter of the PIREPs
@@ -43,13 +42,13 @@ foreach($pirep_list as $pirep) {
 		<?php
 		
 		if($pirep->accepted == PIREP_ACCEPTED) {
-            echo '<div id="success">Accepted</div>';
+            echo '<div id="success">Aprovado</div>';
 		} elseif($pirep->accepted == PIREP_REJECTED) {
-            echo '<div id="error">Rejected</div>';
+            echo '<div id="error">Rejeitado</div>';
 		} elseif($pirep->accepted == PIREP_PENDING) {
-            echo '<div id="error">Approval Pending</div>';
+            echo '<div id="error">Pendente</div>';
 		} elseif($pirep->accepted == PIREP_INPROGRESS) {
-            echo '<div id="error">Flight in Progress</div>';
+            echo '<div id="error">Em progresso</div>';
 		}
 			
 		
