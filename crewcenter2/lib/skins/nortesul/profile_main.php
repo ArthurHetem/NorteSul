@@ -17,11 +17,11 @@ $v_taxa = "0";
    date_default_timezone_set("America/Sao_Paulo");
     $hr = date("H");
     if($hr >= 12 && $hr<18) {
-    $resp = "Boa tarde";}
+    $resp = "Good Afternoon";}
     else if ($hr >= 0 && $hr <12 ){
-    $resp = "Bom dia";}
+    $resp = "Good Morning";}
     else {
-    $resp = "Boa noite";}
+    $resp = "Good Evening";}
   ?>
 <?php
   $hrssomadas = Auth::$userinfo->totalhours + $userinfo->transferhours;
@@ -39,11 +39,11 @@ $v_taxa = "0";
             <div class="widget-user-header bg-black" style="background: url('<?php echo fileurl('lib/skins/nortesul/img/2.jpg');?>');">
 							<br>
                 <h3 class="widget-user-username text-center fonte">NorteSul Virtual</h3>
-                <h5 class="widget-user-desc text-center">Bem-vindo ao futuro.</h5>
+                <h5 class="widget-user-desc text-center">Welcome to the future.</h5>
             </div>
             <div class="box-footer">
                 <div class="row col-md-12">
-                    <div class="alert alert-<?php if ($resp == "Bom dia"){ echo "warning" ;}else if ($resp=="Boa tarde" ){ echo "success" ;}else {echo "info" ;}?>">
+                    <div class="alert alert-<?php if ($resp == "Good Morning"){ echo "warning" ;}else if ($resp=="Good Afternoon" ){ echo "success" ;}else {echo "info" ;}?>">
                         <h4 class="text-center"><strong>
                                 <?php echo $resp?>,
                                 <?php echo $userinfo->firstname ?>!</strong></h4>
@@ -56,10 +56,10 @@ $v_taxa = "0";
 
 	$reports = PIREPData::findPIREPS($search, 1); // return only one
                         if(!$reports){
-						echo 'Você ainda não realizou nenhum voo, está esperando o que? Clique <a href="<?php echo SITE_URL;?>/index.php/fltbook">AQUI</a> para reservar um voo!';
+						echo 'You haven&apos;t made any flights yet, what are you waiting for? Let&apos;s fly!!';
                             }else{
 															?>
-                            Seu PIREP do voo <?php echo $reports[0]->code;?><?php echo $reports[0]->flightnum;?> (<?php echo $reports[0]->depicao;?> - <?php echo $reports[0]->arricao;?>) foi aprovado e $<?php echo $reports[0]->pilotpay;?> vMoney foram creditados para sua conta. Clique <a href="<?php echo SITE_URL;?>/index.php/pireps/view/<?php echo $reports[0]->pirepid;?>">aqui</a> para ver a avaliação pós voo.
+                            Your PIREP from flight <?php echo $reports[0]->code;?><?php echo $reports[0]->flightnum;?> (<?php echo $reports[0]->depicao;?> - <?php echo $reports[0]->arricao;?>) has been approved and $<?php echo $reports[0]->pilotpay;?> vMoney has been credited to your account. Click <a href="<?php echo SITE_URL;?>/index.php/pireps/view/<?php echo $reports[0]->pirepid;?>">here</a> to see the Post Flight Review.
 														<?php
                             }?>
                         </p>
@@ -86,7 +86,7 @@ $v_taxa = "0";
                             <h3 class="description-header">
                                 <?php echo $pilotcode; ?>
                             </h3>
-                            <h3><small><i class="fa fa-id-card-o"></i> Callsign na Companhia</small></h3>
+                            <h3><small><i class="fa fa-id-card-o"></i> Airline Callsign</small></h3>
                         </div>
                         <!-- /.description-block -->
                     </div>
@@ -96,7 +96,7 @@ $v_taxa = "0";
                             <h3 class="description-header">
                                 <?php echo $hrssomadas; ?>
                             </h3>
-                            <h3><small><i class="fa fa-clock-o"></i> Horas Voadas</small></h3>
+                            <h3><small><i class="fa fa-clock-o"></i> Hours Flown</small></h3>
                         </div>
                         <!-- /.description-block -->
                     </div>
@@ -106,7 +106,7 @@ $v_taxa = "0";
                             <h3 class="description-header">
                                 <?php echo $pilot->totalflights; ?>
                             </h3>
-                            <h3><small><i class="fa fa-plane"></i> Voos</small></h3>
+                            <h3><small><i class="fa fa-plane"></i> Flights Flown</small></h3>
                         </div>
                         <!-- /.description-block -->
                     </div>
@@ -116,7 +116,7 @@ $v_taxa = "0";
                             <h3 class="description-header">
                                 <?php echo $userinfo->hub; ?>
                             </h3>
-                            <h3><small><i class="fa fa-map-marker"></i> Meu HUB</small></h3>
+                            <h3><small><i class="fa fa-map-marker"></i> My Hub</small></h3>
                         </div>
                         <!-- /.description-block -->
                     </div>
@@ -134,7 +134,7 @@ $v_taxa = "0";
                     <div class="col-sm-2">
                         <div class="description-block">
                             <h3 class="description-header"><img src="<?php echo $userinfo->rankimage?>" width="75%" height="auto" alt="" data-toggle="tooltip" title="<?php echo Auth::$userinfo->rank; ?>" /></h3>
-                            <h3><small><i class="fa fa-star"></i> Meu Ranking</small></h3>
+                            <h3><small><i class="fa fa-star"></i> My Rank</small></h3>
                         </div>
                         <!-- /.description-block -->
                     </div>
@@ -144,7 +144,7 @@ $v_taxa = "0";
         </div>
         <div class="box box-solid">
             <div class="box-header with-border">
-                <h3 class="box-title"><i class="fa fa-line-chart"></i> Estatísticas do <strong>Piloto</strong></h3>
+                <h3 class="box-title"><i class="fa fa-line-chart"></i> Pilot <strong>Stats</strong></h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -155,7 +155,7 @@ $v_taxa = "0";
                             <h4>
                                 <?php echo round($v_taxa); ?> fpm</h4>
 
-                            <h4><small><strong>Média</strong> de Toque</small></h4>
+                            <h4><small>Landing Rate <strong>Average</strong></small></h4>
                         </div>
                         </a>
                     </div>
@@ -168,7 +168,7 @@ $v_taxa = "0";
                                 <?php echo StatsData::getTotalPassengersPilot($userinfo->pilotid);?>
                             </h4>
 
-                            <h4><small>Passageiros <strong>Transportados</strong></small></h4>
+                            <h4><small>Passengers <strong>Carried</strong></small></h4>
                         </div>
                         </a>
                     </div>
@@ -180,7 +180,7 @@ $v_taxa = "0";
                             <h4>
                                 <?php echo StatsData::getTotalMilesPilot($userinfo->pilotid);?> <strong>NM</strong></h4>
 
-                            <h4><small>Milhas <strong>Voadas</strong></small></h4>
+                            <h4><small>Miles <strong>Flown</strong></small></h4>
                         </div>
                         </a>
                     </div>
@@ -191,7 +191,7 @@ $v_taxa = "0";
         <div class="box box-widget widget-user">
             <!-- Add the bg color to the header using any of the bg-* classes -->
             <div class="widget-user-header bg-black">
-                <h3 class="widget-user-username text-left">Local Atual <strong><i class="fa fa-map-marker"></i>
+                <h3 class="widget-user-username text-left">Current Location <strong><i class="fa fa-map-marker"></i>
                         <?php echo FltbookData::getLocation(Auth::$userinfo->pilotid)->arricao; ?></strong></h3>
                 <h3 class="widget-user-desc text-left"><small>
                         <?php
@@ -223,7 +223,7 @@ echo $page;
                         <a href="<?php echo SITE_URL;?>/index.php/Schedules">
                             <div class="small-box levanta">
                                 <div class="inner">
-                                    <h4 class="text-green text-center">Próximo <strong>voo</strong></h4>
+                                    <h4 class="text-green text-center">Next <strong>flight</strong></h4>
                                     <h4 class="text-center"><small>
                                             <?php $piloto = Auth::$pilot->pilotid;  $proximoVoo = SchedulesData::getLatestBid($piloto);
 																						 echo $proximoVoo->code . $proximoVoo->flightnum ." "."($proximoVoo->depicao <i class='fa fa-plane'></i> $proximoVoo->arricao)";?></small></h4>
@@ -239,9 +239,9 @@ echo $page;
                     <a href="<?php echo SITE_URL;?>/index.php/Schedules">
                         <div class="small-box levanta">
                             <div class="inner">
-                                <h4 class="text-red text-center">Nenhum <strong>voo</strong></h4>
+                                <h4 class="text-red text-center">No <strong>Flights</strong></h4>
 
-                                <h4 class="text-center"><small>Nenhuma reserva encontrada, clique para reservar uma</small></h4>
+                                <h4 class="text-center"><small>No bids found! Click to Bid one.</small></h4>
 
 
                             </div>
@@ -256,14 +256,14 @@ echo $page;
                 <a href="<?php echo SITE_URL;?>/index.php/Pireps/mine">
                     <div class="small-box levanta">
                         <div class="inner">
-                            <h4 class="text-black text-center">Último <strong>voo</strong></h4>
+                            <h4 class="text-black text-center">Latest <strong>Flight</strong></h4>
                             <h4 class="text-center"><small>
                                     <?php
 			if($report)
 			{ ?>
                                     <?php echo $report->code . $report->flightnum .', '. $report->depicao.' <i class="fa fa-plane"></i> '. $report->arricao; ?>
                                     <?php
-			} else { echo 'Nenhum voo encontrado!'; }
+			} else { echo 'Welcome to CrewCenter, ready for your first flight? Fly Now!'; }
 			?></small></h4>
 
 
@@ -275,8 +275,8 @@ echo $page;
             <!-- small box -->
             <div class="small-box">
                 <div class="inner">
-                    <h4 class="text-black text-center">Voo em <strong>grupo</strong> <span class="label label-success">Em Breve</span></h4>
-                    <h4 class="text-center"><small>Em breve mais um recurso para nossos pilotos, aguardem!</small></h4>
+                    <h4 class="text-black text-center">Group <strong>Flight</strong> <span class="label label-success">Soon</span></h4>
+                    <h4 class="text-center"><small>Soon another feature for our pilots, Wait!</small></h4>
 
 
                 </div>
@@ -292,7 +292,7 @@ echo $page;
                 <div class="box-header with-border">
                     <i class="fa fa-globe"></i>
 
-                    <h3 class="box-title">Mapa <strong>Avançado</strong></h3>
+                    <h3 class="box-title">Advanced <strong>Map</strong></h3>
                 </div>
 
                 <div class="body">
@@ -334,9 +334,9 @@ echo $page;
                 <div class="box-header with-border">
                     <i class="fa fa-plane"></i>
 
-                    <h3 class="box-title">Voos <strong>no momento</strong></h3>
+                    <h3 class="box-title">Live <strong>Flights</strong></h3>
                     <div class="pull-right box-tools infinite pulse animated">
-                        <span class="label label-danger">Ao vivo</span>
+                        <span class="label label-danger">Live</span>
                     </div>
                 </div>
 
@@ -344,15 +344,15 @@ echo $page;
                     <table class="table table-bordered table-hover">
                         <thead>
                             <th align="center">Airline</th>
-                            <th align="center">Voo</th>
-                            <th align="center">Piloto</th>
-                            <th align="center">Partida</th>
-                            <th align="center">Chegada</th>
+                            <th align="center">Flight #</th>
+                            <th align="center">Pilot</th>
+                            <th align="center">Departure</th>
+                            <th align="center">Arrival</th>
 														<th align="center">Status</th>
-                            <th align="center">Aeronave</th>
-														<th align="center">Progresso</th>
+                            <th align="center">Aircraft</th>
+														<th align="center">Progress</th>
 														<th align="center">Network</th>
-														<th align="center">Última Atualização</th>
+														<th align="center">Last update</th>
                         </thead>
                         <?php
 $results = ACARSData::GetACARSData();
@@ -401,7 +401,7 @@ else { echo '<span class="label label-success">Cruising</span>'; }?>
                         <?php
 		 }
 	 } else { ?>
-                            <span class="label label-danger text-center">Nenhum voo no momento!</span>
+                            <span class="label label-danger text-center">No flights! :(</span>
                         <?php
 	 }
 	 ?>
@@ -413,35 +413,35 @@ else { echo '<span class="label label-success">Cruising</span>'; }?>
     </div>
     <div class="row">
         <div class="col-md-6">
-					<div class="box box-widget widget-user">
-            <!-- Add the bg color to the header using any of the bg-* classes -->
-            <div class="widget-user-header bg-black" style="background: url('https://icrew.ariaairways.org/iCrew/images/737onground.jpg') center center;">
-							<div class="escurece">
 								<?php
 	                $pom = SchedulesData::getpilotmonth();
 									$pom2 = PilotData::getPilotData($pom);
 	                ?>
-									<div class="pull-right box-tools" style="margin-right: 10px;">
-                        <i class="fa fa-user fa-4x"></i>
-                    </div>
-              <h3 class="widget-user-username"><a href="<?php echo SITE_URL;?>/index.php/profile/view/<?php echo $pom;?>"><?php echo $pom2->firstname.' '.$pom2->lastname;?></a></h3>
-              <h5 class="widget-user-desc">Pilot of the month</h5>
-						</div>
+            <div class="box box-widget widget-user-2">
+            <!-- Add the bg color to the header using any of the bg-* classes -->
+            <div class="widget-user-header bg-yellow">
+              <div class="widget-user-image">
+                <img class="img-circle" src="<?php echo PilotData::getPilotAvatar($pom); ?>" alt="User Avatar">
+              </div>
+              <!-- /.widget-user-image -->
+              <h3 class="widget-user-username"><a href="<?php echo SITE_URL;?>/index.php/profile/view/<?php echo $pom;?>"><?php echo $pom2->firstname.' <strong>'.$pom2->lastname;?></strong></a></h3>
+              <h5 class="widget-user-desc">Pilot of the Month</h5>
+              <br>
             </div>
-          </div>
+          </div>        
             <div class="box box-solid">
                 <div class="box-header with-border" style="margin-right:10px;">
                     <i class="fa fa-exclamation"></i>
 
-                    <h3 class="box-title">NOTAMs da <strong>Companhia</strong></h3>
+                    <h3 class="box-title">Airline <strong>NOTAMs</strong></h3>
                 </div>
 
                 <div class="box-body table-responsive">
                     <table class="table table-bordered table-striped table-hover">
                         <thead>
                             <tr>
-                                <th>Data</th>
-                                <th>Nome</th>
+                                <th>Date</th>
+                                <th>Name</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
@@ -457,7 +457,7 @@ else { echo '<span class="label label-success">Cruising</span>'; }?>
                 <div class="box-header with-border">
                     <i class="fa fa-paper-plane"></i>
 
-                    <h3 class="box-title">Focus Airport</h3>
+                    <h3 class="box-title">Focus <strong>Airport</strong></h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
@@ -475,16 +475,16 @@ else { echo '<span class="label label-success">Cruising</span>'; }?>
 						$lastbids = SchedulesData::GetAllBids();
 						if (count($lastbids) > 0)
 						{
-							$departurestatus = 'Próximas';
+							$departurestatus = 'Next Flights';
 							$label_clr = 'success';
 						}
 						else {
-							$departurestatus = 'Nenhum voo';
+							$departurestatus = 'No Flights';
 							$label_clr = 'danger';
 						}
 				?>
                     <i class="fa fa-clock-o"></i>
-                    <h3 class="box-title">Partidas <strong>próximas</strong></h3>
+                    <h3 class="box-title">Upcoming <strong>Departures</strong></h3>
                     <div class="box-tools pull-right">
                         <span class="label label-<?php echo $label_clr ?> animated pulse infinite">
                             <?php echo $departurestatus?></span>
@@ -496,25 +496,25 @@ else { echo '<span class="label label-success">Cruising</span>'; }?>
                             <thead>
                                 <tr>
                                     <th>
-                                        <div align="center">Voo #</div>
+                                        <div align="center">Flight #</div>
                                     </th>
                                     <th>
-                                        <div align="center">Piloto</div>
+                                        <div align="center">Pilot</div>
                                     </th>
                                     <th>
-                                        <div align="center">Reservado em</div>
+                                        <div align="center">Slot Added on</div>
                                     </th>
                                     <th>
-                                        <div align="center">Vence em</div>
+                                        <div align="center">Slot Expires on</div>
                                     </th>
                                     <th>
-                                        <div align="center">Partida</div>
+                                        <div align="center">Departure</div>
                                     </th>
                                     <th>
-                                        <div align="center">Chegada</div>
+                                        <div align="center">Arrival</div>
                                     </th>
                                     <th>
-                                        <div align="center">Registro</div>
+                                        <div align="center">Registration</div>
                                     </th>
                                 </tr>
                             </thead>
@@ -555,15 +555,15 @@ else { echo '<span class="label label-success">Cruising</span>'; }?>
                                         <?php echo $date; ?></span></td>
                                 <td height="25" width="10%" align="center"><span>
                                         <font face="">
-                                            <?php echo '<a class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="top" title="Clique para ver informações do Aeroporto!" href="  '.SITE_URL.'/index.php/airports/get_airport?icao='.$lastbid->depicao.'">'.$lastbid->depicao.'</a>';?>
+                                            <?php echo '<a class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="top" title="Click to see more about the airport" href="  '.SITE_URL.'/index.php/airports/get_airport?icao='.$lastbid->depicao.'">'.$lastbid->depicao.'</a>';?>
                                         </font>
                                     </span></td>
                                 <td height="25" width="10%" align="center"><span>
                                         <font face="">
-                                            <?php echo '<a class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="top" title="Clique para ver informações do Aeroporto!" href='.SITE_URL.'/index.php/airports/get_airport?icao='.$lastbid->arricao.'>'.$lastbid->arricao.'</a>';?>
+                                            <?php echo '<a class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="top" title="Click to see more about the airport" href='.SITE_URL.'/index.php/airports/get_airport?icao='.$lastbid->arricao.'>'.$lastbid->arricao.'</a>';?>
                                         </font>
                                     </span></td>
-                                <td height="25" width="10%" align="center"><span><a class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="top" title="Clique para ver informações da Aeronave!" href="<?php echo SITE_URL?>/index.php/vFleetTracker/view/<?php echo '' . $lastbid->registration . ''; ?>">
+                                <td height="25" width="10%" align="center"><span><a class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="top" title="Click to see aircraft informations" href="<?php echo SITE_URL?>/index.php/vFleetTracker/view/<?php echo '' . $lastbid->registration . ''; ?>">
                                             <?php echo $lastbid->registration; ?></a></td>
                                 </tr>
                                 <?php
@@ -572,7 +572,7 @@ else { echo '<span class="label label-success">Cruising</span>'; }?>
 
                                 <div class="alert alert-danger">
                                     <strong>Oops</strong><br>
-                                    Parece que não existe nenhuma partida próxima, você quer voar? Clique <a href="<?php echo SITE_URL?>/index.php/Schedules">aqui</a> para reservar um voo! #nortesulvirtual
+                                    Looks like there's no departures coming, do you want to fly? Click <a href="<?php echo SITE_URL?>/index.php/Schedules">here</a> to book a flight! #flynortesul
                                 </div>
 
                                 <?php
@@ -592,10 +592,10 @@ else { echo '<span class="label label-success">Cruising</span>'; }?>
                 <div class="box-header with-border">
                     <i class="fa fa-plane"></i>
 
-                    <h3 class="box-title">Últimos <strong>voos</strong></h3>
+                    <h3 class="box-title">Latest <strong>PIREPs</strong></h3>
                     <div class="pull-right box-tools">
                         <a href="<?php echo SITE_URL;?>/index.php/Pireps/mine">
-                            <div class="btn btn-default btn-rounded btn-sm" title="" data-original-title="Ver os meus">
+                            <div class="btn btn-default btn-rounded btn-sm" title="" data-original-title="See mine">
                                 <i class="fa fa-eye"></i></div>
                         </a>
                     </div>
@@ -609,18 +609,19 @@ else { echo '<span class="label label-success">Cruising</span>'; }?>
                     <table class="table table-bordered table-striped table-hover">
                         <thead>
                             <tr>
-                                <th>Voo #</th>
-                                <th>Partida</th>
-                                <th>Chegada</th>
-                                <th>Duração</th>
-                                <th>Piloto</th>
+                                <th>Flight #</th>
+                                <th>Departure</th>
+                                <th>Arrival</th>
+                                <th>Duration</th>
+                                <th>Pilot</th>
                                 <th>T/D rate</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
 
-if(count($pireps) > 0)
+$vaiContar = (is_array($pireps) ? count($pireps): 0);
+if($vaiContar > 0)
 {
  foreach ($pireps as $pirep)
  {
@@ -653,7 +654,7 @@ else
             <div class="box box-widget widget-user">
                 <!-- Add the bg color to the header using any of the bg-* classes -->
                 <div class="widget-user-header">
-                    <h3 class="widget-user-username text-center">Estatísticas <strong>Mensais</strong></h3>
+                    <h3 class="widget-user-username text-center">Monthly <strong>Stats</strong></h3>
                 </div>
                 <div class="widget-icon cinza">
                     <i class="fa fa-calendar img-circle"></i>
@@ -670,7 +671,7 @@ else
             <div class="box box-widget widget-user">
                 <!-- Add the bg color to the header using any of the bg-* classes -->
                 <div class="widget-user-header">
-                    <h3 class="widget-user-username text-center">Feed de <strong>Atividades</strong></h3>
+                    <h3 class="widget-user-username text-center">Activity <strong>Feed</strong></h3>
                 </div>
                 <div class="widget-icon cinza">
                     <i class="fa fa-hourglass-start img-circle"></i>
@@ -689,31 +690,18 @@ else
 
               <div class="timeline-item">
                 <span class="time"><i class="fa fa-clock-o"></i>
-									<?php $inicio = new DateTime("18-05-2019 21:00:00"); $hoje = new DateTime(); $calcula = $inicio->diff($hoje);if($calcula->d < 1 && $calcula->y == 0){ echo "{$calcula->h} hora(s) atrás";}
-									elseif($calcula->d >= 1){echo "{$calcula->d} dia(s) atrás";}elseif($calcula->m >= 1){echo "{$calcula->m} mes(es) atrás";}elseif($calcula->y >= 1){echo "{$calcula->y} ano(s) atrás";}?></span>
+									<?php $inicio = new DateTime("2019-11-15 00:00:00"); $hoje = new DateTime(); $calcula = $inicio->diff($hoje);if($calcula->d < 1 && $calcula->y == 0){ echo "{$calcula->h} hour(s) ago";}
+									elseif($calcula->d >= 1){echo "{$calcula->d} day(s) ago";}elseif($calcula->m >= 1){echo "{$calcula->m} month(s) ago";}elseif($calcula->y >= 1){echo "{$calcula->y} year(s) ago";}?></span>
 
-                <h3 class="timeline-header">Início</h3>
+                <h3 class="timeline-header">Start</h3>
 
                 <div class="timeline-body">
-                  Nosso feed de atividades começou agora, todos os acontecimentos da NorteSul Virtual serão mostrados aqui!
+                 Our activity feed has just started, all events will be registered here.
                 </div>
               </div>
             </li>
           </ul>
 				</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="box box-widget widget-user">
-                <!-- Add the bg color to the header using any of the bg-* classes -->
-                <div class="widget-user-header">
-                    <h3 class="widget-user-username text-center">Servidor do <strong>Discord</strong></h3>
-                </div>
-                <div class="box-footer">
-                    <iframe src="https://discordapp.com/widget?id=522815385830031401&theme=dark" width="100%" height="500" allowtransparency="true" frameborder="0"></iframe>
                 </div>
             </div>
         </div>

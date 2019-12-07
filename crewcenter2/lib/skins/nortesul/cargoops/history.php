@@ -2,24 +2,24 @@
     <div class="col-md-12">
       <div class="box box-solid">
       <div class="box-header with-border">
-      <h3 class="box-title"><strong>Meus</strong> voos de carga</h3>
+      <h3 class="box-title">My <strong>Cargo Flights</strong></h3>
       </div>
       <div class="box-body">
         <table class="table">
           <tr>
-          <th>Voo#</th>
-          <th>Decolagem</th>
-          <th>Pouso</th>
-          <th>Aeronave</th>
-          <th>Duração</th>
+          <th>Flight#</th>
+          <th>Departure</th>
+          <th>Arrival</th>
+          <th>Aircraft</th>
+          <th>Duration</th>
           <th>Landing Rate</th>
-          <th>Data</th>
+          <th>Date</th>
           </tr>
           <?php
           if(!$pireps)
           {
           ?>
-          <tr><td colspan="7">Nenhum voo de carga encontrado!</td></tr>
+          <tr><td colspan="7"><span class="alert alert-danger">Oops, looks like you haven't flown any freight yet, Don't worry, we'll have something to show once you have flown!</span></td></tr>
           <?php
           }
           else

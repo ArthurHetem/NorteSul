@@ -34,22 +34,61 @@ Maximum amount of days a contract is available before it gets replaced (if nobod
 <tr>
 <td valign="top" style="font-weight:bold">Prefered Airport 1 (ICAO):</td>
 <td><input type="text" name="prefaptA" maxlength="4" style="text-transform:uppercase;" value="<?php echo $setting->prefaptA;?>" />
-<br />
-You may choose up to 3 prefered airports. There is a 50% chance that a newly created contract departs at one of them. OPTIONAL
 </td>
 </tr>
 <tr>
 <td valign="top" style="font-weight:bold">Prefered Airport 2 (ICAO):</td>
 <td><input type="text" name="prefaptB" maxlength="4" style="text-transform:uppercase;" value="<?php echo $setting->prefaptB;?>" />
-<br />
-You may choose up to 3 prefered airports. There is a 50% chance that a newly created contract departs at one of them. OPTIONAL
 </td>
 </tr>
 <tr>
 <td valign="top" style="font-weight:bold">Prefered Airport 3 (ICAO):</td>
 <td><input type="text" name="prefaptC" maxlength="4" style="text-transform:uppercase;" value="<?php echo $setting->prefaptC;?>" />
-<br />
-You may choose up to 3 prefered airports. There is a 50% chance that a newly created contract departs at one of them. OPTIONAL
+</td>
+</tr>
+<tr>
+<td valign="top" style="font-weight:bold">Prefered Airport 4 (ICAO):</td>
+<td><input type="text" name="prefaptD" maxlength="4" style="text-transform:uppercase;" value="<?php echo $setting->prefaptD;?>" />
+</td>
+</tr>
+<tr>
+<td valign="top" style="font-weight:bold">Prefered Airport 5 (ICAO):</td>
+<td><input type="text" name="prefaptE" maxlength="4" style="text-transform:uppercase;" value="<?php echo $setting->prefaptE;?>" />
+</td>
+</tr>
+<tr>
+<td valign="top" style="font-weight:bold">Prefered Airport 6 (ICAO):</td>
+<td><input type="text" name="prefaptF" maxlength="4" style="text-transform:uppercase;" value="<?php echo $setting->prefaptF;?>" />
+</td>
+</tr>
+<tr>
+<td valign="top" style="font-weight:bold">Prefered Airport 7 (ICAO):</td>
+<td><input type="text" name="prefaptG" maxlength="4" style="text-transform:uppercase;" value="<?php echo $setting->prefaptG;?>" />
+</td>
+</tr>
+<tr>
+<td valign="top" style="font-weight:bold">Prefered Airport 8 (ICAO):</td>
+<td><input type="text" name="prefaptH" maxlength="4" style="text-transform:uppercase;" value="<?php echo $setting->prefaptH;?>" />
+</td>
+</tr>
+<tr>
+<td valign="top" style="font-weight:bold">Prefered Airport 9 (ICAO):</td>
+<td><input type="text" name="prefaptI" maxlength="4" style="text-transform:uppercase;" value="<?php echo $setting->prefaptI;?>" />
+</td>
+</tr>
+<tr>
+<td valign="top" style="font-weight:bold">Prefered Airport 10 (ICAO):</td>
+<td><input type="text" name="prefaptJ" maxlength="4" style="text-transform:uppercase;" value="<?php echo $setting->prefaptJ;?>" />
+</td>
+</tr>
+<tr>
+<td valign="top" style="font-weight:bold">Prefered Airport 11 (ICAO):</td>
+<td><input type="text" name="prefaptK" maxlength="4" style="text-transform:uppercase;" value="<?php echo $setting->prefaptK;?>" />
+</td>
+</tr>
+<tr>
+<td valign="top" style="font-weight:bold">Prefered Airport 12 (ICAO):</td>
+<td><input type="text" name="prefaptL" maxlength="4" style="text-transform:uppercase;" value="<?php echo $setting->prefaptK;?>" />
 </td>
 </tr>
 <tr>

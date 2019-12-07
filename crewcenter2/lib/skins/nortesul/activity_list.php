@@ -19,17 +19,17 @@ foreach($allactivities as $activity) {
            
     $link_title = '';
     $link_href = '';
-    if($activity->type == ACTIVITY_NEW_PIREP) {
+    if($activity->type == "ACTIVITY_NEW_PIREP") {
         
         $link_href = url('/pireps/view/'.$activity->refid);
         $link_title = 'Ver PIREP';
         
-    } elseif($activity->type == ACTIVITY_PROMOTION) {
+    } elseif($activity->type == "ACTIVITY_PROMOTION") {
         
         $link_href = 'http://twitter.com/#!/'.Config::get('TWITTER_AIRLINE_ACCOUNT').'/status/'.$activity->refid;
         $link_title = '<font color="white">Ver Tweet</font>';
         
-    } elseif($activity->type == ACTIVITY_NEW_PILOT) {
+    } elseif($activity->type == "ACTIVITY_NEW_PILOT") {
         $link_href = url('/profile/view/'.$activity->pilotid);
         $link_title = '<b>Ver Perfil</b>';
     }
@@ -37,7 +37,7 @@ foreach($allactivities as $activity) {
 
         <li>
               <i class="fa fa-clock-o bg-<?php
-        if($activity->type == ACTIVITY_PROMOTION) {
+        if($activity->type == "ACTIVITY_PROMOTION") {
             echo 'red';
         }else{echo "gray";} 
         ?>"></i>
@@ -48,7 +48,7 @@ foreach($allactivities as $activity) {
                 <h3 class="timeline-header"><?php
         /*  Example, if it's a twitter status update (ACTIVITY_TWITTER),
             then show an image (in this case, a small Twitter icon) */
-        if($activity->type == ACTIVITY_PROMOTION) {
+        if($activity->type == "ACTIVITY_PROMOTION") {
             echo 'Ranks bot';
         }
         
@@ -56,7 +56,7 @@ foreach($allactivities as $activity) {
 		<?php
         /*  Example, if it's a twitter status update (ACTIVITY_TWITTER),
             then show an image (in this case, a small Twitter icon) */
-        if($activity->type == ACTIVITY_JUMPSEAT) {
+        if($activity->type == "ACTIVITY_JUMPSEAT") {
             echo 'Jumpseat monitor bot';
         }
         
@@ -64,7 +64,7 @@ foreach($allactivities as $activity) {
 		<?php
         /*  Example, if it's a twitter status update (ACTIVITY_TWITTER),
             then show an image (in this case, a small Twitter icon) */
-        if($activity->type == ACTIVITY_NEW_PIREP) {
+        if($activity->type == "ACTIVITY_NEW_PIREP") {
             echo 'Flight Operations bot';
         }
         
@@ -72,7 +72,7 @@ foreach($allactivities as $activity) {
 		<?php
         /*  Example, if it's a twitter status update (ACTIVITY_TWITTER),
             then show an image (in this case, a small Twitter icon) */
-        if($activity->type == ACTIVITY_NEW_PILOT) {
+        if($activity->type == "ACTIVITY_NEW_PILOT") {
             echo 'Membership monitor bot';
         }
         

@@ -1,7 +1,7 @@
 <section class="content-header bg-white espaca">
     <div class="pull-right"><i class="fa fa-bell-o fa-4x text-muted"></i></div>
-    <h1><strong>Linha do tempo</strong></h1>
-    <h1><small>Comunicação | NorteSul Virtual &copy;
+    <h1>Airline <strong>Timeline</strong></h1>
+    <h1><small>Communications | NorteSul Virtual &copy;
             <?php echo date("Y");?></small>
         <br>
 </section>
@@ -10,12 +10,12 @@
         <div class="col-md-6">
             <div class="box box-solid">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Sobre <strong>nós</strong></h3>
+                    <h3 class="box-title">About <strong>Us</strong></h3>
                 </div>
                 <div class="box-body">
                     <blockquote>
                         <div class="pull-right"><i class="fa fa-quote-left fa-2x text-muted"></i></div>
-                        <p>Bem-vindo a <span class="fonte">NorteSul</span> Virtual,
+                        <p>Welcome to <span class="fonte">NorteSul</span> Virtual
                     </blockquote>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                         <!-- timeline time label -->
                         <li class="time-label">
                             <span class="bg-gray">
-                                Setembro/2018
+                                September/2018
                             </span>
                         </li>
                         <!-- /.timeline-label -->
@@ -42,7 +42,7 @@
                             <i class="fa fa-clock-o bg-blue"></i>
                             <div class="timeline-item">
 
-                                <h3 class="timeline-header">Nosso website e dominio foram adquiridos.</h3>
+                                <h3 class="timeline-header">Website and domains bought.</h3>
                             </div>
                         </li>
                         <!-- END timeline item -->
@@ -50,7 +50,7 @@
                         <!-- timeline time label -->
                         <li class="time-label">
                             <span class="bg-gray">
-                                Outubro/2018
+                                October/2018
                             </span>
                         </li>
                         <!-- /.timeline-label -->
@@ -69,7 +69,7 @@
                         <!-- timeline time label -->
                         <li class="time-label">
                             <span class="bg-gray">
-                                Novembro/2018
+                                November/2018
                             </span>
                         </li>
                         <!-- /.timeline-label -->
@@ -80,7 +80,7 @@
                             <i class="fa fa-clock-o bg-blue"></i>
                             <div class="timeline-item">
 
-                                <h3 class="timeline-header">smartCARS adquirido e integrado com o CrewCenter v1.</h3>
+                                <h3 class="timeline-header">smartCARS acquired and integrated with CrewCenter v1.</h3>
                             </div>
                         </li>
                         <!-- END timeline item -->
@@ -91,7 +91,7 @@
                             <i class="fa fa-clock-o bg-blue"></i>
                             <div class="timeline-item">
 
-                                <h3 class="timeline-header">A NorteSul Virtual foi anunciada ao publico.</h3>
+                                <h3 class="timeline-header">NorteSul Virtual has been announced to the public.</h3>
                             </div>
                         </li>
                         <!-- END timeline item -->
@@ -99,7 +99,7 @@
                         <!-- timeline time label -->
                         <li class="time-label">
                             <span class="bg-gray">
-                                Dezembro/2018
+                                December/2018
                             </span>
                         </li>
                         <!-- /.timeline-label -->
@@ -110,7 +110,7 @@
                             <i class="fa fa-clock-o bg-blue"></i>
                             <div class="timeline-item">
 
-                                <h3 class="timeline-header">Aeronaves transladadas das respectivas fábricas para nosso HUB SBGL.</h3>
+                                <h3 class="timeline-header">Aircrafts transported to our SBGL HUB.</h3>
                             </div>
                         </li>
                         <!-- END timeline item -->
@@ -121,7 +121,7 @@
                             <i class="fa fa-clock-o bg-blue"></i>
                             <div class="timeline-item">
 
-                                <h3 class="timeline-header">Inauguração da NorteSul Virtual.</h3>
+                                <h3 class="timeline-header">NorteSul Virtual inauguration.</h3>
                             </div>
                         </li>
                         <!-- END timeline item -->
@@ -129,7 +129,7 @@
                         <!-- timeline time label -->
                         <li class="time-label">
                             <span class="bg-gray">
-                                Futuro
+                                Future
                             </span>
                         </li>
                         <!-- /.timeline-label -->
@@ -140,7 +140,7 @@
                             <i class="fa fa-clock-o bg-blue"></i>
                             <div class="timeline-item">
 
-                                <h3 class="timeline-header">Seja parte de nossa história <small class="text-muted">#nortesulvirtual</small></h3>
+                                <h3 class="timeline-header">Be part of our history <small class="text-muted">#nortesulvirtual</small></h3>
                             </div>
                         </li>
                         <!-- END timeline item -->

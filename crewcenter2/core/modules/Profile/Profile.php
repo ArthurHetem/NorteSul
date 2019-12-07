@@ -101,7 +101,6 @@ class Profile extends CodonModule
             $this->set('allawards', AwardsData::getPilotAwards($pilot->pilotid));
 
             $this->render('pilot_public_profile.tpl');
-            $this->render('pireps_viewall.tpl');
 	}
 
 

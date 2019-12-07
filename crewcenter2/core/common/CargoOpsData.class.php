@@ -8,10 +8,10 @@ class CargoOpsData extends CodonModule
 		return DB::get_row($sql);
 	}
 
-	public static function SaveSettings($id, $cargocode, $indextext, $contractnumber, $minexp, $maxexp, $prefaptA, $prefaptB, $prefaptC, $cronjobactive)
+	public static function SaveSettings($id, $cargocode, $indextext, $contractnumber, $minexp, $maxexp, $prefaptA, $prefaptB, $prefaptC, $prefaptD, $prefaptE, $prefaptF, $prefaptG, $prefaptH, $prefaptI, $prefaptJ, $prefaptK, $prefaptL, $cronjobactive)
 	    {
 			
-        $query = "UPDATE cargosettings SET cargocode='$cargocode', indextext='$indextext', contractnumber='$contractnumber', minexp='$minexp', maxexp='$maxexp', prefaptA='$prefaptA', prefaptB='$prefaptB', prefaptC='$prefaptC', cronjobactive='$cronjobactive' WHERE id='$id'";
+        $query = "UPDATE cargosettings SET cargocode='$cargocode', indextext='$indextext', contractnumber='$contractnumber', minexp='$minexp', maxexp='$maxexp', prefaptA='$prefaptA', prefaptB='$prefaptB', prefaptC='$prefaptC', prefaptD='$prefaptD', prefaptE='$prefaptE', prefaptF='$prefaptF', prefaptG='$prefaptG', prefaptH='$prefaptH', prefaptI='$prefaptI', prefaptJ='$prefaptJ', prefaptK='$prefaptK', prefaptL='$prefaptL', cronjobactive='$cronjobactive' WHERE id='$id'";
 		
         DB::query($query);
 		
@@ -219,11 +219,9 @@ public static function EditAirport($length_ft, $icao)
 			$aircraft = self::getcontractaircraft();
 			$aircraftid = $aircraft->id;
 			$depicao = self::getranddepicao($aircraft->runway);
-			$depicao = strtoupper($depicao);
 			$mindistance = $aircraft->mindistance;
 			$maxdistance = $aircraft->range - 400;
 			$arricao = self::getsuitablearricao($depicao, $mindistance, $maxdistance, $aircraft->runway);
-			$arricao = strtoupper($arricao);
 			$cargoload = round(($aircraft->maxcargo * rand(5,10)) / 10);
 			$freighttype = self::getrandomcargotype($aircraft->cargosize);
 			$cargotype = $freighttype->id;
@@ -294,7 +292,7 @@ return $flight->flightnum;
 		 public static function getranddepicao($runwaylength)
 		{ 
 $depapt = new stdClass();
-$randlor = rand(1,6);
+$randlor = rand(1,18);
 $settings = self::getsettings();
 
 if($randlor == '1' && trim($settings->prefaptA) != '')
@@ -344,6 +342,87 @@ LEFT JOIN cargorunways r ON a.icao = r.airport_ident
 WHERE r.length_ft > '$runwaylength' ORDER BY RAND() LIMIT 1";
 $depapt = DB::get_row($sql);
 }
+}
+elseif($randlor == '4' && trim($settings->prefaptD) != '')
+{
+$selectedapt = $settings->prefaptD;
+$runwaycheck = self::checkrunwayforaircraft($selectedapt);
+ if($runwaycheck->length_ft > $runwaylength)
+ {
+$depapt->icao = $selectedapt;
+ }
+}
+elseif($randlor == '5' && trim($settings->prefaptE) != '')
+{
+$selectedapt = $settings->prefaptE;
+$runwaycheck = self::checkrunwayforaircraft($selectedapt);
+ if($runwaycheck->length_ft > $runwaylength)
+ {
+$depapt->icao = $selectedapt;
+ }
+}
+elseif($randlor == '6' && trim($settings->prefaptF) != '')
+{
+$selectedapt = $settings->prefaptF;
+$runwaycheck = self::checkrunwayforaircraft($selectedapt);
+ if($runwaycheck->length_ft > $runwaylength)
+ {
+$depapt->icao = $selectedapt;
+ }
+}
+elseif($randlor == '7' && trim($settings->prefaptG) != '')
+{
+$selectedapt = $settings->prefaptG;
+$runwaycheck = self::checkrunwayforaircraft($selectedapt);
+ if($runwaycheck->length_ft > $runwaylength)
+ {
+$depapt->icao = $selectedapt;
+ }
+}
+elseif($randlor == '8' && trim($settings->prefaptH) != '')
+{
+$selectedapt = $settings->prefaptH;
+$runwaycheck = self::checkrunwayforaircraft($selectedapt);
+ if($runwaycheck->length_ft > $runwaylength)
+ {
+$depapt->icao = $selectedapt;
+ }
+}
+elseif($randlor == '9' && trim($settings->prefaptI) != '')
+{
+$selectedapt = $settings->prefaptI;
+$runwaycheck = self::checkrunwayforaircraft($selectedapt);
+ if($runwaycheck->length_ft > $runwaylength)
+ {
+$depapt->icao = $selectedapt;
+ }
+}
+elseif($randlor == '10' && trim($settings->prefaptJ) != '')
+{
+$selectedapt = $settings->prefaptJ;
+$runwaycheck = self::checkrunwayforaircraft($selectedapt);
+ if($runwaycheck->length_ft > $runwaylength)
+ {
+$depapt->icao = $selectedapt;
+ }
+}
+elseif($randlor == '11' && trim($settings->prefaptK) != '')
+{
+$selectedapt = $settings->prefaptK;
+$runwaycheck = self::checkrunwayforaircraft($selectedapt);
+ if($runwaycheck->length_ft > $runwaylength)
+ {
+$depapt->icao = $selectedapt;
+ }
+}
+elseif($randlor == '12' && trim($settings->prefaptL) != '')
+{
+$selectedapt = $settings->prefaptL;
+$runwaycheck = self::checkrunwayforaircraft($selectedapt);
+ if($runwaycheck->length_ft > $runwaylength)
+ {
+$depapt->icao = $selectedapt;
+ }
 }
 else
 {

@@ -1,7 +1,7 @@
 <section class="content-header bg-white espaca">
     <div class="pull-right"><i class="fa fa-sun-o fa-4x text-muted fa-spin"></i></div>
-    <h1><strong>Sala</strong> de Meteorologia</h1>
-    <h1><small>Operações de voo | NorteSul Virtual &copy;
+    <h1><strong>WX</strong> Briefing Room</h1>
+    <h1><small>Flight Operations | NorteSul Virtual &copy;
             <?php echo date("Y");?></small>
         <br>
 </section>
@@ -17,9 +17,9 @@
                   <form action="<?php echo url('/WTHR/metar');?>" method="post">
         			<table id="tabledlist" class="tablesorter table table-hover">
         				<tbody><tr>
-        					<td style="vertical-align: middle;">Insira um ICAO</td>
+        					<td style="vertical-align: middle;">Insert ICAO</td>
         					<td style="vertical-align: middle;"><input type="text" name="icao" class="form-control" required="required" onchange="javascript:this.value=this.value.toUpperCase();"></td>
-        					<td style="vertical-align: middle;"><input type="submit" name="myform" value="Buscar WX atual" class="btn btn-rounded btn-primary" style="text-transform: uppercase; vertical-align: middle;"></td>
+        					<td style="vertical-align: middle;"><input type="submit" name="myform" value="Get Current WXS" class="btn btn-rounded btn-primary" style="text-transform: uppercase; vertical-align: middle;"></td>
         				</tr>
         			</tbody></table>
                 </div>
@@ -31,7 +31,7 @@
             <div class="box box-solid">
                 <div class="box-header with-border">
                   <i class="fa fa-eye"></i>
-                    <h3 class="box-title">METAR <strong>codificado</strong></h3>
+                    <h3 class="box-title">RAW <strong>WX Data</strong></h3>
                 </div>
                 <div class="box-body">
                   <?php echo $metar; ?>
@@ -50,25 +50,25 @@
         <div class="col-md-6">
             <div class="box box-solid">
                 <div class="box-header with-border">
-                    <h3 class="box-title"><strong>Operação</strong></h3>
+                    <h3 class="box-title">Airport <strong>WX Condition</strong></h3>
                 </div>
                 <div class="box-body">
                   <?php
                   switch ($flightrules){
     case 'LIFR':
-      echo '<h3><span class="label label-danger">FECHADO</span></h3> <br> Operações suspensas devido a condições climáticas extremas';
+      echo '<h3><span class="label label-danger">CLOSED</span></h3> <br> Operations suspended due to extreme weather conditions';
       break;
     case 'IFR':
-      echo '<h3><span class="label label-success">ABERTO</span></h3> <br> Operações V F R suspensas devido visibilidade ruim, o aeroporto está operando somente I F R';
+      echo '<h3><span class="label bg-maroon">OPEN</span></h3> <br> V F R operations are suspended due to low visibility, the airport is operating only I F R';
       break;
     case 'MVFR':
-      echo '<h3><span class="label label-success">ABERTO</span></h3> <br> Operações Marginal V F R, solicite liberação Special V F R e I F R';
+      echo '<h3><span class="label label-warning">OPEN</span></h3> <br> Marginal V F R Operations, request Special V F R and I F R';
       break;
     case 'VFR':
-      echo '<h3><span class="label label-success">ABERTO</span></h3> <br> V F R e I F R estão operacionais';
+      echo '<h3><span class="label label-success">OPEN</span></h3> <br> V F R and I F R are operationals';
       break;
     default:
-      echo '<h3>Insira um <span class="label label-default">ICAO</span></h3> <br> Nenhum ICAO inserido';
+      echo '<h3>Insert a <span class="label label-default">ICAO</span></h3> <br>No ICAO inserted';
       break;
   } ?>
                 </div>
@@ -80,7 +80,7 @@
             <div class="box box-solid">
                 <div class="box-header with-border">
                   <i class="fa fa-code"></i>
-                    <h3 class="box-title">METAR <strong>decodificado</strong></h3>
+                    <h3 class="box-title">Decoded <strong>WX</strong></h3>
                 </div>
                 <div class="box-body">
                   <table id="tabledlist" class="tablesorter table table-hover">
@@ -89,15 +89,15 @@
               					<td><?php echo $stationid;?> (<?php echo $stationname;?>/<?php echo $stationcountry ;?>)</td>
               				</tr>
                       <tr>
-              					<td><span class="label label-default">Observação feita em:</span></td>
+              					<td><span class="label label-default">Observation Time:</span></td>
               					<td><?php echo $time;?></td>
               				</tr>
                       <tr>
-              					<td><span class="label label-default">Direção do vento:</span></td>
+              					<td><span class="label label-default">Wind Direction:</span></td>
               					<td><?php echo $winddir;?> &deg; / <?php echo $windspd;?> kts</td>
               				</tr>
                       <tr>
-              					<td><span class="label label-default">Condições do céu:</span></td>
+              					<td><span class="label label-default">Sky Condition:</span></td>
               					<td><?php
               							if(!$skycondition3 OR !$skycondition4)
               							{
@@ -110,15 +110,15 @@
               						?></td>
               				</tr>
                       <tr>
-              					<td><span class="label label-default">Visibilidade:</span></td>
+              					<td><span class="label label-default">Visibility:</span></td>
               					<td><?php echo $visibility.$sky1;?> Miles</td>
               				</tr>
                       <tr>
-              					<td><span class="label label-default">Temperatura:</span></td>
+              					<td><span class="label label-default">Temperature:</span></td>
               					<td><?php echo $temperature.$sky1;?>° C</td>
               				</tr>
                       <tr>
-              					<td><span class="label label-default">Altímetro:</span></td>
+              					<td><span class="label label-default">Altimeter:</span></td>
               					<td><?php echo $altimeter;?> inHg</td>
               				</tr>
               				</tbody></table>
@@ -129,7 +129,7 @@
             <div class="box box-solid">
                 <div class="box-header with-border">
                   <i class="fa fa-file"></i>
-                    <h3 class="box-title">Cartas <strong>Aéreas</strong></h3>
+                    <h3 class="box-title">Available <strong>AirCharts</strong></h3>
                 </div>
                 <div class="box-body">
                   <table id="tabledlist" class="tablesorter table table-hover">
@@ -140,7 +140,7 @@
 
                 if(!$charts)
                   {
-                    echo 'Nenhuma Carta Encontrada';
+                    echo 'No Charts Available';
                   }
                 else
                   {
@@ -175,9 +175,9 @@
           <div class="box box-solid">
               <div class="box-header with-border">
                 <i class="fa fa-globe"></i>
-                  <h3 class="box-title">WX <strong>map</strong></h3>
+                  <h3 class="box-title">WX <strong>Map</strong></h3>
                   <div class="pull-right box-tools infinite pulse animated">
-                      <span class="label label-danger">Ao vivo</span>
+                      <span class="label label-danger">Live</span>
               </div>
               <div class="box-body">
                 <iframe width="100%" height="670px" src="https://embed.windy.com/embed2.html?lat=<?php echo $lat; ?>&lon=<?php echo $lng; ?>&zoom=6&level=surface&overlay=wind&menu=&message=true&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=-23.630&detailLon=-46.632&metricWind=kt&metricTemp=%C2%B0C&radarRange=-1" frameborder="0"></iframe>

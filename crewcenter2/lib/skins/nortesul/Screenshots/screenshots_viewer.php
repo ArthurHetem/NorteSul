@@ -19,8 +19,8 @@ $screenshots = ScreenshotsData::getpagnated($pagination->getLimitSql());
 ?>
 <section class="content-header bg-white espaca">
     <div class="pull-right"><i class="fa fa-picture-o fa-4x text-muted"></i></div>
-    <h1>Centro de <strong>screenshots</strong></h1>
-    <h1><small>Utilidades | NorteSul Virtual &copy;
+    <h1>Crew<strong>Shot &trade;</strong></h1>
+    <h1><small>Utilities | NorteSul Virtual &copy;
             <?php echo date("Y");?></small>
         <br>
 </section>
@@ -31,7 +31,7 @@ $screenshots = ScreenshotsData::getpagnated($pagination->getLimitSql());
           <!-- Add the bg color to the header using any of the bg-* classes -->
           <div class="widget-user-header bg-white">
               <h3 class="widget-user-username text-center"><strong>Screenshots</strong></h3>
-              <h3 class="widget-user-desc text-center"><small>As melhores das melhores!</small></h3>
+              <h3 class="widget-user-desc text-center"><small>The best of the best!</small></h3>
               <h3 class="widget-user-desc text-center">
               <?php
               if(Auth::LoggedIn())
@@ -39,10 +39,10 @@ $screenshots = ScreenshotsData::getpagnated($pagination->getLimitSql());
                       if(PilotGroups::group_has_perm(Auth::$usergroups, ACCESS_ADMIN))
                       {
                           echo '<form method="link" action="'.SITE_URL.'/index.php/screenshots/approval_list">
-                              <button class="btn-rounded btn btn-warning" type="submit"><i class="fa fa-cog"></i> Administrar screenshots</button></form><br />';
+                              <button class="btn-rounded btn btn-warning" type="submit"><i class="fa fa-cog"></i> Admin</button></form><br />';
                       }
                       echo '<form method="link" action="'.SITE_URL.'/index.php/screenshots/upload">
-                      <button class="btn-rounded btn btn-success" type="submit"><i class="fa fa-cloud-upload"></i> Enviar minha</button></form></td>';
+                      <button class="btn-rounded btn btn-success" type="submit"><i class="fa fa-cloud-upload"></i> Upload Mine</button></form></td>';
                    }
                    ?>
               </h3>

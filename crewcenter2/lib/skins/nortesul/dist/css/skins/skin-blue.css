@@ -3,7 +3,7 @@
  * ----------
  */
 .skin-blue .main-header .navbar {
-  background-image: linear-gradient(to top, #00c0ef, #00c6c0, #4ac26d, #adaf10, #ff851b);
+  background: linear-gradient(180deg, rgba(31,87,175,1) 0%, rgba(0,172,99,1) 50%, rgba(255,202,0,1) 100%);
 }
 .skin-blue .main-header .navbar .nav > li > a {
   color: #ffffff;
@@ -43,7 +43,7 @@
   }
 }
 .skin-blue .main-header .logo {
-  background-image: linear-gradient(to top, #00c0ef, #00c6c0, #4ac26d, #adaf10, #ff851b);
+  background: linear-gradient(180deg, rgba(31,87,175,1) 0%, rgba(0,172,99,1) 50%, rgba(255,202,0,1) 100%);
   color: #ffffff;
   border-bottom: 0 solid transparent;
 }

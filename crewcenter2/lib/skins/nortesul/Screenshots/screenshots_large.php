@@ -13,8 +13,8 @@ $pilot = PilotData::getPilotData($screenshot->pilot_id);
 ?>
 <section class="content-header bg-white espaca">
     <div class="pull-right"><i class="fa fa-picture-o fa-4x text-muted"></i></div>
-    <h1>Centro de <strong>screenshots</strong></h1>
-    <h1><small>Utilidades | NorteSul Virtual &copy;
+    <h1>Crew<strong>Shot &trade;</strong></h1>
+    <h1><small>Utilities | NorteSul Virtual &copy;
             <?php echo date("Y");?></small>
         <br>
 </section>
@@ -42,7 +42,7 @@ $pilot = PilotData::getPilotData($screenshot->pilot_id);
                           <form method="post" action="<?php echo SITE_URL ?>/index.php/Screenshots" >
                           <input type="hidden" name="action" value="last" />
                           <input type="hidden" name="id" value="<?php echo $previous->id; ?>" />
-                          <input class="mail btn btn-info waves-effect" type="submit" value="Anterior">
+                          <input class="mail btn btn-info waves-effect" type="submit" value="Previous">
                           </form>
                           <?php
                               }
@@ -59,7 +59,7 @@ $pilot = PilotData::getPilotData($screenshot->pilot_id);
                           <form method="post" action="<?php echo SITE_URL ?>/index.php/Screenshots" >
                           <input type="hidden" name="action" value="last" />
                           <input type="hidden" name="id" value="<?php echo $next->id; ?>" />
-                          <input class="mail btn btn-info waves-effect" type="submit" value="Próxima">
+                          <input class="mail btn btn-info waves-effect" type="submit" value="Next">
                           </form>
                           <?php
                               }
@@ -70,10 +70,10 @@ $pilot = PilotData::getPilotData($screenshot->pilot_id);
             <td colspan="3"><hr></td>
         </tr>
                   <tr>
-                      <td width="70%"valign="top"><h4>Enviado por <?php echo $pilot->firstname.' '.$pilot->lastname.' - '.PilotData::GetPilotCode($pilot->code, $pilot->pilotid); ?></h4></td>
+                      <td width="70%"valign="top"><h4>Uploaded by <?php echo $pilot->firstname.' '.$pilot->lastname.' - '.PilotData::GetPilotCode($pilot->code, $pilot->pilotid); ?></h4></td>
 
                       <td align="center">
-                          <b>Interações:</b> <?php echo $screenshot->rating; ?>
+                          <b>Ratings:</b> <?php echo $screenshot->rating; ?>
                       </td>
                       <td  width="15%" valign="bottom">
                           <?php
@@ -81,35 +81,35 @@ $pilot = PilotData::getPilotData($screenshot->pilot_id);
                               {
                               $boost = ScreenshotsData::check_boost(Auth::$userinfo->pilotid, $screenshot->id);
                               if($boost->total > 0)
-                              {echo 'Já interagiu, obrigado!';}
+                              {echo 'Rated!';}
                               else
                               {
                               ?>
                               <form method="post" action="<?php echo SITE_URL ?>/index.php/Screenshots/addkarma">
                               <input type="hidden" name="id" value="<?php echo $screenshot->id; ?>" />
-                              <input class="btn btn-warning" type="submit" value="Interagir"></form>
+                              <input class="btn btn-success" type="submit" value="Rate"></form>
                               <?php
                               }
                               }
                               else
-                              {echo 'Faça login para interagir'; }
+                              {echo 'Login to rate'; }
                               ?>
                       </td>
                   </tr>
                   <tr>
                       <td>
-                          <b>Data do envio:</b> <?php echo date('d/m/Y', strtotime($screenshot->date_uploaded)); ?><br />
-                          <b>Descrição:</b> <?php
+                          <b>Date Submitted:</b> <?php echo date('d/m/Y', strtotime($screenshot->date_uploaded)); ?><br />
+                          <b>Description:</b> <?php
                                                   if(!$screenshot->file_description)
-                                                  {echo 'Nenhuma descrição disponível';}
+                                                  {echo 'No description available';}
                                                   else
                                                   {echo $screenshot->file_description;} ?>
                           <br /></td>
-                      <td align="center"><b>Visualizações:</b> <?php echo $screenshot->views; ?></td>
+                      <td align="center"><b>Views:</b> <?php echo $screenshot->views; ?></td>
                       <td>
                             <?php if(PilotGroups::group_has_perm(Auth::$usergroups, ACCESS_ADMIN))
-                                  { ?><a class="btn btn-danger" href="<?php echo SITE_URL ?>/index.php/Screenshots/delete_screenshot?id=<?php echo $screenshot->id; ?>">Deletar screenshot</a><?php } else {} ?>
-                          <a href="<?php echo SITE_URL ?>/index.php/Screenshots" class="btn btn-warning">Voltar à galeria</a>
+                                  { ?><a class="btn btn-danger" href="<?php echo SITE_URL ?>/index.php/Screenshots/delete_screenshot?id=<?php echo $screenshot->id; ?>">Delete screenshot</a><?php } else {} ?>
+                          <a href="<?php echo SITE_URL ?>/index.php/Screenshots" class="btn btn-info">Return to Gallery</a>
                       </td>
                   </tr>
                   <tr>
@@ -124,11 +124,11 @@ $pilot = PilotData::getPilotData($screenshot->pilot_id);
                       <td colspan="3"><hr /></td>
                   </tr>
                   <tr>
-                      <td colspan="2"><h4>Comentários:</h4></td>
-                      <td>Postado por:</td>
+                      <td colspan="2"><h4>Comments:</h4></td>
+                      <td>Posted by:</td>
                   </tr>
                   <?php if(!$comments)
-                      {echo '<tr><td colspan="3">Nenhum comentário encontrado</td></tr>';}
+                      {echo '<tr><td colspan="3">No Comments</td></tr>';}
                       else
                       {
                           echo '<tr><td colspan="3"><hr class="comment" /></td></tr>';
@@ -148,7 +148,7 @@ $pilot = PilotData::getPilotData($screenshot->pilot_id);
                   <?php if(Auth::LoggedIn())
                   { ?>
                   <tr>
-                      <td colspan="3"><h4>Adicionar comentário:</h4></td>
+                      <td colspan="3"><h4>Add a comment:</h4></td>
                   </tr>
                   <tr>
                       <td colspan="3">
@@ -158,7 +158,7 @@ $pilot = PilotData::getPilotData($screenshot->pilot_id);
                               <br /><br />
                               <input type="hidden" name="id" value="<?php echo $screenshot->id; ?>" />
                               <input type="hidden" name="action" value="add_comment" />
-                                  <input  type="submit" class="btn btn-info" value="Adicionar">
+                                  <input  type="submit" class="btn btn-info" value="Add">
                           </form>
                       </td>
                   </tr>
@@ -166,7 +166,7 @@ $pilot = PilotData::getPilotData($screenshot->pilot_id);
                   else
                   { ?>
                   <tr>
-                      <td colspan="3">Faça login para comentar!</td>
+                      <td colspan="3">Login to comment!</td>
                   </tr>
                   <?php } ?>
               </table>

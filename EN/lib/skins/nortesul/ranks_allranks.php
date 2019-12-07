@@ -23,9 +23,7 @@
                         <h4 class="text-center">
                             <?php echo $rank->rank; ?>
                         </h4>
-                        <a href="#" class="d-block figure">
-                            <img src="<?php echo $rank->rankimage; ?>" alt="">
-                        </a>
+                            <img src="<?php echo $rank->rankimage; ?>" class="mx-auto d-block" alt="">
                         <hr>
                         <h3><span class="d-block mb-1 text-center">Pilots in this rank: <strong><?php 
 {

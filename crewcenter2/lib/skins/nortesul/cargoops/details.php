@@ -1,4 +1,3 @@
-<section class="content container-fluid">
     <div class="row">
     <div class="col-md-12">
             <!-- Widget: user widget style 1 --
@@ -9,7 +8,7 @@
               <div class="widget-user-image">
                 <h2 class="text-center"><span class="label label-success"><?php echo $contract->code.''.$contract->flightnum; ?></span></h2>
                 <h3 class="text-center"><?php echo $contract->depicao; ?> <i class="fa fa-plane animated pulse infinite"></i> <?php echo $contract->arricao; ?></h3>
-                <h3 class="text-center"><?php setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+                <h3 class="text-center"><?php setlocale(LC_TIME, 'en_US', 'en_US.utf-8', 'en_US.utf-8', 'english');
 date_default_timezone_set('America/Sao_Paulo'); echo ucwords(strftime("%d %B %Y"));?></h3>
               </div>
               <div class="box-footer bg-black">
@@ -39,10 +38,10 @@ date_default_timezone_set('America/Sao_Paulo'); echo ucwords(strftime("%d %B %Y"
           </div>
 		<div class="row">
       <br>
-		   <div class="col-xs-12">
+		   <div class="col-md-12 col-xs-12">
           <div class="box box-solid">
             <div class="box-header with-border">
-              <h3 class="box-title"><strong>Detalhes</strong> do Contrato</h3>
+              <h3 class="box-title">Contract <strong>Details</strong></h3>
             </div>
             <!-- /.box-header -->
 			<div class="box-body table-responsive">
@@ -50,39 +49,39 @@ date_default_timezone_set('America/Sao_Paulo'); echo ucwords(strftime("%d %B %Y"
                 <table class="table table-hover">
                    <tbody>
                        <tr>
-                       <td>Voo:</td>
+                       <td>Flight #:</td>
                        <td><?php echo $contract->code.''.$contract->flightnum; ?></td>
                        </tr>
                        <tr>
-                       <td>Aeronave:</td>
+                       <td>Aircraft:</td>
                        <td><?php echo $contract->aircraftname.' ('.$contract->aircraftreg.')'; ?></td>
                        </tr>
                        <tr>
-                       <td>Decolagem:</td>
+                       <td>Departure:</td>
                        <td><?php echo $contract->depicao.' ('.$contract->depcountry.')'; ?></td>
                        </tr>
                        <tr>
-                       <td>Decolagem Prevista:</td>
+                       <td>Estimated Departure:</td>
                        <td><?php echo $contract->deptime; ?></td>
                        </tr>
                        <tr>
-                       <td>Pouso:</td>
+                       <td>Arrival:</td>
                        <td><?php echo $contract->arricao.' ('.$contract->arrcountry.')'; ?></td>
                        </tr>
                        <tr>
-                       <td>Pouso Previsto:</td>
+                       <td>Estimated Arrival:</td>
                        <td><?php echo $contract->arrtime; ?></td>
                        </tr>
                        <tr>
-                       <td>Distância prevista (Circulo perfeito):</td>
+                       <td>Estimated Distance (Perfect Circle):</td>
                        <td><?php echo $contract->distance; ?>NM</td>
                        </tr>
                        <tr>
-                       <td>Carga (Estimada):</td>
+                       <td>Cargo (Estimated):</td>
                        <td><?php echo $contract->cargoname; ?> (<?php echo $contract->cload; ?>lbs)</td>
                        </tr>
                        <tr>
-                       <td>Contrato expira em:</td>
+                       <td>Contract Expires:</td>
                        <td><?php echo $contract->expiredate; ?></td>
                        </tr>
                        <tr>
@@ -90,12 +89,12 @@ date_default_timezone_set('America/Sao_Paulo'); echo ucwords(strftime("%d %B %Y"
                        <td><input type="number" class="form-group" style="text-transform:uppercase;" name="altitude" value="<?php echo $contract->altitude;?>" /></td>
                        </tr>
                        <tr>
-                       <td>Rota:</td>
+                       <td>Route:</td>
                        <td><textarea name="flightroute" cols="50" rows="3"></textarea></td>
                        </tr>
                        <tr>
                        <td></td>
-                       <td><input type="submit" class="btn btn-success" value="Voar!"></td>
+                       <td><input type="submit" class="btn btn-success" value="Flight!"></td>
                        </tr>
                 </tbody>
               </table>

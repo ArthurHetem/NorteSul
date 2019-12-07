@@ -16,7 +16,7 @@
 		echo '<li class="mb-3">';
         echo '<a href="'.SITE_URL.'/index.php/PopUpNews/popupnewsitem/'.$item->id.'" class="d-flex">';
         echo '<div class="text">';
-        echo '<span class="small text-uppercase date">'.date(DATE_FORMAT, $item->postdate).'</span>';
+        echo '<span class="small text-uppercase date">'.date("d/m/Y", $item->postdate).'</span>';
         echo '<h4 style="color:#fff;">'.$item->subject.'</h4>';
         echo '</div>';
         echo '</a>';

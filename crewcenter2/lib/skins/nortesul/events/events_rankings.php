@@ -11,8 +11,8 @@
 ?>
 <section class="content-header bg-white espaca">
     <div class="pull-right"><i class="fa fa-plane fa-4x text-muted"></i></div>
-    <h1><strong>Centro</strong> de Eventos</h1>
-    <h1><small>Diretoria de Eventos | NorteSul Virtual &copy;
+    <h1><strong>Events</strong> Center</h1>
+    <h1><small>Events Department | NorteSul Virtual &copy;
             <?php echo date("Y");?></small>
         <br>
 </section>
@@ -21,19 +21,19 @@
 			<div class="col-xs-12">
           <div class="box box-solid">
             <div class="box-header with-border">
-              <h3 class="box-title">Estatísticas dos Eventos</h3>
+              <h3 class="box-title">Events Statistics</h3>
             </div>
 			<div class="box-body">
 <center>
     <table width="100%" class="table table-bordered">
         <tr>
-            <td>Piloto</td>
-            <td># de Eventos Atendido</td>
+            <td>Pilots</td>
+            <td># of Events</td>
         </tr>
     <?php
     if(!$rankings)
     {
-        echo '<tr><td colspan="2">Sem Ranks Disponiveis</td></tr>';
+        echo '<tr><td colspan="2">No stats</td></tr>';
     }
     else
     {
@@ -48,7 +48,7 @@
     </table>
 </center>
 <hr />
-<a href="<?php echo SITE_URL; ?>/index.php/events"><b>Voltar a Lista de Eventos</b></a>
+<a href="<?php echo SITE_URL; ?>/index.php/events" class="btn btn-info"><b><i class="fa fa-arrow-left"></i> Return to Event List</b></a>
 </div>
 </div>
 </div>

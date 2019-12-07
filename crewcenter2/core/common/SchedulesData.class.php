@@ -20,7 +20,7 @@
 class SchedulesData extends CodonData {
 
     /**
-     * A generic find function for schedules. As parameters, do:
+     * A generic find function for schedules. As parameters, do:z
      * 
      * $params = array( 's.depicao' => 'value',
      *					's.arricao' => array ('multiple', 'values'),
@@ -223,7 +223,7 @@ class SchedulesData extends CodonData {
      * @return array Schedule details
      *
      */
-    public static function getScheduleDetailed($id) {
+    public function getScheduleDetailed($id) {
         $schedules = self::findSchedules(array('s.id' => $id));
         if (!$schedules) return false;
 

@@ -1,11 +1,11 @@
 <div class="alert alertsuccess">
-<h4><i class="icon fa fa-check"></i> Reservado!</h4>
-Voo reservado com sucesso
+<h4><i class="icon fa fa-check"></i> Flight Booked!</h4>
+Bid added with success
 </div>
 <script type='text/javascript'>$(window).load(function(){
     Swal({
-  title: 'Voo Reservado!',
-  text: 'Bora Voar chefe! #flynortesul',
+  title: 'Bid Added!',
+  text: 'Let&apos;s Fly, Boss! #flynortesul',
   type: 'success',
   heightAuto: true
 })

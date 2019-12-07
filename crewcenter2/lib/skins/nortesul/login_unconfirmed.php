@@ -1,11 +1,11 @@
 <?php if(!defined('IN_PHPVMS') && IN_PHPVMS !== true) { die(); } ?>
-<div class="login-box">
-  <div class="login-logo">
-    <img src="<?php echo SITE_URL?>/lib/skins/nortesul/img/AviancaCrew.png" alt="logo" class="logo-default" width="256px" height="144px" />
+<div class="login-box pulse animated">
+<div class="login-logo">
+    <img src="<?php echo SITE_URL?>/lib/skins/nortesul/img/crew_logo.png" alt="logo" class="logo-default" style="height: 80%; width: 80%;" />
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg alert alert-danger">ERRO!  Seu registro ainda não foi checado por um administrador, tente novamente mais tarde. Você receberá um e-mail quando seu registro for aceito.</p>
+    <p class="login-box-msg alert alert-danger">Oops!  Your record has not yet been checked by an administrator, please try again later. You will receive an email when your registration is accepted.</p>
   </div>
   <!-- /.login-box-body -->
 </div>

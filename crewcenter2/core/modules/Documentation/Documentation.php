@@ -12,4 +12,4 @@ class Documentation extends CodonModule
 	$this->render('documentation/hb.php');	
 	}	
 }	
-?>	
+?>

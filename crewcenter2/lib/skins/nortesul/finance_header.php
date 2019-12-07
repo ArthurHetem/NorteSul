@@ -1,14 +1,14 @@
 <?php if(!defined('IN_PHPVMS') && IN_PHPVMS !== true) { die(); } ?>
 <br /><div style="float: right;">
 <form action="<?php echo url('/finances/viewreport'); ?>" method="get">
-<strong>Selecionar Reporte: </strong>
+<strong>Select Report: </strong>
 <?php
 $years = StatsData::GetYearsSinceStart();
 $months = StatsData::GetMonthsSinceStart();
 $months = array_reverse($months, true);
 ?>
 <select class="form-control" name="type">
-	<option value="" <?php echo ($_GET['type']=='')?'selected="selected"':''?>>Ver Resumo</option>
+	<option value="" <?php echo ($_GET['type']=='')?'selected="selected"':''?>>See summary</option>
 <?php
 /*
  * Get the years since the VA started
@@ -22,7 +22,7 @@ foreach($years as $yearname=>$timestamp)
 		$selected = '';
 	
 ?>
-	<option value="<?php echo 'y'.$timestamp?>" <?php echo $selected?>>Anual: <?php echo $yearname?></option>
+	<option value="<?php echo 'y'.$timestamp?>" <?php echo $selected?>>Yearly: <?php echo $yearname?></option>
 	<?php
 }
 
@@ -39,11 +39,11 @@ foreach($months as $monthname=>$timestamp)
 		$selected = '';
 		
 ?>
-	<option value="<?php echo 'm'.$timestamp?>" <?php echo $selected?>>Mensal: <?php echo $monthname?></option>
+	<option value="<?php echo 'm'.$timestamp?>" <?php echo $selected?>>Monthly: <?php echo $monthname?></option>
 <?php
 }
 ?>
 </select>
-<input class="btn btn-block btn-flat btn-info" type="submit" name="submit" value="Ver Reporte" />
+<input class="btn btn-block btn-flat btn-info" type="submit" name="submit" value="See Report" />
 </form>
 </div><br />

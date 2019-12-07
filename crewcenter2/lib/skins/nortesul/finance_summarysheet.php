@@ -27,21 +27,21 @@
 <section class="content container-fluid">
 			<div class="row">
 			<div class="col-xs-12">
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Finanças</h3>
+          <div class="box box-solid">
+            <div class="box-header with-border">
+              <h3 class="box-title"><b>Finances</b></h3>
             </div>
 			<div class="box-body">
 			<?php Template::Show('finance_header.php'); ?>
 <table class="table table-bordered">
 
 	<tr class="balancesheet_header" style="text-align: center">
-		<td align="left">Mês</td>
-		<td align="center">Voos</td>
-		<td align="left">Lucro</td>
-		<td align="center" nowrap>Pagamento de Pilotos</td>
-		<td align="left">Despesas</td>
-		<td align="left">Combustivel</td>
+		<td align="left">Month</td>
+		<td align="center">Flights</td>
+		<td align="left">Profit</td>
+		<td align="center" nowrap>Pilots payment</td>
+		<td align="left">Expenses</td>
+		<td align="left">Fuel</td>
 		<td align="center">Total</td>
 	</tr>
 	
@@ -105,7 +105,7 @@ foreach ($allfinances as $month)
 	
 </table>
 
-<h3>Gráfico</h3>
+<h3>Graph</h3>
 <div align="center">
 <?php
 /*

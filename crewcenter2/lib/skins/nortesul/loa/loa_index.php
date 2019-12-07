@@ -1,7 +1,7 @@
 <section class="content-header bg-white espaca">
     <div class="pull-right"><i class="fa fa-deaf fa-4x text-muted"></i></div>
-    <h1><strong>Pedido de afastamento</strong></h1>
-    <h1><small>Recursos humanos | NorteSul Virtual &copy;
+    <h1>Leave Of <strong>Absence</strong></h1>
+    <h1><small>Human Resources Department | NorteSul Virtual &copy;
             <?php echo date("Y");?></small>
         <br>
 </section>
@@ -10,31 +10,31 @@
 			<div class="col-md-12">
           <div class="box box-solid">
             <div class="box-header with-border">
-              <h3 class="box-title">Nossa política de afastamento</h3>
+              <h3 class="box-title">Our LOA <strong>Policy</strong></h3>
             </div>
 			<div class="box-body">
 				<ol>
-					<li>O/A piloto(a) deve ser membro da NorteSul Virtual por no mínimo três (3) meses para ter direito a:
+					<li>The pilot must be a member of NorteSul Virtual for at least three (3) months to be entitled to:
 					<ol>
-						<li><b>Licença prêmio</b>, que é a licença garantida aos pilotos por motivos de qualquer natureza. A licença é um privilégio, não um direito, tendo uma duração de não mais de 180 dias, cabendo ao RH a autorização ou não da licença.</li>
-						<li><b>Licença militar</b>, que é destinada aos pilotos que ao completarem 18 anos, de acordo com as leis brasileiras foram convocados à servir a nação. Nós da NorteSul, em gratidão pelo serviço àqueles que, com afinco decidiram servir as Forças Armadas concedemos esta licença. Tempo máximo da licença: 365 dias.</li>
+						<li><b>Premium license</b>, which is the license granted to riders for reasons of any kind. The license is a privilege, not a right, having a duration of no more than 180 days, whether or not the HR authorize the license.</li>
+						<li><b>Military license</b>, which is intended for pilots who at the age of 18, in accordance with Brazilian law were called to serve the nation. We at NorteSul, in gratitude for serving those who have decided to serve the Armed Forces, have granted this license. Maximum license time: 365 days.</li>
 					</ol>
-					<li>O piloto pode retornar as atividades a qualquer momento.</li>
-					<li>Durante o afastamento, o piloto tem liberdade de acessar o CrewCenter.</li>
-					<li>Quando autorizado o afastamento, o piloto não pode pedir extensão do tempo, tendo que esperar o término do mesmo, para requisitar novamente.</li>
+					<li>The pilot can return to activities at any time.</li>
+					<li>During the leave, the pilot is free to access CrewCenter.</li>
+					<li>When the clearance is authorized, the pilot cannot request time extension, having to wait for the time to finish, to request again.</li>
 				</li>
 				</ol>
 				<br>
 				<blockquote>
-                <p>Nome: <?php echo Auth::$userinfo->firstname;?> <?php echo Auth::$userinfo->lastname;?></p>
+                <p>Name: <?php echo Auth::$userinfo->firstname;?> <?php echo Auth::$userinfo->lastname;?></p>
 								<p>Rank: <?php echo Auth::$userinfo->rank;?></p>
-								<p>ID de piloto: <?php echo PilotData::GetPilotCode(Auth::$userinfo->code, Auth::$userinfo->pilotid) ?></p>
+								<p>Pilot ID: <?php echo PilotData::GetPilotCode(Auth::$userinfo->code, Auth::$userinfo->pilotid) ?></p>
 								<p>HUB: <?php echo Auth::$userinfo->hub;?></p>
 								<p>Email: <?php echo Auth::$userinfo->email;?></p>
-								<p>Status da conta: <?php if (Auth::$userinfo->retired = 3){
-									echo '<span class="label label-success"><i class="fa fa-check"></i> Ativa</span>';
+								<p>Account Status: <?php if (Auth::$userinfo->retired = 3){
+									echo '<span class="label label-success"><i class="fa fa-check"></i> Active</span>';
 								} else{
-									echo '<span class="label label-warning"><i class="fa fa-exclamation-triangle"></i> Verificar com RH</span>';
+									echo '<span class="label label-warning"><i class="fa fa-exclamation-triangle"></i> Check with HR</span>';
 								}
 								?></p>
               </blockquote>
@@ -44,23 +44,23 @@
 						<div class="col-md-12">
 								<div class="box box-solid">
 									<div class="box-header with-border">
-										<h3 class="box-title">Formulário de afastamento</h3>
+										<h3 class="box-title">Leave <strong>Form</strong></h3>
 									</div>
 						<div class="box-body">
 <div class="alert alert-danger">
 	<p>
-		Detalhes sobre seu afastamento serão enviados para seu email. Tenha certeza de que seu email está correto no sistema.
+	Details regarding your LOA will be e-mailed to you. Please make sure you have the correct e-mail address, if not, change it from the Settings page.
 	</p>
 </div>
 <hr />
 <table class="table table-bordered table-striped table-hover">
 	<form method="post" action="<?php echo url('/loa/submit');?>">
 	<tr>
-		<td><strong>Data de inicio: </strong></td>
-		<td><?php echo date("d/m/Y"); ?></td>
+		<td><strong>Application filed on: </strong></td>
+		<td><input class="form-control" disabled value="<?php echo date("d/m/Y"); ?>"></td>
 	</tr>
 	<tr>
-		<td><strong>Data de término: </strong></td>
+		<td><strong>On leave until: </strong></td>
 		<td>
 
 			<select class="form-control" name="day">
@@ -70,18 +70,18 @@
 			</select>
 
 			<select class="form-control" name="month">
-			<option value='1'>Janeiro</option>
-			<option value='2'>Fevereiro</option>
-			<option value='3'>Março</option>
-			<option value='4'>Abril</option>
-			<option value='5'>Maio</option>
-			<option value='6'>Junho</option>
-			<option value='7'>Julho</option>
-			<option value='8'>Agosto</option>
-			<option value='9'>Setembro</option>
-			<option value='10'>Outubro</option>
-			<option value='11'>Novembro</option>
-			<option value='12'>Dezembro</option>
+			<option value='1'>January</option>
+			<option value='2'>February</option>
+			<option value='3'>March</option>
+			<option value='4'>April</option>
+			<option value='5'>May</option>
+			<option value='6'>June</option>
+			<option value='7'>July</option>
+			<option value='8'>August</option>
+			<option value='9'>September</option>
+			<option value='10'>October</option>
+			<option value='11'>November</option>
+			<option value='12'>December</option>
 			</select>
 
 			<select class="form-control" name='year'>
@@ -96,11 +96,11 @@
 		</td>
 	</tr>
 	<tr>
-		<td>Motivo</td>
+		<td>Reason for Leave</td>
 		<td><textarea class="form-control" name="reason" cols="25" rows="5"></textarea></td>
 	</tr>
 	<tr>
-		<td colspan=2 align="right"><input type="submit" class="btn btn-rounded btn-info" value="Enviar!"/></td>
+		<td colspan=2 align="right"><input type="submit" class="btn btn-rounded btn-info" value="Submit!"/></td>
 	</tr>
 </table>
 

@@ -379,6 +379,7 @@ class Mail extends CodonModule {
     
     public function GetNotificationMail() {
         if (!Auth::LoggedIn()) {
+     
         } else {
             $item = MailData::checkformail();
             $items = $item->total;

@@ -1,5 +1,5 @@
 <table class="table">
-	<tr><th width="10%"><h4>Matrícula</h4></th><th width="20%"><h4>Nome</h4></th><th><h4>Rank</h4></th><th><h4>Landing Rate</h4></th></tr>
+	<tr><th width="10%"><h4>Pilot ID</h4></th><th width="20%"><h4>Name</h4></th><th><h4>Rank</h4></th><th><h4>Landing Rate</h4></th></tr>
 	<?php
 	if(!$bestlandingalltimes)
 		{
@@ -19,7 +19,7 @@
 					<tr>
 						<td><?php echo $pilotcode ;?></td>
 						<td><?php echo $bestlandingalltime->firstname.' '.$bestlandingalltime->lastname ;?></td>
-						<td><img src="<?php echo $rank ;?>"></td><td><?php echo $bestlandingalltime->landingrate ;?> /FPS</td>
+						<td><img src="<?php echo $rank ;?>"></td><td><?php echo $bestlandingalltime->landingrate ;?> FPM</td>
 					</tr>
 	<?php
 				}

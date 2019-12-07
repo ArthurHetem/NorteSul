@@ -1,10 +1,10 @@
 <table class="table">
-	<tr><th width="10%"><h4>Matrícula</h4></th><th width="20%"><h4>Nome</h4></th><th><h4>Rank</h4></th><th><h4>Distância</h4></th></tr>
+	<tr><th width="10%"><h4>Pilot ID</h4></th><th width="20%"><h4>Name</h4></th><th><h4>Rank</h4></th><th><h4>Distance</h4></th></tr>
 	<?php
 	if(!$bestdistancemonths)
 		{
 	?>
-			<tr><td align="center" colspan="4" class="label label-danger text-center">Nenhum reporte este mês!</td></tr>
+			<tr><td align="center" colspan="4" class="label label-danger text-center">No reports this month!</td></tr>
 	<?php
 		}
 	else

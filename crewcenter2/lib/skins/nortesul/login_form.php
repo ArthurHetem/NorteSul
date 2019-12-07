@@ -9,12 +9,12 @@
     <form action="<?php echo url('/login');?>" method="post" class="form-horizontal form-bordered form-control-borderless">
       <div class="input-group">
 	  <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-	          <input type="email" name="email" class="form-control" placeholder="Email ou ID de Piloto">
+	          <input type="email" name="email" class="form-control" placeholder="Email or Pilot ID">
       </div>
 	  <hr>
 	  <div class="input-group">
 	  <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
-	          <input type="password" name="password" class="form-control" placeholder="Senha">
+	          <input type="password" name="password" class="form-control" placeholder="Password">
       </div>
       <div class="row bege-espacado">
         <div class="col-xs-8">
@@ -27,17 +27,17 @@
         <div class="col-xs-4">
 		  <input type="hidden" name="redir" value="index.php/profile" />
 		  <input type="hidden" name="action" value="login" />
-          <button type="submit" name="submit" value="submit" class="btn btn-default btn-block btn-rounded" style="margin-top: 10px;"><i class="fa fa-power-off"></i> Logar</button>
+          <button type="submit" name="submit" value="submit" class="btn btn-default btn-block btn-rounded" style="margin-top: 10px;"><i class="fa fa-power-off"></i> Login</button>
         </div>
         <!-- /.col -->
       </div>
 	  <hr>
 	  <div class="form-group">
 	<p class="h6 text-center">
-	<a href="<?php echo SITE_URL; ?>/index.php/login/forgotpassword" id="forget-password" class="text-muted">Esqueceu a Senha?</a>
+	<a href="<?php echo SITE_URL; ?>/index.php/login/forgotpassword" id="forget-password" class="text-muted">Forgot the Password?</a>
 			</p>
 			<div class="col-xs-12 text-center">
-                    <small>NorteSul Virtual © <?php echo date("Y");?>. Todos os direitos reservados.</small>
+                    <small>NorteSul Virtual © <?php echo date("Y");?>. All rights reserved.</small>
                 </div>
 				</div>
     </form>

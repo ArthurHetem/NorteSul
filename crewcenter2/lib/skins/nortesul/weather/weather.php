@@ -1,13 +1,13 @@
 <section class="content-header bg-white espaca">
     <div class="pull-right"><i class="fa fa-sun-o fa-4x text-muted fa-spin"></i></div>
-    <h1><strong>Sala</strong> de Meteorologia</h1>
-    <h1><small>Operações de voo | NorteSul Virtual &copy;
+    <h1><strong>WX</strong> Briefing Room</h1>
+    <h1><small>Flight Operations | NorteSul Virtual &copy;
             <?php echo date("Y");?></small>
         <br>
 </section>
 <section class="content container-fluid">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-5">
             <div class="box box-solid">
                 <div class="box-header with-border">
                   <i class="fa fa-cloud"></i>
@@ -17,22 +17,22 @@
                   <form action="<?php echo url('/WTHR/metar');?>" method="post">
         			<table id="tabledlist" class="tablesorter table table-hover">
         				<tbody><tr>
-        					<td style="vertical-align: middle;">Insira um ICAO</td>
+        					<td style="vertical-align: middle;">Insert ICAO</td>
         					<td style="vertical-align: middle;"><input type="text" name="icao" class="form-control" required="required" onchange="javascript:this.value=this.value.toUpperCase();"></td>
-        					<td style="vertical-align: middle;"><input type="submit" name="myform" value="Buscar WX atual" class="btn btn-rounded btn-primary" style="text-transform: uppercase; vertical-align: middle;"></td>
+        					<td style="vertical-align: middle;"><input type="submit" name="myform" value="Get Current WX" class="btn btn-rounded btn-primary" style="text-transform: uppercase; vertical-align: middle;"></td>
         				</tr>
         			</tbody></table>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-5">
             <div class="box box-solid">
                 <div class="box-header with-border">
                   <i class="fa fa-floppy-o"></i>
-                    <h3 class="box-title">Local <strong>Atual</strong></h3>
+                    <h3 class="box-title">Actual <strong>Location</strong></h3>
                 </div>
                 <div class="box-body">
-                  <h3 class="text-green">Seu local ACARS atual<p><small>
+                  <h3 class="text-green">Your current ACARS location<p><small>
                   <?php
   $localAtual = FltbookData::getLocation(Auth::$userinfo->pilotid)->arricao;
 $metar = $_POST['metar'];

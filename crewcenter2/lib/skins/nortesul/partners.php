@@ -1,6 +1,6 @@
 <section class="content-header bg-white espaca">
     <div class="pull-right"><i class="fa fa-list fa-4x text-muted"></i></div>
-    <h1><strong>Créditos e parceiros</strong></h1>
+    <h1>Credits and <strong>partners</strong></h1>
     <h1><small>NorteSul Virtual &copy;
             <?php echo date("Y");?></small>
         <br>
@@ -13,7 +13,7 @@
               </div>
                 <div class="box-footer">
                   <div class="callout callout-info">
-            <p>A NorteSul Virtual foi criada com <i class="fa fa-heart text-red"></i> para todos seus tripulantes, e teria sido impossível sem a colaboração das pessoas abaixo</p>
+            <p>NorteSul Virtual was craftew with <i class="fa fa-heart text-red"></i> for all of your crew members, and would have been impossible without the collaboration of the people below</p>
           </div>
           <div class="attachment-block clearfix">
         <img class="attachment-img" src="<?php echo SITE_URL; ?>/lib/skins/nortesul/img/parceiros/logo_blue_bg.svg" alt="phpvms">
@@ -22,9 +22,7 @@
           <h4 class="attachment-heading"><a href="https://phpvms.net">phpVMS</a></h4>
 
           <div class="attachment-text">
-            phpVMS é a gratuita e mais popular plataforma de gerenciamento de virtual airlines, com suporte a diversos softwares ACARS
-              (kACARS, FSACARS, XAcars, FS Flight Keeper, e FSPassengers),
-              com sistema financeiro completo, entregando assim, uma operação realistica de uma companhia aérea
+          phpVMS is the free and most popular virtual airlines management platform with support for various ACARS software. (kACARS, FSACARS, XAcars, FS Flight Keeper, and FSPassengers), with complete financial system, thus delivering a realistic operation of an airline.
           </div>
           <!-- /.attachment-text -->
         </div>
@@ -37,8 +35,7 @@
       <h4 class="attachment-heading"><a href="https://vatsim.net.br">VATSIM Brasil</a></h4>
 
       <div class="attachment-text">
-        VATSIM ou Virtual Air Traffic Simulation Network, é uma organização sem fins lucrativos,
-         que opera uma rede mundial dedicada a  voos simulados atráves da internet
+      VATSIM, or Virtual Air Traffic Simulation Network, is a non-profit organization, which operates a worldwide network dedicated to simulated internet flights
       </div>
       <!-- /.attachment-text -->
     </div>
@@ -51,7 +48,7 @@
   <h4 class="attachment-heading"><a href="#">AHsystems</a></h4>
 
   <div class="attachment-text">
-    Tudo desta pagina, desde as cores até os layouts foram especialmente criados pela AHsystems
+  Everything of this page, from colors to layouts, has been specially created by AHsystems
   </div>
   <!-- /.attachment-text -->
 </div>
@@ -64,9 +61,9 @@
 <h4 class="attachment-heading"><a href="https://www.youtube.com/channel/UCQxVH1hysBzmLQlqAMoJdzg/featured">Flight Sim Host</a></h4>
 
 <div class="attachment-text">
-  Simulação aérea de forma prática e objetiva. Regras e procedimentos [IFR] e [VFR]. Aprendendo a mexer no 737 NGX [FMC, MCP, Overhead, Radios, Painéis]. Sempre uma Live ou um Mini tutorial ensinando noções básicas e avançadas deste maravilhoso Addon que é o  PMDG 737 NGX.
-Simulação de voo Prática e Objetiva. levada a sério / Flight Simulation taken seriously
-Tão real quanto possível / As Real As It Gets
+Flight simulation in a practical and objective way. Rules and procedures [IFR] and [VFR]. Learning to fiddle with the 737 NGX [FMC, MCP, Overhead, Radios, Dashboards]. Always a Live or Mini tutorial teaching the basics and advanced of this wonderful Addon which is the PMDG 737 NGX.
+Flight Simulation Practice and Objective. taken seriously / Flight Simulation taken seriously
+As Real As Possible / As Real As It Gets
 </div>
 <!-- /.attachment-text -->
 </div>

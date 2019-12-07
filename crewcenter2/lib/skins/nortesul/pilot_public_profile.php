@@ -19,8 +19,8 @@
       <div class="box box-widget widget-user">
       <!-- Add the bg color to the header using any of the bg-* classes -->
       <div class="widget-user-header bg-black">
-        <h3 class="widget-user-username"><strong>Caixa</strong> de Contato</h3>
-        <h4 class="widget-user-desc"><span class="label label-success">Piloto Verificado <i class="fa fa-check"></i></span></h4>
+        <h3 class="widget-user-username">Contact <strong>Box</strong></h3>
+        <h4 class="widget-user-desc"><span class="label label-success">Verified Pilot <i class="fa fa-check"></i></span></h4>
         <div class="widget-icon cinza2" style="margin-top: 30px; border: solid 2px white;">
                   <i class="fa fa-comments img-circle" style="border: none;"></i>
               </div>
@@ -29,13 +29,13 @@
           <?php if(Auth::$userinfo->pilotcode == $pilotcode){
 
           }else{?>
-          <a href="#" class="levanta btn-block btn-lg">
+          <a href="http://localhost/nortesul/crewcenter2/index.php/Mail/newmail" class="levanta btn-block btn-lg">
             <div class="widget-icon cinza2" style="border: solid 2px white; color:white; margin-left:0px;">
                       <i class="fa fa-envelope img-circle" style="border: none;"></i>
-                  </div><span class="btn btn-lg text-center" style="text-decoration: none; color:#888888;">Enviar iMail</span></a>
+                  </div><span class="btn btn-lg text-center" style="text-decoration: none; color:#888888;">Send iMail</span></a>
         <?php }?>
         <div class="text-center text-muted">
-        ~ Membro desde ~<br>
+        ~ Member since ~<br>
         <?php echo date(DATE_FORMAT, strtotime($pilot->joidate));?>
       </div>
       </div>
@@ -44,49 +44,48 @@
     <div class="col-md-8">
       <div class="box box-solid">
           <div class="box-header with-border">
-              <h3 class="box-title"><strong>Detalhes</strong> do Piloto</h3>
+              <h3 class="box-title">Pilot <strong> Details</strong></h3>
           </div>
           <div class="box-body">
             <table class="table table-striped">
               <tr>
-                <td align="center"><p>Rank na Companhia: <?php echo $pilot->rank;?></p></td>
+                <td align="center"><p><b>Airline Rank:</b> <?php echo $pilot->rank;?></p></td>
               </tr>
               <tr>
-                <td align="center"><p>Aeroporto Base: <?php echo $pilot->hub;?></p></td>
+                <td align="center"><p><b>Base Airport:</b> <?php echo $pilot->hub;?></p></td>
               </tr>
               <tr>
-                <td align="center"><p>IVAO ID: <?php
+                <td align="center"><p><b>IVAO ID:</b> <?php
                 $ivaoId = PilotData::GetFieldValue($pilot->pilotid, 'IVAO VID');
                     if($ivaoId < 1){
-                        echo "<span class='text-muted'>Não Linkado</span>";
+                        echo "<span class='text-muted'>Not Linked</span>";
                     } else {
                         echo "<span class='text-gren'>".$ivaoId."</span>";
                     }?></p></td>
               </tr>
               <tr>
-                <td align="center"><p>VATSIM ID: <?php
+                <td align="center"><p><b>VATSIM ID:</b> <?php
                 $vatsimId = PilotData::GetFieldValue($pilot->pilotid, 'VATSIM ID');
                     if($vatsimId < 1){
-                        echo "<span class='text-muted'>Não Linkado</span>";
+                        echo "<span class='text-muted'>Not Linked</span>";
                     } else {
                         echo "<span class='text-gren'>".$vatsimId."</span>";
                     }?></p></td>
               </tr>
               <tr>
-                <td align="center"><p>Origem do Piloto: <img src="<?php echo Countries::getCountryImage($pilot->location);?>"/> (<?php echo $pilot->location;?>)</p></td>
+                <td align="center"><p><b>Pilot Origin:</b> <span class="flag-icon flag-icon-<?php echo strtolower($pilot->location);?>"></span><span style="margin-left:5px;"><?php echo Countries::getCountryName($pilot->location);?></span></p></td>
               </tr>
               <tr>
-                <td align="center"><p>Pagamento Total: <?php echo $pilot->totalpay;?></p></td>
+                <td align="center"><p><b>Total Pay:</b> <?php echo $pilot->totalpay;?></p></td>
               </tr>
               <tr>
-                <td align="center"><p>Status: <?php if ($pilot->retired = 3){
-									echo '<span class="label label-success"><i class="fa fa-check"></i> Ativo</span>';
+                <td align="center"><p><b>Status:</b> <?php if ($pilot->retired = 3){
+									echo '<span class="label label-success"><i class="fa fa-check"></i> Active</span>';
 								} else{
-									echo '<span class="label label-warning"><i class="fa fa-exclamation-triangle"></i> Indisponível</span>';
+									echo '<span class="label label-warning"><i class="fa fa-exclamation-triangle"></i> Inactive</span>';
 								}
 								?></p></td>
               </tr>
-              <?php var_dump($pilot);?>
             </table>
           </div>
       </div>
@@ -96,47 +95,33 @@
     <div class="col-md-12">
       <div class="box box-solid">
         <div class="box-header with-border">
-          <h3 class="box-title"><strong>Informações</strong> Adicionais</h3>
+          <h3 class="box-title">Additional <strong>Info</strong></h3>
         </div>
         <div class="box-body">
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
-              <li class="active"><a href="#tab_1" data-toggle="tab"><?php $contaMedalha = count($allawards); echo '<span class="label label-primary">' .$contaMedalha.'</span> Awards Recebidas';?> </a></li>
-              <li><a href="#tab_2" data-toggle="tab">Tab 2</a></li>
+              <li class="active"><a href="#tab_1" data-toggle="tab"><?php $contaMedalha = count($allawards); echo '<span class="label label-primary">' .$contaMedalha.'</span> Awards';?> </a></li>
+              <li><a href="#tab_2" data-toggle="tab">Staff Coments</a></li>
             </ul>
             <div class="tab-content">
               <div class="tab-pane active" id="tab_1">
-                <b>How to use:</b>
-
-                <p>Exactly like the original bootstrap tabs except you should use
-                  the custom wrapper <code>.nav-tabs-custom</code> to achieve this style.</p>
-                A wonderful serenity has taken possession of my entire soul,
-                like these sweet mornings of spring which I enjoy with my whole heart.
-                I am alone, and feel the charm of existence in this spot,
-                which was created for the bliss of souls like mine. I am so happy,
-                my dear friend, so absorbed in the exquisite sense of mere tranquil existence,
-                that I neglect my talents. I should be incapable of drawing a single stroke
-                at the present moment; and yet I feel that I never was a greater artist than now.
+              <?php
+			if(is_array($allawards)) {
+			?>
+			<ul>
+				<?php
+                foreach($allawards as $award) {?>
+<img src="<?php echo $award->image?>" class="img-responsive" alt="<?php echo $award->descrip?>" />
+					
+				<?php } ?>
+			</ul>
+			<?php
+			}
+			?>
               </div>
               <!-- /.tab-pane -->
               <div class="tab-pane" id="tab_2">
-                The European languages are members of the same family. Their separate existence is a myth.
-                For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ
-                in their grammar, their pronunciation and their most common words. Everyone realizes why a
-                new common language would be desirable: one could refuse to pay expensive translators. To
-                achieve this, it would be necessary to have uniform grammar, pronunciation and more common
-                words. If several languages coalesce, the grammar of the resulting language is more simple
-                and regular than that of the individual languages.
-              </div>
-              <!-- /.tab-pane -->
-              <div class="tab-pane" id="tab_3">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                It has survived not only five centuries, but also the leap into electronic typesetting,
-                remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-                sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-                like Aldus PageMaker including versions of Lorem Ipsum.
+                <?php echo $pilot->comment;?>
               </div>
               <!-- /.tab-pane -->
             </div>
@@ -146,66 +131,122 @@
     </div>
   </div>
 </div>
-<table>
-	<tr>
-		<td align="center" valign="top">
-			<?php
-			if(!file_exists(SITE_ROOT.AVATAR_PATH.'/'.$pilotcode.'.png')) {
-				echo 'No avatar';
-			} else {
-				echo '<img src="'.SITE_URL.AVATAR_PATH.'/'.$pilotcode.'.png'.'" alt="No Avatar" /> ';
-			}
-			?>
-			<br /><br />
-			<img src="<?php echo $pilot->rankimage?>"  alt="" />
-		</td>
-		<td valign="top">
-			<ul>
-				<li><strong>Pilot ID: </strong><?php echo $pilotcode ?></li>
-				<li><strong>Rank: </strong><?php echo $pilot->rank;?></li>
-				<li><strong>Total Flights: </strong><?php echo $pilot->totalflights?></li>
-				<li><strong>Total Hours: </strong><?php echo Util::AddTime($pilot->totalhours, $pilot->transferhours); ?></li>
-				<li><strong>Location: </strong>
-					<img src="<?php echo Countries::getCountryImage($pilot->location);?>"
-								alt="<?php echo Countries::getCountryName($pilot->location);?>" />
-					<?php echo Countries::getCountryName($pilot->location);?>
-				</li>
-
-				<?php
-				// Show the public fields
-				if($allfields) {
-					foreach($allfields as $field) {
-						echo "<li><strong>$field->title: </strong>$field->value</li>";
-					}
-				}
-				?>
-			</ul>
-
-			<p>
-			<strong>Awards</strong>
-			<?php
-			if(is_array($allawards)) {
-			?>
-			<ul>
-				<?php
-                foreach($allawards as $award) {
-					/* To show the image:
-
-						<img src="<?php echo $award->image?>" alt="<?php echo $award->descrip?>" />
-					*/
-				?>
-					<li><?php echo $award->name ?></li>
-				<?php } ?>
-			</ul>
-			<?php
-			}
-			?>
-		</p>
-		</td>
-
-	</tr>
-</table>
-
-<!-- Google Chart Implementation - OFC Replacement - simpilot -->
-<img src="<?php echo $chart_url  ?>" alt="Pirep Chart" />
+<div class="row">
+      <div class="col-md-12">
+      <div class="box box-widget widget-user">
+              <!-- Add the bg color to the header using any of the bg-* classes -->
+              <div class="widget-user-header bg-white">
+                  <h4 class="widget-user-username text-center"><strong>NorteSul Virtual</strong></h4>
+                  <h5 class="widget-user-desc text-center">
+                      ICAO Style Logbook
+                  </h5>
+              </div>
+              <div class="box-footer">
+                  <hr>
+                  <h4 class="text-center"><small>Belongs to</small></h4>
+                  <h4 class="text-center"><strong><?php echo Auth::$userinfo->firstname;?> <?php echo Auth::$userinfo->lastname;?></strong></h4>
+                  <hr>
+                  <h4 class="text-center"><small>Base Airport</small></h4>
+                  <h4 class="text-center"><strong><?php echo Auth::$userinfo->hub;?></strong></h4>
+                  <hr>
+                  <h4 class="text-center"><small>Total Log hours</small></h4>
+                  <h4 class="text-center text-green"><strong><?php echo Auth::$userinfo->totalhours;?></strong></h4>
+                  <hr>
+                  <button type="button" class="btn btn-default rounded btn-block" data-toggle="modal" data-target="#modal-default">
+                Open
+              </button>
+                </div>
+            </div>
+    </div>
+    </div>
 </section>
+
+<div class="modal modal-xl fade" id="modal-default" style="display: none;">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span></button>
+                <h4 class="modal-title text-center">NorteSul Virtual</h4>
+                <h5 class="modal-title text-center">PIREP Logbook</h4>
+                <h5 class="modal-title text-center">Belongs to <?php echo $pilot->firstname . ' ' . $pilot->lastname?></h4>
+              </div>
+              <div class="modal-body table-responsive">
+              <?php
+                    if(!$pirep_list) {
+                      echo '<div class="alert alert-info"><h3>Error</h3><p>You have not filed any reports. File one through the ACARS software or manual report submission to see its details and status on this page.</p></div>';
+                      return;
+                    }
+                    ?>
+                    <table class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                      <th><h4 class="text-center"><strong>FLIGHT DATE</strong></h4></th>
+                      <th><h4 class="text-center"><strong>CALLSIGN</strong></h4></th>
+                      <th><h4 class="text-center"><strong>DEPARTURE</strong></h4></th>
+                      <th><h4 class="text-center"><strong>ARRIVAL</strong></h4></td>
+                      <th><h4 class="text-center"><strong>FLIGHT TIME</strong></h4></th>
+                      <th></th>
+                      <?php
+                      // Only show this column if they're logged in, and the pilot viewing is the
+                      //	owner/submitter of the PIREPs
+                      if(Auth::LoggedIn() && Auth::$pilot->pilotid == $pilot->pilotid) {
+                        echo '<th></th>';
+                      }
+                      ?>
+                    </tr>
+                    </thead>
+                    <thead>
+                    <tr>
+                      <td align="center">(dd/mm/yyyy)</td>
+                      <td align="center">XXX123</td>
+                      <td align="center">(ICAO)</td>
+                      <td align="center">(ICAO)</td>
+                      <td align="center">(HH:MM)</td>
+                      <th><h4 class="text-center"><strong>PILOT IN COMMAND</strong></h4></th>
+                      <?php
+                      // Only show this column if they're logged in, and the pilot viewing is the
+                      //	owner/submitter of the PIREPs
+                      if(Auth::LoggedIn() && Auth::$pilot->pilotid == $pilot->pilotid) {
+                        echo '<th><h4 class="text-center"><strong>OPTIONS</strong></h4></th>';
+                      }
+                      ?>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    foreach($pirep_list as $pirep) {
+                    ?>
+                    <tr>
+                      <td align="center"><?php echo date(DATE_FORMAT, $pirep->submitdate); ?></td>
+                      <td align="center"><?php echo $pirep->code . $pirep->flightnum; ?></td>
+                      <td align="center"><?php echo $pirep->depicao; ?></td>
+                      <td align="center"><?php echo $pirep->arricao; ?></td>
+                        <td align="center"><?php echo $pirep->flighttime; ?></td>
+                      <td align="center"><?php echo $pilot->firstname;?> <?php echo $pilot->lastname;?></td>
+                      <?php
+                      // Only show this column if they're logged in, and the pilot viewing is the
+                      //	owner/submitter of the PIREPs
+                      if(Auth::LoggedIn() && Auth::$pilot->pilotid == $pirep->pilotid) {
+                        ?>
+                      <td align="center">
+                        <a href="<?php echo url('/pireps/view/'.$pirep->pirepid);?>" data-toggle="tooltip" title="POST FLIGHT REVIEW" class="btn btn-default btn-xs"><i class="fa fa-eye"></i> PFR</a><br />
+                      </td>
+                      <?php
+                      }
+                      ?>
+                    </tr>
+                    <?php
+                    }
+                    ?>
+                    </tbody>
+                    </table>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>

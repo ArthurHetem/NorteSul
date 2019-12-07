@@ -7,4 +7,4 @@ class About extends CodonModule
 	$this->render('about.php');
 	}
 }	
-?>	
+?>

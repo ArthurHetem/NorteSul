@@ -11,93 +11,114 @@
 ?>
 <section class="content-header bg-white espaca">
     <div class="pull-right"><i class="fa fa-plane fa-4x text-muted"></i></div>
-    <h1><strong>Centro</strong> de Eventos</h1>
-    <h1><small>Diretoria de Eventos | NorteSul Virtual &copy;
+    <h1><strong>Events</strong> Center</h1>
+    <h1><small>Events Department | NorteSul Virtual &copy;
             <?php echo date("Y");?></small>
         <br>
 </section>
 <section class="content container-fluid">
-			<div class="row">
-			<div class="col-xs-12">
+	<div class="row">
+		<div class="col-xs-12">
           <div class="box box-solid">
             <div class="box-header with-border">
-              <h3 class="box-title">Próximos Eventos</h3>
+              <h3 class="box-title"><i class="fa fa-calendar" aria-hidden="true"></i> Events <strong>Timeline</strong></h3>
             </div>
 			<div class="box-body">
-<?php
-if(!$events)
-{
-    echo '<div class="alert alert-danger">Nenhum Evento Próximo</div>';
-}
-else
-{
-    ?>
-<center>
-    <table class="table table-bordered" width="80%">
-        <tr>
-            <td width="25%"><b>Data</b></td>
-            <td width="60%"><b>Evento</b></td>
-            <td><b>Detalhes/Inscrição</b></td>
-        </tr>
-            <?php
-            foreach($events as $event)
+                <ul class="timeline">
+                <?php
+                    if(!$events)
+                    {
+                ?>
+<!-- timeline item -->
+<li>
+    <!-- timeline icon -->
+    <i class="fa fa-times bg-red"></i>
+    <div class="timeline-item alert alert-danger">
+        <h3 class="timeline-header" style="color:#fff;">Oops!</h3>
+
+        <div class="timeline-body">
+        There are no upcoming events!
+        </div>
+    </div>
+</li>
+<!-- END timeline item -->
+                <?php 
+            } else {
+                foreach($events as $event)
             {
                 if($event->active == '2')
                 {
                     continue;
                 }
-        echo '<tr><td>'.date('n/j/Y', strtotime($event->date)).'</td>';
-        echo '<td>'.$event->title.'</td>';
-        echo '<td><a href="'.SITE_URL.'/index.php/events/get_event?id='.$event->id.'" class="btn btn-success">Detalhes/Inscrição</a></td></tr>';
-    }
-    ?>
-    </table>
-</center>
-    <?php
-}
-?>
-</div>
-</div>
-</div>
-<div class="col-xs-12">
-          <div class="box box-solid">
-            <div class="box-header with-border">
-              <h3 class="box-title">Eventos Passados</h3>
-            </div>
-			<div class="box-body">
+                echo '<li>';
+                echo '<i class="fa fa-plane bg-orange"></i>';
+                echo '<div class="timeline-item">';
+                echo '<h3 class="timeline-header">'.$event->title.'</h3>';
+                echo '<div class="timeline-body>"';
+                echo '<a href="'.SITE_URL.'/index.php/events/get_event?id='.$event->id.'" class="btn btn-info btn-rounded">Details</a>';
+                echo '</div>';
+                echo '</div>';
+                echo '</li>';
+                echo '<li class="time-label">';
+                echo '<span class="bg-orange">';
+                echo date('d/m/Y', strtotime($event->date));
+                echo '</span>';
+                echo '</li>';
+            }
+            }?>
+<!-- timeline time label -->
+<li class="time-label">
+    <span class="bg-blue">
+        <?php echo date("d/m/Y");?>
+    </span>
+</li>
+<!-- /.timeline-label -->
 
 <?php
-if(!$history)
-{
-    echo '<div class="alert alert-danger">Nenhum Evento Passado</div>';
-}
-else
-{
-    ?>
-<center>
-    <table class="table table-bordered" width="80%">
-        <tr>
-            <td width="25%"><b>Data</b></td>
-            <td width="60%"><b>Evento</b></td>
-            <td><b>Detalhes</b></td>
-        </tr>
-    <?php
-    foreach($history as $event)
-    {
-        echo '<tr><td>'.date('n/j/Y', strtotime($event->date)).'</td>';
-        echo '<td>'.$event->title.'</td>';
-        echo '<td><a href="'.SITE_URL.'/index.php/events/get_past_event?id='.$event->id.'" class="btn btn-success">Detalhes</a></td></tr>';
-    }
-    ?>
-    </table>
-</center>
-    <?php
-}
-?>
+                    if(!$history)
+                    {
+                ?>
+<!-- timeline item -->
+<li>
+    <!-- timeline icon -->
+    <i class="fa fa-times bg-red"></i>
+    <div class="timeline-item alert alert-danger">
+        <h3 class="timeline-header" style="color:#fff;">Oops!</h3>
+
+        <div class="timeline-body">
+        There are no past events!
+        </div>
+    </div>
+</li>
+<!-- END timeline item -->
+                <?php 
+            } else {
+                foreach($history as $event)
+            {
+                if($event->active == '2')
+                {
+                    continue;
+                }
+                echo '<li>';
+                echo '<i class="fa fa-paper-plane bg-navy"></i>';
+                echo '<div class="timeline-item">';
+                echo '<h3 class="timeline-header">'.$event->title.'</h3>';
+                echo '<div class="timeline-body">';
+                echo '<a href="'.SITE_URL.'/index.php/events/get_past_event?id='.$event->id.'" class="btn btn-info btn-rounded">Details</a>';
+                echo '</div>';
+                echo '</div>';
+                echo '</li>';
+                echo '<li class="time-label">';
+                echo '<span class="bg-navy">';
+                echo date('d/m/Y', strtotime($event->date));
+                echo '</span>';
+                echo '</li>';
+            }
+            }?>
+
+</ul>
+</div>
+</div>
 <hr />
-<a href="<?php echo url('/events/get_rankings'); ?>">Mostrar estatísticas dos eventos</a>
-</div>
-</div>
-</div>
-</div>
+<p class="text-center"><a href="<?php echo url('/events/get_rankings'); ?>" class="btn btn-info btn-rounded">Pilot Stats for Events</a></p>
 </section>

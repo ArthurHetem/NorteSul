@@ -230,11 +230,20 @@ public function savesettings($id) {
 		$minexp = trim(DB::escape($this->post->minexp));
 		$maxexp = trim(DB::escape($this->post->maxexp));
 		$prefaptA = trim(DB::escape($this->post->prefaptA));
- $prefaptB = trim(DB::escape($this->post->prefaptB));
- $prefaptC = trim(DB::escape($this->post->prefaptC));
+		$prefaptB = trim(DB::escape($this->post->prefaptB));
+		$prefaptC = trim(DB::escape($this->post->prefaptC));
+		$prefaptD = trim(DB::escape($this->post->prefaptD));
+		$prefaptE = trim(DB::escape($this->post->prefaptE));
+		$prefaptF = trim(DB::escape($this->post->prefaptF));
+		$prefaptG = trim(DB::escape($this->post->prefaptG));
+		$prefaptH = trim(DB::escape($this->post->prefaptH));
+		$prefaptI = trim(DB::escape($this->post->prefaptI));
+		$prefaptJ = trim(DB::escape($this->post->prefaptJ));
+		$prefaptK = trim(DB::escape($this->post->prefaptK));
+		$prefaptL = trim(DB::escape($this->post->prefaptL));
 	 $cronjobactive = trim(DB::escape($this->post->cronjobactive));
 		
-        CargoOpsData::SaveSettings($id, $cargocode, $indextext, $contractnumber, $minexp, $maxexp, $prefaptA, $prefaptB, $prefaptC, $cronjobactive);
+        CargoOpsData::SaveSettings($id, $cargocode, $indextext, $contractnumber, $minexp, $maxexp, $prefaptA, $prefaptB, $prefaptC, $prefaptD, $prefaptE, $prefaptF, $prefaptG, $prefaptH, $prefaptI, $prefaptJ, $prefaptK, $prefaptL, $cronjobactive);
         
 		$this->set('message', 'Settings Saved!');
 	    $this->show('core_success.tpl');

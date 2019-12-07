@@ -16,7 +16,7 @@
 <section class="content-header bg-white espaca">
     <div class="pull-right"><i class="fa fa-envelope fa-4x text-muted"></i></div>
     <h1><strong>iMail</strong></h1>
-    <h1><small>Comunicações e recursos | NorteSul Virtual &copy;
+    <h1><small>Communications and Resources | NorteSul Virtual &copy;
             <?php echo date("Y");?></small>
         <br>
 </section>
@@ -27,11 +27,11 @@
             <div class="box box-solid">
                 <div class="box-header with-border">
                     <a href="<?php echo SITE_URL; ?>/index.php/Mail/newmail">
-                        <div class="btn btn-rounded btn-default"><i class="fa fa-pencil"></i> Escrever novo e-mail</div>
+                        <div class="btn btn-rounded btn-default"><i class="fa fa-pencil"></i> Write new e-mail</div>
                     </a>
                     <div class="pull-right box-tools">
-                        <button class="btn btn-default btn-rounded" onclick="goBack()"><i class="fa fa-eye"></i></button>
-                        <button class="btn btn-default btn-rounded" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
+                        <button class="btn btn-default btn-rounded" onclick="goBack()" data-toggle="tooltip" title="Previous Page"><i class="fa fa-arrow-left"></i></button>
+                        <button class="btn btn-default btn-rounded" onclick="location.reload();" data-toggle="tooltip" title="Refresh"><i class="fa fa-refresh"></i></button>
                     </div>
                 </div>
 
@@ -45,15 +45,14 @@
                                     </td>
                                     <td>
                                         <span class="label label-info">
-                                            <?php 
+                                            <?php
 							$firstName = Auth::$userinfo->firstname;
 							$firstName = strtolower($firstName);
-							
+
 							$lastName = Auth::$userinfo->lastname;
 							$lastName = strtolower($lastName);
 							?>
-                                            <?php echo $firstName; ?>.
-                                            <?php echo $lastName; ?>@nortesulvirtual.com</span>
+                                            <?php echo $firstName; ?>.<?php echo $lastName; ?>@nortesulvirtual.com</span>
                                     </td>
                                 </tr>
                             </tbody>
@@ -61,13 +60,13 @@
 
                         <li class="">
                             <a href="<?php echo SITE_URL; ?>/index.php/Mail">
-                                <strong>Caixa de entrada</strong>
+                                <strong>Inbox</strong> <div class="pull-right"><span class="label label-default"><?php MainController::Run('Mail', 'checkmail'); ?></span></div>
                             </a>
                         </li>
 
                         <li class="">
                             <a href="<?php echo SITE_URL; ?>/index.php/Mail/settings">
-                                <strong>Configurações</strong>
+                                <strong>Settings</strong>
                             </a>
                         </li>
                     </ul>
@@ -79,20 +78,20 @@
                 <div class="box-header with-border">
                     <i class="fa fa-cog"></i>
 
-                    <h3 class="box-title"><strong>iMail</strong> Configurações</h3>
+                    <h3 class="box-title"><strong>iMail</strong> Settings</h3>
                 </div>
                 <div class="box-body">
                     <form action="<?php echo url('/Mail');?>" method="post" enctype="multipart/form-data">
                         <center>
-                            Enviar alerta para
-                            <?php echo Auth::$userinfo->email; ?> quando houver um novo iMail?: <br>
+                            Send alert to
+                            <?php echo Auth::$userinfo->email; ?> when there is a new iMail?: <br>
                             <select name="email" class="form-control">
-                                <option value="0">Não</option>
-                                <option value="1" <?php if(MailData::send_email(Auth::$userinfo->pilotid) === TRUE){echo 'selected="seclected"';} ?>>Sim</option>
+                                <option value="0">No</option>
+                                <option value="1" <?php if(MailData::send_email(Auth::$userinfo->pilotid) === TRUE){echo 'selected="seclected"';} ?>>Yes</option>
                             </select>
                             <br>
                             <input type="hidden" name="action" value="save_settings" />
-                            <input class="btn btn-flat btn-bg-gray" type="submit" value="Salvar" />
+                            <input class="btn btn-flat btn-bg-gray" type="submit" value="Save" />
                         </center>
                     </form>
                 </div>

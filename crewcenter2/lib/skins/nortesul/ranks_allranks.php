@@ -1,7 +1,7 @@
 <section class="content-header bg-white espaca">
     <div class="pull-right"><i class="fa fa-graduation-cap fa-4x text-muted"></i></div>
-    <h1>Ranking da <strong>Tripulação</strong></h1>
-    <h1><small>Recursos Humanos | NorteSul Virtual &copy;
+    <h1>Crew <strong>Ranks</strong></h1>
+    <h1><small>Human Resources Department | NorteSul Virtual &copy;
             <?php echo date("Y");?></small>
         <br>
 </section>
@@ -11,19 +11,19 @@
 		        <div class="col-md-12">
 		            <div class="box box-solid">
 		                <div class="box-header with-border">
-		                    <h3 class="box-title">Ranking dos <strong>pilotos</strong></h3>
+		                    <h3 class="box-title">Pilot <strong>Ranks</strong></h3>
 		                </div>
 		                <div class="box-body table-responsive">
 											<div class="callout callout-info">
-                <p>Na NorteSul Virtual, as promoções podem ou não serem realizadas automaticamente, dependendo se existe uma prova para a mesma. Horas transferidas não contam para promoções!</p>
+                <p>At NorteSul Virtual, promotions may or may not be performed automatically, depending on whether there is proof for it. Hours transferred do not count towards promotions!</p>
               </div>
 		                   <table class="table table-hover table-bordered">
 												 <thead>
-													 <th><h4>Título do ranking</h4></th>
-													 <th><h4>Mínimo de horas</h4></th>
-													 <th><h4>Imagem do ranking</h4></th>
-													 <th><h4>Salário</h4></th>
-													 <th><h4>Total de pilotos</h4></th>
+													 <th><h4>Rank Name</h4></th>
+													 <th><h4>Minimum Hours</h4></th>
+													 <th><h4>Rank Image</h4></th>
+													 <th><h4>Salary</h4></th>
+													 <th><h4>Total of Pilots</h4></th>
 												 </thead>
 												 <tr>
 

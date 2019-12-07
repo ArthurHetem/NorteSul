@@ -2,7 +2,7 @@
 <section class="content-header bg-white espaca">
     <div class="pull-right"><i class="fa fa-download fa-4x text-muted"></i></div>
     <h1><strong>Downloads</strong></h1>
-    <h1><small>Recursos para os tripulantes | NorteSul Virtual &copy;
+    <h1><small>Resources for CrewMembers | NorteSul Virtual &copy;
             <?php echo date("Y");?></small>
         <br>
 </section>
@@ -11,7 +11,7 @@
         <div class="col-md-12">
             <div class="box box-solid">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Essenciais para operações de <strong>voo</strong></h3>
+                    <h3 class="box-title">Essentials for <strong>flight operations</strong></h3>
                 </div>
                 <div class="box-body">
                   <div class="col-md-6">
@@ -26,7 +26,7 @@
                                 <h4 class="text-center text-black"><i class="fa fa-safari fa-4x fa-spin"></i></h4>
 
                                 <h4 class="text-center text-black">SmartCARS 2.0</h4>
-                                <h4 class="text-center"><smalL>Software de registro de voos da NorteSul Virtual desenvolvido pela TFDi Design (Nescessário para registro de voos)</small></h4>
+                                <h4 class="text-center"><smalL>Flight register software developed by TFDi Design (Required for flight register)</small></h4>
 
                             </div>
                 </div>
@@ -42,8 +42,8 @@
                           <div class="inner">
                               <h4 class="text-center text-green"><i class="fa fa-file fa-4x"></i></h4>
 
-                              <h4 class="text-center text-black">Manual de usuário do SmartCARS</h4>
-                              <h4 class="text-center"><smalL>smartCARS é um moderno e de fácil uso software de registro de voos virtual idealizado e desenvolvido pela TFDi Design. Baixe este manual para saber mais.</small></h4>
+                              <h4 class="text-center text-black">SmartCARS User Manual</h4>
+                              <h4 class="text-center"><smalL>smartCARS is a modern and easy to use virtual flight logging software designed and developed by TFDi Design. Download this manual to learn more.</small></h4>
 
                           </div>
                   </a>
@@ -70,7 +70,7 @@
                             <h4 class="text-center text-black"><i class="fa fa-cloud-download fa-4x"></i></h4>
 
                             <h4 class="text-center text-black">Download manager</h4>
-                            <h4 class="text-center"><smalL>Plataforma digital em que todos os downloads oficiais da NorteSul Virtual se encontram.</small></h4>
+                            <h4 class="text-center"><smalL>Digital platform where all official NorteSul downloads are.</small></h4>
 
                         </div>
             </div>

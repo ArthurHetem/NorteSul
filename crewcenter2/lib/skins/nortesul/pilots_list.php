@@ -23,10 +23,10 @@ return;
                                     <h4 class="text-center">ID</h4>
                                 </th>
                                 <th>
-                                    <h4 class="text-center">País</h4>
+                                    <h4 class="text-center">Country</h4>
                                 </th>
                                 <th>
-                                    <h4 class="text-center">Nome</h4>
+                                    <h4 class="text-center">Name</h4>
                                 </th>
                                 <th>
                                     <h4 class="text-center">Rank</h4>
@@ -38,10 +38,10 @@ return;
                                     <h4 class="text-center">VATSIM</h4>
                                 </th>
                                 <th>
-                                    <h4 class="text-center">Imagem do rank</h4>
+                                    <h4 class="text-center">Rank </h4>
                                 </th>
-                                <th>
-                                    <h4 class="text-center">Ver piloto</h4>
+                                <th width="10%">
+                                    <h4 class="text-center">See Pilot Details</h4>
                                 </th>
                             </tr>
                         </thead>
@@ -68,9 +68,8 @@ foreach($pilot_list as $pilot)
                                 <td width="1%" nowrap>
                                         <?php echo PilotData::GetPilotCode($pilot->code, $pilot->pilotid)?>
                                 </td>
-                                <td>
-                                    <img src="<?php echo Countries::getCountryImage($pilot->location);?>" alt="<?php echo Countries::getCountryName($pilot->location);?>" />
-                                    <?php echo Countries::getCountryName($pilot->location);?>
+                                <td width="10%">
+                                <span class="flag-icon flag-icon-<?php echo strtolower($pilot->location);?>"></span><span style="margin-left:5px;"><?php echo Countries::getCountryName($pilot->location);?></span>
                                 </td>
                                 <td>
                                     <?php echo $pilot->firstname.' '.$pilot->lastname?>
@@ -82,7 +81,7 @@ foreach($pilot_list as $pilot)
                                     <?php
                                     $ivaoId = PilotData::GetFieldValue($pilot->pilotid, 'IVAO VID');
                                         if($ivaoId < 1){
-                                            echo "<span class='text-muted'>Não Linkado</span>";
+                                            echo "<span class='text-muted'>Not Linked</span>";
                                         } else {
                                             echo "<span class='text-gren'>".$ivaoId."</span>";
                                         }
@@ -93,7 +92,7 @@ foreach($pilot_list as $pilot)
                                     <?php
                                     $vatsimId = PilotData::GetFieldValue($pilot->pilotid, 'VATSIM ID');
                                         if($vatsimId < 1){
-                                            echo "<span class='text-muted'>Não Linkado</span>";
+                                            echo "<span class='text-muted'>Not Linked</span>";
                                         } else {
                                             echo "<span class='text-gren'>".$vatsimId."</span>";
                                         }

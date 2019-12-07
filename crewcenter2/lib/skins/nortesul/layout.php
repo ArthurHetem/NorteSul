@@ -36,7 +36,8 @@
   <!-- SweetAlert2 -->
    <link rel="stylesheet" href="<?php echo SITE_URL ?>/lib/skins/nortesul/css/sweetalert2.min.css">
   <!-- MorrisJS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+  <link rel="stylesheet" href="<?php echo SITE_URL;?>/lib/skins/nortesul/css/flag-icon.min.css">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -46,45 +47,24 @@
 
   <!-- Google Font -->
   <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+        href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
  <style>
-  .widget{
-	 background-color:#DA0808;
-	 color:#FFF;
-	 height:80px;
-	 width:80px;
-   }
-   .widget:hover{
-	 background-color:#fff;
-	 color:#DA0808;
-	 border:1px solid #DA0808;
-	 transition-property:background-color color border;
-	 transition-duration:0.5s;
-	 transition-timing-function:ease-out;
-	 transition-delay: 0.1s;
-   }
-   .cor{
-	 color:#DA0808;
-   }
    .norte{
 	background-color:#009b3a;
 	color:#FFF;
    }
-    .btn.aqua-gradient {
-		color:#fff;
-    background: -webkit-linear-gradient(50deg,#2096ff,#05ffa3)!important;
-    background: linear-gradient(40deg,#2096ff,#05ffa3)!important;
-    -webkit-transition: .5s ease;
-    transition: .5s ease;
-}
-
 .swal2-popup {
   font-size: 1.6rem !important;
 }
  </style>
+ <style>
+.modal-dialog {
+    width: 70%;
+}
+</style>
  <!--Your Google Maps API Key here-->
-    <script src="https://maps.google.com/maps/api/js?v=3&key=AIzaSyDbwylblt3-Nz21yNoDJWbHyqTjTNogYcg&callback=main.CreateMap"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js" type="text/javascript"></script>
+    <script src="//maps.google.com/maps/api/js?v=3&key=AIzaSyDbwylblt3-Nz21yNoDJWbHyqTjTNogYcg&callback=main.CreateMap"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js" type="text/javascript"></script>
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -132,12 +112,12 @@ desired effect
 		?>
     <div class="overlay">
     	<div class="wrap">
-    		<h1 class="fonte6"><b>Acesso</b> Ligeiro</h1>
+    		<h1 class="fonte6"><b>Quick</b> Access</h1>
         <ul class="wrap-nav">
-          <li><a href="<?php echo SITE_URL;?>/index.php/Schedules"><i class="fa fa-paper-plane"></i> Reservar voo</a></li>
-          <li><a href="<?php echo SITE_URL;?>/index.php/Schedules/bids"><i class="fa fa-plane"></i> Voos reservados</a></li>
-          <li><a href="<?php echo SITE_URL;?>/index.php/Schedules"><i class="fa fa-phone"></i> Discord</a></li>
-          <li><a href="https://nortesulvirtual.com/hesk/"><i class="fa fa-life-ring"></i> HelpDesk</a></li>
+          <li><a href="<?php echo SITE_URL;?>/index.php/cargoops"><i class="fa fa-paper-plane"></i> Bid a Flight</a></li>
+          <li><a href="<?php echo SITE_URL;?>/index.php/Schedules/bids"><i class="fa fa-plane"></i> Current Bids</a></li>
+          <li><a href="//discord.gg/bq2RH5M"><i class="fa fa-phone"></i> Discord</a></li>
+          <li><a href="//nortesulvirtual.com/hesk/"><i class="fa fa-life-ring"></i> HelpDesk</a></li>
           <li><a href="<?php echo SITE_URL;?>/index.php/logout"><i class="fa fa-power-off"></i> Logout</a></li>
         </ul>
     	</div>
@@ -161,7 +141,7 @@ desired effect
 
 <!-- jQuery 3 e 2 -->
 <script src="<?php echo SITE_URL ?>/lib/skins/nortesul/js/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="<?php echo SITE_URL ?>/lib/skins/nortesul/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
@@ -176,11 +156,11 @@ desired effect
 <script type="text/javascript" src="<?php echo SITE_URL ?>/lib/js/phpvms.js"></script>
 <script type="text/javascript" src="<?php echo fileurl('lib/js/simbrief.apiv1.js');?>"></script>
 <!-- Raphael for MorrisJS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
 <!-- MorrisJS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
 <!-- CkEditor-->
-<script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
+<script src="//cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
 <!-- Tooltip -->
 <script src="<?php echo SITE_URL ?>/lib/skins/nortesul/js/tooltip.js"></script>
 <script>
@@ -220,7 +200,7 @@ $('.overlay').on('click', function(){
 					jQuery.ajax({
 						'async': false,
 						'global': false,
-						'url': "https://nortesulvirtual.com/crewcenter2pt/action.php/pilots/morrisstatsbymonthdata",
+						'url': "https://crew.nortesulvirtual.com/action.php/pilots/morrisstatsbymonthdata",
 						'dataType': "json",
 						'success': function (data) {
 						json = data;

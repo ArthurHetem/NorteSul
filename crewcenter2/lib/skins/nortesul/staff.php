@@ -6,7 +6,7 @@
         <br>
 </section>
 <section class="content container-fluid">
-        <div class="col-md-12">
+        <div class="col-md-12"> 
             <div class="box box-widget widget-user">
                 <div class="box-footer">
                         <div class="well">

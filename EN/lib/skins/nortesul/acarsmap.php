@@ -1,3 +1,8 @@
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="<?php echo fileurl('lib/js/jquery.form.js');?>"></script>
+    <script type="text/javascript" src="<?php echo fileurl('lib/js/phpvms.js');?>"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=weather&sensor=false&key=AIzaSyDNXF-5w4vpCLtqL0hNmxlp9ieGvoVJNCg"></script>
 <div class="site-blocks-cover overlay"
     style="background-image: url(<?php echo SITE_URL;?>/lib/skins/nortesul/images/canvas/4.jpg);" data-aos="fade"
     data-stellar-background-ratio="0.5">
@@ -40,7 +45,7 @@
  */
 ?>
                 <script type="text/javascript">
-                    < ? php
+                    <?php
                         /* These are the settings for the Google map. You can see the
                         	Google API reference if you want to add more options.
                         	
@@ -53,32 +58,18 @@
                         	refreshTime: Time, in seconds * 1000 to refresh the map.
                         	  The default is 10000 (10 seconds)
                         */
-                        ?
-                        >
-                    var
-                    acars_map_defaults
-                    =
-                    {
-                    autozoom:
-                    true,
-                    zoom:
-                    4,
-                    center:
-                    new
-                    google.maps.LatLng("<?php echo Config::Get('MAP_CENTER_LAT'); ?>",
-                    "<?php echo Config::Get('MAP_CENTER_LNG'); ?>"),
-                    mapTypeId:
-                    google.maps.MapTypeId.HYBRID,
-                    refreshTime:
-                    10000,
-                    disableDefaultUI:
-                    true,
-                    zoomControl:
-                    true
-                    };
+                        ?>
+                    var acars_map_defaults= {
+                    autozoom: true,
+                    zoom: 4,
+                    center: new google.maps.LatLng("<?php echo Config::Get('MAP_CENTER_LAT'); ?>","<?php echo Config::Get('MAP_CENTER_LNG'); ?>"),
+                    mapTypeId: google.maps.MapTypeId.HYBRID,
+                    refreshTime: 10000,
+                    disableDefaultUI: true,
+                    zoomControl:true };
                 </script>
                 <div class="mapcenter" align="center">
-                    <div id="acarsmap" style="width:1140px; height:940px;"></div>
+                    <div id="acarsmap" style="width:1110px; height:940px;"></div>
                 </div>
                 <table id="tabledlist" class="table table-striped">
                     <thead>
@@ -182,22 +173,22 @@
  */
 ?>
                 <script type="text/html" id="navpoint_bubble">
-                    <span style="font-size: 10px; text-align:left; width: 100%" align="left">
-                        <strong>Name: </strong><%=nav.title%> (<%=nav.name%>)<br />
-                        <strong>Type: </strong>
-                        <?php	/* Show the type of point */ ?>
-                        <% if(nav.type == 2) { %> NDB <% } %>
-                        <% if(nav.type == 3) { %> VOR <% } %>
-                        <% if(nav.type == 4) { %> DME <% } %>
-                        <% if(nav.type == 5) { %> FIX <% } %>
-                        <% if(nav.type == 6) { %> TRACK <% } %>
-                        <br />
-                        <?php	/* Only show frequency if it's not a 0*/ ?>
-                        <% if(nav.freq != 0) { %>
-                        <strong>Frequency: </strong><%=nav.freq%>
-                        <% } %>
-                    </span>
-                </script>
+<span style="font-size: 10px; text-align:left; width: 100%" align="left">
+<strong>Name: </strong><%=nav.title%> (<%=nav.name%>)<br />
+<strong>Type: </strong>
+<?php	/* Show the type of point */ ?>
+<% if(nav.type == 2) { %> NDB <% } %>
+<% if(nav.type == 3) { %> VOR <% } %>
+<% if(nav.type == 4) { %> DME <% } %>
+<% if(nav.type == 5) { %> FIX <% } %>
+<% if(nav.type == 6) { %> TRACK <% } %>
+<br />
+<?php	/* Only show frequency if it's not a 0*/ ?>
+<% if(nav.freq != 0) { %>
+<strong>Frequency: </strong><%=nav.freq%>
+<% } %>
+</span>
+</script> 
                 <!-- End container -->
             </div>
         </div>

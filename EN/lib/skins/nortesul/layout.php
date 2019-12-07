@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="<?php echo SITE_URL;?>/lib/skins/nortesul/css/jquery.timepicker.css">
 
     <!--Your Google Maps API Key here-->
-    <script src="https://maps.google.com/maps/api/js?v=3&key=AIzaSyDbwylblt3-Nz21yNoDJWbHyqTjTNogYcg&callback=main.CreateMap"></script>
     <link rel="stylesheet" href="<?php echo SITE_URL;?>/lib/skins/nortesul/css/flaticon.css">
 	<link rel="stylesheet" href="<?php echo SITE_URL;?>/lib/skins/nortesul/css/icomoon.css">
 	<script src="https://use.fontawesome.com/90c9086cc0.js"></script>
@@ -73,16 +72,11 @@
   <script src="<?php echo SITE_URL;?>/lib/skins/nortesul/js/jquery.animateNumber.min.js"></script>
   <script src="<?php echo SITE_URL;?>/lib/skins/nortesul/js/jquery.mb.YTPlayer.min.js"></script>
   <script src="<?php echo SITE_URL;?>/lib/skins/nortesul/js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="<?php echo SITE_URL;?>/lib/skins/nortesul/js/google-map.js"></script>
   <script src="<?php echo SITE_URL;?>/lib/skins/nortesul/js/main.js"></script>
   <script type="text/javascript">
   $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
-$(function(){
-    $('.selectpicker').selectpicker();
-});
 </script>
   </body>
 </html>
